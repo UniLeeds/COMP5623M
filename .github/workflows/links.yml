@@ -1,4 +1,4 @@
-name: Links
+name: HTML
 
 on:
   repository_dispatch:
@@ -7,7 +7,8 @@ on:
     - cron: "* */3 * * *"
 
 jobs:
-  linkChecker:
+  everything:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,15 +16,24 @@ jobs:
       - name: Link Checker
         id: lychee
         uses: lycheeverse/lychee-action@v1.4.1
-        permissions: write-all
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Create Issue From File
         if: steps.lychee.outputs.exit_code != 0
         uses: peter-evans/create-issue-from-file@v3
-        permissions: write-all
         with:
           title: Link Checker Report
           content-filepath: ./lychee/out.md
           labels: report, automated issue
+      - name: HTML Proofer
+        uses: chabad360/htmlproofer@master
+        with:
+          directory: "/"
+          # The directory to scan
+          arguments: --allow-missing-href
+          # The arguments to pass to HTMLProofer
+      - name: asciidoctor-ghpages
+        uses: manoelcampos/asciidoctor-ghpages-action@v2.2.1
+        pdf_build: true
+
