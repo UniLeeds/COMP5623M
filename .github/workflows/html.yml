@@ -35,5 +35,4 @@ jobs:
           # The arguments to pass to HTMLProofer
       - name: asciidoctor-ghpages
         uses: manoelcampos/asciidoctor-ghpages-action@v2.2.1
-        pdf_build: true
 
