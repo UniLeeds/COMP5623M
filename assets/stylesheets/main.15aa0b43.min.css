@@ -2664,7 +2664,7 @@ html .md-footer-meta.md-typeset a:hover {
 
 .md-source__fact::before {
     margin: 0 .1rem;
-    content: "·"
+    content: "Â·"
 }
 
 .md-source__fact:first-child::before {
@@ -3830,227 +3830,227 @@ html .md-typeset summary:last-child {
 
 .md-typeset .keys .key-alt::before {
     padding-right: .4em;
-    content: "⎇"
+    content: "âŽ‡"
 }
 
 .md-typeset .keys .key-left-alt::before {
     padding-right: .4em;
-    content: "⎇"
+    content: "âŽ‡"
 }
 
 .md-typeset .keys .key-right-alt::before {
     padding-right: .4em;
-    content: "⎇"
+    content: "âŽ‡"
 }
 
 .md-typeset .keys .key-command::before {
     padding-right: .4em;
-    content: "⌘"
+    content: "âŒ˜"
 }
 
 .md-typeset .keys .key-left-command::before {
     padding-right: .4em;
-    content: "⌘"
+    content: "âŒ˜"
 }
 
 .md-typeset .keys .key-right-command::before {
     padding-right: .4em;
-    content: "⌘"
+    content: "âŒ˜"
 }
 
 .md-typeset .keys .key-control::before {
     padding-right: .4em;
-    content: "⌃"
+    content: "âŒƒ"
 }
 
 .md-typeset .keys .key-left-control::before {
     padding-right: .4em;
-    content: "⌃"
+    content: "âŒƒ"
 }
 
 .md-typeset .keys .key-right-control::before {
     padding-right: .4em;
-    content: "⌃"
+    content: "âŒƒ"
 }
 
 .md-typeset .keys .key-meta::before {
     padding-right: .4em;
-    content: "◆"
+    content: "â—†"
 }
 
 .md-typeset .keys .key-left-meta::before {
     padding-right: .4em;
-    content: "◆"
+    content: "â—†"
 }
 
 .md-typeset .keys .key-right-meta::before {
     padding-right: .4em;
-    content: "◆"
+    content: "â—†"
 }
 
 .md-typeset .keys .key-option::before {
     padding-right: .4em;
-    content: "⌥"
+    content: "âŒ¥"
 }
 
 .md-typeset .keys .key-left-option::before {
     padding-right: .4em;
-    content: "⌥"
+    content: "âŒ¥"
 }
 
 .md-typeset .keys .key-right-option::before {
     padding-right: .4em;
-    content: "⌥"
+    content: "âŒ¥"
 }
 
 .md-typeset .keys .key-shift::before {
     padding-right: .4em;
-    content: "⇧"
+    content: "â‡§"
 }
 
 .md-typeset .keys .key-left-shift::before {
     padding-right: .4em;
-    content: "⇧"
+    content: "â‡§"
 }
 
 .md-typeset .keys .key-right-shift::before {
     padding-right: .4em;
-    content: "⇧"
+    content: "â‡§"
 }
 
 .md-typeset .keys .key-super::before {
     padding-right: .4em;
-    content: "❖"
+    content: "â–"
 }
 
 .md-typeset .keys .key-left-super::before {
     padding-right: .4em;
-    content: "❖"
+    content: "â–"
 }
 
 .md-typeset .keys .key-right-super::before {
     padding-right: .4em;
-    content: "❖"
+    content: "â–"
 }
 
 .md-typeset .keys .key-windows::before {
     padding-right: .4em;
-    content: "⊞"
+    content: "âŠž"
 }
 
 .md-typeset .keys .key-left-windows::before {
     padding-right: .4em;
-    content: "⊞"
+    content: "âŠž"
 }
 
 .md-typeset .keys .key-right-windows::before {
     padding-right: .4em;
-    content: "⊞"
+    content: "âŠž"
 }
 
 .md-typeset .keys .key-arrow-down::before {
     padding-right: .4em;
-    content: "↓"
+    content: "â†“"
 }
 
 .md-typeset .keys .key-arrow-left::before {
     padding-right: .4em;
-    content: "←"
+    content: "â†"
 }
 
 .md-typeset .keys .key-arrow-right::before {
     padding-right: .4em;
-    content: "→"
+    content: "â†’"
 }
 
 .md-typeset .keys .key-arrow-up::before {
     padding-right: .4em;
-    content: "↑"
+    content: "â†‘"
 }
 
 .md-typeset .keys .key-backspace::before {
     padding-right: .4em;
-    content: "⌫"
+    content: "âŒ«"
 }
 
 .md-typeset .keys .key-backtab::before {
     padding-right: .4em;
-    content: "⇤"
+    content: "â‡¤"
 }
 
 .md-typeset .keys .key-caps-lock::before {
     padding-right: .4em;
-    content: "⇪"
+    content: "â‡ª"
 }
 
 .md-typeset .keys .key-clear::before {
     padding-right: .4em;
-    content: "⌧"
+    content: "âŒ§"
 }
 
 .md-typeset .keys .key-context-menu::before {
     padding-right: .4em;
-    content: "☰"
+    content: "â˜°"
 }
 
 .md-typeset .keys .key-delete::before {
     padding-right: .4em;
-    content: "⌦"
+    content: "âŒ¦"
 }
 
 .md-typeset .keys .key-eject::before {
     padding-right: .4em;
-    content: "⏏"
+    content: "â"
 }
 
 .md-typeset .keys .key-end::before {
     padding-right: .4em;
-    content: "⤓"
+    content: "â¤“"
 }
 
 .md-typeset .keys .key-escape::before {
     padding-right: .4em;
-    content: "⎋"
+    content: "âŽ‹"
 }
 
 .md-typeset .keys .key-home::before {
     padding-right: .4em;
-    content: "⤒"
+    content: "â¤’"
 }
 
 .md-typeset .keys .key-insert::before {
     padding-right: .4em;
-    content: "⎀"
+    content: "âŽ€"
 }
 
 .md-typeset .keys .key-page-down::before {
     padding-right: .4em;
-    content: "⇟"
+    content: "â‡Ÿ"
 }
 
 .md-typeset .keys .key-page-up::before {
     padding-right: .4em;
-    content: "⇞"
+    content: "â‡ž"
 }
 
 .md-typeset .keys .key-print-screen::before {
     padding-right: .4em;
-    content: "⎙"
+    content: "âŽ™"
 }
 
 .md-typeset .keys .key-tab::after {
     padding-left: .4em;
-    content: "⇥"
+    content: "â‡¥"
 }
 
 .md-typeset .keys .key-num-enter::after {
     padding-left: .4em;
-    content: "⌤"
+    content: "âŒ¤"
 }
 
 .md-typeset .keys .key-enter::after {
     padding-left: .4em;
-    content: "⏎"
+    content: "âŽ"
 }
 
 .md-typeset .tabbed-content {
