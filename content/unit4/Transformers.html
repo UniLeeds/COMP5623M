@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+
+    <link rel="shortcut icon" href="../../img/favicon.jpg">
+    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
+
+
+
+    <title>Transformers - Artificial Intelligence</title>
+
+
+
+    <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
+
+
+    <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
+
+
+
+
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+    <style>
+        body,
+        input {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
+        }
+
+        code,
+        kbd,
+        pre {
+            font-family: "", SFMono-Regular, Consolas, Menlo, monospace
+        }
+    </style>
+
+
+
+
+    <link rel="stylesheet" href="../../css/extra.css">
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+
+
+
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+
+
+        <a href="#transformers" class="md-skip">
+          Skip to content
+        </a>
+
+    </div>
+    <div data-md-component="announce">
+
+        <aside class="md-announce">
+            <div class="md-announce__inner md-grid md-typeset">
+
+                <div id="versionIndicator"> <b>Version:</b>27.10.21.a </div>
+                <img id="customlogo" src="../../img/logo.svg" alt="University of Leeds logo.">
+
+            </div>
+        </aside>
+
+    </div>
+
+
+
+
+
+    <header class="md-header" data-md-component="header">
+        <nav class="md-header-nav md-grid" aria-label="Header">
+            <a href="../../index.html" title="Artificial Intelligence" class="md-header-nav__button md-logo" aria-label="Artificial Intelligence">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+            <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+            <div class="md-header-nav__title" data-md-component="header-title">
+                <div class="md-header-nav__ellipsis">
+                    <div class="md-header-nav__topic">
+                        <span class="md-ellipsis">
+            Artificial Intelligence
+          </span>
+                    </div>
+                    <div class="md-header-nav__topic">
+                        <span class="md-ellipsis">
+            
+              Transformers
+            
+          </span>
+                    </div>
+                </div>
+            </div>
+
+            <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+            <div class="md-search" data-md-component="search" role="dialog">
+                <label class="md-search__overlay" for="__search"></label>
+                <div class="md-search__inner" role="search">
+                    <form class="md-search__form" name="search">
+                        <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+                        <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+                        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+                    </form>
+                    <div class="md-search__output">
+                        <div class="md-search__scrollwrap" data-md-scrollfix>
+                            <div class="md-search-result" data-md-component="search-result">
+                                <div class="md-search-result__meta">
+                                    Initializing search
+                                </div>
+                                <ol class="md-search-result__list"></ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+
+    <div class="md-container" data-md-component="container">
+
+
+
+
+        <main class="md-main" data-md-component="main">
+            <div class="md-main__inner md-grid">
+
+
+
+                <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+
+
+
+
+
+
+                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                                <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Artificial Intelligence
+  </label>
+
+                                <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../../index.html" class="md-nav__link">
+      Introduction
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit1/Optimisation.html" class="md-nav__link">
+      Optimisation
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/LinearClassifier.html" class="md-nav__link">
+      Linear classifier
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/Performance.html" class="md-nav__link">
+      Measuring classifier performance
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/MultiLayerNetworks.html" class="md-nav__link">
+      Multilayer networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/Convolution.html" class="md-nav__link">
+      Convolution
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/CNN.html" class="md-nav__link">
+      Convolutional neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/Segmentation.html" class="md-nav__link">
+      Image segmentation
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="Introduction.html" class="md-nav__link">
+      Sequential data
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="RNN.html" class="md-nav__link">
+      Recurrent neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="TextClassification.html" class="md-nav__link">
+      Text classification
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item md-nav__item--active">
+
+                                        <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+
+
+
+                                        <label class="md-nav__link md-nav__link--active" for="__toc">
+        Transformers
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+
+                                        <a href="Transformers.html" class="md-nav__link md-nav__link--active">
+      Transformers
+    </a>
+
+
+                                        <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+                                            <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+                                            <ul class="md-nav__list" data-md-scrollfix>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#input-encoding" class="md-nav__link">
+    Input encoding
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#multi-head-attention" class="md-nav__link">
+    Multi-head attention
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#normalisation" class="md-nav__link">
+    Normalisation
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#positional-encoding" class="md-nav__link">
+    Positional encoding
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#output-layer" class="md-nav__link">
+    Output layer
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#training" class="md-nav__link">
+    Training
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#evaluation" class="md-nav__link">
+    Evaluation
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#full-transformer" class="md-nav__link">
+    Full transformer
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#references" class="md-nav__link">
+    References
+  </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit5/RelationalData.html" class="md-nav__link">
+      Relational data
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit5/GNN.html" class="md-nav__link">
+      Graph neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit6/GAN.html" class="md-nav__link">
+      Generative adversarial networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit6/Cyclegan.html" class="md-nav__link">
+      Image-to-image translation
+    </a>
+                                    </li>
+
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+                            <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+                                <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+                                <ul class="md-nav__list" data-md-scrollfix>
+
+                                    <li class="md-nav__item">
+                                        <a href="#input-encoding" class="md-nav__link">
+    Input encoding
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#multi-head-attention" class="md-nav__link">
+    Multi-head attention
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#normalisation" class="md-nav__link">
+    Normalisation
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#positional-encoding" class="md-nav__link">
+    Positional encoding
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#output-layer" class="md-nav__link">
+    Output layer
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#training" class="md-nav__link">
+    Training
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#evaluation" class="md-nav__link">
+    Evaluation
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#full-transformer" class="md-nav__link">
+    Full transformer
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#references" class="md-nav__link">
+    References
+  </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="md-content">
+                    <article class="md-content__inner md-typeset">
+
+
+
+                        <h1 id="transformers">Transformers</h1>
+                        <p>The <em>transformer</em> architecture was first proposed by Vaswani et al. in 2017 [1]. We will be looking at this model architecture in the section on the 'Full transformer' below. However, we start with the transformer used for
+                            the series of GPT systems built by Open-AI and first reported in a preprint by Radford et al. in 2018 [2].</p>
+                        <p>The model from Radford et al. [2] is a seq2seq mapping function used for language modelling. The system can be used for text generation in a similar setup to an RNN, except that the network is not recurrent and input and output
+                            sequences are fixed length.</p>
+                        <p>The overall architecture looks like this:</p>
+                        <figure role="group">
+                            <img src="images/transformer.svg" alt="transformer architecture" />
+                            <figcaption>
+                                <p><strong>Figure 1.</strong> Transformer architecture.</p>
+                            </figcaption>
+                        </figure>
+
+                        <h3 id="input-encoding">Input encoding</h3>
+                        <p>The input is a context sequence of <span class="arithmatex">\(seqlen\)</span> tokens (in GPT3 <span class="arithmatex">\(seqlen=2048\)</span>). In handling text, the tokens could represent words, characters or fragments of words.
+                            In Generative pre-training (GPT), a commonly occurring set of word fragments is chosen in order to provide a compact encoding of raw text input. For example, 'The cat sat on the mat' might be encoded as:</p>
+                        <div class="arithmatex">\[ \frac {\textit{the_}}{12} \frac {\textit{cat_}}{536} \frac {\textit{sat_}}{1326} \frac {\textit{on_}}{15} \frac {\textit{the_}}{12} \frac {\textit{m}}{8} \frac {\textit{at_}}{28} \]</div>
+                        <p>Note that the spaces between words have been included in the encoding, represented here by the '_' symbol. The approach taken here is an example of <em>Byte Pair Encoding (BPE)</em>. Starting with individual characters as our set
+                            of tokens, we recursively merge the most commonly occurring pairs of consecutive tokens and replace with new tokens representing those pairs. In GPT, there are 256 basic characters, merged recursively 50,000 times to represent
+                            longer and longer character sequences, each with a new unique token. This gives a total of 50,257 possible tokens: 256 basic tokens, 50,000 tokens arising from pairwise merging, and a special end-of-text token.</p>
+                        <p>We now use an embedding to turn the 1-D vector of tokens representing a text string into a 2D tensor of size <span class="arithmatex">\(seqlen \times d\)</span>, where <span class="arithmatex">\(d\)</span> is the length of each
+                            embedding vector (in GPT1 <span class="arithmatex">\(d=512\)</span>). The embedding could come from word2vec on a corpus of text and working with fragments of words instead of whole words or individual characters. The input
+                            layer and embedding layer are shown at the bottom of Figure 4.1.</p>
+                        <h3 id="multi-head-attention">Multi-head attention</h3>
+                        <p>The most key part of the transformer architecture is the <em>multi-head attention</em>.</p>
+                        <p>The terminology used to describe this step comes from the data retrieval literature. A database consists of a set of (<strong>key</strong>, <strong>value</strong>) pairs. Given a query, we retrieve a desired <strong>value</strong>                            by finding the closest <strong>key</strong> to the <strong>query</strong>. In our 'attention' context, queries, keys and values are all vectors. Given a query value, we measure the similarity to every key vector. We then sum
+                            all value vectors, weighted by the corresponding similarities. The idea is that the attention mechanism is focusing on those values associated with the most similar keys to the query.</p>
+                        <p>The similarity between query vector <span class="arithmatex">\(\myvec{q}\)</span> and key vector <span class="arithmatex">\(\myvec{k}\)</span> is measured using the dot product: <span class="arithmatex">\(\myvec{q} \cdot \myvec{k}\)</span>.
+                            For efficiency, we pack the query, key and value vectors into the matrices <span class="arithmatex">\(\mymat{Q}\)</span>, <span class="arithmatex">\(\mymat{K}\)</span>, <span class="arithmatex">\(\mymat{V}\)</span> where each
+                            row is a query, key or value vector. Consider a single query <span class="arithmatex">\(\myvec{q}\)</span>, the similarity to all keys is given succinctly by:</p>
+                        <div class="arithmatex">\[ \myvec{w} = \mathrm{softmax}(\myvec{q}\mymat{K}^T) \]</div>
+                        <p>This gives a vector of weights summing to one. We now use these values to produce a weighted sum of the value vectors: <span class="arithmatex">\(\myvec{w} \mymat{V}\)</span></p>
+                        <p>This can be done for all queries at once to define the overall <em>Attention</em> function:</p>
+                        <div class="arithmatex">\[ \mathrm{Attention}(\mymat{Q},\mymat{K}, \mymat{V}) = \mathrm{softmax}(\frac{\mymat{Q}\mymat{K}^T}{\sqrt{d}}) \mymat{V} \]</div>
+                        <p>The <span class="arithmatex">\(\sqrt{d}\)</span> in the denominator is to keep the values small for use in <span class="arithmatex">\(softmax\)</span>.</p>
+                        <p>The <span class="arithmatex">\(Attention\)</span> function is applied multiple times with different linear mappings of the query, key and value matrices. A single application producing <span class="arithmatex">\(\mymat{H}_i\)</span>                            therefore looks like this:</p>
+                        <div class="arithmatex">\[ \mymat{H}_i = \mathrm{Attention}(\mymat{Q}\mymat{W}_i^Q , \mymat{K}\mymat{W}_i^K, \mymat{V}\mymat{W}_i^V) \]</div>
+                        <p>The results of each application of <span class="arithmatex">\(Attention\)</span> are concatenated together and a final linear mapping <span class="arithmatex">\(\mymat{W}^O\)</span> applied to give an output. The overall process
+                            is referred to as <em>multi-head attention</em>.</p>
+                        <div class="arithmatex">\[ \mathrm{MultiHead}(\mymat{Q}, \mymat{K}, \mymat{V}) = [\mymat{H}_1 \cdots \mymat{H}_n]\mymat{W}^O \]</div>
+                        <p>In GPT1, the number of applications of attention <span class="arithmatex">\(h=8\)</span>, and in GPT3 <span class="arithmatex">\(h=96\)</span>.</p>
+                        <p>The whole process in multi-head attention is illustrated by the following diagram:</p>
+                        <figure role="group">
+                            <img src="images/multiheadattention.svg" alt="the multi-head attention model" />
+                            <figcaption>
+                                <p><strong>Figure 2.</strong> Multi-head attention.</p>
+                                <p> From <em>Vaswani et al.</em> [1] </p>
+                            </figcaption>
+                        </figure>
+
+                        <p>Now for the crucial bit. The queries, keys and values are all set equal to the embeddings obtained from the input:</p>
+                        <div class="arithmatex">\[ \mymat{V} = \mymat{K} = \mymat{Q} = \textit{embedded tensor}\]</div>
+                        <p>Thus, each (embedded and linearly mapped) token is compared with every other token, and the degree of similarity is used to weight an average of the (embedded and linearly mapped) tokens themselves. Intuitively, this is referred
+                            to as <em>self-attention</em>.</p>
+                        <p>Typically, the linear mappings of queries, keys and values are chosen to downsize to vectors of length <span class="arithmatex">\(\frac{d}{h}\)</span> (e.g. <span class="arithmatex">\(\frac{512}{8} = 64\)</span>). This means the
+                            size of the total input into the <span class="arithmatex">\(h\)</span> channels is the same as it would have been with a single channel and no downsizing.</p>
+                        <p>In the remainder of the transformer block, the output from multi-head attention is normalised, passed through two fully-connected layers, with ReLU after the first, and then through a final normalisation. This produces an output
+                            from the block that is the same size as the input.</p>
+                        <p>The overall model is composed of <span class="arithmatex">\(N\)</span> transformer blocks stacked one above the other. GPT has <span class="arithmatex">\(N=12\)</span>, GPT3 raises this to <span class="arithmatex">\(N=96\)</span>.
+                            Each block has unique parameter values for the linear mappings in the multi-head attention and in the two fully connected layers. The output from the whole transformer model is the same size as the input (<span class="arithmatex">\(seqlen \times d\)</span>).</p>
+                        <h3 id="normalisation">Normalisation</h3>
+                        <p>The normalisation is carried out over the depth dimension, independently for each position and example. It is not a batchwise operation. The values are transformed to have mean of 0 and standard deviation of 1.</p>
+                        <h3 id="positional-encoding">Positional encoding</h3>
+                        <p>Unlike an RNN, there is no intrinsic ordering in the way inputs are processed within the transformer architecture. Every input is compared with every other input, disregarding the temporal order that is implicit in the input token
+                            vector. Thus the temporal order has been lost. Clearly we need some way of re-introducing an encoding of the order so that, for example, the sequence of the words in a sentence is available during machine translation.</p>
+                        <p>One way to introduce a temporal encoding is to superimpose (add) a position signature onto the tensor of embedded tokens. This is a tensor of the same size as the token embedding, with a unique vector of values at each token position.
+                            The following function of position <span class="arithmatex">\(pos\)</span> and depth <span class="arithmatex">\(i\)</span> is used in GPT:</p>
+                        <div class="arithmatex">\[ \mathrm{pe}(pos,i) = \bigg \{ \begin{matrix} \sin(pos/100000^{i/d}) &amp; i \text{ even} \\ \cos(pos/100000^{i/d}) &amp; i \text{ odd} \end{matrix} \]</div>
+                        <p>Note that the values are in the interval <span class="arithmatex">\([-1,1]\)</span>.</p>
+                        <figure role="group">
+                            <img src="images/timecode.png" alt="time code for superimposition onto token embedding" />
+                            <figcaption>
+                                <p><strong>Figure 3.</strong> Time code for superimposition onto token embedding.</p>
+                            </figcaption>
+                        </figure>
+
+                        <h3 id="output-layer">Output layer</h3>
+                        <p>The output from the final transformer block is the same size as the input to the first transformer block (<span class="arithmatex">\(seqlen \times d\)</span>). On top of this we add a linear layer operating pointwise (i.e. an affine
+                            mapping in the <span class="arithmatex">\(d\)</span> direction) and expanding to the <span class="arithmatex">\(vocab\_size\)</span>. In evaluation mode, we may only be interested in applying this final layer over a segment
+                            of the output tensor shown as <span class="arithmatex">\(seqlen'\times d\)</span>. In training <span class="arithmatex">\(seqlen' = seqlen\)</span>.</p>
+                        <p>Finally, softmax is applied pointwise over the <span class="arithmatex">\(d\)</span> dimension to produce a probability distribution over the vocabulary at each position.</p>
+                        <figure role="group">
+                            <img src="images/outputlayer.svg" alt="Output layer for the transformer" />
+                            <figcaption>
+                                <p><strong>Figure 4.</strong> Output layer for the transformer.</p>
+                            </figcaption>
+                        </figure>
+
+                        <figure role="group">
+                            <img src="images/outputlayer2.svg" alt="Showing the tensors in the output layer" />
+                            <figcaption>
+                                <p><strong>Figure 5.</strong> Showing the tensors in the output layer.</p>
+                            </figcaption>
+                        </figure>
+
+                        <h3 id="training">Training</h3>
+                        <p>Training is similar to the procedure used for the RNN. We fill the context window with token sequences and minimise the negative log likelihood of the same text shifted to the left by one position. With a context window of size
+                            2048, as in GPT3, there is typically room for between 10 and 100 (tokenised) sentences. For GPT3, the batches contained 3.2M examples and there are 175B parameters that must be optimised in training. The compressed text corpus
+                            from which examples are drawn is 570Gb in size, amounting to around 400 billion tokens.</p>
+                        <h3 id="evaluation">Evaluation</h3>
+                        <p>Evaluation in language generation is similar, but not identical, to the procedure used for RNNs. We start with a short tokenised text string in the context window, padded to fill the whole size of 2048. We then pass this through
+                            the transformer and sample from the distribution obtained at the position of the final token making up the prior text. The earlier outputs are ignored. Note that we only need to generate outputs up until the length of the tokenised
+                            text input since there is no need for the outputs beyond this. Next we concatenate the sampled token onto the end of the tokenised input text, re-run the transformer and sample the next token. This process repeats until the
+                            required number of tokens has been generated. The difference from the procedure we used for RNNs is that there we could continue generating new tokens indefinitely by passing the hidden state forwards at each time step. In
+                            the transformer, we re-run on the whole input each time, with a token string that gets progressively longer. When the context window is full, we can start to lose tokens from the start and continue to extend the generated text
+                            on what remains. When this happens, the memory of what went before, will be completely lost. In principle, an LSTM could retain memories for longer.</p>
+                        <p>The GPT3 model has been demonstrated for news article generation. The following example is primed with the text in black (i.e. this is placed in the context window), and then novel text (shown in red) is generated by the transformer
+                            from this position:</p>
+                        <blockquote>
+                            <p><em>Title: Star’s Tux Promise Draws Megyn Kelly’s Sarcasm <br>
+Subtitle: Joaquin Phoenix pledged to not change for each awards event<br>
+Article: <span style="color: red;"> A year ago, Joaquin Phoenix made headlines when he appeared on the red
+carpet at the Golden Globes wearing a tuxedo with a paper bag over his head that
+read, "I am a shape-shifter. I can't change the world. I can only change myself." It was
+a promise to not change to fit into the Hollywood mold: "I think that's a really special
+thing, to not change yourself. I think it's a really special thing to say, `This is what's
+inside of me, I'm proud of it, and I'm not going to be ashamed because of the way that someone else thinks I should be.'" Now, it's the Oscars,
+and Phoenix is at it  again. But this time, his publicist is saying he'll be wearing a tux no matter what. Megyn Kelly was not impressed,
+and she let him have it on The Tonight Show.
+"You know, I feel like, I feel like you could have worn the tux," she says. "But you're saying you're a shape-shifter.
+I don't know if you can change your tux, but you can change your mind. You can change your mind. You can change your mind." Phoenix says he did, but it didn't stick
+"I was like, `Okay, I'm going to wear a tuxedo to this thing.' And then I thought,
+`I don't want to wear a tuxedo to this thing.'" Kelly goes on to encourage him to change his mind again,
+but Phoenix says it's too late: "I'm committed to wearing this."</em> </span>
+                            </p>
+                        </blockquote>
+                        <h2 id="full-transformer">Full transformer</h2>
+                        <p>In the original transformer paper (Veswani et al.), the transformer is divided into an encoder and a decoder. The model is intended for mapping from input text to an output text, where a representation for the input text in its
+                            entirety is constructed before starting on generating the output text. This works particularly well for machine translation, where the whole input needs to be read before attempting to produce a translation.</p>
+                        <p>The overall architecture looks like this:</p>
+                        <figure role="group">
+                            <img src="images/full_transformer.png" alt="Architecture of the full transformer" />
+                            <figcaption>
+                                <p><strong>Figure 6.</strong> The full encoder-decoder transformer model.</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>The encoder and decoder are similar in design to the transformer model we have examined above. The encoder doesn't have the final linear layer (with softmax) and simply produces the output from the final transformer block. This
+                            output in its entirety becomes the representation of the source text from which the decoder will produce a translation.</p>
+                        <p>The decoder has a second multi-head attention layer in each block. These layers are used as the entry point for the representation received from the encoder. The output from the encoder is used as the source of the keys <span class="arithmatex">\(K\)</span>                            and values <span class="arithmatex">\(V\)</span> input to the second attention layer in every block. The queries <span class="arithmatex">\(Q\)</span> on the other hand flow up from within the decoder. In this way, the source
+                            text influences the decoder within every transformer block.</p>
+                        <p>The final translation is obtained from the decoder by simply generating text in a similar fashion to the earlier language generator above. Rather than sampling from the output distribution at the position of the final input token,
+                            we can simply take the token with the maximum probability. This <em>greedy</em> strategy produces our output translation.</p>
+                        <p>In detail, we first train the model with pairs of source and target texts in the different languages (e.g. English into French). The source text is input to the encoder, and the target text is input to the decoder shifted one place
+                            to the right and with a &lt;start> token entered in the first position. This identifies the start of a target text in the first position. The loss is the negative log likelihood of the target text with an &lt;end> token tacked
+                            on the end. The likelihoods are given by the probability distributions generated by the decoder and linear output layer (with softmax).</p>
+                        <p>Having trained the model, we move into evaluation mode to produce translations of new source texts. The source text is input to the encoder and the output representation passed across to the decoder to be used as keys and values
+                            by the second multi-head attention layer in each block. The decoder receives a single
+                            <start> token as input, padded out to the size of the context window (<span class="arithmatex">\(seqlen\)</span>).</p>
+                        <figure role="group">
+                            <img src="images/translate1.svg" alt="generating the first output token from a source text" />
+                            <figcaption>
+                                <p><strong>Figure 7.</strong> Generating the first output token from a source text.</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>Select the maximum probability token from the decoder output distribution in the first position. In this case it is a token corresponding to the letter 'l'.</p>
+                        <p>Next, repeat the process, except that the input is extended to two tokens by appending the 'l' token to the &lt;start> token. Now read off the maximum probability token in the second position, ignoring the output in the first position.
+                            In this case, it is a token corresponding to the letter 'e'.</p>
+                        <figure role="group">
+                            <img src="images/translate2.svg" alt="generating the second output token from a source text" />
+                            <figcaption>
+                                <p><strong>Figure 8.</strong> Generating the second output token from a source text.</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>This process repeats until the most probable output token is &lt;end>.</p>
+                        <figure role="group">
+                            <img src="images/translate3.svg" alt="repeating the generation of tokens until the <end> token is the most probable" />
+                            <figcaption>
+                                <p><strong>Figure 9.</strong> Repeating the generation of tokens until the &ltend&gt token is the most probable.</p>
+                            </figcaption>
+                        </figure>
+
+                        <div class="admonition abstract">
+                            <p class="admonition-title">Reading</p>
+                            <p>Read the 2020 paper on GPT3 from Brown et al. at Open-AI [3]. Read sections 1, 2, 5, 6 and 8. Browse through section 3 to get a feel for the range of tasks that GPT3 can be used for (see for example 3.9.4 on news article generation).</p>
+                        </div>
+                        <h2 id="references">References</h2>
+                        <p>[1] <a href="https://papers.nips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html"><em>Vaswani, Ashish, et al., ‘Attention Is All You Need’. Advances in Neural Information Processing Systems 30 (2017)</em></a>.</p>
+                        <p>[2] <a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf"><em>Radford, A. ‘Improving Language Understanding by Generative Pre-Training’, 2018</em></a>.</p>
+                        <p>[3] <a href="https://proceedings.neurips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf"><em>Brown, Tom, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, et al. ‘Language Models Are Few-Shot Learners’. In Advances in Neural Information Processing Systems, edited by H. Larochelle, M. Ranzato, R. Hadsell, M. F. Balcan, and H. Lin, 33:1877–1901. Curran Associates, Inc., 2020.</em></a>.</p>
+
+
+
+
+
+
+
+                    </article>
+                </div>
+            </div>
+        </main>
+
+
+        <footer class="md-footer">
+
+            <div class="md-footer-nav">
+                <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+
+                    <a href="TextClassification.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                        <div class="md-footer-nav__button md-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+                        </div>
+                        <div class="md-footer-nav__title">
+                            <div class="md-ellipsis">
+                                <span class="md-footer-nav__direction">
+                  Previous
+                </span> Text classification
+                            </div>
+                        </div>
+                    </a>
+
+
+                    <a href="../unit5/RelationalData.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+                        <div class="md-footer-nav__title">
+                            <div class="md-ellipsis">
+                                <span class="md-footer-nav__direction">
+                  Next
+                </span> Relational data
+                            </div>
+                        </div>
+                        <div class="md-footer-nav__button md-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+                        </div>
+                    </a>
+
+                </nav>
+            </div>
+
+            <div class="md-footer-meta md-typeset">
+                <div class="md-footer-meta__inner md-grid">
+                    <div class="md-footer-copyright">
+
+                        <div class="md-footer-copyright__highlight">
+                            Copyright © University of Leeds
+                        </div>
+
+                        Made with
+                        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
+    <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script>
+    <script id="__lang" type="application/json">
+        {
+            "clipboard.copy": "Copy to clipboard",
+            "clipboard.copied": "Copied to clipboard",
+            "search.config.lang": "en",
+            "search.config.pipeline": "trimmer, stopWordFilter",
+            "search.config.separator": "[\\s\\-]+",
+            "search.placeholder": "Search",
+            "search.result.placeholder": "Type to start searching",
+            "search.result.none": "No matching documents",
+            "search.result.one": "1 matching document",
+            "search.result.other": "# matching documents",
+            "search.result.more.one": "1 more on this page",
+            "search.result.more.other": "# more on this page",
+            "search.result.term.missing": "Missing"
+        }
+    </script>
+
+    <script>
+        app = initialize({
+            base: "../..",
+            features: ['navigation.sections'],
+            search: Object.assign({
+                worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+            }, typeof search !== "undefined" && search)
+        })
+    </script>
+
+    <script src="../../javascript/tablecontentsoverride.js"></script>
+
+    <script src="../../javascript/config.js"></script>
+
+    <script src="../../javascript/interactive-elements.js"></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</body>
+
+</html>

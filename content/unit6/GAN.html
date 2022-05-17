@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+
+    <link rel="shortcut icon" href="../../img/favicon.jpg">
+    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
+
+
+
+    <title>Generative adversarial networks - Artificial Intelligence</title>
+
+
+
+    <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
+
+
+    <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
+
+
+
+
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+    <style>
+        body,
+        input {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
+        }
+
+        code,
+        kbd,
+        pre {
+            font-family: "", SFMono-Regular, Consolas, Menlo, monospace
+        }
+    </style>
+
+
+
+
+    <link rel="stylesheet" href="../../css/extra.css">
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+
+
+
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+
+
+        <a href="#generative-adversarial-networks" class="md-skip">
+          Skip to content
+        </a>
+
+    </div>
+    <div data-md-component="announce">
+
+        <aside class="md-announce">
+            <div class="md-announce__inner md-grid md-typeset">
+
+                <div id="versionIndicator"> <b>Version:</b>27.10.21.a </div>
+                <img id="customlogo" src="../../img/logo.svg" alt="University of Leeds logo.">
+
+            </div>
+        </aside>
+
+    </div>
+
+
+
+
+
+    <header class="md-header" data-md-component="header">
+        <nav class="md-header-nav md-grid" aria-label="Header">
+            <a href="../../index.html" title="Artificial Intelligence" class="md-header-nav__button md-logo" aria-label="Artificial Intelligence">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+            <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+            <div class="md-header-nav__title" data-md-component="header-title">
+                <div class="md-header-nav__ellipsis">
+                    <div class="md-header-nav__topic">
+                        <span class="md-ellipsis">
+            Artificial Intelligence
+          </span>
+                    </div>
+                    <div class="md-header-nav__topic">
+                        <span class="md-ellipsis">
+            
+              Generative adversarial networks
+            
+          </span>
+                    </div>
+                </div>
+            </div>
+
+            <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+            <div class="md-search" data-md-component="search" role="dialog">
+                <label class="md-search__overlay" for="__search"></label>
+                <div class="md-search__inner" role="search">
+                    <form class="md-search__form" name="search">
+                        <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+                        <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+                        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+                    </form>
+                    <div class="md-search__output">
+                        <div class="md-search__scrollwrap" data-md-scrollfix>
+                            <div class="md-search-result" data-md-component="search-result">
+                                <div class="md-search-result__meta">
+                                    Initializing search
+                                </div>
+                                <ol class="md-search-result__list"></ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+
+    <div class="md-container" data-md-component="container">
+
+
+
+
+        <main class="md-main" data-md-component="main">
+            <div class="md-main__inner md-grid">
+
+
+
+                <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+
+
+
+
+
+
+                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                                <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Artificial Intelligence
+  </label>
+
+                                <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../../index.html" class="md-nav__link">
+      Introduction
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit1/Optimisation.html" class="md-nav__link">
+      Optimisation
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/LinearClassifier.html" class="md-nav__link">
+      Linear classifier
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/Performance.html" class="md-nav__link">
+      Measuring classifier performance
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/MultiLayerNetworks.html" class="md-nav__link">
+      Multilayer networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/Convolution.html" class="md-nav__link">
+      Convolution
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/CNN.html" class="md-nav__link">
+      Convolutional neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/Segmentation.html" class="md-nav__link">
+      Image segmentation
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit4/Introduction.html" class="md-nav__link">
+      Sequential data
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit4/RNN.html" class="md-nav__link">
+      Recurrent neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit4/TextClassification.html" class="md-nav__link">
+      Text classification
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit4/Transformers.html" class="md-nav__link">
+      Transformers
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit5/RelationalData.html" class="md-nav__link">
+      Relational data
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit5/GNN.html" class="md-nav__link">
+      Graph neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item md-nav__item--active">
+
+                                        <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+
+
+
+                                        <label class="md-nav__link md-nav__link--active" for="__toc">
+        Generative adversarial networks
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+
+                                        <a href="GAN.html" class="md-nav__link md-nav__link--active">
+      Generative adversarial networks
+    </a>
+
+
+                                        <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+                                            <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+                                            <ul class="md-nav__list" data-md-scrollfix>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#training" class="md-nav__link">
+    Training
+  </a>
+
+                                                    <nav class="md-nav" aria-label="Training">
+                                                        <ul class="md-nav__list">
+
+                                                            <li class="md-nav__item">
+                                                                <a href="#adversarial-setting" class="md-nav__link">
+    Adversarial setting
+  </a>
+
+                                                            </li>
+
+                                                        </ul>
+                                                    </nav>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#results" class="md-nav__link">
+    Results
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#biggan-deep" class="md-nav__link">
+    BigGAN-deep
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#references" class="md-nav__link">
+    References
+  </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="Cyclegan.html" class="md-nav__link">
+      Image-to-image translation
+    </a>
+                                    </li>
+
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+                            <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+                                <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+                                <ul class="md-nav__list" data-md-scrollfix>
+
+                                    <li class="md-nav__item">
+                                        <a href="#training" class="md-nav__link">
+    Training
+  </a>
+
+                                        <nav class="md-nav" aria-label="Training">
+                                            <ul class="md-nav__list">
+
+                                                <li class="md-nav__item">
+                                                    <a href="#adversarial-setting" class="md-nav__link">
+    Adversarial setting
+  </a>
+
+                                                </li>
+
+                                            </ul>
+                                        </nav>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#results" class="md-nav__link">
+    Results
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#biggan-deep" class="md-nav__link">
+    BigGAN-deep
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#references" class="md-nav__link">
+    References
+  </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="md-content">
+                    <article class="md-content__inner md-typeset">
+
+
+
+                        <h1 id="generative-adversarial-networks">Generative adversarial networks</h1>
+                        <p>We saw an example of a generative network in the section on RNNs. This was a generator of text. The input is a short segment of text and the network extends this text, character by character. The network implements an autoregressive
+                            process that defines a probability distribution over the vocabulary of possible next characters conditioned on the history of the output sequence up until the current timestep. In this section, we look at a different kind of
+                            generative network, where the aim is to generate examples from some domain, conditioned on a random vector sampled from a pre-defined probability distribution.</p>
+                        <p>The aim is to build a <em>generator</em> of images from a given domain, such as <em>outdoor scenes</em> or <em>faces</em>, based only on a training set of example images from the domain. The typical setup is illustrated below:</p>
+                        <figure role="group">
+                            <div class="arithmatex">
+
+                            </div>
+                            <img src="images/diagram1.svg" alt="The task of generating images from random vectors." />
+                            <figcaption>
+                                <p><strong>Figure 1</strong> The task of generating images from random vectors.</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>We sample a random vector <span class="arithmatex">\(\myvec{z}\)</span> from some pre-defined distribution. This is input to a deep CNN that outputs a colour image <span class="arithmatex">\(\mymat{x}=g(\myvec{z})\)</span> represented
+                            as a 3D tensor. The image is typical of images within a chosen domain, in this case outdoor scenes.</p>
+                        <p>The random vector is drawn from a given distribution over <span class="arithmatex">\(\R^n\)</span>, where <span class="arithmatex">\(n\)</span> is typically between 100 and 512. The random vectors are not specified as part of a
+                            training dataset and are therefore referred to as <em>latent</em>. Normally, the distribution decomposes so that the <span class="arithmatex">\(n\)</span> components of each sample vector are drawn independently from the same
+                            1-D probability distribution. Two common choices for this distribution are the normal (Gaussian) with mean 0 and standard deviation 1 (i.e. <span class="arithmatex">\(z \sim \mathcal{N}(0,1)\)</span>), and the uniform distribution
+                            over the interval <span class="arithmatex">\([-1,1]\)</span> (i.e. <span class="arithmatex">\(z \sim \mathcal{U}(-1,1)\)</span>).</p>
+                        <p>Here we will focus on the DCGAN [1]. The details of the DCGAN architecture vary depending on the resolution of image required as output. In experiments on generating images like those in the MNIST dataset, the architecture is as
+                            follows:</p>
+                        <figure role="group">
+                            <div class="arithmatex">
+                            </div>
+                            <img src="images/dcgan.svg" alt="Architecture of the DCGAN generator" />
+                            <figcaption>
+                                <p><strong>Figure 2</strong> Architecture of the DCGAN generator.</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>The output of the first fully connected layer is reshaped to <span class="arithmatex">\(7 \times 7 \times 256\)</span> as shown. The output images are <span class="arithmatex">\(28 \times 28\)</span> intensity arrays (i.e. one
+                            channel deep). The progressive upsampling from <span class="arithmatex">\(7 \times 7\)</span> to <span class="arithmatex">\(28 \times 28\)</span> is achieved using <em>fractionally-strided</em> convolution. In regular (zero
+                            padded) convolution with stride <span class="arithmatex">\(n\)</span>, the output is <span class="arithmatex">\(n\)</span> times smaller than the input. By contrast, convolution with a fractional stride of <span class="arithmatex">\(\frac{1}{n}\)</span>                            makes the output n times larger by simply inserting <span class="arithmatex">\(n-1\)</span> rows and columns of zeros between the rows and columns of the input to the convolution. The example below uses a <span class="arithmatex">\(3 \times 3\)</span>                            kernel and a fractional stride of <span class="arithmatex">\(\frac{1}{2}\)</span>.</p>
+                        <figure role="group">
+                            <div class="arithmatex">
+                                $$ \mathrm{LeakyReLU}(x)= \bigg \{ \begin{align*} x \quad & x \geq 0 \\ ax \quad & x
+                                < -1 \end{align*}$$ </div>
+                                    <img src="images/fractionalstride.gif" alt="convolution with a fractional stride of 1/2." />
+                                    <figcaption>
+                                        <p><strong>Figure 3</strong> Convolution with a fractional stride of 1/2.</p>
+                                    </figcaption>
+                        </figure>
+
+                        <p>The <em>Leaky ReLU</em> function is a modification of ReLU to replace the flat zero output for negative inputs by a positive gradient. This still attenuates negative inputs, but avoids zero gradients, which contribute nothing to
+                            gradient descent. The slope of the line would typically be around 0.1 (i.e. <span class="arithmatex">\(a=0.1\)</span>). It is also possible to learn an optimal value for <span class="arithmatex">\(a\)</span> as part of the
+                            training.</p>
+                        <figure role="group">
+                            <div class="arithmatex">
+                                $$ \mathrm{LeakyReLU}(x)= \bigg \{ \begin{align*} x \quad & x \geq 0 \\ ax \quad & x
+                                < -1 \end{align*}$$ </div>
+                                    <img src="images/leakyrelu.svg" alt="Graph of the leaky rectified linear unit function." />
+                                    <figcaption>
+                                        <p><strong>Figure 4</strong> Graph of the leaky rectified linear unit function.</p>
+                                    </figcaption>
+                        </figure>
+
+                        <h2 id="training">Training</h2>
+                        <p>The training data is a set of images from the target domain. If we knew the latent vector corresponding to each of these images, this would be a conventional supervised setting with paired data of the form <span class="arithmatex">\(\{(\myvec{z}_i,\mymat{x}_i)\}\)</span>.
+                            Without the corresponding latent vectors, the problem is partially supervised to the extent that we are given examples of images <span class="arithmatex">\(\{\mymat{x}_i\}\)</span> from the target domain but no more. In this
+                            situation, the question is what do we do for a loss function?</p>
+                        <p>In the approach adopted for Generative Adversarial Networks (GANs), the solution is to use a regular CNN classifier (the <em>discriminator</em>) as a loss function to train the generator. The classifier outputs a probability
+                            <span
+                                class="arithmatex">\(d(\mymat{x})\)</span> that an input image is real (i.e. from the target domain). The probability that the image is fake (i.e. from the <em>generator</em>) is then simply given by <span class="arithmatex">\(1-d(\mymat{x})\)</span>.
+                                The parameter values of the discriminator are updated in a regular supervised setting to increase the log likelihood on a minibatch of <span class="arithmatex">\(m\)</span> images <span class="arithmatex">\(\{\mymat{x}^{(1)},\cdots.\mymat{x}^{(m)}\}\)</span>                                from the chosen domain and fake images from the generator <span class="arithmatex">\(\{ g(\mymat{z}^{(1)}),\cdots.g(\mymat{z}^{(m)})\}\)</span>, obtained from a sample of <span class="arithmatex">\(m\)</span> latent vectors
+                                <span class="arithmatex">\(\{\mymat{z}^{(1)},\cdots.\mymat{z}^{(m)}\}\)</span>. The log likelihood objective is given by:</p>
+                        <div class="arithmatex">\[\frac{1}{m}\sum_{i=1}^m \log(d(\mymat{x}^{(i)}))+\log(1-d(g(\myvec{z}^{(i)})))\tag{6.1}\]</div>
+                        <p>where we are seeking to update the parameters values of the discriminator <span class="arithmatex">\(\boldsymbol\theta_d\)</span>.</p>
+                        <p>Note that in a GAN, the discriminator is only updated for one or a small number of iterations at a time.</p>
+                        <p>We now switch to updating the generator. To do this, we could generate another sample of <span class="arithmatex">\(m\)</span> latent vectors and pass these through the generator to give a new set of fake images. In DCGAN, this
+                            isn't done, and instead the previous set of fake images is re-used (you will see this in the PyTorch tutorial later in this lesson). The discriminator can now be used as the basis of a loss function for training the generator.
+                            We impose the label 'real' for each of the fake images. Again this provides a regular supervised setting, with only fake images as input, all labelled 'real'. The log likelihood to be maximised now becomes:</p>
+                        <div class="arithmatex">\[\frac{1}{m}\sum_{i=1}^m \log(d(g(\myvec{z}^{(i)})))\tag{6.2}\]</div>
+                        <p>The second term in (6.1) associated with the 'fake' class disappears since we only have images labelled 'real'.</p>
+                        <p>The rationale here is that we are updating the generator to increase the log probability of the 'real' class on fake images. In other words, the generator is improved such that its output images are more likely to be labelled as
+                            'real'.</p>
+                        <p>The gradients of the log likelihood are backpropagated through the discriminator and then through the generator. Only the parameter values of the generator are updated; those of the discriminator remain fixed.</p>
+                        <figure role="group">
+                            <div class="arithmatex">
+
+                            </div>
+                            <img src="images/training.svg" alt="Training the generative network." />
+                            <figcaption>
+                                <p><strong>Figure 5</strong> Training the generative network.</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>The architecture of the discriminator in DCGAN is as follows:</p>
+                        <figure role="group">
+                            <div class="arithmatex">
+
+                            </div>
+                            <img src="images/discriminator.svg" alt="Architecture of the discriminator." />
+                            <figcaption>
+                                <p><strong>Figure 6</strong> Architecture of the DCGAN discriminator.</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>This is a simple classifier with two convolutional layers and a single scalar <span class="arithmatex">\(d(\mymat{x})\)</span> as output - the probability that the input image <span class="arithmatex">\(\mymat{x}\)</span> is real.</p>
+                        <p>Because the generator is now doing a better job of producing images that look like those from the chosen domain, we return to updating the discriminator as before. Having updated the discriminator, we return again to updating the
+                            generator and so on until the discriminator is unable to tell the difference between fake and real images. Thus, the generator and discriminator improve together, minibatch by minibatch.</p>
+                        <p>In summary, the method is as follows:</p>
+                        <div class="highlight">
+                            <pre><span></span><code>Initialise the generator and discriminator networks randomly from a normal distribution
+
+  Repeat num_epoch times
+
+    Repeat on each batch of real images
+
+      Sample from latent distribution and use generator to produce a batch of fake images
+
+      Update discriminator to increase the log likelihood
+          on the output from real and fake images (equivalent to using cross-entropy loss)
+
+      Pass fake images through the current discriminator to generate output probabilities
+
+      Backpropagate gradient through discriminator and generator, and update generator
+          to increase the log likelihood of &#39;real&#39; for the fake images.
+</code></pre>
+                        </div>
+                        <h3 id="adversarial-setting">Adversarial setting</h3>
+                        <p>In this iterative method, the generator and discriminator can be viewed as competing with one another. This can be couched as a zero-sum game with <em>payoff</em> <span class="arithmatex">\(v(\boldsymbol\theta_g,\boldsymbol\theta_d)\)</span>                            to the discriminator given by:</p>
+                        <div class="arithmatex">\[v(\boldsymbol\theta_g,\boldsymbol\theta_d)=\mathbb{E}_{\mymat{x} \sim p_{data}} \log(d(\mymat{x})) + \mathbb{E}_{\mymat{x} \sim p_{model}} \log(1-d(\mymat{x}))\]</div>
+                        <p>where <span class="arithmatex">\(\theta_g\)</span> and <span class="arithmatex">\(\theta_d\)</span> are the parameter values of the generator and discriminator networks.</p>
+                        <p>The first term is the expected value of the log probability of <span class="arithmatex">\(\mymat{x}\)</span> being real, given <span class="arithmatex">\(\mymat{x}\)</span> distributed as <span class="arithmatex">\(p_{data}\)</span>,
+                            the distribution of real images. The second term is the expected value of the log probability of <span class="arithmatex">\(\mymat{x}\)</span> being fake, given <span class="arithmatex">\(\mymat{x}\)</span> distributed as
+                            <span
+                                class="arithmatex">\(p_{model}\)</span>, the distribution of fake images. </p>
+                        <p>In updating the discriminator, we seek to maximise the payoff. Since this is a zero-sum game, the payoff to the generator is simply <span class="arithmatex">\(-v(\boldsymbol\theta_g,\boldsymbol\theta_d)\)</span>. Thus we update
+                            the generator to decrease <span class="arithmatex">\(v(\boldsymbol\theta_g,\boldsymbol\theta_d)\)</span>. The turn-taking of the game is repeated until convergence, when the optimal generator is given by:</p>
+                        <div class="arithmatex">\[ g^*= \underset {g}{\arg\min} \underset {d}{\max} v(g,d) \]</div>
+                        <p>In this <em>minimax</em> formulation, the optimal generator minimises the maximum payoffs achieved by the discriminator.</p>
+                        <p>Under certain general assumptions on the form of <span class="arithmatex">\(g\)</span> and <span class="arithmatex">\(d\)</span>, it can be shown that the game will eventually converge on this optimal generator. However, when the
+                            discriminator and generator are implemented as multi-layer neural networks, as in DCGAN, the general assumptions don't hold in general and convergence can't be guaranteed.</p>
+                        <p>In implementing this adversarial approach, the expected values in the payoff are estimated on minibatches of real and fake images. The estimate is simply the log likelihood defined in <span class="arithmatex">\((6.1)\)</span> above
+                            and used in DCGAN to update the discriminator.</p>
+                        <p>In practice, updating the generator to decrease the payoff <span class="arithmatex">\(v(\boldsymbol\theta_g,\boldsymbol\theta_d)\)</span> doesn't work as well as updating the generator to increase the chance that the discriminator
+                            makes a mistake on fake images, defined as the expected value <span class="arithmatex">\(\mathbb{E}_{\mymat{x} \sim p_{model}} \log(d(\mymat{x}))\)</span>.</p>
+                        <p>This is the basis on which the generator for DCGAN is updated, giving rise to the estimate of this expected value on a minibatch in <span class="arithmatex">\((6.2)\)</span> above.</p>
+                        <h2 id="results">Results</h2>
+                        <p>The following animation shows the images generated from a fixed sample of latent vectors over 50 training epochs.</p>
+                        <figure role="group">
+                            <div class="arithmatex">
+
+                            </div>
+                            <iframe title="Animation of samples from generator over 50 training epochs." width="450" height="300" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" src="images/dcgan.gif" allowfullscreen msallowfullscreen allow="fullscreen">
+</iframe>
+                            <figcaption>
+                                <p><strong>Figure 7</strong> Animation of the improvement in the generator over time. 16 latent vectors are sampled before training begins; the images generated from these vectors are shown after each epoch. The images begin
+                                    as random noise and become increasingly recognisable as written digits. This animation is from the <a href="https://www.tensorflow.org/tutorials/generative/dcgantensorflow"> tensor flow tutorial on DCGAN </a>. </p>
+
+                            </figcaption>
+                        </figure>
+
+                        <p>The following figure shows fake images from a generator trained on 3 million images of bedrooms:</p>
+                        <figure role="group">
+                            <div class="arithmatex">
+
+                            </div>
+                            <img src="images/bedrooms.png" alt="Fake images of bedrooms" />
+                            <figcaption>
+                                <p><strong>Figure 8</strong> Fake images of bedrooms.</p>
+                                <p> From <em>Radford et al.</em> [1]</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>It is interesting to observe the way in which generated images change as we make a tour of the latent space. In the following illustration, nine latent vectors have been sampled at random, from which intermediate points are generated
+                            by interpolation. The result is a trajectory through the latent space consisting of a sequence of 100 latent vectors, from which a corresponding sequence of slowly changing images is generated. The 100 images are shown in order
+                            scanning left to right from top to bottom. Notice that the contents of the bedrooms change smoothly as we transition through the 100 images.</p>
+                        <figure role="group">
+                            <div class="arithmatex">
+
+                            </div>
+                            <img src="images/traversal.png" alt="Touring the latent space" />
+                            <figcaption>
+                                <p><strong>Figure 9</strong> Touring the latent space.</p>
+                                <p> From <em>Radford et al.</em> [1]</p>
+                            </figcaption>
+                        </figure>
+
+                        <div class="admonition abstract">
+                            <p class="admonition-title">Tutorial</p>
+                            <p>There is an implementation of DCGAN available as a <a href="https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html">PyTorch tutorial</a>. Please go through this tutorial. Having understood the explanation above, you
+                                should be able to follow the code, looking in particular at the definition of the two models <code>Generator</code> and <code>Discriminator</code>, and the section on Training. You can download the notebook, or run in Colab
+                                directly from the tutorial.</p>
+                            <p>The dataset file is called img_align_celeba.zip and sits within the img directory in the shared area accessed from the 'Align&amp;Cropped Images' download shown on the front page. The dataset required is 1.34Gb as a ZIP file
+                                so takes a while to unzip.</p>
+                        </div>
+                        <h2 id="biggan-deep">BigGAN-deep</h2>
+                        <p>We now look at a much larger generator network developed by Brook et al. [2]. The architecture of BigGAN-deep is shown below:</p>
+                        <figure role="group">
+                            <div class="arithmatex">
+
+                            </div>
+                            <img src="images/biggan.svg" alt="Architecture of BigGAN-deep" />
+                            <figcaption>
+                                <p><strong>Figure 10</strong> Architecture of BigGAN-deep.</p>
+                                <p> Based on a diagram from <em>Brock et al.</em> [2]</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>The input is the concatenation of a random vector <span class="arithmatex">\(\myvec{z} \in \R^{128}\)</span> and a <span class="arithmatex">\(128D\)</span> embedding of the desired class. The embedding is a lookup table from the
+                            class index to a <span class="arithmatex">\(128D\)</span> embedding vector, but can also be implemented as a linear function of the one-hot encoding for the class index. Either way, the embedding can be learnt as part of the
+                            training. The <span class="arithmatex">\(256D\)</span> vector that results from concatenation is passed through a linear mapping and reshaped to <span class="arithmatex">\(4\times 4\times 16\)</span> channels. This is followed
+                            by four residual blocks, each containing multiple convolutional layers, with upsampling and batch normalisation. Notice that the input is supplied into each of the residual blocks. After training the generator on ImageNet using
+                            an <em>adversarial loss</em> (as for DCGAN), <span class="arithmatex">\(256\times 256\)</span> resolution images like those shown below are produced by sampling from the latent space and selecting a desired object category.</p>
+                        <figure role="group">
+                            <div class="arithmatex">
+
+                            </div>
+                            <img src="images/biggan_examples.png" alt="Examples from BigGAN-deep trainined on ImageNet" />
+                            <figcaption>
+                                <p><strong>Figure 11</strong> Examples from BigGAN-deep trainined on ImageNet.</p>
+                                <p> From <em>Brock et al.</em> [2]</p>
+                            </figcaption>
+                        </figure>
+
+                        <h2 id="references">References</h2>
+                        <p>[1] <a href="https://arxiv.org/abs/1511.06434"><em>Radford et al., Unsupervised representation learning with deep convolutional generative adversarial networks. ICLR, 2016</em></a>.</p>
+                        <p>[2] <a href="https://openreview.net/forum?id=B1xsqj09Fm"><em>Brock, Andrew, Jeff Donahue, and Karen Simonyan. Large Scale GAN Training for High Fidelity Natural Image Synthesis, 2018</em></a>.</p>
+
+
+
+
+
+
+
+                    </article>
+                    </div>
+                    </div>
+        </main>
+
+
+        <footer class="md-footer">
+
+            <div class="md-footer-nav">
+                <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+
+                    <a href="../unit5/GNN.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                        <div class="md-footer-nav__button md-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+                        </div>
+                        <div class="md-footer-nav__title">
+                            <div class="md-ellipsis">
+                                <span class="md-footer-nav__direction">
+                  Previous
+                </span> Graph neural networks
+                            </div>
+                        </div>
+                    </a>
+
+
+                    <a href="Cyclegan.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+                        <div class="md-footer-nav__title">
+                            <div class="md-ellipsis">
+                                <span class="md-footer-nav__direction">
+                  Next
+                </span> Image-to-image translation
+                            </div>
+                        </div>
+                        <div class="md-footer-nav__button md-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+                        </div>
+                    </a>
+
+                </nav>
+            </div>
+
+            <div class="md-footer-meta md-typeset">
+                <div class="md-footer-meta__inner md-grid">
+                    <div class="md-footer-copyright">
+
+                        <div class="md-footer-copyright__highlight">
+                            Copyright © University of Leeds
+                        </div>
+
+                        Made with
+                        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        </div>
+
+        <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
+        <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script>
+        <script id="__lang" type="application/json">
+            {
+                "clipboard.copy": "Copy to clipboard",
+                "clipboard.copied": "Copied to clipboard",
+                "search.config.lang": "en",
+                "search.config.pipeline": "trimmer, stopWordFilter",
+                "search.config.separator": "[\\s\\-]+",
+                "search.placeholder": "Search",
+                "search.result.placeholder": "Type to start searching",
+                "search.result.none": "No matching documents",
+                "search.result.one": "1 matching document",
+                "search.result.other": "# matching documents",
+                "search.result.more.one": "1 more on this page",
+                "search.result.more.other": "# more on this page",
+                "search.result.term.missing": "Missing"
+            }
+        </script>
+
+        <script>
+            app = initialize({
+                base: "../..",
+                features: ['navigation.sections'],
+                search: Object.assign({
+                    worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+                }, typeof search !== "undefined" && search)
+            })
+        </script>
+
+        <script src="../../javascript/tablecontentsoverride.js"></script>
+
+        <script src="../../javascript/config.js"></script>
+
+        <script src="../../javascript/interactive-elements.js"></script>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</body>
+
+</html>

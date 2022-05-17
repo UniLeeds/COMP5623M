@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+
+    <link rel="shortcut icon" href="../../img/favicon.jpg">
+    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
+
+
+
+    <title>Text classification - Artificial Intelligence</title>
+
+
+
+    <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
+
+
+    <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
+
+
+
+
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+    <style>
+        body,
+        input {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
+        }
+
+        code,
+        kbd,
+        pre {
+            font-family: "", SFMono-Regular, Consolas, Menlo, monospace
+        }
+    </style>
+
+
+
+
+    <link rel="stylesheet" href="../../css/extra.css">
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+
+
+
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+
+
+        <a href="#text-classification" class="md-skip">
+          Skip to content
+        </a>
+
+    </div>
+    <div data-md-component="announce">
+
+        <aside class="md-announce">
+            <div class="md-announce__inner md-grid md-typeset">
+
+                <div id="versionIndicator"> <b>Version:</b>27.10.21.a </div>
+                <img id="customlogo" src="../../img/logo.svg" alt="University of Leeds logo.">
+
+            </div>
+        </aside>
+
+    </div>
+
+
+
+
+
+    <header class="md-header" data-md-component="header">
+        <nav class="md-header-nav md-grid" aria-label="Header">
+            <a href="../../index.html" title="Artificial Intelligence" class="md-header-nav__button md-logo" aria-label="Artificial Intelligence">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+            <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+            <div class="md-header-nav__title" data-md-component="header-title">
+                <div class="md-header-nav__ellipsis">
+                    <div class="md-header-nav__topic">
+                        <span class="md-ellipsis">
+            Artificial Intelligence
+          </span>
+                    </div>
+                    <div class="md-header-nav__topic">
+                        <span class="md-ellipsis">
+            
+              Text classification
+            
+          </span>
+                    </div>
+                </div>
+            </div>
+
+            <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+            <div class="md-search" data-md-component="search" role="dialog">
+                <label class="md-search__overlay" for="__search"></label>
+                <div class="md-search__inner" role="search">
+                    <form class="md-search__form" name="search">
+                        <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+                        <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+                        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+                    </form>
+                    <div class="md-search__output">
+                        <div class="md-search__scrollwrap" data-md-scrollfix>
+                            <div class="md-search-result" data-md-component="search-result">
+                                <div class="md-search-result__meta">
+                                    Initializing search
+                                </div>
+                                <ol class="md-search-result__list"></ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+
+    <div class="md-container" data-md-component="container">
+
+
+
+
+        <main class="md-main" data-md-component="main">
+            <div class="md-main__inner md-grid">
+
+
+
+                <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+
+
+
+
+
+
+                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                                <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Artificial Intelligence
+  </label>
+
+                                <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../../index.html" class="md-nav__link">
+      Introduction
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit1/Optimisation.html" class="md-nav__link">
+      Optimisation
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/LinearClassifier.html" class="md-nav__link">
+      Linear classifier
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/Performance.html" class="md-nav__link">
+      Measuring classifier performance
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/MultiLayerNetworks.html" class="md-nav__link">
+      Multilayer networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/Convolution.html" class="md-nav__link">
+      Convolution
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/CNN.html" class="md-nav__link">
+      Convolutional neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/Segmentation.html" class="md-nav__link">
+      Image segmentation
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="Introduction.html" class="md-nav__link">
+      Sequential data
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="RNN.html" class="md-nav__link">
+      Recurrent neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item md-nav__item--active">
+
+                                        <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+
+
+
+                                        <label class="md-nav__link md-nav__link--active" for="__toc">
+        Text classification
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+
+                                        <a href="TextClassification.html" class="md-nav__link md-nav__link--active">
+      Text classification
+    </a>
+
+
+                                        <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+                                            <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+                                            <ul class="md-nav__list" data-md-scrollfix>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#one-hot-encoding" class="md-nav__link">
+    One-hot encoding
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#word-embedding" class="md-nav__link">
+    Word embedding
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#using-word-embedding-in-text-classification" class="md-nav__link">
+    Using word-embedding in text classification
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#text-classification-using-a-cnn" class="md-nav__link">
+    Text classification using a CNN
+  </a>
+
+                                                    <nav class="md-nav" aria-label="Text classification using a CNN">
+                                                        <ul class="md-nav__list">
+
+                                                            <li class="md-nav__item">
+                                                                <a href="#datasets" class="md-nav__link">
+    Datasets
+  </a>
+
+                                                            </li>
+
+                                                            <li class="md-nav__item">
+                                                                <a href="#input-representation" class="md-nav__link">
+    Input representation
+  </a>
+
+                                                            </li>
+
+                                                            <li class="md-nav__item">
+                                                                <a href="#network-architecture" class="md-nav__link">
+    Network architecture
+  </a>
+
+                                                            </li>
+
+                                                            <li class="md-nav__item">
+                                                                <a href="#k-max-pooling" class="md-nav__link">
+    k-max pooling
+  </a>
+
+                                                            </li>
+
+                                                        </ul>
+                                                    </nav>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="Transformers.html" class="md-nav__link">
+      Transformers
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit5/RelationalData.html" class="md-nav__link">
+      Relational data
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit5/GNN.html" class="md-nav__link">
+      Graph neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit6/GAN.html" class="md-nav__link">
+      Generative adversarial networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit6/Cyclegan.html" class="md-nav__link">
+      Image-to-image translation
+    </a>
+                                    </li>
+
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+                            <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+                                <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+                                <ul class="md-nav__list" data-md-scrollfix>
+
+                                    <li class="md-nav__item">
+                                        <a href="#one-hot-encoding" class="md-nav__link">
+    One-hot encoding
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#word-embedding" class="md-nav__link">
+    Word embedding
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#using-word-embedding-in-text-classification" class="md-nav__link">
+    Using word-embedding in text classification
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#text-classification-using-a-cnn" class="md-nav__link">
+    Text classification using a CNN
+  </a>
+
+                                        <nav class="md-nav" aria-label="Text classification using a CNN">
+                                            <ul class="md-nav__list">
+
+                                                <li class="md-nav__item">
+                                                    <a href="#datasets" class="md-nav__link">
+    Datasets
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#input-representation" class="md-nav__link">
+    Input representation
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#network-architecture" class="md-nav__link">
+    Network architecture
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#k-max-pooling" class="md-nav__link">
+    k-max pooling
+  </a>
+
+                                                </li>
+
+                                            </ul>
+                                        </nav>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="md-content">
+                    <article class="md-content__inner md-typeset">
+
+
+
+                        <h1 id="text-classification">Text classification</h1>
+                        <p>One of the most common forms of sequential data is found in natural language. We can treat a piece of text as a sequence made up of words or characters, partial words, or even a mixture of all three. For example, the text string
+                            'The cats ran quickly' could be represented as any of the following sequences:</p>
+                        <p>'the' 'cats' 'ran' 'quickly'</p>
+                        <p>'t' 'h' 'e' &lt;space> 'c' 'a' 't' 's' &lt;space> 'r' 'a' 'n' &lt;space> 'q' 'u' 'i' 'c' 'k' 'l' 'y'</p>
+                        <p>'the' &lt;space> 'cat' 's' &lt;space> 'ran' &lt;space> 'quick' 'ly'</p>
+                        <p>Notice that in the second and third sequences we need the &lt;space> symbol since we are treating the source as a sequence of characters rather than a sequence of words.</p>
+                        <p>We will refer to the elements of a sequence as <em>tokens</em> and the set of all tokens as a <em>vocabulary</em>.</p>
+                        <h2 id="one-hot-encoding">One-hot encoding</h2>
+                        <p>To process token sequences in a neural network, we must convert each token into a vector. An easy way to do this is to use a <em>one-hot</em> encoding.</p>
+                        <p>Suppose we have a vocabulary of <span class="arithmatex">\(N\)</span> tokens. We assume that the vocabulary is ordered so that each token has an index from <span class="arithmatex">\({1,2,\cdots, N}\)</span>. In the one-hot encoding,
+                            each token is represented by an N-dimensional binary vector with a one in the position of the index for that token and zero everywhere else. Thus, the 4<sup>th</sup> token would be represented as follows:</p>
+                        <div class="arithmatex">\[\begin{bmatrix} 0&amp; 0&amp; 0&amp; 1&amp; 0&amp; \cdots &amp;0&amp; 0 \end{bmatrix}\]</div>
+                        <p>We can use a one-hot encoding to represent other kinds of token. For example, consider the 10 classes of CIFAR-10 (airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck). In the one-hot encoding, we would represent
+                            the class 'bird' by the binary vector:</p>
+                        <div class="arithmatex">\[\begin{bmatrix} 0&amp;0&amp;1&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0 \end{bmatrix}\]</div>
+                        <h2 id="word-embedding">Word embedding</h2>
+                        <p>A useful technique developed for use with word tokens is to map each word into an M-dimensional space where similar words are close by in terms of Euclidean distance. The value of <span class="arithmatex">\(M\)</span> is generally
+                            much less than the number of tokens in the vocabulary N (written as <span class="arithmatex">\(M&lt;&lt;N\)</span>). The sequence of words in a text is replaced by a sequence of M-dimensional vectors. We refer to this process
+                            as <em>word embedding</em>.</p>
+                        <p>The so-called <em>distributional hypothesis</em> first postulated in the 1950s states that words in similar contexts tend to have similar meanings. For example, the words 'oculist' and 'eye-doctor' tend to occur in the same context
+                            with words like 'eye' and 'examined' as in:</p>
+                        <blockquote>
+                            <p>I called the oculist to arrange an eye examination</p>
+                            <p>He became an eye-doctor after examining my eyes</p>
+                        </blockquote>
+                        <p>You can read more about the background to this approach in chapter 6 of the draft 3<sup>rd</sup> edition of <a href="https://web.stanford.edu/~jurafsky/slp3/"> "Speech and Language Processing” by Dan Jurafsky and James H Martin. </a></p>
+                        <p>Taking an example from this book, suppose you don't know what ongchoi means, but see these six word sequences:</p>
+                        <blockquote>
+                            <p><span style="color:red" aria-label="Red">ongchoi</span> is <span style="color:blue" aria-label="Blue">delicious</span> sauteed with <span style="color:blue" aria-label="Blue">garlic</span></p>
+                            <p><span style="color:red" aria-label="Red">ongchoi</span> is superb over <span style="color:blue" aria-label="Blue">rice</span></p>
+                            <p>... <span style="color:red" aria-label="Red">ongchoi</span> leaves with <span style="color:blue" aria-label="Blue">salty</span> sauces ...</p>
+                            <p>... <span style="color:green" aria-label="Green">spinach</span> sauteed with <span style="color:blue" aria-label="Blue">garlic</span> over <span style="color:blue" aria-label="Blue">rice</span> ...</p>
+                            <p>... <span style="color:green" aria-label="Green">chard</span> stems and leaves are <span style="color:blue" aria-label="Blue">delicious</span> ...</p>
+                            <p>... <span style="color:green" aria-label="Green">collard greens</span> and other <span style="color:blue" aria-label="Blue">salty</span> leafy greens</p>
+                        </blockquote>
+                        <p>Context words in blue suggest ongchoi has a related meaning to the words in green. We produce an embedding for each token by modelling the probability that other tokens appear in the same context.</p>
+                        <p>The idea of a word embedding is illustrated in the following figure from Jurafsky and Martin, where a 60-dimensional word embedding is visualised in <span class="arithmatex">\(2D\)</span>. Note that related words are close together
+                            and unrelated words are far apart. Some of the tokens consist of two words (e.g. 'not good')</p>
+                        <figure role="group">
+                            <img src="images/Picture1.svg" alt="Embedding example." aria-describedby="fig-4.2.1-description" />
+                            <figcaption>
+                                <p><strong>Figure 1.</strong> Visualisation of a set of words, partial words and short phrases in a 60D embedding.</p>
+                                <button class="accordion-button">View image description</button>
+                                <div class="accordion-panel">
+                                    <div id="fig-1-description">
+                                        <p>Around 25 words, parts of words and two-word phrases are positioned within a rectangular area. Similar words and phrases are close together. For example, 'not good' and 'bad' are close together, and 'incredibly
+                                            good and 'fantastic' are close together.</p>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <p>The*Word2vec* approach is widely used. There are two principal methods. We will examine the so-called <em>skip-gram</em> method in which a simple fully-connected encoder-decoder network is trained to model the probability of other
+                            words appearing in the same context as a given word. Each encoded word becomes the desired word-embedding.</p>
+                        <figure role="group">
+                            <img src="images/Picture2.svg" alt="See image description" aria-describedby="fig-4.2.2-description" />
+                            <figcaption>
+                                <p><strong>Figure 2.</strong> Skip-gram network.</p>
+                                <button class="accordion-button">View image description</button>
+                                <div class="accordion-panel">
+                                    <div id="fig-2-description">
+                                        <p>The input to the network is a one-hot encoding of a single word. This is followed by a fully connected layer from N (the size of the one-hot encoding and the number of possible words) to a smaller number, in this
+                                            case 300. This is the required embedding. This is followed by a second fully-connected layer from 300 back to N, followed by softmax. The output is a probability distribution over the set of N possible words.</p>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <p>The network is trained using a large corpus of text. Pairs of words are chosen from the text, where that the second word appears in the context of the first word somewhere in the text. By 'context' we mean a fixed length window
+                            with the first word at its centre. The context window is typically five words (two words either side of the target word).</p>
+                        <p>In the following example, pairs of words are selected methodically from a source text, using a context window of size five.</p>
+                        <!--- ![generating training data for skip-gram](Picture3.svg){width = "300"} --->
+
+                        <figure role="group">
+                            <img src="images/Picture3.svg" alt="See image description" aria-describedby="fig-4.2.3-description" />
+                            <figcaption>
+                                <p><strong>Figure 3.</strong> Generating training data for skip-gram.</p>
+                                <button class="accordion-button">View image description</button>
+                                <div class="accordion-panel">
+                                    <div id="fig-3-description">
+                                        <p>The sequence of words 'The rain in Spain falls mainly on the plain' is repeated four times. In the first case, the first word 'The' is highlighted, with a less pronounced highlight around the following two words
+                                            'rain in'. In the second case, the highlighted word is 'rain' with one negihbour to the left and two to the right also highlighted. In the third case, the word 'in' is highlighted and so on. The words are selected
+                                            in turn and a window formed on either side of size two, or less if too close to the start or end of the sequence. </p>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <h2 id="using-word-embedding-in-text-classification">Using word-embedding in text classification</h2>
+                        <p>We can use word-embedding to produce a text classifier. For example, the <em>20 Newsgroups</em> dataset consists of 20,000 newsgroup documents (postings), each falling into one of the following 20 categories:</p>
+                        <ul>
+                            <li>comp.graphics</li>
+                            <li>comp.os.ms-windows.misc </li>
+                            <li>comp.sys.ibm.pc.hardware</li>
+                            <li>comp.sys.mac.hardware</li>
+                            <li>comp.windows.x</li>
+                            <li>rec.autos</li>
+                            <li>rec.motorcycles</li>
+                            <li>rec.sport.baseball</li>
+                            <li>rec.sport.hockey</li>
+                            <li>sci.crypt</li>
+                            <li>sci.electronics</li>
+                            <li>sci.med</li>
+                            <li>sci.space</li>
+                            <li>misc.forsale</li>
+                            <li>talk.politics.misc</li>
+                            <li>talk.politics.guns</li>
+                            <li>talk.politics.mideast</li>
+                            <li>talk.religion.misc</li>
+                            <li>alt.atheism</li>
+                            <li>soc.religion.christian</li>
+                        </ul>
+                        <p>The task is to identify the category from a given document. A simple kind of network for doing this looks like the following:</p>
+                        <figure role="group">
+                            <img src="images/Picture5.svg" alt="See image description" aria-describedby="fig-4.2.4-description" />
+                            <figcaption>
+                                <p><strong>Figure 4.</strong> Network architecture for text classification.</p>
+                                <button class="accordion-button">View image description</button>
+                                <div class="accordion-panel">
+                                    <div id="fig-4-description">
+                                        <p>The input is a sequence of IDs for the first s words of a document. Thse IDs are replaced by a 50xs tensor of word vectors using a lookup table. This tensor forms the input to a classifier. </p>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <p>The word-embedding is 50-dimensional and we assume a fixed width input of the first <span class="arithmatex">\(s\)</span> word tokens from the given document. The classifier can be a simple linear classifier, trained using the
+                            negative log-likelihood loss function. Thus, we are seeking a classifier network that maximises the joint probability of classifications in the training data. For a given input test document, the output classification (class
+                            ID in the figure above) is the one with maximum probability.</p>
+                        <h2 id="text-classification-using-a-cnn">Text classification using a CNN</h2>
+                        <p>Convolutional neural networks can be used in a text classifier by applying <span class="arithmatex">\(1D\)</span> convolutions on the <span class="arithmatex">\(1D\)</span> input sequence of embedded tokens. Because the single
+                            dimension of the convolution often corresponds to time, this form of convolution is sometimes called <em>temporal convolution</em> to distinguish it from the familiar <span class="arithmatex">\(2D\)</span> convolutions operating
+                            on images. The operation of <span class="arithmatex">\(1D\)</span> convolution with a kernel (mask) of size 3 is illustrated below:</p>
+                        <figure role="group">
+                            <img src="images/Picture13.svg" alt="By analogy with 2D convolution, the example shows how a window of size 3 (corresponding to a kernel of size 3) is moved across a padded 1D input vector to produce an output feature map." />
+                            <figcaption>
+                                <p><strong>Figure 5.</strong>1-D convolution with padding.</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>We now consider the system for text classification proposed by Conneau et al. [1], which uses temporal convolution.</p>
+                        <h3 id="datasets">Datasets</h3>
+                        <p>The network is evaluated on the following text datasets:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th align="left">Data set</th>
+                                    <th align="center">Number of Trains</th>
+                                    <th align="center">Number of Tests</th>
+                                    <th align="center">Number of Classes</th>
+                                    <th align="left">Classification Task</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="left">AG's news</td>
+                                    <td align="center">120k</td>
+                                    <td align="center">7.6k</td>
+                                    <td align="center">4</td>
+                                    <td align="left">English news categorisation</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Soguo news</td>
+                                    <td align="center">450k</td>
+                                    <td align="center">60k</td>
+                                    <td align="center">5</td>
+                                    <td align="left">Chinese news categorisation</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">DBPedia</td>
+                                    <td align="center">560k</td>
+                                    <td align="center">70k</td>
+                                    <td align="center">14</td>
+                                    <td align="left">Ontology classification</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Yelp review polarity</td>
+                                    <td align="center">560k</td>
+                                    <td align="center">38k</td>
+                                    <td align="center">2</td>
+                                    <td align="left">Sentiment analysis</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Yelp review full</td>
+                                    <td align="center">650k</td>
+                                    <td align="center">50k</td>
+                                    <td align="center">5</td>
+                                    <td align="left">Sentiment analysis</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Yahoo! answers</td>
+                                    <td align="center">1400K</td>
+                                    <td align="center">60k</td>
+                                    <td align="center">10</td>
+                                    <td align="left">Topic classification</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Amazon review full</td>
+                                    <td align="center">3000k</td>
+                                    <td align="center">650k</td>
+                                    <td align="center">5</td>
+                                    <td align="left">Sentiment analysis</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Amazon review polarity</td>
+                                    <td align="center">3600k</td>
+                                    <td align="center">400k</td>
+                                    <td align="center">2</td>
+                                    <td align="left">Sentiment analysis</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>To illustrate, the Amazon review full dataset contains the reviews of Amazon customers, including comments and start-rating from <span class="arithmatex">\(1-5\)</span>, such as this:</p>
+                        <figure role="group">
+                            <img src="images/Picture7.svg" alt="Amazon customer review: 4 stars. 'Not a lot to day'. 'What can one say about a pack of batteries. Delivery however good'." />
+                            <figcaption>
+                                <p><strong>Figure 6.</strong> Amazon customer review.</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>The dataset contains 3000k examples (600k of each score) used for training and 650k examples (130k of each score) used for testing. The examples are chosen to have comments between <span class="arithmatex">\(100-2014\)</span> characters
+                            in length.</p>
+                        <p>The following table contains examples of four of the datasets:</p>
+                        <table>
+                            <caption>from Conneau et al. EACL 2017 [1]</caption>
+                            <thead>
+                                <tr>
+                                    <th align="left">Dataset</th>
+                                    <th align="left">Label</th>
+                                    <th align="left">Sample</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="left">Yelp P.</td>
+                                    <td align="left">+1</td>
+                                    <td align="left">Been going to Dr. Goldberg for over 10 years. I think I was one of his 1<sup>st</sup> patients when he started at MHMG. Hes been great over the years and is all about the big picture. [...]</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Amz P.</td>
+                                    <td align="left">3(/5)</td>
+                                    <td align="left">I love this show, however, there are 14 episodes in the first season and this DVD only shows the first eight. [...]. I hope the BBC will release another DVD that contains all the episodes, but for now this one is still
+                                        somewhat enjoyable.</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Sogou</td>
+                                    <td align="left">"Sports"</td>
+                                    <td align="left">ju4 xi1n hua2 se4 5 yue4 3 ri4 , be3i ji1ng 2008 a4o yu4n hui4 huo3 ju4 jie1 li4 ji1ng guo4 shi4 jie4 wu3 da4 zho1u 21 ge4 che2ng shi4</td>
+                                </tr>
+                                <tr>
+                                    <td align="left">Yah. A.</td>
+                                    <td align="left">"Computer, Internet"</td>
+                                    <td align="left">"What should I look for when buying a laptop? What is the best brand and what's reliable?", "Weight and dimensions are important if you're planning to travel with the laptop. Get something with at least 512 mb of RAM.
+                                        [...] is a good brand, and has an easy to use site where you can build a custom laptop."</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>The Sogou dataset uses pinyin, a romanisation system for Standard Chinese. The Yelp review polarity dataset contains labels that are either <span class="arithmatex">\(-1\)</span> (negative review) or <span class="arithmatex">\(+1\)</span>                            (positive review).</p>
+                        <h3 id="input-representation">Input representation</h3>
+                        <p>The natural language in each sample is represented as a fixed-length character string of length <span class="arithmatex">\(s\)</span>, with 69 possible characters:</p>
+                        <p>abcdefghijklmnopqrstuvwxyz0123456789-,;.!?:’"/| #$%ˆ&amp;*˜‘+=&lt;&gt;()[]{}</p>
+                        <p><span class="arithmatex">\(\square\)</span> space</p>
+                        <p><span class="arithmatex">\(\diamond\)</span> padding (to pad input text to s characters)</p>
+                        <p><span class="arithmatex">\(\oslash\)</span> unknown character</p>
+                        <p>For example, the text:</p>
+                        <p>'what can one say about a pack of batteries delivery however good'</p>
+                        <p>would be represented as a vector of IDs for character tokens as follows:</p>
+                        <figure role="group">
+                            <img src="images/Picture9.svg" alt="See image description" aria-describedby="fig-4.2.7-description" />
+                            <figcaption>
+                                <p><strong>Figure 7.</strong> Padded character string.</p>
+                                <button class="accordion-button">View image description</button>
+                                <div class="accordion-panel">
+                                    <div id="fig-7-description">
+                                        <p>A string of characters (letters, digits and punctuation) with special tokens to represent space, padding, and an unknown character. The string represents the text from the Amazon review above, with padding tokens
+                                            at the end to extend to a fixed length s.</p>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <p>We represent the input as an <span class="arithmatex">\(16 \times s\)</span> tensor, where each column is a <span class="arithmatex">\(16D\)</span> character embedding. We can use a <span class="arithmatex">\(16 \times 69\)</span>                            lookup table to find the embedding for a given character ID.</p>
+                        <figure role="group">
+                            <img src="images/Picture10.svg" alt="The character string from Figure 7 is mapped into a 16 x s tensor using a 16D embedding for each character." />
+                            <figcaption>
+                                <p><strong>Figure 8.</strong> Encoding the character string as a 16xs tensor using a 16D character embedding.</p>
+                            </figcaption>
+                        </figure>
+
+                        <h3 id="network-architecture">Network architecture</h3>
+                        <p>The network architecture is a deep convolutional network with the following form:</p>
+                        <figure role="group">
+                            <img src="images/Picture11.svg" alt="See description below" aria-describedby="fig-4.2.9-description" />
+                            <figcaption>
+                                <p><strong>Figure 9.</strong> Network architecture for convolutional text classifier.</p>
+                                <button class="accordion-button">View image description</button>
+                                <div class="accordion-panel">
+                                    <div id="fig-9-description">
+                                        <p>The network starts with a lookup table to embed the text sequence. This is followed by 1D convolution with a kernel of size 3 into 64 1D channels. This is followed by two convolution blocks (explained in Figure
+                                            10) with 64 channels, maxpooling size 2, two more convolutional blocks with 128 channels, maxpooling size 2, two more convolutional blocks with 256 channels, maxpooling size 2, two more convolutional blocks
+                                            with 512 channels and maxpooling size 2. Note that the 1D string in each channel halves in length after each max-pooling operation. Finally, there are three fully connected layers, and softmax, leading to output
+                                            of size nclasses.</p>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <p>The convolutional blocks are each repetitions of the following structure:</p>
+                        <figure role="group">
+                            <img src="images/Picture12.svg" alt="See description below" aria-describedby="fig-4.2.10-description" />
+                            <figcaption>
+                                <p><strong>Figure 10.</strong> Convolutional block</p>
+                                <button class="accordion-button">View image description</button>
+                                <div class="accordion-panel">
+                                    <div id="fig-10-description">
+                                        <p>The convolutional block used several times in the main network contains two convolutional layers with kernel of size 3, each followed by batch normalisation and ReLU. The number of channels (feature maps) varies
+                                            as indicated in Figure 9.</p>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+
+                        <p>Notice that the number of feature maps doubles as their size halves. This is common with CNNs applied to images.</p>
+                        <p>Although one could use a pre-generated character embedding on input, it is also possible to learn the embedding by simply incorporating the entries in the lookup table into the optimisation. This will tailor the embedding to the
+                            specific classification task and probably give better performance.</p>
+                        <h3 id="k-max-pooling">k-max pooling</h3>
+                        <p>The so-called k-max pooling layer is defined in a paper by LeCun et al. in 1998 and works as follows:</p>
+                        <p>Given some fixed <span class="arithmatex">\(k\)</span> and a numerical sequence <span class="arithmatex">\(\myvec{p}\)</span> of length <span class="arithmatex">\(n&gt;=k\)</span>, select the subsequence <span class="arithmatex">\(\myvec{q}\)</span>                            of the <span class="arithmatex">\(k\)</span> highest values of <span class="arithmatex">\(\myvec{p}\)</span>. The order of the values in <span class="arithmatex">\(\myvec{q}\)</span> corresponds to their original order in
+                            <span
+                                class="arithmatex">\(\myvec{p}\)</span>. For example, let</p>
+                        <div class="arithmatex">\[\myvec{p} = (3,71,9,2,1,19,27,13,6,49)\]</div>
+                        <p>k-max pooliing on <span class="arithmatex">\(\myvec{p}\)</span> for <span class="arithmatex">\(k=4\)</span> gives:</p>
+                        <div class="arithmatex">\[\myvec{q}=(71,19,27,49)\]</div>
+                        <h2 id="reference">Reference</h2>
+                        <p>[1] <a href="https://www.aclweb.org/anthology/E17-1104"><em>Conneau, Alexis, Holger Schwenk, Loïc Barrault, and Yann Lecun. 2017. “Very Deep Convolutional Networks for Text Classification.” In Proceedings of the 15<sup>th</sup> Conference of the European Chapter of the Association for Computational Linguistics: Volume 1, 1107–1116.</em></a></p>
+
+
+
+
+
+
+
+                    </article>
+                </div>
+            </div>
+        </main>
+
+
+        <footer class="md-footer">
+
+            <div class="md-footer-nav">
+                <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+
+                    <a href="RNN.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                        <div class="md-footer-nav__button md-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+                        </div>
+                        <div class="md-footer-nav__title">
+                            <div class="md-ellipsis">
+                                <span class="md-footer-nav__direction">
+                  Previous
+                </span> Recurrent neural networks
+                            </div>
+                        </div>
+                    </a>
+
+
+                    <a href="Transformers.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+                        <div class="md-footer-nav__title">
+                            <div class="md-ellipsis">
+                                <span class="md-footer-nav__direction">
+                  Next
+                </span> Transformers
+                            </div>
+                        </div>
+                        <div class="md-footer-nav__button md-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+                        </div>
+                    </a>
+
+                </nav>
+            </div>
+
+            <div class="md-footer-meta md-typeset">
+                <div class="md-footer-meta__inner md-grid">
+                    <div class="md-footer-copyright">
+
+                        <div class="md-footer-copyright__highlight">
+                            Copyright © University of Leeds
+                        </div>
+
+                        Made with
+                        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
+    <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script>
+    <script id="__lang" type="application/json">
+        {
+            "clipboard.copy": "Copy to clipboard",
+            "clipboard.copied": "Copied to clipboard",
+            "search.config.lang": "en",
+            "search.config.pipeline": "trimmer, stopWordFilter",
+            "search.config.separator": "[\\s\\-]+",
+            "search.placeholder": "Search",
+            "search.result.placeholder": "Type to start searching",
+            "search.result.none": "No matching documents",
+            "search.result.one": "1 matching document",
+            "search.result.other": "# matching documents",
+            "search.result.more.one": "1 more on this page",
+            "search.result.more.other": "# more on this page",
+            "search.result.term.missing": "Missing"
+        }
+    </script>
+
+    <script>
+        app = initialize({
+            base: "../..",
+            features: ['navigation.sections'],
+            search: Object.assign({
+                worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+            }, typeof search !== "undefined" && search)
+        })
+    </script>
+
+    <script src="../../javascript/tablecontentsoverride.js"></script>
+
+    <script src="../../javascript/config.js"></script>
+
+    <script src="../../javascript/interactive-elements.js"></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</body>
+
+</html>

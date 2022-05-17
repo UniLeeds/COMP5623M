@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+
+    <link rel="shortcut icon" href="../../img/favicon.jpg">
+    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
+
+
+
+    <title>Linear classifier - Artificial Intelligence</title>
+
+
+
+    <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
+
+
+    <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
+
+
+
+
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+    <style>
+        body,
+        input {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
+        }
+
+        code,
+        kbd,
+        pre {
+            font-family: "", SFMono-Regular, Consolas, Menlo, monospace
+        }
+    </style>
+
+
+
+
+    <link rel="stylesheet" href="../../css/extra.css">
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+
+
+
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+
+
+        <a href="#linear-classifier" class="md-skip">
+          Skip to content
+        </a>
+
+    </div>
+    <div data-md-component="announce">
+
+        <aside class="md-announce">
+            <div class="md-announce__inner md-grid md-typeset">
+
+                <div id="versionIndicator"> <b>Version:</b>27.10.21.a </div>
+                <img id="customlogo" src="../../img/logo.svg" alt="University of Leeds logo.">
+
+            </div>
+        </aside>
+
+    </div>
+
+
+
+
+
+    <header class="md-header" data-md-component="header">
+        <nav class="md-header-nav md-grid" aria-label="Header">
+            <a href="../../index.html" title="Artificial Intelligence" class="md-header-nav__button md-logo" aria-label="Artificial Intelligence">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+            <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+            <div class="md-header-nav__title" data-md-component="header-title">
+                <div class="md-header-nav__ellipsis">
+                    <div class="md-header-nav__topic">
+                        <span class="md-ellipsis">
+            Artificial Intelligence
+          </span>
+                    </div>
+                    <div class="md-header-nav__topic">
+                        <span class="md-ellipsis">
+            
+              Linear classifier
+            
+          </span>
+                    </div>
+                </div>
+            </div>
+
+            <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+            <div class="md-search" data-md-component="search" role="dialog">
+                <label class="md-search__overlay" for="__search"></label>
+                <div class="md-search__inner" role="search">
+                    <form class="md-search__form" name="search">
+                        <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+                        <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+                        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+                    </form>
+                    <div class="md-search__output">
+                        <div class="md-search__scrollwrap" data-md-scrollfix>
+                            <div class="md-search-result" data-md-component="search-result">
+                                <div class="md-search-result__meta">
+                                    Initializing search
+                                </div>
+                                <ol class="md-search-result__list"></ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+
+    <div class="md-container" data-md-component="container">
+
+
+
+
+        <main class="md-main" data-md-component="main">
+            <div class="md-main__inner md-grid">
+
+
+
+                <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+
+
+
+
+
+
+                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                                <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Artificial Intelligence
+  </label>
+
+                                <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../../index.html" class="md-nav__link">
+      Introduction
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit1/Optimisation.html" class="md-nav__link">
+      Optimisation
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item md-nav__item--active">
+
+                                        <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+
+
+
+                                        <label class="md-nav__link md-nav__link--active" for="__toc">
+        Linear classifier
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+
+                                        <a href="LinearClassifier.html" class="md-nav__link md-nav__link--active">
+      Linear classifier
+    </a>
+
+
+                                        <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+                                            <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+                                            <ul class="md-nav__list" data-md-scrollfix>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#classifying-iris-flowers" class="md-nav__link">
+    Classifying iris flowers
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#image-classification" class="md-nav__link">
+    Image classification
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#linear-classifier-for-2-d-data-and-two-classes" class="md-nav__link">
+    Linear classifier for 2-D data and two classes
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#linear-classifier-for-n-d-data-and-two-classes" class="md-nav__link">
+    Linear classifier for n-D data and two classes
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#linear-multiclass-classifier" class="md-nav__link">
+    Linear multiclass classifier
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#defining-a-probability-distribution-over-class-labels" class="md-nav__link">
+    Defining a probability distribution over class labels
+  </a>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="Performance.html" class="md-nav__link">
+      Measuring classifier performance
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="MultiLayerNetworks.html" class="md-nav__link">
+      Multilayer networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/Convolution.html" class="md-nav__link">
+      Convolution
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/CNN.html" class="md-nav__link">
+      Convolutional neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/Segmentation.html" class="md-nav__link">
+      Image segmentation
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit4/Introduction.html" class="md-nav__link">
+      Sequential data
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit4/RNN.html" class="md-nav__link">
+      Recurrent neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit4/TextClassification.html" class="md-nav__link">
+      Text classification
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit4/Transformers.html" class="md-nav__link">
+      Transformers
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit5/RelationalData.html" class="md-nav__link">
+      Relational data
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit5/GNN.html" class="md-nav__link">
+      Graph neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit6/GAN.html" class="md-nav__link">
+      Generative adversarial networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit6/Cyclegan.html" class="md-nav__link">
+      Image-to-image translation
+    </a>
+                                    </li>
+
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+                            <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+                                <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+                                <ul class="md-nav__list" data-md-scrollfix>
+
+                                    <li class="md-nav__item">
+                                        <a href="#classifying-iris-flowers" class="md-nav__link">
+    Classifying iris flowers
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#image-classification" class="md-nav__link">
+    Image classification
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#linear-classifier-for-2-d-data-and-two-classes" class="md-nav__link">
+    Linear classifier for 2-D data and two classes
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#linear-classifier-for-n-d-data-and-two-classes" class="md-nav__link">
+    Linear classifier for n-D data and two classes
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#linear-multiclass-classifier" class="md-nav__link">
+    Linear multiclass classifier
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#defining-a-probability-distribution-over-class-labels" class="md-nav__link">
+    Defining a probability distribution over class labels
+  </a>
+
+                                    </li>
+
+                                </ul>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="md-content">
+                    <article class="md-content__inner md-typeset">
+
+
+
+                        <h1 id="linear-classifier">Linear classifier</h1>
+                        <p>In this section we look at the <em>linear classifier</em>. This will help to motivate the key ideas in a deep feedforward network.</p>
+                        <h2 id="classifying-iris-flowers">Classifying iris flowers</h2>
+                        <p>The idea of a linear classifier goes back to before the field of AI began. We start with the often used example of Iris classification, where the problem is to classify iris flowers into one of three species: <em>Iris setosa</em>,
+                            <em>Iris versicolor</em> and <em>Iris virginica</em>.</p>
+                        <figure role="group">
+                            <img src="images/DL_IMG028.png" alt="3 classes of iris flower." />
+                            <figcaption>
+                                <p><strong>Figure 1.</strong> Three classes corresponding to three species of Iris flowers.</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>The classification is based on four measurements: the length and width of sepals and petals, as shown below:</p>
+                        <figure role="group">
+                            <img src="images/DL_IMG029.png" alt="4 measurements of sepals and petals." />
+                            <figcaption>
+                                <p><strong>Figure 2.</strong> In the Iris dataset, a flower is represented by four measurements. </p>
+                            </figcaption>
+                        </figure>
+
+                        <p>The dataset consists of 120 iris flowers, with four measurements each, as shown in this extract of the table:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Dataset order</th>
+                                    <th>Sepal length</th>
+                                    <th>Sepal width</th>
+                                    <th>Petal length</th>
+                                    <th>Petal width</th>
+                                    <th>Species</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>5.1</td>
+                                    <td>3.5</td>
+                                    <td>1.4</td>
+                                    <td>0.2</td>
+                                    <td><em>l. setosa</em></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>4.9</td>
+                                    <td>3.0</td>
+                                    <td>1.4</td>
+                                    <td>0.2</td>
+                                    <td><em>l. setosa</em></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>4.7</td>
+                                    <td>3.2</td>
+                                    <td>1.3</td>
+                                    <td>0.2</td>
+                                    <td><em>l. setosa</em></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>4.6</td>
+                                    <td>3.1</td>
+                                    <td>1.5</td>
+                                    <td>0.2</td>
+                                    <td><em>l. setosa</em></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>5.0</td>
+                                    <td>3.6</td>
+                                    <td>1.4</td>
+                                    <td>0.3</td>
+                                    <td><em>l. setosa</em></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>5.4</td>
+                                    <td>3.9</td>
+                                    <td>1.7</td>
+                                    <td>0.4</td>
+                                    <td><em>l. setosa</em></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>All measurements are in centimetres. The class labels are encoded as integers: 0 for <em>Iris setosa</em>, 1 for <em>Iris versicolor</em>, and 2 for <em>Iris virginica</em>. You can read about the dataset at <a href=https://en.wikipedia.org/wiki/Iris_flower_data_set ">https://en.wikipedia.org/wiki/Iris_flower_data_set</a>.</p>
+<p>To understand more about the distribution of the data, consider the following scatterplots comparing different pairs of measurements for all flowers. For example, the scatterplot in the second column of the first row compares sepal width on the horizontal axis with sepal length on the vertical axis. The different types of iris are colour-coded as shown.</p>
+<figure role="group ">
+  <img src="images/Iris_dataset_scatterplot.svg " alt="scatterplots. " aria-describedby="fig-3-description "/>
+  <figcaption>
+    <p><strong>Figure 3.</strong>Pairwise scatterplots of petal and sepal measurements. Licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by/4.0/deed.en ">Attribution 4.0 International</a> license.</p>
+    <button class="accordion-button ">View image description</button>
+    <div class="accordion-panel ">
+        <div id="fig-3-description ">
+          <p>12 scatterplots showing each of the four measurements on the horizontal axis plotted against the three other measurements on the vertical axis. Six of the scatterplots are transpositions of the other six, exchanging horizontal and vertical axes. Individual flowers are colour coded to denote one of the three classes. The scatterplots demonstrate that the examples of versicolor and virginica flowers cannot be separated by a line for any pair of measurements. By contrast, the examples of setosa flowers can be separated from the other two with any pair of measurements.</p>
+        </div>
+    </div>
+  </figcaption>
+</figure>
+
+<h2 id="image-classification ">Image classification</h2>
+<p>Classification of images into different classes is a major topic in AI with many potential applications. Given the following image, we might seek to classify it into one of three classes: car, bike or truck. Or we might seek to classify it into an indoor or outdoor scene, or to whether it is raining, sunny or cloudy.</p>
+<figure role="group ">
+  <img src="images/DL_IMG032.png " alt="Depiction of a car on a cloudy day. " />
+  <figcaption>
+    <p><strong>Figure 4.</strong> This image could be classified in many different ways.</p>
+  </figcaption>
+</figure>
+
+<p>A particularly challenging classification task is to identify the face in an image from millions of possibilities, as here:</p>
+<figure role="group ">
+  <img src="images/DL_IMG033.png " alt="Bill Gates. " />
+  <figcaption>
+    <p><strong>Figure 5.</strong> Facial identity recognition is a standard image classification task.</p>
+  </figcaption>
+</figure>
+
+<p>In general, these are hard problems because of:</p>
+<ul>
+<li>variations in viewpoint and lighting</li>
+<li>intra-category variation</li>
+<li>shape deformation</li>
+<li>distraction from other objects and scene background.</li>
+</ul>
+<figure role="group ">
+  <img src="images/DL_IMG034.png " alt="Cats. " />
+  <figcaption>
+    <p><strong>Figure 6.</strong> The following images of cats are all very different from one another for a variety of reasons.</p>
+  </figcaption>
+</figure>
+
+<p>For faces, there is also the problem of changing appearance with age and obscuring objects such as glasses.</p>
+<figure role="group ">
+  <img src="images/DL_IMG035.png " alt="Four pictures of Bill Gates. " />
+  <figcaption>
+    <p><strong>Figure 7.</strong> People change their appearance with age and apparel.</p>
+  </figcaption>
+</figure>
+
+<p>The research community makes use of standard datasets as benchmarks against which to compare different classification methods. These include the MNIST dataset consisting of 70,000 28x28 images of handwritten digits, each classified with one of ten class labels corresponding to the digits from 0-9, as in the examples below:</p>
+<figure role="group ">
+  <img src="images/MnistExamples.png " alt="MNIST dataset. " />
+  <figcaption>
+    <p><strong>Figure 8.</strong> Examples from the MNIST dataset of 70,000 28x28 images of handwritten digits. <a href="https://creativecommons.org/licenses/by-sa/4.0/ ">CC BY-SA 4.0</a></p>
+  </figcaption>
+</figure>
+
+<p>The CIFAR-10 dataset contains 6000 32x32 RGB images for each of 10 object categories.</p>
+<figure role="group ">
+  <img src="images/DL_IMG037.png " alt="CIFAR-10 dataset. "/>
+  <figcaption>
+    <p><strong>Figure 9.</strong> Examples from the CIFAR-10 dataset. From <a href="https://www.cs.toronto.edu/~kriz/cifar.html ">https://www.cs.toronto.edu/~kriz/cifar.html</a></p>
+  </figcaption>
+</figure>
+
+<p>The CIFAR-100 dataset contains 600 32x32 RGB images for each of 100 object categories.</p>
+<figure role="group ">
+  <img src="images/cifar-100.png " alt="CIFAR-100 dataset. " />
+  <figcaption>
+    <p><strong>Figure 10.</strong> Examples from the CIFAR-100 dataset. From <a href="https://www.cs.toronto.edu/~kriz/cifar.html ">https://www.cs.toronto.edu/~kriz/cifar.htm </a></p>
+  </figcaption>
+</figure>
+
+<h2 id="linear-classifier-for-2-d-data-and-two-classes
+                                ">Linear classifier for 2-D data and two classes</h2>
+<p>Returning to the classification of iris flowers, suppose we choose two measures: petal length and petal width. We then attempt to discriminate between images of <em>Iris setosa</em> and images of <em>Iris versicolor</em>. A linear classifier would attempt to separate instances of the two classes by a straight line. The following scatter plot shows the dataset of iris flowers, each represented by <span class="arithmatex ">\(2D\)</span> vectors <span class="arithmatex ">\((x_1,x_2)\)</span> corresponding to petal length and petal width. Here it is possible to draw a straight line that separates <em>Iris setosa</em> and <em>Iris versicolor</em> from one another – we say they are <em>linearly separable</em>.</p>
+<figure role="group ">
+  <img src="images/iris_scatterplot.png " alt="Scatter plot of iris flowers for petal length and petal width. " aria-describedby="fig-11-description "/>
+  <figcaption>
+    <p><strong>Figure 11.</strong> Scatterplot of petal length against petal width for the Iris dataset. </p>
+    <button class="accordion-button ">View image description</button>
+    <div class="accordion-panel ">
+        <div id="fig-11-description ">
+          <p>Scatterplot showing that the examples of Iris setosa and Iris versicolor in the Iris dataset are easily separated from one another by a straight line. </p>
+        </div>
+    </div>
+  </figcaption>
+</figure>
+
+<p>The equation of a line has the form:</p>
+<div class="arithmatex ">\[w_1 x_1 + w_2 x_2 + b = 0\]</div>
+<p>where <span class="arithmatex ">\(w_1, w_2\)</span> determine the orientation of the line, and <span class="arithmatex ">\(b\)</span> determines the distance from the line to the origin.</p>
+<p>If you substitute a datapoint <span class="arithmatex ">\((𝑥_1,𝑥_2)\)</span> into the left-hand-side of the line equation, the value obtained will be positive for points on one side of the line and negative on the other. Thus, we have an easy way to determine whether a given flower is <em>Iris setosa</em> or <em>Iris versicolor</em>. Denoting <em>Iris setosa</em> by the label 0 and <em>Iris versicolor</em> by the label 1, we have:</p>
+<div class="arithmatex ">\[ z=\bigg\{\begin{matrix}
+1 &amp; w_1 x_1 + w_2 x_2 + b &gt; 0 \\
+0 &amp; otherwise
+\end{matrix} \]</div>
+<h2 id="linear-classifier-for-n-d-data-and-two-classes ">Linear classifier for n-D data and two classes</h2>
+<p>All of this readily generalises to n-dimensional data, where the equivalent of the line is a hyperplane, given by:</p>
+<div class="arithmatex ">\[\sum_{i=1}^{n} w_i x_i + b = 0\]</div>
+<p>We can write this succinctly using a dot product as <span class="arithmatex ">\(\myvec{w}\cdot\myvec{x}+b=0\)</span>.</p>
+<p>Using matrix notation and expressing as column vectors <span class="arithmatex ">\(\myvec{x}=[x_1\dots  x_n]^T\)</span> and <span class="arithmatex ">\(\myvec{w}=[w_1 \dots  w_n]^T\)</span> we can also write this as a matrix product <span class="arithmatex ">\(\myvec{w}^T \myvec{x}+b=0\)</span>.</p>
+<p>Just as for a line, a hyperplane divides the <span class="arithmatex ">\(nD\)</span> space into two parts. Substituting a data point into the left-hand-side of the equation above gives a positive value on one side of the hyperplane and negative on the other. Thus, in terms of the dot product, we have:</p>
+<div class="arithmatex ">\[ z=\bigg\{\begin{matrix}
+1 &amp; \myvec{w}\cdot\myvec{x} &gt; 0 \\
+0 &amp; otherwise
+\end{matrix} \]</div>
+<p>Note that the vector <span class="arithmatex ">\(\myvec{w}\)</span> is perpendicular to the hyperplane. The perpendicular distance of the hyperplane to the origin is given by
+<span class="arithmatex ">\(\frac{b}{||\myvec{w}||}\)</span>. The perpendicular distance <span class="arithmatex ">\(d\)</span> of a point <span class="arithmatex ">\(\myvec{x}\)</span> to the hyperplane is given by <span class="arithmatex
+                                ">\(d=\frac{\myvec{w}.\myvec{x}+ b}{||\myvec{w}||}\)</span>, where <span class="arithmatex ">\(d\)</span> is positive on the side of the hyperplane in the direction of <span class="arithmatex ">\(\myvec{w}\)</span> and negative on the opposite side.</p>
+<details class="note "><summary>More explanation on the geometry</summary><p>A plane or a hyperplane is generally defined by a normal vector which, by definition, is perpendicular to the hyperplane and determines the inclination or orientation of the hyperplane in the space. Since there are infinitely many planes that can be perpendicular to the normal vector, we also need a single point on the hyperplane to be able to uniquely define it.</p>
+<p>Let’s call the normal vector <span class="arithmatex ">\(\myvec{w}\)</span> and the point on the hyperplane <span class="arithmatex ">\(\myvec{x_0}\)</span> . Now let’s assume another arbitrary point <span class="arithmatex
+                                ">\(\myvec{x}\)</span> on the hyperplane. Since <span class="arithmatex ">\(\myvec{x}\)</span>and <span class="arithmatex ">\(\myvec{x_0}\)</span> are both on the hyperplane, the vector <span class="arithmatex
+                                ">\(\myvec{x}−\myvec{x_0}\)</span> is also on the hyperplane. We know from the definition that all vectors on the hyperplane must be perpendicular to the normal vector. Therefore, all vectors of the form <span class="arithmatex ">\(\myvec{x}−\myvec{x_0}\)</span> must be perpendicular to the hyperplane. In mathematical terms, the dot-product of <span class="arithmatex
+                                ">\(\myvec{x}−\myvec{x_0}\)</span> and the normal vector <span class="arithmatex ">\(\myvec{w}\)</span> must be zero. This gives us the plane equation:</p>
+<div class="arithmatex ">\[\myvec{w}\cdot(\myvec{x}−\myvec{x_0})=0\]</div>
+<p>We can expand this to get:</p>
+<div class="arithmatex ">\[\myvec{w}\cdot\myvec{x}−\myvec{w}\cdot\myvec{x_0}=0\]</div>
+<p>Now let <span class="arithmatex ">\(b=−\myvec{w}\cdot\myvec{x_0}\)</span> . This gives you the plane equation above: <span class="arithmatex ">\(\myvec{w}\cdot\myvec{x}+b=0\)</span> .</p>
+<p>As background for understanding the computation of distance from the origin, you need to know about vector projection. To get the projection length of a vector <span class="arithmatex
+                                ">\(\myvec{a}\)</span> onto a straight line parallel to another vector <span class="arithmatex ">\(\myvec{b}\)</span> , we use the following equation:</p>
+<div class="arithmatex ">\[ a_1 = \myvec{a}\cdot\hat{\myvec{b}} \]</div>
+<p>where <span class="arithmatex ">\(\hat{\myvec{b}}\)</span> is the unit vector <span class="arithmatex ">\(\frac{\myvec{b}}{∥\myvec{b}∥}\)</span> and <span class="arithmatex ">\(a_1\)</span> is the length of the vector <span class="arithmatex ">\(\myvec{a_1}\)</span> .</p>
+<p><img alt="projection " src="images/projection.png " /></p>
+<p>To derive the distance equations, it’s easier to work with the following formulation of the hyperplane (derived above):</p>
+<div class="arithmatex ">\[\myvec{w}\cdot\myvec{x}−\myvec{w}\cdot\myvec{x_0}=0\]</div>
+<p>The term <span class="arithmatex ">\(b=−\myvec{w}\cdot\myvec{x_0}\)</span> can be used to find the projection of the vector connecting the origin and the point <span class="arithmatex
+                                ">\(\myvec{x_0}\)</span> onto a straight line parallel to the normal vector <span class="arithmatex ">\(\myvec{w}\)</span> . If we normalise this by the length of the normal vector, we get the length of the projection which is technically the closest distance from the origin to the hyperplane:</p>
+<div class="arithmatex ">\[ \frac{|-\myvec{w}\cdot\myvec{x_0}|}{||\myvec{w}||} \]</div>
+<p>Note that the absolute value in the numerator is needed because dot-product can be positive or negative depending on the angle between the vectors.</p>
+<p>We can use the projection idea to derive the distance from an arbitrary point. Assume an arbitrary point <span class="arithmatex ">\(\myvec{x}\)</span> in the space. The vector <span class="arithmatex
+                                ">\(\myvec{x}−\myvec{x_0}\)</span> is the vector connecting <span class="arithmatex ">\(\myvec{x_0}\)</span> on the hyperplane and the point <span class="arithmatex ">\(\myvec{x}\)</span> . The projection length of this vector along the straight line parallel to the normal vector is:</p>
+<div class="arithmatex
+                                ">\[ \frac{|\myvec{w}\cdot(\myvec{x}-\myvec{x_0})|}{||\myvec{w}||}=\frac{|\myvec{w}\cdot\myvec{x}−\myvec{w}\cdot\myvec{x_0}|}{||\myvec{w}||}=\frac{|\myvec{w}.\myvec{x}+ b|}{||\myvec{w}||}\]</div>
+<p>For the classification purposes explained in the notes, we can drop the absolute value from the numerator to be able to use the sign to find out on which side of the plane a given point resides. This is related to the angle the vector <span class="arithmatex ">\(\myvec{x}−\myvec{x_0}\)</span> makes with the normal vector <span class="arithmatex ">\(\myvec{w}\)</span> .</p>
+</details>
+<h2 id="linear-multiclass-classifier ">Linear multiclass classifier</h2>
+<p>Suppose now we have K classes (<span class="arithmatex ">\(K \ge 2\)</span>). We can build a multi-class classifier by associating a separate hyperplane with each of the <span class="arithmatex ">\(K\)</span> classes <span class="arithmatex
+                                ">\(\{\myvec{w}_c.\myvec{x}+b_c=0 \}_{1 \leq c \leq K}\)</span>. The idea is that each hyperplane separates the associated class from the remaining classes. The figure below illustrates this idea for four classes and <span class="arithmatex ">\(2D\)</span> datapoints. The clouds represent clusters of datapoints from a single class.</p>
+<figure role="group ">
+  <img src="images/multiclass.svg " alt="Multiclass classifier. " />
+  <figcaption>
+    <p><strong>Figure 12.</strong> Examples of four classes represented by the four data clouds. Each cloud of data can be separated from the other three by a straight line. </p>
+  </figcaption>
+</figure>
+
+<p>The distance from the associated hyperplane in the positive direction can be regarded as a measure of confidence in this class being the correct label. Assuming <span class="arithmatex ">\(\myvec{w}_c\)</span> is already scaled to be a unit vector, the confidence values are given by:</p>
+<div class="arithmatex ">\[ z_c = \myvec{w}_c.\myvec{x} + b_c\]</div>
+<p>We simply choose the class with the highest confidence value: <span class="arithmatex ">\(\underset{c}{\operatorname{argmax}(z_c)}\)</span></p>
+<h2 id="defining-a-probability-distribution-over-class-labels ">Defining a probability distribution over class labels</h2>
+<p>From our confidence values, we can compute a probability distribution using the <em>softmax</em> function:</p>
+<div class="arithmatex ">\[\sigma(\myvec{z})_c = \frac {e^{z_c}}{\sum_{k=1}^K e^{z_k}}\]</div>
+<p>Softmax takes the set of confidence values, which may be negative, and returns corresponding values between <span class="arithmatex ">\([0,1]\)</span> which sum to one, as required for a probability distribution. The exponential function in the numerator of softmax is a monotonically increasing function with positive output.</p>
+<figure role="group ">
+  <img src="images/exponential.svg " alt="Exponential function. " />
+  <figcaption>
+    <p><strong>Figure 13.</strong> The exponential function is positive and monotonically increasing.</p>
+  </figcaption>
+</figure>
+
+<p>Thus, the higher the confidence value (even if negative) the higher the probability. The denominator ensures that the values sum to one.</p>
+<p>For example, suppose the confidence values for 3 classes are given by <span class="arithmatex ">\((2.1, 1.2, -1.5)\)</span>. The probability distribution computed by softmax will be <span class="arithmatex ">\((0.70, 0.28, 0.002)\)</span>.</p>
+<!-- fix 1/m in argmin - see slides -->
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer ">
+  
+    <div class="md-footer-nav ">
+      <nav class="md-footer-nav__inner md-grid " aria-label="Footer ">
+        
+          <a href="../unit1/Optimisation.html " class="md-footer-nav__link md-footer-nav__link--prev " rel="prev ">
+            <div class="md-footer-nav__button md-icon ">
+              <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 "><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z "/></svg>
+            </div>
+            <div class="md-footer-nav__title ">
+              <div class="md-ellipsis ">
+                <span class="md-footer-nav__direction ">
+                  Previous
+                </span>
+                Optimisation
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="Performance.html " class="md-footer-nav__link md-footer-nav__link--next " rel="next ">
+            <div class="md-footer-nav__title ">
+              <div class="md-ellipsis ">
+                <span class="md-footer-nav__direction ">
+                  Next
+                </span>
+                Measuring classifier performance
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon ">
+              <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 "><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z "/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset ">
+    <div class="md-footer-meta__inner md-grid ">
+      <div class="md-footer-copyright ">
+        
+          <div class="md-footer-copyright__highlight ">
+            Copyright © University of Leeds
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/ " target="_blank " rel="noopener ">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.93c04032.min.js "></script>
+      <script src="../../assets/javascripts/bundle.83e5331e.min.js "></script><script id="__lang " type="application/json ">{"clipboard.copy ": "Copy to clipboard ", "clipboard.copied ": "Copied to clipboard ", "search.config.lang ": "en ", "search.config.pipeline
+                                ": "trimmer, stopWordFilter ", "search.config.separator ": "[\\s\\-]+ ", "search.placeholder ": "Search ", "search.result.placeholder ": "Type to start searching ", "search.result.none ": "No matching documents ", "search.result.one
+                                ": "1 matching document ", "search.result.other ": "# matching documents ", "search.result.more.one ": "1 more on this page ", "search.result.more.other ": "# more on this page ", "search.result.term.missing ": "Missing "}</script>
+      
+      <script>
+        app = initialize({
+          base: "../.. ",
+          features: ['navigation.sections'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js "
+          }, typeof search !== "undefined " && search)
+        })
+      </script>
+      
+        <script src="../../javascript/tablecontentsoverride.js "></script>
+      
+        <script src="../../javascript/config.js "></script>
+      
+        <script src="../../javascript/interactive-elements.js "></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6 "></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js "></script>
+      
+    
+  </body>
+</html>

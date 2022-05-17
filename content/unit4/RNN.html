@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+
+    <link rel="shortcut icon" href="../../img/favicon.jpg">
+    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
+
+
+
+    <title>Recurrent neural networks - Artificial Intelligence</title>
+
+
+
+    <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
+
+
+    <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
+
+
+
+
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+    <style>
+        body,
+        input {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
+        }
+
+        code,
+        kbd,
+        pre {
+            font-family: "", SFMono-Regular, Consolas, Menlo, monospace
+        }
+    </style>
+
+
+
+
+    <link rel="stylesheet" href="../../css/extra.css">
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+
+
+
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+
+
+        <a href="#recurrent-neural-networks" class="md-skip">
+          Skip to content
+        </a>
+
+    </div>
+    <div data-md-component="announce">
+
+        <aside class="md-announce">
+            <div class="md-announce__inner md-grid md-typeset">
+
+                <div id="versionIndicator"> <b>Version:</b>27.10.21.a </div>
+                <img id="customlogo" src="../../img/logo.svg" alt="University of Leeds logo.">
+
+            </div>
+        </aside>
+
+    </div>
+
+
+
+
+
+    <header class="md-header" data-md-component="header">
+        <nav class="md-header-nav md-grid" aria-label="Header">
+            <a href="../../index.html" title="Artificial Intelligence" class="md-header-nav__button md-logo" aria-label="Artificial Intelligence">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+            <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+            <div class="md-header-nav__title" data-md-component="header-title">
+                <div class="md-header-nav__ellipsis">
+                    <div class="md-header-nav__topic">
+                        <span class="md-ellipsis">
+            Artificial Intelligence
+          </span>
+                    </div>
+                    <div class="md-header-nav__topic">
+                        <span class="md-ellipsis">
+            
+              Recurrent neural networks
+            
+          </span>
+                    </div>
+                </div>
+            </div>
+
+            <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+            <div class="md-search" data-md-component="search" role="dialog">
+                <label class="md-search__overlay" for="__search"></label>
+                <div class="md-search__inner" role="search">
+                    <form class="md-search__form" name="search">
+                        <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+                        <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+                        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+                    </form>
+                    <div class="md-search__output">
+                        <div class="md-search__scrollwrap" data-md-scrollfix>
+                            <div class="md-search-result" data-md-component="search-result">
+                                <div class="md-search-result__meta">
+                                    Initializing search
+                                </div>
+                                <ol class="md-search-result__list"></ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+
+    <div class="md-container" data-md-component="container">
+
+
+
+
+        <main class="md-main" data-md-component="main">
+            <div class="md-main__inner md-grid">
+
+
+
+                <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+
+
+
+
+
+
+                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                                <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Artificial Intelligence
+  </label>
+
+                                <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../../index.html" class="md-nav__link">
+      Introduction
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit1/Optimisation.html" class="md-nav__link">
+      Optimisation
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/LinearClassifier.html" class="md-nav__link">
+      Linear classifier
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/Performance.html" class="md-nav__link">
+      Measuring classifier performance
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit2/MultiLayerNetworks.html" class="md-nav__link">
+      Multilayer networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/Convolution.html" class="md-nav__link">
+      Convolution
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/CNN.html" class="md-nav__link">
+      Convolutional neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit3/Segmentation.html" class="md-nav__link">
+      Image segmentation
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="Introduction.html" class="md-nav__link">
+      Sequential data
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item md-nav__item--active">
+
+                                        <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+
+
+
+                                        <label class="md-nav__link md-nav__link--active" for="__toc">
+        Recurrent neural networks
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+
+                                        <a href="RNN.html" class="md-nav__link md-nav__link--active">
+      Recurrent neural networks
+    </a>
+
+
+                                        <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+                                            <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+                                            <ul class="md-nav__list" data-md-scrollfix>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#elman-rnn" class="md-nav__link">
+    Elman RNN
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#building-a-text-clip-generator" class="md-nav__link">
+    Building a text-clip generator
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#building-a-text-generator" class="md-nav__link">
+    Building a text generator
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#rnns-with-long-term-memory" class="md-nav__link">
+    RNNs with long-term memory
+  </a>
+
+                                                    <nav class="md-nav" aria-label="RNNs with long-term memory">
+                                                        <ul class="md-nav__list">
+
+                                                            <li class="md-nav__item">
+                                                                <a href="#long-short-term-memory" class="md-nav__link">
+    Long short-term memory
+  </a>
+
+                                                            </li>
+
+                                                            <li class="md-nav__item">
+                                                                <a href="#gated-recurrent-unit" class="md-nav__link">
+    Gated recurrent unit
+  </a>
+
+                                                            </li>
+
+                                                        </ul>
+                                                    </nav>
+
+                                                </li>
+
+                                            </ul>
+
+                                        </nav>
+
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="TextClassification.html" class="md-nav__link">
+      Text classification
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="Transformers.html" class="md-nav__link">
+      Transformers
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit5/RelationalData.html" class="md-nav__link">
+      Relational data
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit5/GNN.html" class="md-nav__link">
+      Graph neural networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit6/GAN.html" class="md-nav__link">
+      Generative adversarial networks
+    </a>
+                                    </li>
+
+
+
+
+
+
+
+
+                                    <li class="md-nav__item">
+                                        <a href="../unit6/Cyclegan.html" class="md-nav__link">
+      Image-to-image translation
+    </a>
+                                    </li>
+
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+
+                            <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+
+
+
+
+
+                                <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+                                <ul class="md-nav__list" data-md-scrollfix>
+
+                                    <li class="md-nav__item">
+                                        <a href="#elman-rnn" class="md-nav__link">
+    Elman RNN
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#building-a-text-clip-generator" class="md-nav__link">
+    Building a text-clip generator
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#building-a-text-generator" class="md-nav__link">
+    Building a text generator
+  </a>
+
+                                    </li>
+
+                                    <li class="md-nav__item">
+                                        <a href="#rnns-with-long-term-memory" class="md-nav__link">
+    RNNs with long-term memory
+  </a>
+
+                                        <nav class="md-nav" aria-label="RNNs with long-term memory">
+                                            <ul class="md-nav__list">
+
+                                                <li class="md-nav__item">
+                                                    <a href="#long-short-term-memory" class="md-nav__link">
+    Long short-term memory
+  </a>
+
+                                                </li>
+
+                                                <li class="md-nav__item">
+                                                    <a href="#gated-recurrent-unit" class="md-nav__link">
+    Gated recurrent unit
+  </a>
+
+                                                </li>
+
+                                            </ul>
+                                        </nav>
+
+                                    </li>
+
+                                </ul>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="md-content">
+                    <article class="md-content__inner md-typeset">
+
+
+
+                        <h1 id="recurrent-neural-networks">Recurrent neural networks</h1>
+                        <h2 id="elman-rnn">Elman RNN</h2>
+                        <p>A recurrent neural network (RNN) is designed to operate with sequences. The simplest RNN is the so-called <em>Elman</em> (or <em>vanilla</em>) RNN the operation of which is illustrated in the following diagram:</p>
+                        <figure role="group">
+                            <img src="images/rnnoperation.svg" alt="An Elman RNN with input node, intermediate node containing the hidden state and output node. " />
+                            <figcaption>
+                                <p><strong>Figure 1.</strong> Architecture of an Elman (or vanilla) RNN.</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>The network consists of a simple feedforward network that we apply to an input sequence, one item at a time. The network has a single hidden layer, which receives input from the current input and from the previous hidden layer
+                            - this is the recurrence. The time-delay of the recurrent input is signified by the brown square on the corresponding link.</p>
+                        <p>The computation at time <span class="arithmatex">\(t\)</span> of an Elman RNN is given by:</p>
+                        <div class="arithmatex">\[ \myvec{o}_t = \myvec{c} + \mymat{V}\myvec{h}_t \]</div>
+                        <div class="arithmatex">\[ \myvec{h}_t = \tanh(\myvec{b} + \mymat{W}\myvec{h}_{t-1} + \mymat{U}\myvec{x}_t) \]</div>
+                        <p>where <span class="arithmatex">\(\mymat{U},\mymat{V},\mymat{W}\)</span> are weight matrices and <span class="arithmatex">\(\myvec{b},\myvec{c}\)</span> are bias vectors.</p>
+                        <p>It is sometimes convenient to rewrite <span class="arithmatex">\(\mymat{W}\myvec{h}_{t-1} + \mymat{U}_t\myvec{x}_t\)</span> as <span class="arithmatex">\([\mymat{W},\mymat{U}][\myvec{h}_{t-1};\myvec{x}_t]\)</span>, where we are
+                            simply concatenating <span class="arithmatex">\(\mymat{W}\)</span> and <span class="arithmatex">\(\mymat{U}\)</span> side by side, and concatenating <span class="arithmatex">\(\myvec{h}_{t-1}\)</span> and <span class="arithmatex">\(\myvec{x}_t\)</span>                            one above the other.</p>
+                        <p>To build a computational graph from an RNN, we operate (<em>unroll</em>) the network over a fixed number of time steps (<span class="arithmatex">\(T\)</span> in this case), as illustrated below:</p>
+                        <figure role="group">
+                            <img src="images/rnnunroll.svg" alt="The RNN is repeated once for each timesteps. The hidden state is shown being passed forwards in time to following timestep. A zero vector is introduced in its place at the first timestep." />
+                            <figcaption>
+                                <p><strong>Figure 2.</strong> Unrolled RNN over multiple timesteps</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>Note that the parameters of the RNN are the same across all time steps. Because there is no hidden state vector from the previous time on the first time step, it is normally assumed that this is the zero-vector.</p>
+                        <p>We create a deep RNN by simply stacking hidden layers on top of one another in the usual way. The operation of an RNN with two hidden layers is shown below:</p>
+                        <figure role="group">
+                            <img src="images/deeprnn.svg" alt="A deep RNN with two hidden layers" />
+                            <figcaption>
+                                <p><strong>Figure 3.</strong> A deep RNN having two intermediate layers with associated hidden states</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>Rolling this out for a fixed number of timesteps is done by analogy with the single layer RNN.</p>
+                        <h2 id="building-a-text-clip-generator">Building a text-clip generator</h2>
+                        <p>Our aim is to produce a generative model of language in the form of an RNN which has been trained on a corpus of text-clips (short pieces of text), the style of which we wish to capture. The RNN will process single characters at
+                            a time and when rolled out over several time steps looks like this:</p>
+                        <figure role="group">
+                            <img src="images/rnngenerator.svg" alt="A sequence of characters is input to an unrolled two-layer RNN, preceeded by a special <start> token. The desired output is the same sequence advanced by one timestep, with a special <end> token on the end. Note that the <start> token doesn't appear on the output."
+                            />
+                            <figcaption>
+                                <p><strong>Figure 4.</strong> using an RNN as a character generator</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>The RNN in this example has two hidden layers and accepts one of 28 possible tokens as input. The possible tokens correspond to the 26 letters in the English alphabet (A-Z) and the special tokens &lt;start> and &lt;end> which denote
+                            the beginning on input and the end of the text-clip on output. Input tokens are represented as one-hot vectors.</p>
+                        <p>Assuming our RNN network has been trained, we generate a novel character sequence as follows. At the first timestep we input the &lt;start> token to the RNN. The output is a probability distribution over tokens. We sample from
+                            this distribution and this becomes the first output token - in this case it is an 'h'. The process is repeated in subsequent timesteps, each time sampling from the distribution and transferring the chosen token to become the
+                            next input. The process repeats until either the
+                            <end> token is chosen for output or a fixed limit on the number of timesteps is reached.</p>
+                        <p>
+                            <div class="highlight">
+                                <pre><span></span><code>Input &lt;start&gt; and compute output distribution (using RNN with softmax)
+Sample from the probability distribution
+Set next input to be this value
+Repeat sampling until &lt;end&gt; chosen or a fixed number of iterations
+</code></pre>
+                            </div>
+                            Instead of sampling from the distribution, we could simply take the token with the highest probability - the so-called <em>greedy</em> strategy. Of course, this would generate the same sequence every time and is therefore not
+                            particularly useful.</p>
+                        <p>To train the network, we sample a large number of fixed-length characters sequences from our language corpus (e.g. 16 characters in length). Each example contributes to a batchwise loss as illustrated below (here assuming that
+                            'hello' now appears in the language corpus). For each input sequence, the idea is to target an identical sequence on output, except advanced by one timestep as required for prediction. From the sequence of output distributions
+                            and corresponding target sequence, we compute a log-likelihood for the target character at each timestep and sum these to produce a log-likelihood for the entire sequence. The overall loss is then the per-example negative log
+                            likelihood summed over a batch of examples.</p>
+                        <figure role="group">
+                            <img src="images/rnntraining.svg" alt=" A similar diagram to Figure 4 except that the input tokens (characters, <start> and <end>) are represented by a one-hor encoding, and the output at each timestep is now a probability distribution over tokens." />
+                            <figcaption>
+                                <p><strong>Figure 5.</strong> Training the RNN text generator</p>
+                            </figcaption>
+                        </figure>
+
+                        <p>Notice that unlike in testing where we are generating a novel sequence, we don't sample from the output distributions, but instead lookup the probabilities associated with the target characters in order to compute the likelihoods
+                            needed for the cross-entropy loss.</p>
+                        <h2 id="building-a-text-generator">Building a text generator</h2>
+                        <p>A variation on the above approach is to do away with the special &lt;start> and &lt;end> tokens and simply use fixed length character strings in training. The character strings are sampled from a large corpus of text such as the
+                            Complete Works of Shakespeare, or textual data accessed from the Web. For each example, we drop the last character to produce an input sequence, and drop the first character to produce an output sequence. Thus, from the character
+                            string <em>The cat sat on the mat</em> sampled from our corpus, the input becomes <em>The cat sat on the ma</em>, and the output become <em>he cat sat on the mat</em>. In testing, instead of using a
+                            <start> token to make the first prediction, we input a short piece of seed text and get the generator to extend this for as long as we wish.</p>
+                        <p>To illustrate, the following generated texts comes from an RNN trained on the text of the book <a href="https://www.gutenberg.org/files/11/11-h/11-h.htm">Alice's Adventures in Wonderland</a> by Lewis Carroll. The seed text that
+                            starts the generator is shown in red. Although the style is vaguely reminiscent of the book, the generated text is entirely novel.</p>
+                        <blockquote>
+                            <p>The queen looked <span style="color: red;"> at alice and she said to herself and she said to herself in a mourefully as she could not and sometimes to say it at all said the caterpillar.  well to her like the while and the dormouse she said to herself in a mouse them the mock turtle said and so she said the mock turtle to say what i should like to the hatter with a sort of catter that the dormouse was a little began with a streak the dormo</span></p>
+                        </blockquote>
+                        <h2 id="rnns-with-long-term-memory">RNNs with long-term memory</h2>
+                        <p>Consider the following partial sentence:</p>
+                        <div class="highlight">
+                            <pre><span></span><code>I grew up in France ... I speak fluent French
+</code></pre>
+                        </div>
+                        <p>Generating this sentence with an RNN is challenging because predicting the final word 'French' requires information from earlier in the sentence. In principle an RNN can handle this since the occurrence of the word 'France' should
+                            be encoded into the hidden state vector when it occurs, and carried through to the point at which the word 'French' must be produced. In practice, this doesn't work well since the gradients computed by backpropagation get progressively
+                            smaller the further back in time one goes. This undermines the parameter adaptation that we need to retain a trace of the word 'France' having occurred. A solution is to introduce a more explicit kind of persistent memory into
+                            our recurrent network. In the following sections, we examine the two most common RNN architectures for doing this.</p>
+                        <h3 id="long-short-term-memory">Long short-term memory</h3>
+                        <p>In a <em>Long short-term Memory (LSTM)</em>, the simple Elman RNN cell is replaced by one that looks like this:</p>
+                        <figure role="group">
+                            <img src="images/LSTM_Cell.svg" alt="The cell architecture of an LSTM, which implements thet set of equations below. The diagram highlights the idea that the LSTM has a 'cell' state which comes in from the previous timestep and goes out to the next timestep, being attenuated on the way and with a new value added in that depends on the current input and previous hidden state."
+                            />
+                            <figcaption>
+                                <p><strong>Figure 6.</strong> LSTM cell architecture</p>
+                            </figcaption>
+                        </figure>
+
+                        <div class="arithmatex">\[ \begin{align} \myvec{f}_t &amp;= \sigma (\mymat{W}_f \myvec{x}_t + \mymat{U}_f \myvec{h}_{t-1} + \myvec{b}_f ) \\ \myvec{i}_t &amp;= \sigma (\mymat{W}_i \myvec{x}_t + \mymat{U}_i \myvec{h}_{t-1} + \myvec{b}_i ) \\ \myvec{o}_t
+                            &amp;= \sigma (\mymat{W}_o \myvec{x}_t + \mymat{U}_o \myvec{h}_{t-1} + \myvec{b}_o ) \\ \\ \myvec{\tilde{c}}_t &amp;= \tanh (\mymat{W}_c \myvec{x}_t + \mymat{U}_c \myvec{h}_{t-1} + \myvec{b}_c ) \\ \myvec{c}_t &amp;= \myvec{f}_t
+                            \circ \myvec{c}_{t-1} + \myvec{i}_t \circ \myvec{\tilde{c}}_t \\ \myvec{h}_t &amp;= \myvec{o}_t \circ \tanh(\myvec{c}_t) \end{align}\]
+                        </div>
+                        <p>The symbol <span class="arithmatex">\(\circ\)</span> means the Hadamard product between two vectors, which is simply the element-wise product. Thus <span class="arithmatex">\((0,0.5,1.0) \circ (3.0,4.0,2.0) = (0,2.0,2.0)\)</span>.</p>
+                        <p>To understand how the LSTM works, let's look at the equations in turn.</p>
+                        <p>The first three equations are affine functions of the input and previous hidden state vector - in other words, they are fully connected linear layers. The logistic function is applied to this, giving output vectors <span class="arithmatex">\(\myvec{f}_t\)</span>,
+                            <span class="arithmatex">\(\myvec{i}_t\)</span> and <span class="arithmatex">\(\myvec{o}_t\)</span> with components in the interval <span class="arithmatex">\((0,1)\)</span>. These output vectors will be used as 'gates' to
+                            control the flow of information through the LSTM.</p>
+                        <p>The vector <span class="arithmatex">\(\myvec{c}\)</span> is the ongoing memory of the LSTM - the <em>cell state</em>. The previous memory <span class="arithmatex">\(\myvec{c_{t-1}}\)</span> enters the cell and is first attenuated
+                            (gated) by <span class="arithmatex">\(\myvec{ f}_t\)</span> (i.e. the components of <span class="arithmatex">\(\myvec{c}_{t-1}\)</span> are multiplied elementwise by the components of <span class="arithmatex">\(\myvec{f}_t\)</span>).
+                            A new memory is added in and the result leaves the cell as <span class="arithmatex">\(\myvec{c}_t\)</span>. The memory addition is based on <span class="arithmatex">\(\myvec{\tilde{c}}\)</span>, which is itself an affine function
+                            of the input and previous hidden state followed by the hyperbolic tangent function (<span class="arithmatex">\(tanh\)</span>). Before adding in, this new memory is attenuated by <span class="arithmatex">\(\myvec{i}_t\)</span>.</p>
+                        <p>Finally, the output hidden state <span class="arithmatex">\(\myvec{h}_t\)</span> is scaled element wise by the new cell state <span class="arithmatex">\(\myvec{c}_t\)</span>, attenuated by <span class="arithmatex">\(\myvec{o}_t\)</span>.</p>
+                        <p>Just as for the vanilla RNN, a linear output layer at each time step can be added as a function of <span class="arithmatex">\(\myvec{h}_t\)</span> (not shown).</p>
+                        <p>The LSTM cell within a neural network is normally represented as follows:</p>
+                        <figure role="group">
+                            <img src="images/lstm.svg" alt="Similar to the Elman RNN diagram except that the hidden state is replaced by an LSTM cell." />
+                            <figcaption>
+                                <p><strong>Figure 7.</strong> LSTM architecture diagram</p>
+                            </figcaption>
+                        </figure>
+
+                        <h3 id="gated-recurrent-unit">Gated recurrent unit</h3>
+                        <p>The <em>Gated Recurrent Unit</em> (GRU) does away with the cell state of an LSTM, and simply uses the hidden state <span class="arithmatex">\(\myvec{h}_t\)</span> for the persistent memory. The architecture of a GRU cell looks
+                            like this:</p>
+                        <figure role="group">
+                            <img src="images/GRU_Cell.svg" alt="Simpler than the LSTM cell architecture. There is no cell state and everything hinges on the hidden state, which is shown as passing through as for the cell state in the LSTM. As for the LSTM, there is additional machinery to attenuate and add in a new value that depends on the current input and previous hidden state."
+                            />
+                            <figcaption>
+                                <p><strong>Figure 8.</strong> GRU cell architecture</p>
+                            </figcaption>
+                        </figure>
+
+                        <div class="arithmatex">\[ \begin{align} \myvec{z}_t &amp;= \sigma (\mymat{W}_z\myvec{x}_t + \mymat{U}_z \myvec{h}_{t-1} + \myvec{b}_z ) \\ \myvec{r}_t &amp;= \sigma (\mymat{W}_r\myvec{x}_t + \mymat{U}_r \myvec{h}_{t-1} + \myvec{b}_r ) \\ \\ \hat{\myvec{h}}_t
+                            &amp;= \tanh(\mymat{W}_h\myvec{x}_t + \mymat{U}_h (\myvec{r}_t \circ \myvec{h}_{t-1}) + \myvec{b}_h) \\ \myvec{h}_t &amp;= (1-\myvec{z}_t)\circ\myvec{h}_{t-1} + \myvec{z}_t\circ\hat{\myvec{h}}_t \end{align} \]</div>
+                        <p>The first two equations are fully connected linear layers taking the input and previous hidden state vectors. The logistic function is applied to this, giving output vectors <span class="arithmatex">\(\myvec{z}_t\)</span> and
+                            <span
+                                class="arithmatex">\(\myvec{r}_t\)</span> with components in the interval <span class="arithmatex">\((0,1)\)</span>. These output vectors will be used as 'gates' to control the flow of information through the GRU.</p>
+                        <p>The third equation produces a prospective value <span class="arithmatex">\(\hat{\myvec{h}}_t\)</span> for the new hidden state vector as an affine function of the input and previous hidden state vector, except that the previous
+                            hidden state vector is gated by <span class="arithmatex">\(\myvec{r}_t\)</span>. This gating effectively determines the extent to which the previous hidden state influences the prospective value for the current hidden state.</p>
+                        <p>Finally, the fourth equation computes a final hidden state <span class="arithmatex">\(\myvec{h}_t\)</span> by blending together the previous hidden state and the prospective hidden state computed in the third equation. The proportions
+                            of either constituent depend on <span class="arithmatex">\(\myvec{z}_t\)</span>. The operation labelled '1-' subtracts the input elementwise from 1.</p>
+                        <p>The state can be seen as a persistent memory which can pass through a timestep unchanged if <span class="arithmatex">\(\myvec{z}_t = 0\)</span> (by the fourth equation). If on the other hand <span class="arithmatex">\(\myvec{z}_t = 1\)</span>,
+                            the value is replaced by a new value, which could be entirely independent of the previous state (i.e. when <span class="arithmatex">\(\myvec{r}_t = 0\)</span>).</p>
+
+
+
+
+
+
+
+                    </article>
+                </div>
+            </div>
+        </main>
+
+
+        <footer class="md-footer">
+
+            <div class="md-footer-nav">
+                <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+
+                    <a href="Introduction.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+                        <div class="md-footer-nav__button md-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+                        </div>
+                        <div class="md-footer-nav__title">
+                            <div class="md-ellipsis">
+                                <span class="md-footer-nav__direction">
+                  Previous
+                </span> Sequential data
+                            </div>
+                        </div>
+                    </a>
+
+
+                    <a href="TextClassification.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+                        <div class="md-footer-nav__title">
+                            <div class="md-ellipsis">
+                                <span class="md-footer-nav__direction">
+                  Next
+                </span> Text classification
+                            </div>
+                        </div>
+                        <div class="md-footer-nav__button md-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+                        </div>
+                    </a>
+
+                </nav>
+            </div>
+
+            <div class="md-footer-meta md-typeset">
+                <div class="md-footer-meta__inner md-grid">
+                    <div class="md-footer-copyright">
+
+                        <div class="md-footer-copyright__highlight">
+                            Copyright © University of Leeds
+                        </div>
+
+                        Made with
+                        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
+    <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script>
+    <script id="__lang" type="application/json">
+        {
+            "clipboard.copy": "Copy to clipboard",
+            "clipboard.copied": "Copied to clipboard",
+            "search.config.lang": "en",
+            "search.config.pipeline": "trimmer, stopWordFilter",
+            "search.config.separator": "[\\s\\-]+",
+            "search.placeholder": "Search",
+            "search.result.placeholder": "Type to start searching",
+            "search.result.none": "No matching documents",
+            "search.result.one": "1 matching document",
+            "search.result.other": "# matching documents",
+            "search.result.more.one": "1 more on this page",
+            "search.result.more.other": "# more on this page",
+            "search.result.term.missing": "Missing"
+        }
+    </script>
+
+    <script>
+        app = initialize({
+            base: "../..",
+            features: ['navigation.sections'],
+            search: Object.assign({
+                worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+            }, typeof search !== "undefined" && search)
+        })
+    </script>
+
+    <script src="../../javascript/tablecontentsoverride.js"></script>
+
+    <script src="../../javascript/config.js"></script>
+
+    <script src="../../javascript/interactive-elements.js"></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</body>
+
+</html>
