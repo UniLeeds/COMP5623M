@@ -1,1001 +1,1402 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-
-
-
-    <link rel="shortcut icon" href="../../img/favicon.jpg">
-    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
-
-
+    <link rel="shortcut icon" href="../../img/favicon.jpg" />
+    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4" />
 
     <title>Convolutional neural networks - Artificial Intelligence</title>
 
+    <link
+      rel="stylesheet"
+      href="../../assets/stylesheets/main.15aa0b43.min.css"
+    />
 
+    <link
+      rel="stylesheet"
+      href="../../assets/stylesheets/palette.75751829.min.css"
+    />
 
-    <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
-
-
-    <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
-
-
-
-
-
-
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback"
+    />
     <style>
-        body,
-        input {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
-        }
+      body,
+      input {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica,
+          Arial, sans-serif;
+      }
 
-        code,
-        kbd,
-        pre {
-            font-family: "", SFMono-Regular, Consolas, Menlo, monospace
-        }
+      code,
+      kbd,
+      pre {
+        font-family: "", SFMono-Regular, Consolas, Menlo, monospace;
+      }
     </style>
 
+    <link rel="stylesheet" href="../../css/extra.css" />
+  </head>
 
-
-
-    <link rel="stylesheet" href="../../css/extra.css">
-
-
-
-
-
-</head>
-
-
-
-
-
-
-
-<body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-
-
-
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+  <body
+    dir="ltr"
+    data-md-color-scheme=""
+    data-md-color-primary="none"
+    data-md-color-accent="none"
+  >
+    <input
+      class="md-toggle"
+      data-md-toggle="drawer"
+      type="checkbox"
+      id="__drawer"
+      autocomplete="off"
+    />
+    <input
+      class="md-toggle"
+      data-md-toggle="search"
+      type="checkbox"
+      id="__search"
+      autocomplete="off"
+    />
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-
-
-        <a href="#convolutional-neural-networks" class="md-skip">
-          Skip to content
-        </a>
-
+      <a href="#convolutional-neural-networks" class="md-skip">
+        Skip to content
+      </a>
     </div>
     <div data-md-component="announce">
-
-        <aside class="md-announce">
-            <div class="md-announce__inner md-grid md-typeset">
-
-                <div id="versionIndicator"> <b>Version:</b>27.10.21.a </div>
-                <img id="customlogo" src="../../img/logo.svg" alt="University of Leeds logo.">
-
-            </div>
-        </aside>
-
+      <aside class="md-announce">
+        <div class="md-announce__inner md-grid md-typeset">
+          <div id="versionIndicator"><b>Version:</b>27.10.21.a</div>
+          <img
+            id="customlogo"
+            src="../../img/logo.svg"
+            alt="University of Leeds logo."
+          />
+        </div>
+      </aside>
     </div>
 
-
-
-
-
     <header class="md-header" data-md-component="header">
-        <nav class="md-header-nav md-grid" aria-label="Header">
-            <a href="../../index.html" title="Artificial Intelligence" class="md-header-nav__button md-logo" aria-label="Artificial Intelligence">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-            <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-            <div class="md-header-nav__title" data-md-component="header-title">
-                <div class="md-header-nav__ellipsis">
-                    <div class="md-header-nav__topic">
-                        <span class="md-ellipsis">
-            Artificial Intelligence
-          </span>
-                    </div>
-                    <div class="md-header-nav__topic">
-                        <span class="md-ellipsis">
-            
-              Convolutional neural networks
-            
-          </span>
-                    </div>
-                </div>
+      <nav class="md-header-nav md-grid" aria-label="Header">
+        <a
+          href="../../index.html"
+          title="Artificial Intelligence"
+          class="md-header-nav__button md-logo"
+          aria-label="Artificial Intelligence"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"
+            />
+          </svg>
+        </a>
+        <label class="md-header-nav__button md-icon" for="__drawer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" />
+          </svg>
+        </label>
+        <div class="md-header-nav__title" data-md-component="header-title">
+          <div class="md-header-nav__ellipsis">
+            <div class="md-header-nav__topic">
+              <span class="md-ellipsis"> Artificial Intelligence </span>
             </div>
-
-            <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-
-            <div class="md-search" data-md-component="search" role="dialog">
-                <label class="md-search__overlay" for="__search"></label>
-                <div class="md-search__inner" role="search">
-                    <form class="md-search__form" name="search">
-                        <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
-                        <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-                        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-                    </form>
-                    <div class="md-search__output">
-                        <div class="md-search__scrollwrap" data-md-scrollfix>
-                            <div class="md-search-result" data-md-component="search-result">
-                                <div class="md-search-result__meta">
-                                    Initializing search
-                                </div>
-                                <ol class="md-search-result__list"></ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="md-header-nav__topic">
+              <span class="md-ellipsis"> Convolutional neural networks </span>
             </div>
+          </div>
+        </div>
 
+        <label class="md-header-nav__button md-icon" for="__search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"
+            />
+          </svg>
+        </label>
 
-        </nav>
+        <div class="md-search" data-md-component="search" role="dialog">
+          <label class="md-search__overlay" for="__search"></label>
+          <div class="md-search__inner" role="search">
+            <form class="md-search__form" name="search">
+              <input
+                type="text"
+                class="md-search__input"
+                name="query"
+                aria-label="Search"
+                placeholder="Search"
+                autocapitalize="off"
+                autocorrect="off"
+                autocomplete="off"
+                spellcheck="false"
+                data-md-component="search-query"
+                data-md-state="active"
+                required
+              />
+              <label class="md-search__icon md-icon" for="__search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"
+                  />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"
+                  />
+                </svg>
+              </label>
+              <button
+                type="reset"
+                class="md-search__icon md-icon"
+                aria-label="Clear"
+                data-md-component="search-reset"
+                tabindex="-1"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+                  />
+                </svg>
+              </button>
+            </form>
+            <div class="md-search__output">
+              <div class="md-search__scrollwrap" data-md-scrollfix>
+                <div class="md-search-result" data-md-component="search-result">
+                  <div class="md-search-result__meta">Initializing search</div>
+                  <ol class="md-search-result__list"></ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <div class="md-container" data-md-component="container">
-
-
-
-
-        <main class="md-main" data-md-component="main">
-            <div class="md-main__inner md-grid">
-
-
-
-                <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                    <div class="md-sidebar__scrollwrap">
-                        <div class="md-sidebar__inner">
-
-
-
-
-
-
-
-                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-                                <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-    Artificial Intelligence
-  </label>
-
-                                <ul class="md-nav__list" data-md-scrollfix>
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../../index.html" class="md-nav__link">
-      Introduction
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit1/Optimisation.html" class="md-nav__link">
-      Optimisation
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit2/LinearClassifier.html" class="md-nav__link">
-      Linear classifier
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit2/Performance.html" class="md-nav__link">
-      Measuring classifier performance
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit2/MultiLayerNetworks.html" class="md-nav__link">
-      Multilayer networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="Convolution.html" class="md-nav__link">
-      Convolution
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item md-nav__item--active">
-
-                                        <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-
-
-
-
-                                        <label class="md-nav__link md-nav__link--active" for="__toc">
-        Convolutional neural networks
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-
-                                        <a href="CNN.html" class="md-nav__link md-nav__link--active">
-      Convolutional neural networks
-    </a>
-
-
-                                        <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
-
-
-
-
-                                            <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-                                            <ul class="md-nav__list" data-md-scrollfix>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#pooling" class="md-nav__link">
-    Pooling
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#a-cnn-for-image-classification" class="md-nav__link">
-    A CNN for image classification
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#training" class="md-nav__link">
-    Training
-  </a>
-
-                                                    <nav class="md-nav" aria-label="Training">
-                                                        <ul class="md-nav__list">
-
-                                                            <li class="md-nav__item">
-                                                                <a href="#data-augmentation" class="md-nav__link">
-    Data augmentation
-  </a>
-
-                                                            </li>
-
-                                                            <li class="md-nav__item">
-                                                                <a href="#dropout" class="md-nav__link">
-    Dropout
-  </a>
-
-                                                            </li>
-
-                                                            <li class="md-nav__item">
-                                                                <a href="#batch-normalisation" class="md-nav__link">
-    Batch normalisation
-  </a>
-
-                                                            </li>
-
-                                                        </ul>
-                                                    </nav>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#receptive-fields" class="md-nav__link">
-    Receptive fields
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#network-visualisation" class="md-nav__link">
-    Network visualisation
-  </a>
-
-                                                    <nav class="md-nav" aria-label="Network visualisation">
-                                                        <ul class="md-nav__list">
-
-                                                            <li class="md-nav__item">
-                                                                <a href="#grad-cam" class="md-nav__link">
-    Grad-Cam
-  </a>
-
-                                                            </li>
-
-                                                            <li class="md-nav__item">
-                                                                <a href="#inspecting-the-kernels" class="md-nav__link">
-    Inspecting the kernels
-  </a>
-
-                                                            </li>
-
-                                                        </ul>
-                                                    </nav>
-
-                                                </li>
-
-                                            </ul>
-
-                                        </nav>
-
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="Segmentation.html" class="md-nav__link">
-      Image segmentation
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/Introduction.html" class="md-nav__link">
-      Sequential data
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/RNN.html" class="md-nav__link">
-      Recurrent neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/TextClassification.html" class="md-nav__link">
-      Text classification
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/Transformers.html" class="md-nav__link">
-      Transformers
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit5/RelationalData.html" class="md-nav__link">
-      Relational data
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit5/GNN.html" class="md-nav__link">
-      Graph neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit6/GAN.html" class="md-nav__link">
-      Generative adversarial networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit6/Cyclegan.html" class="md-nav__link">
-      Image-to-image translation
-    </a>
-                                    </li>
-
-
-                                </ul>
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          <div
+            class="md-sidebar md-sidebar--primary"
+            data-md-component="navigation"
+          >
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav
+                  class="md-nav md-nav--primary"
+                  aria-label="Navigation"
+                  data-md-level="0"
+                >
+                  <label class="md-nav__title" for="__drawer">
+                    <a
+                      href="../../index.html"
+                      title="Artificial Intelligence"
+                      class="md-nav__button md-logo"
+                      aria-label="Artificial Intelligence"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"
+                        />
+                      </svg>
+                    </a>
+                    Artificial Intelligence
+                  </label>
+
+                  <ul class="md-nav__list" data-md-scrollfix>
+                    <li class="md-nav__item">
+                      <a href="../../index.html" class="md-nav__link">
+                        Introduction
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit1/Optimisation.html" class="md-nav__link">
+                        Optimisation
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit2/LinearClassifier.html"
+                        class="md-nav__link"
+                      >
+                        Linear classifier
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit2/Performance.html" class="md-nav__link">
+                        Measuring classifier performance
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit2/MultiLayerNetworks.html"
+                        class="md-nav__link"
+                      >
+                        Multilayer networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="Convolution.html" class="md-nav__link">
+                        Convolution
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item md-nav__item--active">
+                      <input
+                        class="md-nav__toggle md-toggle"
+                        data-md-toggle="toc"
+                        type="checkbox"
+                        id="__toc"
+                      />
+
+                      <label
+                        class="md-nav__link md-nav__link--active"
+                        for="__toc"
+                      >
+                        Convolutional neural networks
+                        <span class="md-nav__icon md-icon"></span>
+                      </label>
+
+                      <a
+                        href="CNN.html"
+                        class="md-nav__link md-nav__link--active"
+                      >
+                        Convolutional neural networks
+                      </a>
+
+                      <nav
+                        class="md-nav md-nav--secondary"
+                        aria-label="Table of contents"
+                      >
+                        <label class="md-nav__title" for="__toc">
+                          <span class="md-nav__icon md-icon"></span>
+                          Table of contents
+                        </label>
+                        <ul class="md-nav__list" data-md-scrollfix>
+                          <li class="md-nav__item">
+                            <a href="#pooling" class="md-nav__link">
+                              Pooling
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#a-cnn-for-image-classification"
+                              class="md-nav__link"
+                            >
+                              A CNN for image classification
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a href="#training" class="md-nav__link">
+                              Training
+                            </a>
+
+                            <nav class="md-nav" aria-label="Training">
+                              <ul class="md-nav__list">
+                                <li class="md-nav__item">
+                                  <a
+                                    href="#data-augmentation"
+                                    class="md-nav__link"
+                                  >
+                                    Data augmentation
+                                  </a>
+                                </li>
+
+                                <li class="md-nav__item">
+                                  <a href="#dropout" class="md-nav__link">
+                                    Dropout
+                                  </a>
+                                </li>
+
+                                <li class="md-nav__item">
+                                  <a
+                                    href="#batch-normalisation"
+                                    class="md-nav__link"
+                                  >
+                                    Batch normalisation
+                                  </a>
+                                </li>
+                              </ul>
                             </nav>
-                        </div>
-                    </div>
-                </div>
+                          </li>
 
+                          <li class="md-nav__item">
+                            <a href="#receptive-fields" class="md-nav__link">
+                              Receptive fields
+                            </a>
+                          </li>
 
+                          <li class="md-nav__item">
+                            <a
+                              href="#network-visualisation"
+                              class="md-nav__link"
+                            >
+                              Network visualisation
+                            </a>
 
-                <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                    <div class="md-sidebar__scrollwrap">
-                        <div class="md-sidebar__inner">
+                            <nav
+                              class="md-nav"
+                              aria-label="Network visualisation"
+                            >
+                              <ul class="md-nav__list">
+                                <li class="md-nav__item">
+                                  <a href="#grad-cam" class="md-nav__link">
+                                    Grad-Cam
+                                  </a>
+                                </li>
 
-                            <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
-
-
-
-
-                                <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-                                <ul class="md-nav__list" data-md-scrollfix>
-
-                                    <li class="md-nav__item">
-                                        <a href="#pooling" class="md-nav__link">
-    Pooling
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#a-cnn-for-image-classification" class="md-nav__link">
-    A CNN for image classification
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#training" class="md-nav__link">
-    Training
-  </a>
-
-                                        <nav class="md-nav" aria-label="Training">
-                                            <ul class="md-nav__list">
-
-                                                <li class="md-nav__item">
-                                                    <a href="#data-augmentation" class="md-nav__link">
-    Data augmentation
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#dropout" class="md-nav__link">
-    Dropout
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#batch-normalisation" class="md-nav__link">
-    Batch normalisation
-  </a>
-
-                                                </li>
-
-                                            </ul>
-                                        </nav>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#receptive-fields" class="md-nav__link">
-    Receptive fields
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#network-visualisation" class="md-nav__link">
-    Network visualisation
-  </a>
-
-                                        <nav class="md-nav" aria-label="Network visualisation">
-                                            <ul class="md-nav__list">
-
-                                                <li class="md-nav__item">
-                                                    <a href="#grad-cam" class="md-nav__link">
-    Grad-Cam
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#inspecting-the-kernels" class="md-nav__link">
-    Inspecting the kernels
-  </a>
-
-                                                </li>
-
-                                            </ul>
-                                        </nav>
-
-                                    </li>
-
-                                </ul>
-
+                                <li class="md-nav__item">
+                                  <a
+                                    href="#inspecting-the-kernels"
+                                    class="md-nav__link"
+                                  >
+                                    Inspecting the kernels
+                                  </a>
+                                </li>
+                              </ul>
                             </nav>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="md-content">
-                    <article class="md-content__inner md-typeset">
-
-
-
-                        <h1 id="convolutional-neural-networks">Convolutional neural networks</h1>
-                        <p>A convolutional neural network applied to images is organised as a series of layers. Each layer uses convolution to produce a set of feature maps using a different kernel for each feature map. The feature maps from one layer are
-                            passed as input to the next layer. The first layer receives the image as input. By analogy with fully-connected layers, a single bias value is added to every value in each feature map. This bias value will normally be different
-                            for each feature map.</p>
-                        <p>For RGB images there are three colour channels on input. To deal with this, a separate convolution is applied to each channel, normally with different <span class="arithmatex">\(m \times m\)</span> kernels. The results are then
-                            added pixelwise to produce a single 2D output. Finally, we add a single scalar bias value and the result is an output feature map.</p>
-                        <figure role="group">
-                            <img src="images/cnn1.svg" alt="For a colour image, red, green and blue channels are shown separately, with a kernel window at the same position in each. The three values from the convolutions at this kernel position are shown contributing to a single value in the output feature map."
-                            />
-                            <figcaption>
-                                <p><strong>Figure 1.</strong> A separate convolution applied to each colour channel contributes to the values in the output feature map. </p>
-                            </figcaption>
-                        </figure>
-
-                        <p>An alternative way of looking at this is that we are performing a single 3D convolution with a <span class="arithmatex">\(3 \times m \times m\)</span> kernel on the full 3D (RGB) input tensor. This 3D kernel is simply a concatenation
-                            of the three 2D kernels along the first dimension. In this operation, the kernel is applied at every spatial location, spanning all three channels. We don't scan the kernel in the first dimension because it has only one position
-                            in this dimension that keeps it within the 3D input tensor. In general, the output from a 3D convolution would be 3D, but in this case it is only one layer deep and can therefore be considered to be a 2D array - the result
-                            we require.</p>
-                        <figure role="group">
-                            <img src="images/cnn2.svg" alt="schematic of 3D kernel scanning over a 3D input tensor" />
-                            <figcaption>
-                                <p><strong>Figure 2.</strong> The convolutional layer applied to an RGB image can be viewed as a single convolution with 3D kernel applied to the 3D image tensor. </p>
-                            </figcaption>
-                        </figure>
-
-                        <p>Conceptually, we can think of the convolution as looking for image features that involve all three colour channels. Thus, for example we might find a detector that is sensitive to vertical edges, separating red and green regions
-                            of the image.</p>
-                        <p>The whole process can be repeated as many times as we wish using different 3D kernels and generating different feature maps on output. Note that we normally use a different bias value for each feature map.</p>
-                        <p>In summary, we take a 3D tensor as input with three colour channels and output an 3D tensor as output, with <span class="arithmatex">\(K\)</span> feature map channels. For convenience we refer to the number of channels as the <em>depth</em>                            of the tensor, as opposed to its spatial dimensions of width and height.</p>
-                        <p>For subsequent layers of the CNN, we simply apply the same process, except that the input to a layer may contain any number of channels (<span class="arithmatex">\(K \times h \times w\)</span>), which are either the feature maps
-                            from the previous layer or the three colour channels of the input image. In general, the kernel will be <span class="arithmatex">\(K \times m \times m\)</span> in size. As for a regular multi-layer network, the layers are separated
-                            by a non-linearity to accentuate the strong responses. You can think of the layers of the CNN as forming spatial features from the prominent features detected in the previous layer. As we move up the layers, the features become
-                            more and more complex, starting out with simple features of the image and ending up with features that might correspond to parts of an object, or indeed a whole object.</p>
-                        <p>In convolution, each output value comes from the weighted sum of values in a window onto the input image. The weights remain the same for every output position. This is in contrast to a fully-connected linear layer where each output
-                            value comes from a unique weighted sum of all (flattened) input values.</p>
-                        <h2 id="pooling">Pooling</h2>
-                        <p>A so-called <em>pooling</em> layer is used in CNNs to reduce the spatial size of the feature maps and give some invariance to small spatial transformations of the input image, which might arise from small translations or deformations.
-                            The idea is to tile the feature map with a fixed sized window and then to aggregate the values in the window at each position into a single scalar value. The idea is that the aggregate value provides a summary the values within
-                            the window. In <em>max-pooling</em> this is the maximum of the values. For translations of the image smaller than the size of the window, this maximum value will often remain the same.</p>
-                        <p>Normally the tiles sit side-by-side in rows and columns, but they may also overlap. As for convolution, the arrangement is specified by an integer stride. Thus, the following arrangement for max-pooling is specified by a
-                            <span
-                                class="arithmatex">\(2 \times 2\)</span> window and a stride of 2.</p>
-                        <figure role="group">
-                            <img src="images/pooling.svg" alt="A 4x4 array of integers is reduced by max-pooling to a 2x2 array of integers by taking the maximum value in each 2x2 non-overlapping tile over the 4x4 input." />
-                            <figcaption>
-                                <p><strong>Figure 3.</strong> Illustrating max-pooling with a 2x2 window and stride of 2.</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>Note that a translation of the image by one pixel to the right or one pixel up keeps the maximum value from the upper-left tile as '7'. On the other hand, a translation of the image by one pixel to the left will replace the maximum
-                            value in the upper-left tile by '4'. In this case, the invariance of the max-pooling to one-pixel translations is only partial.</p>
-                        <p>The pooling layer normally reduces the size of the feature map. In the above case, the width and height are reduced by a factor of two.</p>
-                        <h2 id="a-cnn-for-image-classification">A CNN for image classification</h2>
-                        <p>We are now ready to use a CNN for image classification. The following diagram illustrates the architecture of a CNN with two convolutional layers by focusing on the size of the intermediate tensors. Each of the convolutional layers
-                            is followed by max-pooling. The output from the final max-pooling is <em>flattened</em>, meaning that all of the values in the 3D tensor are concatenated into a single vector. It doesn't matter the order in which this occurs,
-                            providing it is done consistently. A final fully-connected layer converts this vector into a vector of class confidence values, which is in turn mapped into class probabilities using softmax (see Linear classifier).</p>
-                        <figure role="group">
-                            <img src="images/simplecnn1.svg" alt="Simple CNN data flow." aria-describedby="fig-2-description" />
-                            <figcaption>
-                                <p><strong>Figure 4.</strong> The data flow of a CNN with two convolutional layers and a single fully connected layer leading to a probability distribution over ten classes. </p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-4-description">
-                                        <p>The data flow diagram shows three 64x64 colour channel images at the left, passing through a convolution layer into 4 64x64 feature maps, a max-pooling layer into 4 32x32 feature maps, another convolutional layer
-                                            into 8 32x32 feature maps, another max-pooling into 8 16x16 feature maps, flattening of the feature maps into a vector of size 2048, and finally a fully-connected layer into a vector of size 10, with softmax
-                                            at the end.</p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>A different representation of the same CNN architecture is shown below. This time we focus on the functions applied at each layer and give the tensor sizes on the connections.</p>
-                        <figure role="group">
-                            <img src="images/simplecnn2.svg" alt="Simple CNN as a data flow diagram." aria-describedby="fig-3-description" />
-                            <figcaption>
-                                <p><strong>Figure 5.</strong> Alternative data flow diagram for the CNN depicted in Figure 4.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-5-description">
-                                        <p>The data flow diagram gives more information on the individual steps. The two convolutions use 3x3 kernels, with a stride of 1 and zero padding.</p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>This CNN has many parameter values that must be estimated during optimisation on a training dataset. It is instructive to count the number of these parameters. We must include the convolutional kernels, bias values and weights
-                            in the fully connected linear layer. The number of such parameters are shown below:</p>
-                        <figure role="group">
-                            <img src="images/simplecnn3.svg" alt="Simple CNN with number of parameters." aria-describedby="fig-4-description" />
-                            <figcaption>
-                                <p><strong>Figure 6.</strong> The number of parameters associated with each step of the architecture shown in Figure 5.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-6-description">
-                                        <p>The first convolutional layer has 3 (in channels) x 4 (out channels) x 9 (weights per kernel) + 4 (bias values) = 112. The two max-pooling layers and flatten layer have no parameters. The second convolutional layer
-                                            has 4x8x9+8=296 parameters. The fully connected layer has 2048 (in) x 10 (out) + 10 bias values=20490. This gives 20898 parameters in total. </p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>Notice that the number of parameters associated with the two convolutional layers is much lower than for the fully-connected 'classifier' layer. Intuitively this seems reasonable. The convolutional layers are responding to common
-                            features of the objects depicted in the domain and there should be sharing of features between object classes. On the other hand, the final classifier layer has to deal with assembling the features for each object class independently.
-                            It also has to cope with the natural variation in the appearance of an object within the image (i.e. position, orientation, scale, deformation, within class variation).</p>
-                        <h2 id="training">Training</h2>
-                        <p>We train the network on a given dataset in the same way as for our multilayer networks, using gradient descent on minibatches with gradients computed via backpropagation.</p>
-                        <p>In PyTorch, this adds a new dimension in the first position of the input, giving a 4D tensor of size <span class="arithmatex">\((N,C,H,W)\)</span> where <span class="arithmatex">\(N\)</span> is the number of 2D inputs, <span class="arithmatex">\(C\)</span>                            is the number of channels, and <span class="arithmatex">\(H,W\)</span> are the number of rows and columns in each 2D input. The individual convolutional layers then progressively process the whole minibatch until the loss function
-                            can be computed at the end.</p>
-                        <p>In terms of our running example, the input and output tensors at each level would be as follows:</p>
-                        <figure role="group">
-                            <img src="images/simplecnn5.svg" alt="Network architecture with the tensor size at each stage. Each tensor has an extra dimension of size N on the front to accomodate a mini-batch of data. Thus for example, the input to the network has size Nx3x64x64"
-                            />
-                            <figcaption>
-                                <p><strong>Figure 7.</strong> Network architecture showing the tensor size at each stage.</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>Typically, we don't show the extra dimension when visualising a network since it is secondary to the conceptual operation on a single input at a time.</p>
-                        <p>During training we collect statistics on how the loss function and accuracy computed on the training and test data changes over each epoch (i.e. each iteration of gradient descent on the complete training dataset). In the following
-                            graph, we see how the loss and the accuracy statistics change in one such experiment on the CIFAR-10 dataset. Notice that the loss and accuracy continue improving with each epoch on the training data, yet performance levels-off
-                            prematurely on the test data. This is a sign that the network is <em>over-fitting</em> to the training data.</p>
-                        <figure role="group">
-                            <img src="images/overfitting.svg" alt="Over-fitting the training data." width="500px" />
-                            <figcaption>
-                                <p><strong>Figure 8.</strong> Training and test loss and accuracy over 50 epochs. Notice that the test accuracy levels out well below the training accuracy, and the test loss starts to increase as the training loss continues
-                                    to decrease. This is a sure sign of over-fitting to the training data.</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>In evaluation mode, we are simply interested in computing the outputs from individual inputs. For efficiency, it makes sense to group this computation into minibatches as would be done during training, but we don't need to build
-                            a computational graph since there is no need for gradients.</p>
-                        <h3 id="data-augmentation">Data augmentation</h3>
-                        <p>One way to avoid over-fitting is to the reduce the capacity of the model to do this by lowering the model complexity, thereby reducing the number of parameters.</p>
-                        <p>Another way is to increase the size of the training set. A major step in this direction can be achieved by <em>data augmentation</em> in which new input images are produced by:</p>
-                        <ul>
-                            <li>applying random transformations to the images in the training set.</li>
-                            <li>simulating changes in camera position and orientation by translating.</li>
-                            <li>rotating and scaling the image.</li>
-                            <li>scene lighting by scaling intensity values.</li>
-                            <li>intraclass variations in shape and appearance by applying small image deformations.</li>
+                          </li>
                         </ul>
-                        <p>The new images come pre-labelled with the label from the image from which each new image is obtained. A series of such transformations are shown below.</p>
-                        <figure role="group">
-                            <img src="images/augmentation1.svg" alt="An image from the dataset is transformed in four ways: flipped, translated, rotated and brightened." width="500px" />
-                            <figcaption>
-                                <p><strong>Figure 9.</strong> Four transformations of an image from the dataset. Each of the resulting images can be used to augment the dataset during training.</p>
-                            </figcaption>
-                        </figure>
+                      </nav>
+                    </li>
 
-                        <p>In the following generated images random transformations have been combined and applied to a single image. The component transformations are to rotate, translate, scale, flip and alter the saturation/hue/brightness of the original
-                            image.</p>
-                        <figure role="group">
-                            <img src="images/augmentation2.png" alt="An image is transformed 12 times with a composite of random elementary transformations." />
-                            <figcaption>
-                                <p><strong>Figure 10.</strong> Random compositions of elementary transformations applied to an image.</p>
-                            </figcaption>
-                        </figure>
+                    <li class="md-nav__item">
+                      <a href="Segmentation.html" class="md-nav__link">
+                        Image segmentation
+                      </a>
+                    </li>
 
-                        <h3 id="dropout">Dropout</h3>
-                        <p>A third way to avoid over-fitting is to apply a process known as <em>dropout</em>. The idea is to perturb training examples, not by transforming the input image, but by zeroing input values to a layer with some given probability
-                            <span class="arithmatex">\(p\)</span>. We are effectively removing features at a chosen layer in the CNN. Dropout is a form of regularisation that can reduce generalisation error and thereby improve performance on unseen data.</p>
-                        <h3 id="batch-normalisation">Batch normalisation</h3>
-                        <p>Training can often be improved by reducing the variability of the data using <em>batch normalisation</em>. Here we normalise the values in the input image, or in feature maps, by standardising over each batch of data. The normalisation
-                            of a value within a feature map is based on the mean and standard deviation of all values in the corresponding feature map across the whole batch. Thus, it is sometimes called <em>spatial</em> batch normalisation. Thus given
-                            an input of size <span class="arithmatex">\((N,C,H,W)\)</span> we normalise every value <span class="arithmatex">\(x\)</span> from channel <span class="arithmatex">\(c\)</span> as follows:</p>
-                        <div class="arithmatex">\[ x' = \frac{x-\mu_c}{\sigma_c} \]</div>
-                        <p>where the mean value for channel <span class="arithmatex">\(c\)</span> is given by
-                            <span class="arithmatex">\(\mu_c = \frac{1}{NHW} \sum_{n=1}^{n=N}\sum_{h=1}^{h=H}\sum_{w=1}^{w=W} x_{n,h,w}\)</span> where <span class="arithmatex">\(x_{n,h,w}\)</span> is the value in row and column <span class="arithmatex">\(h,w\)</span>                            of input <span class="arithmatex">\(n\)</span> in the minibatch.</p>
-                        <p>The standard deviation is computed in an analagous fashion.</p>
-                        <p>Note that batch normalisation is faciliated by the way in which layers work on a whole minibatch at once.</p>
-                        <p>In a final step, a channel dependent affine function is applied to <span class="arithmatex">\(x'\)</span> so that the final output of batch normalisation is given by:</p>
-                        <div class="arithmatex">\[ \alpha_c x' + \beta_c \]</div>
-                        <p>The values of these (<span class="arithmatex">\(2C\)</span>) parameters are typically included in the optimisation. Notice that if we chose <span class="arithmatex">\(\alpha_c = \sigma_c\)</span> and <span class="arithmatex">\(\beta_c = \mu_c\)</span>                            the normalisation step is undone and <span class="arithmatex">\(y=x\)</span> ! The idea is that the optimisation will find whatever are the best values, even if this means undoing the normalisation. In PyTorch, the parameters
-                            of the affine transformation are learnable by default.</p>
-                        <p>Finally, in evaluation mode when we are applying the CNN to a single input, there may be no minibatch of data to normalise over. In this case, we simply use a mean and standard deviation that has been carried over from the training
-                            data.</p>
-                        <h2 id="receptive-fields">Receptive fields</h2>
-                        <p>In a CNN, the value at each posiiton in a feature map derives from a region of values in the input image known as the <em>receptive field</em> for that feature map position. Typically the size of the receptive fields grows as we
-                            move through the layers of the CNN.</p>
-                        <p>Consider the following CNN:</p>
-                        <figure role="group">
-                            <img src="images/simplecnn4.svg" alt="CNN with receptive field sizes." aria-describedby="fig-7-description" />
-                            <figcaption>
-                                <p><strong>Figure 11.</strong> A simple CNN with the receptive field size at each stage.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-11-description">
-                                        <p>A CNN architecture consisting of convolution with a 3x3 kernel, followed by a convolution with a 4x4 kernel, followed by 2x2 max-pooling with a stride of 2. The corresponding receptive fields are 3x3 following the
-                                            first convolution, 6x6 following the second convolution and 7x7 following the max-pooling.</p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
+                    <li class="md-nav__item">
+                      <a href="../unit4/Introduction.html" class="md-nav__link">
+                        Sequential data
+                      </a>
+                    </li>
 
-                        <p>The <span class="arithmatex">\(3 \times 3\)</span> convolution in the first layer produces a receptive field of size <span class="arithmatex">\(3 \times 3\)</span>. The receptive field size following the second layer <span class="arithmatex">\(4 \times 4\)</span>                            convolution grows to <span class="arithmatex">\(6 \times 6\)</span>, meaning that each value in the resulting feature map is determined by the values in a <span class="arithmatex">\(6 \times 6\)</span> window in the input image.
-                            This can be seen from the following illustration showing the <span class="arithmatex">\(3 \times 3\)</span> receptive fields of four values along the diagonal of a <span class="arithmatex">\(4 \times 4\)</span> window that
-                            combine to give an output value from the second layer.</p>
-                        <figure role="group">
-                            <img src="images/receptivefield1.svg" alt="Four 3x3 windows offset by one along diagonal from one another. The result fits into a 6x6 window - the receptive field size" />
-                            <figcaption>
-                                <p><strong>Figure 12.</strong> Receptive field of 6x6 arising from convolution with a 3x3 kernel followed by convolution with a 4x4 kernel.</p>
-                            </figcaption>
-                        </figure>
+                    <li class="md-nav__item">
+                      <a href="../unit4/RNN.html" class="md-nav__link">
+                        Recurrent neural networks
+                      </a>
+                    </li>
 
-                        <p>These three receptive fields span a <span class="arithmatex">\(6 \times 6\)</span> window in the input image.</p>
-                        <p>The <span class="arithmatex">\(2 \times 2\)</span> maxpooling layer results in output values with a receptive field size of <span class="arithmatex">\(7 \times 7\)</span> as a direct result of there being two adjacent <span class="arithmatex">\(6 \times 6\)</span>                            receptive fields from the layer below in both rows and columns.</p>
-                        <figure role="group">
-                            <img src="images/receptivefield2.svg" alt="Two 6x6 windows offset by one along diagonal from one another. The result fits into a 7x7 window - the receptive field" />
-                            <figcaption>
-                                <p><strong>Figure 13.</strong> Receptive field of 7x7 arising from 2x2 max-pooling of values each having a receptive field of size 6x6.</p>
-                            </figcaption>
-                        </figure>
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit4/TextClassification.html"
+                        class="md-nav__link"
+                      >
+                        Text classification
+                      </a>
+                    </li>
 
-                        <h2 id="network-visualisation">Network visualisation</h2>
-                        <p>By examining the feature maps and kernels in a deep classifier, we can find out something about the function of these maps and thereby shed light on how the deep network is working.</p>
-                        <p>In this section, we will be examining the feature maps and kernels obtained from one of the earliest CNNs known as <em>Alexnet</em> [1], trained on 1000 object classes from ImageNet.</p>
-                        <h3 id="grad-cam">Grad-Cam</h3>
-                        <p>The <em>Grad-Cam</em> method is a way to find out which parts of an input image contribute most to selection of a given class label. Consider the image below:</p>
-                        <figure role="group">
-                            <img src="images/catdog.jpg" alt="Image of a German Shepherd dog and a Tabby cat" />
-                            <figcaption>
-                                <p><strong>Figure 14.</strong> Which parts of this image are most important for a classifier in detecting the German Shepherd dog, and the Tabby cat? </p>
-                            </figcaption>
-                        </figure>
+                    <li class="md-nav__item">
+                      <a href="../unit4/Transformers.html" class="md-nav__link">
+                        Transformers
+                      </a>
+                    </li>
 
-                        <p>For the classifier Alexnet trained on ImageNet, the Grad-Cam method produces the following result given the class 'Tabby cat':</p>
-                        <figure role="group">
-                            <img src="images/gradcam1.png" alt="Image of a German Shepherd and a Tabby cat with the Tabby cat highlighted" />
-                            <figcaption>
-                                <p><strong>Figure 15.</strong> For the output class 'Tabby cat' the Grad-Cam method highlights the head of the cat. </p>
-                            </figcaption>
-                        </figure>
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit5/RelationalData.html"
+                        class="md-nav__link"
+                      >
+                        Relational data
+                      </a>
+                    </li>
 
-                        <p>Given the class 'German Shepherd', Grad-Cam generates the following:</p>
-                        <figure role="group">
-                            <img src="images/gradcam2.png" alt="Image of a German Shepherd and a Tabby cat with the German Shepherd highlighted" />
-                            <figcaption>
-                                <p><strong>Figure 16.</strong> For the output class 'German Shepherd' the Grad-Cam method highlights the head of the dog. </p>
-                            </figcaption>
-                        </figure>
+                    <li class="md-nav__item">
+                      <a href="../unit5/GNN.html" class="md-nav__link">
+                        Graph neural networks
+                      </a>
+                    </li>
 
-                        <p>This is of course highly intuitive and helps to confirm that the network is doing something sensible.</p>
-                        <p>Grad-Cam works as follows. We run the network in evaluation mode on a test image and select the class label for a prominent object. We then backpropagate the gradient from the scalar confidence value for the target class
-                            <span
-                                class="arithmatex">\(y^c\)</span> to the feature maps (<em>activation</em> maps) output from the final convolutional layer. These gradients form a 3D tensor <span class="arithmatex">\(\frac{\partial y^c}{\partial \mymat{A}}\)</span> of size
-                                <span
-                                    class="arithmatex">\(C \times H \times W\)</span> and give an indication of the extent to which each spatial location contributes to variation of the output label confidence <span class="arithmatex">\(c\)</span>. We assume that each
-                                    <span
-                                        class="arithmatex">\(W \times H\)</span> 2D feature map <span class="arithmatex">\(\mymat{A}^k\)</span> making up <span class="arithmatex">\(\mymat{A}\)</span> is sensitive to the patterns of activation associated with one or more object
-                                        classes (e.g. Tabby cat). Furthermore, because of the translational invariance of the convolutional structure giving rise to the feature map, the location of an object instance within the image will be mirrored
-                                        in regions of high activation within the feature map and within the gradient map. For the chosen class confidence <span class="arithmatex">\(y^c\)</span>, we sum the gradients for each feature map to give an average
-                                        gradient for each feature map:</p>
-                        <div class="arithmatex">\[ \alpha_k^c = \frac{1}{Z} \sum_i \sum_j \frac{\partial y^c}{\partial \mymat{A}_{ij}^k} \]</div>
-                        <p>Intuitively, higher values of <span class="arithmatex">\(\alpha_k^c\)</span> are obtained for features maps that are most influential in deriving the confidence for the target class <span class="arithmatex">\(c\)</span>. Finally,
-                            we now compute a weighted sum of the feature maps and apply the ReLU activation function to suppress negative values:</p>
-                        <div class="arithmatex">\[ L_{\text{Grad-Cam}}^c = ReLU( \sum_k \alpha_k^c \mymat{A}_k ) \]</div>
-                        <h3 id="inspecting-the-kernels">Inspecting the kernels</h3>
-                        <p>We can also visualise the convolution kernels that are learnt during training. For Alexnet trained on ImageNet, the kernels in the first convolutional layer are <span class="arithmatex">\(11 \times 11\)</span>. This is large enough
-                            to provide a discernible pattern when viewed as an image. If we normalise the values of the learnt kernels in the trained Alexnet into the range <span class="arithmatex">\([0,1]\)</span> we obtain the following 64 kernels -
-                            one for each of the output feature maps. For visualisation purposes, the 3D kernels are rendered in colour, treating the depth dimension as RGB colour channels. Note that the kernels resemble the features that they respond
-                            most strongly to in the image. This is simply because the dot product computed by the vectorised kernel and image values at each location in convolution produces a measure of similarity between vectors when they are suitably
-                            normalised. As expected, the spatial patterns are reminiscent of the receptive fields discovered by Hubel and Wiesel. There are features in different orientations and with different colour contrasts.</p>
-                        <figure role="group">
-                            <img src="images/kernels.png" alt="64 11x11 RGB images depicting oriented and coloured bars, blobs and edges" width="600" />
-                            <figcaption>
-                                <p><strong>Figure 17.</strong> The 64 by 3 channel 11x11 kernels from the first convolutional layer of the pre-trained Alexnet, visualised by combining each set of three corresponding channels to form an RGB image. </p>
-                            </figcaption>
-                        </figure>
+                    <li class="md-nav__item">
+                      <a href="../unit6/GAN.html" class="md-nav__link">
+                        Generative adversarial networks
+                      </a>
+                    </li>
 
-                        <p>Note: the pre-trained version of Alexnet available via torchvision has 64 feature maps from the first convolutional layer. The original Alexnet had 96.</p>
-                        <p>Reference</p>
-                        <p>[1] <a href="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html">Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E Hinton. ‘ImageNet Classification with Deep Convolutional Neural Networks’. In Advances in Neural Information Processing Systems, Vol. 25. Curran Associates, Inc., 2012.</a>.</p>
-
-
-
-
-
-
-
-                    </article>
-                </div>
-            </div>
-        </main>
-
-
-        <footer class="md-footer">
-
-            <div class="md-footer-nav">
-                <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-
-                    <a href="Convolution.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-                        <div class="md-footer-nav__button md-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-                        </div>
-                        <div class="md-footer-nav__title">
-                            <div class="md-ellipsis">
-                                <span class="md-footer-nav__direction">
-                  Previous
-                </span> Convolution
-                            </div>
-                        </div>
-                    </a>
-
-
-                    <a href="Segmentation.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-                        <div class="md-footer-nav__title">
-                            <div class="md-ellipsis">
-                                <span class="md-footer-nav__direction">
-                  Next
-                </span> Image segmentation
-                            </div>
-                        </div>
-                        <div class="md-footer-nav__button md-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-                        </div>
-                    </a>
-
+                    <li class="md-nav__item">
+                      <a href="../unit6/Cyclegan.html" class="md-nav__link">
+                        Image-to-image translation
+                      </a>
+                    </li>
+                  </ul>
                 </nav>
+              </div>
             </div>
+          </div>
 
-            <div class="md-footer-meta md-typeset">
-                <div class="md-footer-meta__inner md-grid">
-                    <div class="md-footer-copyright">
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav
+                  class="md-nav md-nav--secondary"
+                  aria-label="Table of contents"
+                >
+                  <label class="md-nav__title" for="__toc">
+                    <span class="md-nav__icon md-icon"></span>
+                    Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix>
+                    <li class="md-nav__item">
+                      <a href="#pooling" class="md-nav__link"> Pooling </a>
+                    </li>
 
-                        <div class="md-footer-copyright__highlight">
-                            Copyright © University of Leeds
-                        </div>
+                    <li class="md-nav__item">
+                      <a
+                        href="#a-cnn-for-image-classification"
+                        class="md-nav__link"
+                      >
+                        A CNN for image classification
+                      </a>
+                    </li>
 
-                        Made with
-                        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+                    <li class="md-nav__item">
+                      <a href="#training" class="md-nav__link"> Training </a>
+
+                      <nav class="md-nav" aria-label="Training">
+                        <ul class="md-nav__list">
+                          <li class="md-nav__item">
+                            <a href="#data-augmentation" class="md-nav__link">
+                              Data augmentation
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a href="#dropout" class="md-nav__link">
+                              Dropout
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a href="#batch-normalisation" class="md-nav__link">
+                              Batch normalisation
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="#receptive-fields" class="md-nav__link">
+                        Receptive fields
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="#network-visualisation" class="md-nav__link">
+                        Network visualisation
+                      </a>
+
+                      <nav class="md-nav" aria-label="Network visualisation">
+                        <ul class="md-nav__list">
+                          <li class="md-nav__item">
+                            <a href="#grad-cam" class="md-nav__link">
+                              Grad-Cam
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#inspecting-the-kernels"
+                              class="md-nav__link"
+                            >
+                              Inspecting the kernels
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              <h1 id="convolutional-neural-networks">
+                Convolutional neural networks
+              </h1>
+              <p>
+                A convolutional neural network applied to images is organised as
+                a series of layers. Each layer uses convolution to produce a set
+                of feature maps using a different kernel for each feature map.
+                The feature maps from one layer are passed as input to the next
+                layer. The first layer receives the image as input. By analogy
+                with fully-connected layers, a single bias value is added to
+                every value in each feature map. This bias value will normally
+                be different for each feature map.
+              </p>
+              <p>
+                For RGB images there are three colour channels on input. To deal
+                with this, a separate convolution is applied to each channel,
+                normally with different
+                <span class="arithmatex">\(m \times m\)</span> kernels. The
+                results are then added pixelwise to produce a single 2D output.
+                Finally, we add a single scalar bias value and the result is an
+                output feature map.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/cnn1.svg"
+                  alt="For a colour image, red, green and blue channels are shown separately, with a kernel window at the same position in each. The three values from the convolutions at this kernel position are shown contributing to a single value in the output feature map."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 1.</strong> A separate convolution applied to
+                    each colour channel contributes to the values in the output
+                    feature map.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                An alternative way of looking at this is that we are performing
+                a single 3D convolution with a
+                <span class="arithmatex">\(3 \times m \times m\)</span> kernel
+                on the full 3D (RGB) input tensor. This 3D kernel is simply a
+                concatenation of the three 2D kernels along the first dimension.
+                In this operation, the kernel is applied at every spatial
+                location, spanning all three channels. We don't scan the kernel
+                in the first dimension because it has only one position in this
+                dimension that keeps it within the 3D input tensor. In general,
+                the output from a 3D convolution would be 3D, but in this case
+                it is only one layer deep and can therefore be considered to be
+                a 2D array - the result we require.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/cnn2.svg"
+                  alt="schematic of 3D kernel scanning over a 3D input tensor"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 2.</strong> The convolutional layer applied
+                    to an RGB image can be viewed as a single convolution with
+                    3D kernel applied to the 3D image tensor.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                Conceptually, we can think of the convolution as looking for
+                image features that involve all three colour channels. Thus, for
+                example we might find a detector that is sensitive to vertical
+                edges, separating red and green regions of the image.
+              </p>
+              <p>
+                The whole process can be repeated as many times as we wish using
+                different 3D kernels and generating different feature maps on
+                output. Note that we normally use a different bias value for
+                each feature map.
+              </p>
+              <p>
+                In summary, we take a 3D tensor as input with three colour
+                channels and output an 3D tensor as output, with
+                <span class="arithmatex">\(K\)</span> feature map channels. For
+                convenience we refer to the number of channels as the
+                <em>depth</em> of the tensor, as opposed to its spatial
+                dimensions of width and height.
+              </p>
+              <p>
+                For subsequent layers of the CNN, we simply apply the same
+                process, except that the input to a layer may contain any number
+                of channels (<span class="arithmatex"
+                  >\(K \times h \times w\)</span
+                >), which are either the feature maps from the previous layer or
+                the three colour channels of the input image. In general, the
+                kernel will be
+                <span class="arithmatex">\(K \times m \times m\)</span> in size.
+                As for a regular multi-layer network, the layers are separated
+                by a non-linearity to accentuate the strong responses. You can
+                think of the layers of the CNN as forming spatial features from
+                the prominent features detected in the previous layer. As we
+                move up the layers, the features become more and more complex,
+                starting out with simple features of the image and ending up
+                with features that might correspond to parts of an object, or
+                indeed a whole object.
+              </p>
+              <p>
+                In convolution, each output value comes from the weighted sum of
+                values in a window onto the input image. The weights remain the
+                same for every output position. This is in contrast to a
+                fully-connected linear layer where each output value comes from
+                a unique weighted sum of all (flattened) input values.
+              </p>
+              <h2 id="pooling">Pooling</h2>
+              <p>
+                A so-called <em>pooling</em> layer is used in CNNs to reduce the
+                spatial size of the feature maps and give some invariance to
+                small spatial transformations of the input image, which might
+                arise from small translations or deformations. The idea is to
+                tile the feature map with a fixed sized window and then to
+                aggregate the values in the window at each position into a
+                single scalar value. The idea is that the aggregate value
+                provides a summary the values within the window. In
+                <em>max-pooling</em> this is the maximum of the values. For
+                translations of the image smaller than the size of the window,
+                this maximum value will often remain the same.
+              </p>
+              <p>
+                Normally the tiles sit side-by-side in rows and columns, but
+                they may also overlap. As for convolution, the arrangement is
+                specified by an integer stride. Thus, the following arrangement
+                for max-pooling is specified by a
+                <span class="arithmatex">\(2 \times 2\)</span> window and a
+                stride of 2.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/pooling.svg"
+                  alt="A 4x4 array of integers is reduced by max-pooling to a 2x2 array of integers by taking the maximum value in each 2x2 non-overlapping tile over the 4x4 input."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 3.</strong> Illustrating max-pooling with a
+                    2x2 window and stride of 2.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                Note that a translation of the image by one pixel to the right
+                or one pixel up keeps the maximum value from the upper-left tile
+                as '7'. On the other hand, a translation of the image by one
+                pixel to the left will replace the maximum value in the
+                upper-left tile by '4'. In this case, the invariance of the
+                max-pooling to one-pixel translations is only partial.
+              </p>
+              <p>
+                The pooling layer normally reduces the size of the feature map.
+                In the above case, the width and height are reduced by a factor
+                of two.
+              </p>
+              <h2 id="a-cnn-for-image-classification">
+                A CNN for image classification
+              </h2>
+              <p>
+                We are now ready to use a CNN for image classification. The
+                following diagram illustrates the architecture of a CNN with two
+                convolutional layers by focusing on the size of the intermediate
+                tensors. Each of the convolutional layers is followed by
+                max-pooling. The output from the final max-pooling is
+                <em>flattened</em>, meaning that all of the values in the 3D
+                tensor are concatenated into a single vector. It doesn't matter
+                the order in which this occurs, providing it is done
+                consistently. A final fully-connected layer converts this vector
+                into a vector of class confidence values, which is in turn
+                mapped into class probabilities using softmax (see Linear
+                classifier).
+              </p>
+              <figure role="group">
+                <img
+                  src="images/simplecnn1.svg"
+                  alt="Simple CNN data flow."
+                  aria-describedby="fig-2-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 4.</strong> The data flow of a CNN with two
+                    convolutional layers and a single fully connected layer
+                    leading to a probability distribution over ten classes.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-4-description">
+                      <p>
+                        The data flow diagram shows three 64x64 colour channel
+                        images at the left, passing through a convolution layer
+                        into 4 64x64 feature maps, a max-pooling layer into 4
+                        32x32 feature maps, another convolutional layer into 8
+                        32x32 feature maps, another max-pooling into 8 16x16
+                        feature maps, flattening of the feature maps into a
+                        vector of size 2048, and finally a fully-connected layer
+                        into a vector of size 10, with softmax at the end.
+                      </p>
                     </div>
+                  </div>
+                </figcaption>
+              </figure>
 
+              <p>
+                A different representation of the same CNN architecture is shown
+                below. This time we focus on the functions applied at each layer
+                and give the tensor sizes on the connections.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/simplecnn2.svg"
+                  alt="Simple CNN as a data flow diagram."
+                  aria-describedby="fig-3-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 5.</strong> Alternative data flow diagram for
+                    the CNN depicted in Figure 4.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-5-description">
+                      <p>
+                        The data flow diagram gives more information on the
+                        individual steps. The two convolutions use 3x3 kernels,
+                        with a stride of 1 and zero padding.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                This CNN has many parameter values that must be estimated during
+                optimisation on a training dataset. It is instructive to count
+                the number of these parameters. We must include the
+                convolutional kernels, bias values and weights in the fully
+                connected linear layer. The number of such parameters are shown
+                below:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/simplecnn3.svg"
+                  alt="Simple CNN with number of parameters."
+                  aria-describedby="fig-4-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 6.</strong> The number of parameters
+                    associated with each step of the architecture shown in
+                    Figure 5.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-6-description">
+                      <p>
+                        The first convolutional layer has 3 (in channels) x 4
+                        (out channels) x 9 (weights per kernel) + 4 (bias
+                        values) = 112. The two max-pooling layers and flatten
+                        layer have no parameters. The second convolutional layer
+                        has 4x8x9+8=296 parameters. The fully connected layer
+                        has 2048 (in) x 10 (out) + 10 bias values=20490. This
+                        gives 20898 parameters in total.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                Notice that the number of parameters associated with the two
+                convolutional layers is much lower than for the fully-connected
+                'classifier' layer. Intuitively this seems reasonable. The
+                convolutional layers are responding to common features of the
+                objects depicted in the domain and there should be sharing of
+                features between object classes. On the other hand, the final
+                classifier layer has to deal with assembling the features for
+                each object class independently. It also has to cope with the
+                natural variation in the appearance of an object within the
+                image (i.e. position, orientation, scale, deformation, within
+                class variation).
+              </p>
+              <h2 id="training">Training</h2>
+              <p>
+                We train the network on a given dataset in the same way as for
+                our multilayer networks, using gradient descent on minibatches
+                with gradients computed via backpropagation.
+              </p>
+              <p>
+                In PyTorch, this adds a new dimension in the first position of
+                the input, giving a 4D tensor of size
+                <span class="arithmatex">\((N,C,H,W)\)</span> where
+                <span class="arithmatex">\(N\)</span> is the number of 2D
+                inputs, <span class="arithmatex">\(C\)</span> is the number of
+                channels, and <span class="arithmatex">\(H,W\)</span> are the
+                number of rows and columns in each 2D input. The individual
+                convolutional layers then progressively process the whole
+                minibatch until the loss function can be computed at the end.
+              </p>
+              <p>
+                In terms of our running example, the input and output tensors at
+                each level would be as follows:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/simplecnn5.svg"
+                  alt="Network architecture with the tensor size at each stage. Each tensor has an extra dimension of size N on the front to accomodate a mini-batch of data. Thus for example, the input to the network has size Nx3x64x64"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 7.</strong> Network architecture showing the
+                    tensor size at each stage.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                Typically, we don't show the extra dimension when visualising a
+                network since it is secondary to the conceptual operation on a
+                single input at a time.
+              </p>
+              <p>
+                During training we collect statistics on how the loss function
+                and accuracy computed on the training and test data changes over
+                each epoch (i.e. each iteration of gradient descent on the
+                complete training dataset). In the following graph, we see how
+                the loss and the accuracy statistics change in one such
+                experiment on the CIFAR-10 dataset. Notice that the loss and
+                accuracy continue improving with each epoch on the training
+                data, yet performance levels-off prematurely on the test data.
+                This is a sign that the network is <em>over-fitting</em> to the
+                training data.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/overfitting.svg"
+                  alt="Over-fitting the training data."
+                  width="500px"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 8.</strong> Training and test loss and
+                    accuracy over 50 epochs. Notice that the test accuracy
+                    levels out well below the training accuracy, and the test
+                    loss starts to increase as the training loss continues to
+                    decrease. This is a sure sign of over-fitting to the
+                    training data.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                In evaluation mode, we are simply interested in computing the
+                outputs from individual inputs. For efficiency, it makes sense
+                to group this computation into minibatches as would be done
+                during training, but we don't need to build a computational
+                graph since there is no need for gradients.
+              </p>
+              <h3 id="data-augmentation">Data augmentation</h3>
+              <p>
+                One way to avoid over-fitting is to the reduce the capacity of
+                the model to do this by lowering the model complexity, thereby
+                reducing the number of parameters.
+              </p>
+              <p>
+                Another way is to increase the size of the training set. A major
+                step in this direction can be achieved by
+                <em>data augmentation</em> in which new input images are
+                produced by:
+              </p>
+              <ul>
+                <li>
+                  applying random transformations to the images in the training
+                  set.
+                </li>
+                <li>
+                  simulating changes in camera position and orientation by
+                  translating.
+                </li>
+                <li>rotating and scaling the image.</li>
+                <li>scene lighting by scaling intensity values.</li>
+                <li>
+                  intraclass variations in shape and appearance by applying
+                  small image deformations.
+                </li>
+              </ul>
+              <p>
+                The new images come pre-labelled with the label from the image
+                from which each new image is obtained. A series of such
+                transformations are shown below.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/augmentation1.svg"
+                  alt="An image from the dataset is transformed in four ways: flipped, translated, rotated and brightened."
+                  width="500px"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 9.</strong> Four transformations of an image
+                    from the dataset. Each of the resulting images can be used
+                    to augment the dataset during training.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                In the following generated images random transformations have
+                been combined and applied to a single image. The component
+                transformations are to rotate, translate, scale, flip and alter
+                the saturation/hue/brightness of the original image.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/augmentation2.png"
+                  alt="An image is transformed 12 times with a composite of random elementary transformations."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 10.</strong> Random compositions of
+                    elementary transformations applied to an image.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <h3 id="dropout">Dropout</h3>
+              <p>
+                A third way to avoid over-fitting is to apply a process known as
+                <em>dropout</em>. The idea is to perturb training examples, not
+                by transforming the input image, but by zeroing input values to
+                a layer with some given probability
+                <span class="arithmatex">\(p\)</span>. We are effectively
+                removing features at a chosen layer in the CNN. Dropout is a
+                form of regularisation that can reduce generalisation error and
+                thereby improve performance on unseen data.
+              </p>
+              <h3 id="batch-normalisation">Batch normalisation</h3>
+              <p>
+                Training can often be improved by reducing the variability of
+                the data using <em>batch normalisation</em>. Here we normalise
+                the values in the input image, or in feature maps, by
+                standardising over each batch of data. The normalisation of a
+                value within a feature map is based on the mean and standard
+                deviation of all values in the corresponding feature map across
+                the whole batch. Thus, it is sometimes called
+                <em>spatial</em> batch normalisation. Thus given an input of
+                size <span class="arithmatex">\((N,C,H,W)\)</span> we normalise
+                every value <span class="arithmatex">\(x\)</span> from channel
+                <span class="arithmatex">\(c\)</span> as follows:
+              </p>
+              <div class="arithmatex">\[ x' = \frac{x-\mu_c}{\sigma_c} \]</div>
+              <p>
+                where the mean value for channel
+                <span class="arithmatex">\(c\)</span> is given by
+                <span class="arithmatex"
+                  >\(\mu_c = \frac{1}{NHW}
+                  \sum_{n=1}^{n=N}\sum_{h=1}^{h=H}\sum_{w=1}^{w=W}
+                  x_{n,h,w}\)</span
+                >
+                where <span class="arithmatex">\(x_{n,h,w}\)</span> is the value
+                in row and column <span class="arithmatex">\(h,w\)</span> of
+                input <span class="arithmatex">\(n\)</span> in the minibatch.
+              </p>
+              <p>The standard deviation is computed in an analagous fashion.</p>
+              <p>
+                Note that batch normalisation is faciliated by the way in which
+                layers work on a whole minibatch at once.
+              </p>
+              <p>
+                In a final step, a channel dependent affine function is applied
+                to <span class="arithmatex">\(x'\)</span> so that the final
+                output of batch normalisation is given by:
+              </p>
+              <div class="arithmatex">\[ \alpha_c x' + \beta_c \]</div>
+              <p>
+                The values of these (<span class="arithmatex">\(2C\)</span>)
+                parameters are typically included in the optimisation. Notice
+                that if we chose
+                <span class="arithmatex">\(\alpha_c = \sigma_c\)</span> and
+                <span class="arithmatex">\(\beta_c = \mu_c\)</span> the
+                normalisation step is undone and
+                <span class="arithmatex">\(y=x\)</span> ! The idea is that the
+                optimisation will find whatever are the best values, even if
+                this means undoing the normalisation. In PyTorch, the parameters
+                of the affine transformation are learnable by default.
+              </p>
+              <p>
+                Finally, in evaluation mode when we are applying the CNN to a
+                single input, there may be no minibatch of data to normalise
+                over. In this case, we simply use a mean and standard deviation
+                that has been carried over from the training data.
+              </p>
+              <h2 id="receptive-fields">Receptive fields</h2>
+              <p>
+                In a CNN, the value at each posiiton in a feature map derives
+                from a region of values in the input image known as the
+                <em>receptive field</em> for that feature map position.
+                Typically the size of the receptive fields grows as we move
+                through the layers of the CNN.
+              </p>
+              <p>Consider the following CNN:</p>
+              <figure role="group">
+                <img
+                  src="images/simplecnn4.svg"
+                  alt="CNN with receptive field sizes."
+                  aria-describedby="fig-7-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 11.</strong> A simple CNN with the receptive
+                    field size at each stage.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-11-description">
+                      <p>
+                        A CNN architecture consisting of convolution with a 3x3
+                        kernel, followed by a convolution with a 4x4 kernel,
+                        followed by 2x2 max-pooling with a stride of 2. The
+                        corresponding receptive fields are 3x3 following the
+                        first convolution, 6x6 following the second convolution
+                        and 7x7 following the max-pooling.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                The <span class="arithmatex">\(3 \times 3\)</span> convolution
+                in the first layer produces a receptive field of size
+                <span class="arithmatex">\(3 \times 3\)</span>. The receptive
+                field size following the second layer
+                <span class="arithmatex">\(4 \times 4\)</span> convolution grows
+                to <span class="arithmatex">\(6 \times 6\)</span>, meaning that
+                each value in the resulting feature map is determined by the
+                values in a
+                <span class="arithmatex">\(6 \times 6\)</span> window in the
+                input image. This can be seen from the following illustration
+                showing the
+                <span class="arithmatex">\(3 \times 3\)</span> receptive fields
+                of four values along the diagonal of a
+                <span class="arithmatex">\(4 \times 4\)</span> window that
+                combine to give an output value from the second layer.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/receptivefield1.svg"
+                  alt="Four 3x3 windows offset by one along diagonal from one another. The result fits into a 6x6 window - the receptive field size"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 12.</strong> Receptive field of 6x6 arising
+                    from convolution with a 3x3 kernel followed by convolution
+                    with a 4x4 kernel.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                These three receptive fields span a
+                <span class="arithmatex">\(6 \times 6\)</span> window in the
+                input image.
+              </p>
+              <p>
+                The <span class="arithmatex">\(2 \times 2\)</span> maxpooling
+                layer results in output values with a receptive field size of
+                <span class="arithmatex">\(7 \times 7\)</span> as a direct
+                result of there being two adjacent
+                <span class="arithmatex">\(6 \times 6\)</span> receptive fields
+                from the layer below in both rows and columns.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/receptivefield2.svg"
+                  alt="Two 6x6 windows offset by one along diagonal from one another. The result fits into a 7x7 window - the receptive field"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 13.</strong> Receptive field of 7x7 arising
+                    from 2x2 max-pooling of values each having a receptive field
+                    of size 6x6.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <h2 id="network-visualisation">Network visualisation</h2>
+              <p>
+                By examining the feature maps and kernels in a deep classifier,
+                we can find out something about the function of these maps and
+                thereby shed light on how the deep network is working.
+              </p>
+              <p>
+                In this section, we will be examining the feature maps and
+                kernels obtained from one of the earliest CNNs known as
+                <em>Alexnet</em> [1], trained on 1000 object classes from
+                ImageNet.
+              </p>
+              <h3 id="grad-cam">Grad-Cam</h3>
+              <p>
+                The <em>Grad-Cam</em> method is a way to find out which parts of
+                an input image contribute most to selection of a given class
+                label. Consider the image below:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/catdog.jpg"
+                  alt="Image of a German Shepherd dog and a Tabby cat"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 14.</strong> Which parts of this image are
+                    most important for a classifier in detecting the German
+                    Shepherd dog, and the Tabby cat?
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                For the classifier Alexnet trained on ImageNet, the Grad-Cam
+                method produces the following result given the class 'Tabby
+                cat':
+              </p>
+              <figure role="group">
+                <img
+                  src="images/gradcam1.png"
+                  alt="Image of a German Shepherd and a Tabby cat with the Tabby cat highlighted"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 15.</strong> For the output class 'Tabby cat'
+                    the Grad-Cam method highlights the head of the cat.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                Given the class 'German Shepherd', Grad-Cam generates the
+                following:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/gradcam2.png"
+                  alt="Image of a German Shepherd and a Tabby cat with the German Shepherd highlighted"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 16.</strong> For the output class 'German
+                    Shepherd' the Grad-Cam method highlights the head of the
+                    dog.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                This is of course highly intuitive and helps to confirm that the
+                network is doing something sensible.
+              </p>
+              <p>
+                Grad-Cam works as follows. We run the network in evaluation mode
+                on a test image and select the class label for a prominent
+                object. We then backpropagate the gradient from the scalar
+                confidence value for the target class
+                <span class="arithmatex">\(y^c\)</span> to the feature maps (<em
+                  >activation</em
+                >
+                maps) output from the final convolutional layer. These gradients
+                form a 3D tensor
+                <span class="arithmatex"
+                  >\(\frac{\partial y^c}{\partial \mymat{A}}\)</span
+                >
+                of size
+                <span class="arithmatex">\(C \times H \times W\)</span> and give
+                an indication of the extent to which each spatial location
+                contributes to variation of the output label confidence
+                <span class="arithmatex">\(c\)</span>. We assume that each
+                <span class="arithmatex">\(W \times H\)</span> 2D feature map
+                <span class="arithmatex">\(\mymat{A}^k\)</span> making up
+                <span class="arithmatex">\(\mymat{A}\)</span> is sensitive to
+                the patterns of activation associated with one or more object
+                classes (e.g. Tabby cat). Furthermore, because of the
+                translational invariance of the convolutional structure giving
+                rise to the feature map, the location of an object instance
+                within the image will be mirrored in regions of high activation
+                within the feature map and within the gradient map. For the
+                chosen class confidence <span class="arithmatex">\(y^c\)</span>,
+                we sum the gradients for each feature map to give an average
+                gradient for each feature map:
+              </p>
+              <div class="arithmatex">
+                \[ \alpha_k^c = \frac{1}{Z} \sum_i \sum_j \frac{\partial
+                y^c}{\partial \mymat{A}_{ij}^k} \]
+              </div>
+              <p>
+                Intuitively, higher values of
+                <span class="arithmatex">\(\alpha_k^c\)</span> are obtained for
+                features maps that are most influential in deriving the
+                confidence for the target class
+                <span class="arithmatex">\(c\)</span>. Finally, we now compute a
+                weighted sum of the feature maps and apply the ReLU activation
+                function to suppress negative values:
+              </p>
+              <div class="arithmatex">
+                \[ L_{\text{Grad-Cam}}^c = ReLU( \sum_k \alpha_k^c \mymat{A}_k )
+                \]
+              </div>
+              <h3 id="inspecting-the-kernels">Inspecting the kernels</h3>
+              <p>
+                We can also visualise the convolution kernels that are learnt
+                during training. For Alexnet trained on ImageNet, the kernels in
+                the first convolutional layer are
+                <span class="arithmatex">\(11 \times 11\)</span>. This is large
+                enough to provide a discernible pattern when viewed as an image.
+                If we normalise the values of the learnt kernels in the trained
+                Alexnet into the range
+                <span class="arithmatex">\([0,1]\)</span> we obtain the
+                following 64 kernels - one for each of the output feature maps.
+                For visualisation purposes, the 3D kernels are rendered in
+                colour, treating the depth dimension as RGB colour channels.
+                Note that the kernels resemble the features that they respond
+                most strongly to in the image. This is simply because the dot
+                product computed by the vectorised kernel and image values at
+                each location in convolution produces a measure of similarity
+                between vectors when they are suitably normalised. As expected,
+                the spatial patterns are reminiscent of the receptive fields
+                discovered by Hubel and Wiesel. There are features in different
+                orientations and with different colour contrasts.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/kernels.png"
+                  alt="64 11x11 RGB images depicting oriented and coloured bars, blobs and edges"
+                  width="600"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 17.</strong> The 64 by 3 channel 11x11
+                    kernels from the first convolutional layer of the
+                    pre-trained Alexnet, visualised by combining each set of
+                    three corresponding channels to form an RGB image.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                Note: the pre-trained version of Alexnet available via
+                torchvision has 64 feature maps from the first convolutional
+                layer. The original Alexnet had 96.
+              </p>
+              <p>Reference</p>
+              <p>
+                [1]
+                <a
+                  href="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"
+                  >Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E Hinton.
+                  ‘ImageNet Classification with Deep Convolutional Neural
+                  Networks’. In Advances in Neural Information Processing
+                  Systems, Vol. 25. Curran Associates, Inc., 2012.</a
+                >.
+              </p>
+            </article>
+          </div>
+        </div>
+      </main>
+
+      <footer class="md-footer">
+        <div class="md-footer-nav">
+          <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+            <a
+              href="Convolution.html"
+              class="md-footer-nav__link md-footer-nav__link--prev"
+              rel="prev"
+            >
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"
+                  />
+                </svg>
+              </div>
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction"> Previous </span>
+                  Convolution
                 </div>
-            </div>
-        </footer>
+              </div>
+            </a>
 
+            <a
+              href="Segmentation.html"
+              class="md-footer-nav__link md-footer-nav__link--next"
+              rel="next"
+            >
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction"> Next </span> Image
+                  segmentation
+                </div>
+              </div>
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"
+                  />
+                </svg>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+        <div class="md-footer-meta md-typeset">
+          <div class="md-footer-meta__inner md-grid">
+            <div class="md-footer-copyright">
+              <div class="md-footer-copyright__highlight">
+                Copyright © University of Leeds
+              </div>
+
+              Made with
+              <a
+                href="https://squidfunk.github.io/mkdocs-material/"
+                target="_blank"
+                rel="noopener"
+              >
+                Material for MkDocs
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
     <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script>
     <script id="__lang" type="application/json">
-        {
-            "clipboard.copy": "Copy to clipboard",
-            "clipboard.copied": "Copied to clipboard",
-            "search.config.lang": "en",
-            "search.config.pipeline": "trimmer, stopWordFilter",
-            "search.config.separator": "[\\s\\-]+",
-            "search.placeholder": "Search",
-            "search.result.placeholder": "Type to start searching",
-            "search.result.none": "No matching documents",
-            "search.result.one": "1 matching document",
-            "search.result.other": "# matching documents",
-            "search.result.more.one": "1 more on this page",
-            "search.result.more.other": "# more on this page",
-            "search.result.term.missing": "Missing"
-        }
+      {
+        "clipboard.copy": "Copy to clipboard",
+        "clipboard.copied": "Copied to clipboard",
+        "search.config.lang": "en",
+        "search.config.pipeline": "trimmer, stopWordFilter",
+        "search.config.separator": "[\\s\\-]+",
+        "search.placeholder": "Search",
+        "search.result.placeholder": "Type to start searching",
+        "search.result.none": "No matching documents",
+        "search.result.one": "1 matching document",
+        "search.result.other": "# matching documents",
+        "search.result.more.one": "1 more on this page",
+        "search.result.more.other": "# more on this page",
+        "search.result.term.missing": "Missing"
+      }
     </script>
 
     <script>
-        app = initialize({
-            base: "../..",
-            features: ['navigation.sections'],
-            search: Object.assign({
-                worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
-            }, typeof search !== "undefined" && search)
-        })
+      app = initialize({
+        base: "../..",
+        features: ["navigation.sections"],
+        search: Object.assign(
+          {
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js",
+          },
+          typeof search !== "undefined" && search
+        ),
+      });
     </script>
 
     <script src="../../javascript/tablecontentsoverride.js"></script>
@@ -1007,8 +1408,5 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-</body>
-
+  </body>
 </html>

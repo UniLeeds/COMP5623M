@@ -1,908 +1,1205 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-
-
-
-    <link rel="shortcut icon" href="../../img/favicon.jpg">
-    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
-
-
+    <link rel="shortcut icon" href="../../img/favicon.jpg" />
+    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4" />
 
     <title>Multilayer networks - Artificial Intelligence</title>
 
+    <link
+      rel="stylesheet"
+      href="../../assets/stylesheets/main.15aa0b43.min.css"
+    />
 
+    <link
+      rel="stylesheet"
+      href="../../assets/stylesheets/palette.75751829.min.css"
+    />
 
-    <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
-
-
-    <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
-
-
-
-
-
-
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback"
+    />
     <style>
-        body,
-        input {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
-        }
+      body,
+      input {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica,
+          Arial, sans-serif;
+      }
 
-        code,
-        kbd,
-        pre {
-            font-family: "", SFMono-Regular, Consolas, Menlo, monospace
-        }
+      code,
+      kbd,
+      pre {
+        font-family: "", SFMono-Regular, Consolas, Menlo, monospace;
+      }
     </style>
 
+    <link rel="stylesheet" href="../../css/extra.css" />
+  </head>
 
-
-
-    <link rel="stylesheet" href="../../css/extra.css">
-
-
-
-
-
-</head>
-
-
-
-
-
-
-
-<body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-
-
-
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+  <body
+    dir="ltr"
+    data-md-color-scheme=""
+    data-md-color-primary="none"
+    data-md-color-accent="none"
+  >
+    <input
+      class="md-toggle"
+      data-md-toggle="drawer"
+      type="checkbox"
+      id="__drawer"
+      autocomplete="off"
+    />
+    <input
+      class="md-toggle"
+      data-md-toggle="search"
+      type="checkbox"
+      id="__search"
+      autocomplete="off"
+    />
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-
-
-        <a href="#multilayer-networks" class="md-skip">
-          Skip to content
-        </a>
-
+      <a href="#multilayer-networks" class="md-skip"> Skip to content </a>
     </div>
     <div data-md-component="announce">
-
-        <aside class="md-announce">
-            <div class="md-announce__inner md-grid md-typeset">
-
-                <div id="versionIndicator"> <b>Version:</b>27.10.21.a </div>
-                <img id="customlogo" src="../../img/logo.svg" alt="University of Leeds logo.">
-
-            </div>
-        </aside>
-
+      <aside class="md-announce">
+        <div class="md-announce__inner md-grid md-typeset">
+          <div id="versionIndicator"><b>Version:</b>27.10.21.a</div>
+          <img
+            id="customlogo"
+            src="../../img/logo.svg"
+            alt="University of Leeds logo."
+          />
+        </div>
+      </aside>
     </div>
 
-
-
-
-
     <header class="md-header" data-md-component="header">
-        <nav class="md-header-nav md-grid" aria-label="Header">
-            <a href="../../index.html" title="Artificial Intelligence" class="md-header-nav__button md-logo" aria-label="Artificial Intelligence">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-            <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-            <div class="md-header-nav__title" data-md-component="header-title">
-                <div class="md-header-nav__ellipsis">
-                    <div class="md-header-nav__topic">
-                        <span class="md-ellipsis">
-            Artificial Intelligence
-          </span>
-                    </div>
-                    <div class="md-header-nav__topic">
-                        <span class="md-ellipsis">
-            
-              Multilayer networks
-            
-          </span>
-                    </div>
-                </div>
+      <nav class="md-header-nav md-grid" aria-label="Header">
+        <a
+          href="../../index.html"
+          title="Artificial Intelligence"
+          class="md-header-nav__button md-logo"
+          aria-label="Artificial Intelligence"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"
+            />
+          </svg>
+        </a>
+        <label class="md-header-nav__button md-icon" for="__drawer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" />
+          </svg>
+        </label>
+        <div class="md-header-nav__title" data-md-component="header-title">
+          <div class="md-header-nav__ellipsis">
+            <div class="md-header-nav__topic">
+              <span class="md-ellipsis"> Artificial Intelligence </span>
             </div>
-
-            <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-
-            <div class="md-search" data-md-component="search" role="dialog">
-                <label class="md-search__overlay" for="__search"></label>
-                <div class="md-search__inner" role="search">
-                    <form class="md-search__form" name="search">
-                        <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
-                        <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-                        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-                    </form>
-                    <div class="md-search__output">
-                        <div class="md-search__scrollwrap" data-md-scrollfix>
-                            <div class="md-search-result" data-md-component="search-result">
-                                <div class="md-search-result__meta">
-                                    Initializing search
-                                </div>
-                                <ol class="md-search-result__list"></ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="md-header-nav__topic">
+              <span class="md-ellipsis"> Multilayer networks </span>
             </div>
+          </div>
+        </div>
 
+        <label class="md-header-nav__button md-icon" for="__search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"
+            />
+          </svg>
+        </label>
 
-        </nav>
+        <div class="md-search" data-md-component="search" role="dialog">
+          <label class="md-search__overlay" for="__search"></label>
+          <div class="md-search__inner" role="search">
+            <form class="md-search__form" name="search">
+              <input
+                type="text"
+                class="md-search__input"
+                name="query"
+                aria-label="Search"
+                placeholder="Search"
+                autocapitalize="off"
+                autocorrect="off"
+                autocomplete="off"
+                spellcheck="false"
+                data-md-component="search-query"
+                data-md-state="active"
+                required
+              />
+              <label class="md-search__icon md-icon" for="__search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"
+                  />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"
+                  />
+                </svg>
+              </label>
+              <button
+                type="reset"
+                class="md-search__icon md-icon"
+                aria-label="Clear"
+                data-md-component="search-reset"
+                tabindex="-1"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+                  />
+                </svg>
+              </button>
+            </form>
+            <div class="md-search__output">
+              <div class="md-search__scrollwrap" data-md-scrollfix>
+                <div class="md-search-result" data-md-component="search-result">
+                  <div class="md-search-result__meta">Initializing search</div>
+                  <ol class="md-search-result__list"></ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <div class="md-container" data-md-component="container">
-
-
-
-
-        <main class="md-main" data-md-component="main">
-            <div class="md-main__inner md-grid">
-
-
-
-                <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                    <div class="md-sidebar__scrollwrap">
-                        <div class="md-sidebar__inner">
-
-
-
-
-
-
-
-                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-                                <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-    Artificial Intelligence
-  </label>
-
-                                <ul class="md-nav__list" data-md-scrollfix>
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../../index.html" class="md-nav__link">
-      Introduction
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit1/Optimisation.html" class="md-nav__link">
-      Optimisation
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="LinearClassifier.html" class="md-nav__link">
-      Linear classifier
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="Performance.html" class="md-nav__link">
-      Measuring classifier performance
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item md-nav__item--active">
-
-                                        <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-
-
-
-
-                                        <label class="md-nav__link md-nav__link--active" for="__toc">
-        Multilayer networks
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-
-                                        <a href="MultiLayerNetworks.html" class="md-nav__link md-nav__link--active">
-      Multilayer networks
-    </a>
-
-
-                                        <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
-
-
-
-
-                                            <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-                                            <ul class="md-nav__list" data-md-scrollfix>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-
-                                                    <nav class="md-nav" aria-label="Introduction">
-                                                        <ul class="md-nav__list">
-
-                                                            <li class="md-nav__item">
-                                                                <a href="#the-logistic-function" class="md-nav__link">
-    The logistic function
-  </a>
-
-                                                            </li>
-
-                                                            <li class="md-nav__item">
-                                                                <a href="#the-hyperbolic-tangent-tanh-function" class="md-nav__link">
-    The hyperbolic tangent (tanh) function
-  </a>
-
-                                                            </li>
-
-                                                            <li class="md-nav__item">
-                                                                <a href="#the-rectified-linear-unit-relu-function" class="md-nav__link">
-    The Rectified Linear Unit (ReLU) function
-  </a>
-
-                                                            </li>
-
-                                                        </ul>
-                                                    </nav>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#terminology" class="md-nav__link">
-    Terminology
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#training-and-testing" class="md-nav__link">
-    Training and testing
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#maximum-likelihood-loss-function" class="md-nav__link">
-    Maximum likelihood loss function
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#stochastic-gradient-descent-sdg" class="md-nav__link">
-    Stochastic gradient descent (SDG)
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#applying-multilayer-networks-to-mnist" class="md-nav__link">
-    Applying multilayer networks to MNIST
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#momentum-in-gradient-descent" class="md-nav__link">
-    Momentum in gradient descent
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-
-                                                </li>
-
-                                            </ul>
-
-                                        </nav>
-
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit3/Convolution.html" class="md-nav__link">
-      Convolution
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit3/CNN.html" class="md-nav__link">
-      Convolutional neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit3/Segmentation.html" class="md-nav__link">
-      Image segmentation
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/Introduction.html" class="md-nav__link">
-      Sequential data
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/RNN.html" class="md-nav__link">
-      Recurrent neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/TextClassification.html" class="md-nav__link">
-      Text classification
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/Transformers.html" class="md-nav__link">
-      Transformers
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit5/RelationalData.html" class="md-nav__link">
-      Relational data
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit5/GNN.html" class="md-nav__link">
-      Graph neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit6/GAN.html" class="md-nav__link">
-      Generative adversarial networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit6/Cyclegan.html" class="md-nav__link">
-      Image-to-image translation
-    </a>
-                                    </li>
-
-
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                    <div class="md-sidebar__scrollwrap">
-                        <div class="md-sidebar__inner">
-
-                            <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
-
-
-
-
-                                <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-                                <ul class="md-nav__list" data-md-scrollfix>
-
-                                    <li class="md-nav__item">
-                                        <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-
-                                        <nav class="md-nav" aria-label="Introduction">
-                                            <ul class="md-nav__list">
-
-                                                <li class="md-nav__item">
-                                                    <a href="#the-logistic-function" class="md-nav__link">
-    The logistic function
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#the-hyperbolic-tangent-tanh-function" class="md-nav__link">
-    The hyperbolic tangent (tanh) function
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#the-rectified-linear-unit-relu-function" class="md-nav__link">
-    The Rectified Linear Unit (ReLU) function
-  </a>
-
-                                                </li>
-
-                                            </ul>
-                                        </nav>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#terminology" class="md-nav__link">
-    Terminology
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#training-and-testing" class="md-nav__link">
-    Training and testing
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#maximum-likelihood-loss-function" class="md-nav__link">
-    Maximum likelihood loss function
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#stochastic-gradient-descent-sdg" class="md-nav__link">
-    Stochastic gradient descent (SDG)
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#applying-multilayer-networks-to-mnist" class="md-nav__link">
-    Applying multilayer networks to MNIST
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#momentum-in-gradient-descent" class="md-nav__link">
-    Momentum in gradient descent
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-
-                                    </li>
-
-                                </ul>
-
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="md-content">
-                    <article class="md-content__inner md-typeset">
-
-
-
-                        <h1 id="multilayer-networks">Multilayer networks</h1>
-                        <h2 id="introduction">Introduction</h2>
-                        <p>Our multiclass classifier computes a set of confidence values using <em>affine</em> equations of the form <span class="arithmatex">\(z_c = {\myvec{w}_c}\cdot\myvec{x} + b_c\)</span>.</p>
-                        <p>We can express this as a single affine matrix equation generating a column vector of outputs (confidence values) <span class="arithmatex">\(\myvec{z} = [z_1 \cdots z_K]^T\)</span> as follows:</p>
-                        <div class="arithmatex">\[ \myvec{z} = \mymat{W} \myvec{x} + \myvec{b} \]</div>
-                        <p>where <span class="arithmatex">\(\myvec{b} = [b_1 \cdots b_K]^T\)</span> and the rows of <span class="arithmatex">\(W\)</span> are the weight vectors <span class="arithmatex">\(\myvec{w}_c\)</span>.</p>
-                        <p>We generate a probability distribution from <span class="arithmatex">\(\myvec{z}\)</span> using softmax.</p>
-                        <p>Consider the following two-class classification task for 2-D feature vectors:</p>
-                        <figure role="group">
-                            <img src="images/xor.svg" alt="Four clusters that are not linearly separable." />
-                            <figcaption>
-                                <p><strong>Figure 1.</strong> Examples from two classes (red and blue) are grouped into four clusters. The examples from the two classes are not linearly separable. </p>
-                            </figcaption>
-                        </figure>
-
-                        <p>We can't configure a linear classification to do this because there is no line that separates the two classes. Of course, it is easy to see how we might resolve this problem by simply treating the individual clusters as separate
-                            classes and then adding additional machinery to select from these in making the classification we require. It turns out we can do this by feeding the output from the affine function into a second affine function.</p>
-                        <p>We might be tempted to do the following:</p>
-                        <div class="arithmatex">\[ \myvec{z}_1 = f_1(\myvec{x}) = \mymat{W}_1 \myvec{x}+\myvec{b}_1 \]</div>
-                        <div class="arithmatex">\[ \myvec{z}_2 = f_2(\myvec{z}_1) = \mymat{W}_2 \myvec{z}_1+\myvec{b}_2 \]</div>
-                        <p>But this reduces to:</p>
-                        <div class="arithmatex">\[ \myvec{z}_2 = \mymat{W}_2( \mymat{W}_1 \myvec{x} +\myvec{b}_1)+ \myvec{b}_2 = \mymat{W}_1 \mymat{W}_2 \myvec{x}+ \mymat{W}_2 \myvec{b}_1 + \myvec{b}_2\]</div>
-                        <p>which is again a simple affine function of the form:</p>
-                        <div class="arithmatex">\[ \myvec{z}_2 = \mymat{W}_3 \myvec{x}+\myvec{b}_3 \]</div>
-                        <p>where <span class="arithmatex">\(\mymat{W}_3 = \mymat{W}_2 \mymat{W}_1\)</span> and <span class="arithmatex">\(\myvec{b}_3 = \mymat{W}_2 \myvec{b}_1+ \myvec{b}_2\)</span></p>
-                        <p>Instead, we introduce a non-linear function between the two affine functions in order to accentuate the highest values from <span class="arithmatex">\(f_1\)</span>. In the neural network literature, this non-linearity is known
-                            as an <em>activation</em> function. We will see that adding yet more layers often improves performance further. Each layer is separated by an activation function. Three of the most common activation functions are introduced
-                            below.</p>
-                        <h3 id="the-logistic-function">The logistic function</h3>
-                        <p>The <em>logistic</em> function drives outputs towards one for positive inputs and towards zero for negative inputs.</p>
-                        <figure role="group">
-                            <div class="arithmatex">
-                                $$ f(x)=\frac{1}{1+e^{-x}} $$
-                            </div>
-                            <img src="images/logistic.svg" alt="Graph of the logistic function." />
-                            <figcaption>
-                                <p><strong>Figure 2.</strong> Graph of the logistic function. </p>
-                            </figcaption>
-                        </figure>
-
-                        <p>We use this to emphasise high confidence values, driving low values towards zero.</p>
-                        <p>The logistic function is often referred to as the <em>sigmoid</em> function because of the 'S' shape.</p>
-                        <h3 id="the-hyperbolic-tangent-tanh-function">The hyperbolic tangent (tanh) function</h3>
-                        <p>The <em>hyperbolic tangent</em> function, or <em>tanh</em> for short, squashes the input into the interval <span class="arithmatex">\((-1, 1)\)</span>, driving positive inputs towards 1 and negative inputs towards -1.</p>
-                        <figure role="group">
-                            <div class="arithmatex">
-                                $$ \tanh(x) = \frac{(e^{2x} - 1)}{(e^{2x} + 1)} \in [-1,1] $$
-                            </div>
-                            <img src="images/tanh.svg" alt="Graph of the hyperbolic tangent function." />
-                            <figcaption>
-                                <p><strong>Figure 3.</strong> Graph of the hyperbolic tangent function.</p>
-                            </figcaption>
-                        </figure>
-
-                        <h3 id="the-rectified-linear-unit-relu-function">The Rectified Linear Unit (ReLU) function</h3>
-                        <p>The <em>rectified linear unit</em> function, or <em>ReLU</em> for short, simply passes through positive inputs unchanged and outputs zero for negative inputs:</p>
-                        <figure role="group">
-                            <div class="arithmatex">
-                                $$ \func{ReLU}(x)=\max(0,x) $$
-                            </div>
-                            <img src="images/relu.svg" alt="Graph of the Rectified Linear Unit function." />
-                            <figcaption>
-                                <p><strong>Figure 4.</strong> Graph of the Rectified Linear Unit function.</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>We'll see uses for all three activation functions during the module.</p>
-                        <h2 id="terminology">Terminology</h2>
-                        <p>The kind of multilayer network introduced above is normally referred to as a <em>Multilayer Perceptron (MLP)</em>. The affine layers are referred to as <em>Linear</em> layers in PyTorch and Tensorflow, and <em>Dense</em> layers
-                            in Keras. They are also often referred to as <em>fully-connected layers</em> because every scalar value in the output from the layer is a function of every scalar value in the input to the layer. We will abbreviate fully-connected
-                            layer to <em>fcl</em> in network diagrams.</p>
-                        <h2 id="training-and-testing">Training and testing</h2>
-                        <p>For a chosen dataset and classifier architecture, we divide the dataset into two parts: the first part for training and the second part for testing. We define a measure of performance which we call the <em>loss function</em>. The
-                            idea is to find values for the weights and bias values of the classifier that minimise the loss function computed on the training data. We then apply the resulting classifier to the test data to obtain a final measure of performance.
-                            It is important not to use the test data in any way during training.</p>
-                        <p>Unfortunately, using this procedure, we won’t know how well we’ve generalised from the training data until it's too late and we have what may be a poor test result. In particular, the classifier may have <em>over-fitted</em> the
-                            training data in the sense that it produces a low loss (on the training data) but doesn’t generalise well to new data. The usual way around this is to further split the training data into two. The first part (confusingly also
-                            referred to as the training data) is used to minimise the loss function, and the second part (validation set) is used to check that the training has produced a good generalisation from the training data. We can explore a range
-                            of hyper-parameters (meta-parameters) and architectures to see what works best. After multiple rounds of training and evaluation on the validation set, the network is applied to the test data to produce a final measure of performance.</p>
-                        <p>For the multiclass, multidimensional classifier introduced above, we must estimate the optimal values for the parameters associated with each of the <span class="arithmatex">\(K\)</span> hyperplanes: <span class="arithmatex">\(\{(\myvec{w}_c , b_c) \}_{1 \leq c \leq K}\)</span>                            in each layer.</p>
-                        <h2 id="maximum-likelihood-loss-function">Maximum likelihood loss function</h2>
-                        <p>We focus on classifiers for which the output is a probability distribution over class labels.</p>
-                        <figure role="group">
-                            <img src="images/DL_IMG042.png" alt="Classifier pipeline." />
-                            <figcaption>
-                                <p><strong>Figure 5.</strong> Classifier pipeline from an image to a probability distribution over the possible classes. The classifier is configured with a set of values for its parameters (weights and bias values). </p>
-                            </figcaption>
-                        </figure>
-
-                        <p>For an input <span class="arithmatex">\(\myvec{x} \in \R^n\)</span> let the probability from our classifier for a given class label <span class="arithmatex">\(y \in \{1,\dots ,K \}\)</span> and model parameters <span class="arithmatex">\(\boldsymbol{\theta}\)</span>                            be <span class="arithmatex">\(p(y|\myvec{x};\boldsymbol{\theta})\)</span>. Thus, <span class="arithmatex">\(p(.|\myvec{x};\boldsymbol{\theta})\)</span> is a categorical probability distribution (i.e. a multinomial distribution
-                            with one draw).</p>
-                        <p>Given training data <span class="arithmatex">\(\{\myvec{x}^{(1)}, \myvec{x}^{(2)}, \dots,\myvec{x}^{(m)}\}, \{y^{(1)},y^{(2)},\dots,y^{(m)}\}\)</span> containing <span class="arithmatex">\(m\)</span> labelled examples, the joint
-                            probability of these outputs given these inputs is:</p>
-                        <div class="arithmatex">\[ \prod_{i=1}^m p(y^{(i)}|\myvec{x}^{(i)};\boldsymbol{\theta})\]</div>
-                        <p>We think of this as a function of <span class="arithmatex">\(\boldsymbol\theta\)</span> since the training data is fixed, and we are interested in maximising the joint probability over <span class="arithmatex">\(\boldsymbol\theta\)</span>.
-                            Thus, we refer to this as a <em>likelihood</em> function since it can't be considered to be a probability density function, which would have to have unit area.</p>
-                        <p>In training the classifier, we need to maximise the likelihood function to find the <em>maximum likelihood</em> solution, denoted by <span class="arithmatex">\(\boldsymbol\theta_{ML}\)</span>.</p>
-                        <div class="arithmatex">\[ \boldsymbol\theta_{ML} = \underset {\boldsymbol\theta} {\arg\max} \prod_{i=1}^m p(y^{(i)}|\myvec{x}^{(i)};\boldsymbol{\theta})\]</div>
-                        <p>Before doing this, we avoid the product by taking the log of the likelihood, which enables us to rewrite the product as a sum (as in <span class="arithmatex">\(log(ab)=log(a)+log(b)\)</span>).</p>
-                        <div class="arithmatex">\[ \boldsymbol\theta_{ML} = \underset {\boldsymbol\theta} {\arg\max} \log \bigg (\prod_{i=1}^m p(y^{(i)}|\myvec{x}^{(i)};\boldsymbol{\theta})\bigg ) \]</div>
-                        <div class="arithmatex">\[ = \underset {\boldsymbol\theta} {\arg\max} \sum_{i=1}^m \log(p(y^{(i)}|\myvec{x}^{(i)};\boldsymbol{\theta})\]</div>
-                        <p>Note that the <span class="arithmatex">\(\log\)</span> function is monotonically increasing (i.e. <span class="arithmatex">\(x \ge y \implies \log(x) \ge \log(y)\)</span>).</p>
-                        <figure role="group">
-                            <img src="images/log.svg" alt="The log function is monotonically increasing." />
-                            <figcaption>
-                                <p><strong>Figure 6.</strong> Graph of the (natural) log function. </p>
-                            </figcaption>
-                        </figure>
-
-                        <p>Consequently, taking the log of the joint likelihood doesn't change the optimal value <span class="arithmatex">\(\boldsymbol\theta_{ML}\)</span> that we seek.</p>
-                        <p>We finish by negating the log likelihood to turn the maximisation into a minimisation:</p>
-                        <div class="arithmatex">\[ \boldsymbol\theta_{ML} = \underset {\boldsymbol\theta} {\arg\min} -\sum_{i=1}^m \log(p(y^{(i)}|\myvec{x}^{(i)};\boldsymbol{\theta}))\]</div>
-                        <p>The term we are minimising in this final equation is known as the <em>negative log likelihood</em> loss function or NLL for short. It is equivalent to the so-called <em>cross entropy</em> loss function.</p>
-                        <p class="note"><strong>Note:</strong> in PyTorch, NLL takes log probability as input, whereas cross-entropy loss takes raw confidence values.</p>
-                        <h2 id="stochastic-gradient-descent-sdg">Stochastic gradient descent (SDG)</h2>
-                        <p>To find the maximum likelihood solution <span class="arithmatex">\(\boldsymbol\theta_{ML}\)</span>, we use gradient descent on the loss function. Instead of doing this with a loss computed from all of the training data, we break
-                            the training dataset down into fixed sized chunks (<em>minibatches</em>) and perform gradient descent sequentially over each one in turn, each time starting with the previous estimate. The size of minibatches depends on the
-                            size of the problem and is often determined by the amount of data that will fit into a GPU.</p>
-                        <p>Due to the small size of minibatches, there is some stochasticity (randomness) in the gradient descent (hence the name). This can help in generalisation.</p>
-                        <p>After all examples from the training dataset have been used once, this marks the end of an <em>epoch</em>. The same procedure continues until a fixed number of epochs is reached or until the loss is no longer decreasing.</p>
-                        <p>The input to the gradient descent is therefore a whole minibatch of data that is propagated jointly through the classifier to deliver a combined loss at the end. To build the computational graph required for backpropagation, we
-                            could iterate through the data elements in the minibatch one by one in order to compute the loss function on the set of outputs; remember that the loss function is computed on the outputs from the whole minibatch of data. It
-                            is more efficient however to perform the layerwise computations together, computing the first layer on the whole minibatch before moving on to the second layer and so on. To do this, we concatenate the minibatch into a single
-                            tensor.</p>
-                        <h2 id="applying-multilayer-networks-to-mnist">Applying multilayer networks to MNIST</h2>
-                        <p>In this section, we build classifiers for the MNIST dataset. We will compare classifiers with one and two fully connected layers. The architectures of the two classifiers are illustrated as follows:</p>
-                        <figure role="group">
-                            <img src="images/linear_classifiers_MNIST.svg" alt="Single-layer and two-layer classifiers for MNIST." aria-describedby="fig-7-description" />
-                            <figcaption>
-                                <p><strong>Figure 7.</strong> Classifiers with one full connected layer (left) and two fully connected layers (right). </p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-7-description">
-                                        <p>The 1-layer pipeline on the left starts with an MNIST 28x28 grey-level (i.e. one channel) input image. This is flattened into a vector of size 784, passed through a fully-connected layer to a vector of size 10,
-                                            and then through softmax to output a probability distribution of size 10. The 2-layer pipeline is similar, except that the first fully-connected layer outputs a vector of size 300, which passes through a sigmoid
-                                            function before passing through a second fully-connected layer to a vector of size 10, and finally the softmax function.</p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>The size of the tensor at each stage is shown in red. Note that we are showing the tensor sizes for a single input passing through the network rather than a minibatch of inputs. In PyTorch, the actual input size will be <span class="arithmatex">\(N \times 1 \times 28 \times 28\)</span>,
-                            where <span class="arithmatex">\(N\)</span> is the number of samples in the minibatch.</p>
-                        <p>The following graph shows the reduction in the loss over 200 epochs of stochastic gradient descent on the two classifiers. The classification accuracies are 92.6% and 97.8% respectively. As expected, the accuracy increases with
-                            the move from one to two layers.</p>
-                        <figure role="group">
-                            <img src="images/training_loss_MNIST.svg" alt="Graph of the loss over 200 epochs of SGD." aria-describedby="fig-8-description" />
-                            <figcaption>
-                                <p><strong>Figure 8.</strong> Graph of the loss over 200 epochs of SGD for a 1-layer network (red) and 2-layer network (green).</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-8-description">
-                                        <p>A graph plotting the mean loss on the training data after each epoch for the 1-layer and 2-layer networks shown in Figure 7. The 1-layer network starts out with lower loss but immediately levels out. It is rapidly
-                                            overtaken by the 2-layer network, for which the loss continues to decrease over 200 epochs.</p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <h2 id="momentum-in-gradient-descent">Momentum in gradient descent</h2>
-                        <p>Gradient descent updates <span class="arithmatex">\(\boldsymbol\theta\)</span> according to the gradient of the loss at its current value:</p>
-                        <div class="arithmatex">\[ \boldsymbol\theta ' = \boldsymbol\theta - \epsilon \nabla_{\boldsymbol\theta} f(\boldsymbol\theta) \]</div>
-                        <p>Several variations of gradient descent are motivated by thinking of <span class="arithmatex">\(\boldsymbol\theta\)</span> as having momentum. Thus, the movement of <span class="arithmatex">\(\boldsymbol\theta\)</span> through the
-                            parameter space is interpreted as a body in motion, with velocity <span class="arithmatex">\(\myvec{v}\)</span>. On each iteration it slows down a bit and gets nudged in the direction of the negative gradient (the direction
-                            of fastest decrease in <span class="arithmatex">\(f(\boldsymbol\theta)\)</span> ).</p>
-                        <div class="arithmatex">\[ \myvec{v}' = \alpha \myvec{v} - \epsilon \nabla_{\boldsymbol\theta} f(\boldsymbol\theta) \quad \alpha \in[0,1) \]</div>
-                        <p>The update to <span class="arithmatex">\(\boldsymbol\theta\)</span> on each iteration is now:</p>
-                        <div class="arithmatex">\[ \boldsymbol\theta' = \boldsymbol\theta + \myvec{v}' \]</div>
-                        <p>Nestorov momentum is a slight variation on this. The gradient is evaluated after the current velocity is applied, thus:</p>
-                        <div class="arithmatex">\[ \myvec{v}' = \alpha \myvec{v} - \epsilon \nabla_{\boldsymbol\theta} f(\boldsymbol\theta + \alpha \myvec{v}) \quad \alpha \in[0,1) \]</div>
-                        <div class="admonition abstract">
-                            <p class="admonition-title">Reading</p>
-                            <p>To set the scene for what is to come in the module, and to look at the wider implications of deep learning and AI in general, read the 2019 paper by Eric Topol on the application of AI to medicine [1]. Topol is a clinician
-                                and has an interesting vision for the future of medicine in the light of progress in AI.</p>
-                        </div>
-                        <h2 id="reference">Reference</h2>
-                        <p>[1] <a href="https://doi.org/10.1038/s41591-018-0300-7"><em>Topol, E.J. High-performance medicine: the convergence of human and artificial intelligence. Nat Med 25, 44–56 (2019).</em></a></p>
-
-
-
-
-
-
-
-                    </article>
-                </div>
-            </div>
-        </main>
-
-
-        <footer class="md-footer">
-
-            <div class="md-footer-nav">
-                <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-
-                    <a href="Performance.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-                        <div class="md-footer-nav__button md-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-                        </div>
-                        <div class="md-footer-nav__title">
-                            <div class="md-ellipsis">
-                                <span class="md-footer-nav__direction">
-                  Previous
-                </span> Measuring classifier performance
-                            </div>
-                        </div>
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          <div
+            class="md-sidebar md-sidebar--primary"
+            data-md-component="navigation"
+          >
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav
+                  class="md-nav md-nav--primary"
+                  aria-label="Navigation"
+                  data-md-level="0"
+                >
+                  <label class="md-nav__title" for="__drawer">
+                    <a
+                      href="../../index.html"
+                      title="Artificial Intelligence"
+                      class="md-nav__button md-logo"
+                      aria-label="Artificial Intelligence"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"
+                        />
+                      </svg>
                     </a>
+                    Artificial Intelligence
+                  </label>
 
+                  <ul class="md-nav__list" data-md-scrollfix>
+                    <li class="md-nav__item">
+                      <a href="../../index.html" class="md-nav__link">
+                        Introduction
+                      </a>
+                    </li>
 
-                    <a href="../unit3/Convolution.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-                        <div class="md-footer-nav__title">
-                            <div class="md-ellipsis">
-                                <span class="md-footer-nav__direction">
-                  Next
-                </span> Convolution
-                            </div>
-                        </div>
-                        <div class="md-footer-nav__button md-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-                        </div>
-                    </a>
+                    <li class="md-nav__item">
+                      <a href="../unit1/Optimisation.html" class="md-nav__link">
+                        Optimisation
+                      </a>
+                    </li>
 
+                    <li class="md-nav__item">
+                      <a href="LinearClassifier.html" class="md-nav__link">
+                        Linear classifier
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="Performance.html" class="md-nav__link">
+                        Measuring classifier performance
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item md-nav__item--active">
+                      <input
+                        class="md-nav__toggle md-toggle"
+                        data-md-toggle="toc"
+                        type="checkbox"
+                        id="__toc"
+                      />
+
+                      <label
+                        class="md-nav__link md-nav__link--active"
+                        for="__toc"
+                      >
+                        Multilayer networks
+                        <span class="md-nav__icon md-icon"></span>
+                      </label>
+
+                      <a
+                        href="MultiLayerNetworks.html"
+                        class="md-nav__link md-nav__link--active"
+                      >
+                        Multilayer networks
+                      </a>
+
+                      <nav
+                        class="md-nav md-nav--secondary"
+                        aria-label="Table of contents"
+                      >
+                        <label class="md-nav__title" for="__toc">
+                          <span class="md-nav__icon md-icon"></span>
+                          Table of contents
+                        </label>
+                        <ul class="md-nav__list" data-md-scrollfix>
+                          <li class="md-nav__item">
+                            <a href="#introduction" class="md-nav__link">
+                              Introduction
+                            </a>
+
+                            <nav class="md-nav" aria-label="Introduction">
+                              <ul class="md-nav__list">
+                                <li class="md-nav__item">
+                                  <a
+                                    href="#the-logistic-function"
+                                    class="md-nav__link"
+                                  >
+                                    The logistic function
+                                  </a>
+                                </li>
+
+                                <li class="md-nav__item">
+                                  <a
+                                    href="#the-hyperbolic-tangent-tanh-function"
+                                    class="md-nav__link"
+                                  >
+                                    The hyperbolic tangent (tanh) function
+                                  </a>
+                                </li>
+
+                                <li class="md-nav__item">
+                                  <a
+                                    href="#the-rectified-linear-unit-relu-function"
+                                    class="md-nav__link"
+                                  >
+                                    The Rectified Linear Unit (ReLU) function
+                                  </a>
+                                </li>
+                              </ul>
+                            </nav>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a href="#terminology" class="md-nav__link">
+                              Terminology
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#training-and-testing"
+                              class="md-nav__link"
+                            >
+                              Training and testing
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#maximum-likelihood-loss-function"
+                              class="md-nav__link"
+                            >
+                              Maximum likelihood loss function
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#stochastic-gradient-descent-sdg"
+                              class="md-nav__link"
+                            >
+                              Stochastic gradient descent (SDG)
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#applying-multilayer-networks-to-mnist"
+                              class="md-nav__link"
+                            >
+                              Applying multilayer networks to MNIST
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#momentum-in-gradient-descent"
+                              class="md-nav__link"
+                            >
+                              Momentum in gradient descent
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a href="#reference" class="md-nav__link">
+                              Reference
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit3/Convolution.html" class="md-nav__link">
+                        Convolution
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit3/CNN.html" class="md-nav__link">
+                        Convolutional neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit3/Segmentation.html" class="md-nav__link">
+                        Image segmentation
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/Introduction.html" class="md-nav__link">
+                        Sequential data
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/RNN.html" class="md-nav__link">
+                        Recurrent neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit4/TextClassification.html"
+                        class="md-nav__link"
+                      >
+                        Text classification
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/Transformers.html" class="md-nav__link">
+                        Transformers
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit5/RelationalData.html"
+                        class="md-nav__link"
+                      >
+                        Relational data
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit5/GNN.html" class="md-nav__link">
+                        Graph neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit6/GAN.html" class="md-nav__link">
+                        Generative adversarial networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit6/Cyclegan.html" class="md-nav__link">
+                        Image-to-image translation
+                      </a>
+                    </li>
+                  </ul>
                 </nav>
+              </div>
             </div>
+          </div>
 
-            <div class="md-footer-meta md-typeset">
-                <div class="md-footer-meta__inner md-grid">
-                    <div class="md-footer-copyright">
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav
+                  class="md-nav md-nav--secondary"
+                  aria-label="Table of contents"
+                >
+                  <label class="md-nav__title" for="__toc">
+                    <span class="md-nav__icon md-icon"></span>
+                    Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix>
+                    <li class="md-nav__item">
+                      <a href="#introduction" class="md-nav__link">
+                        Introduction
+                      </a>
 
-                        <div class="md-footer-copyright__highlight">
-                            Copyright © University of Leeds
-                        </div>
+                      <nav class="md-nav" aria-label="Introduction">
+                        <ul class="md-nav__list">
+                          <li class="md-nav__item">
+                            <a
+                              href="#the-logistic-function"
+                              class="md-nav__link"
+                            >
+                              The logistic function
+                            </a>
+                          </li>
 
-                        Made with
-                        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-                    </div>
+                          <li class="md-nav__item">
+                            <a
+                              href="#the-hyperbolic-tangent-tanh-function"
+                              class="md-nav__link"
+                            >
+                              The hyperbolic tangent (tanh) function
+                            </a>
+                          </li>
 
+                          <li class="md-nav__item">
+                            <a
+                              href="#the-rectified-linear-unit-relu-function"
+                              class="md-nav__link"
+                            >
+                              The Rectified Linear Unit (ReLU) function
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="#terminology" class="md-nav__link">
+                        Terminology
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="#training-and-testing" class="md-nav__link">
+                        Training and testing
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="#maximum-likelihood-loss-function"
+                        class="md-nav__link"
+                      >
+                        Maximum likelihood loss function
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="#stochastic-gradient-descent-sdg"
+                        class="md-nav__link"
+                      >
+                        Stochastic gradient descent (SDG)
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="#applying-multilayer-networks-to-mnist"
+                        class="md-nav__link"
+                      >
+                        Applying multilayer networks to MNIST
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="#momentum-in-gradient-descent"
+                        class="md-nav__link"
+                      >
+                        Momentum in gradient descent
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="#reference" class="md-nav__link"> Reference </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              <h1 id="multilayer-networks">Multilayer networks</h1>
+              <h2 id="introduction">Introduction</h2>
+              <p>
+                Our multiclass classifier computes a set of confidence values
+                using <em>affine</em> equations of the form
+                <span class="arithmatex"
+                  >\(z_c = {\myvec{w}_c}\cdot\myvec{x} + b_c\)</span
+                >.
+              </p>
+              <p>
+                We can express this as a single affine matrix equation
+                generating a column vector of outputs (confidence values)
+                <span class="arithmatex"
+                  >\(\myvec{z} = [z_1 \cdots z_K]^T\)</span
+                >
+                as follows:
+              </p>
+              <div class="arithmatex">
+                \[ \myvec{z} = \mymat{W} \myvec{x} + \myvec{b} \]
+              </div>
+              <p>
+                where
+                <span class="arithmatex"
+                  >\(\myvec{b} = [b_1 \cdots b_K]^T\)</span
+                >
+                and the rows of <span class="arithmatex">\(W\)</span> are the
+                weight vectors <span class="arithmatex">\(\myvec{w}_c\)</span>.
+              </p>
+              <p>
+                We generate a probability distribution from
+                <span class="arithmatex">\(\myvec{z}\)</span> using softmax.
+              </p>
+              <p>
+                Consider the following two-class classification task for 2-D
+                feature vectors:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/xor.svg"
+                  alt="Four clusters that are not linearly separable."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 1.</strong> Examples from two classes (red
+                    and blue) are grouped into four clusters. The examples from
+                    the two classes are not linearly separable.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                We can't configure a linear classification to do this because
+                there is no line that separates the two classes. Of course, it
+                is easy to see how we might resolve this problem by simply
+                treating the individual clusters as separate classes and then
+                adding additional machinery to select from these in making the
+                classification we require. It turns out we can do this by
+                feeding the output from the affine function into a second affine
+                function.
+              </p>
+              <p>We might be tempted to do the following:</p>
+              <div class="arithmatex">
+                \[ \myvec{z}_1 = f_1(\myvec{x}) = \mymat{W}_1
+                \myvec{x}+\myvec{b}_1 \]
+              </div>
+              <div class="arithmatex">
+                \[ \myvec{z}_2 = f_2(\myvec{z}_1) = \mymat{W}_2
+                \myvec{z}_1+\myvec{b}_2 \]
+              </div>
+              <p>But this reduces to:</p>
+              <div class="arithmatex">
+                \[ \myvec{z}_2 = \mymat{W}_2( \mymat{W}_1 \myvec{x}
+                +\myvec{b}_1)+ \myvec{b}_2 = \mymat{W}_1 \mymat{W}_2 \myvec{x}+
+                \mymat{W}_2 \myvec{b}_1 + \myvec{b}_2\]
+              </div>
+              <p>which is again a simple affine function of the form:</p>
+              <div class="arithmatex">
+                \[ \myvec{z}_2 = \mymat{W}_3 \myvec{x}+\myvec{b}_3 \]
+              </div>
+              <p>
+                where
+                <span class="arithmatex"
+                  >\(\mymat{W}_3 = \mymat{W}_2 \mymat{W}_1\)</span
+                >
+                and
+                <span class="arithmatex"
+                  >\(\myvec{b}_3 = \mymat{W}_2 \myvec{b}_1+ \myvec{b}_2\)</span
+                >
+              </p>
+              <p>
+                Instead, we introduce a non-linear function between the two
+                affine functions in order to accentuate the highest values from
+                <span class="arithmatex">\(f_1\)</span>. In the neural network
+                literature, this non-linearity is known as an
+                <em>activation</em> function. We will see that adding yet more
+                layers often improves performance further. Each layer is
+                separated by an activation function. Three of the most common
+                activation functions are introduced below.
+              </p>
+              <h3 id="the-logistic-function">The logistic function</h3>
+              <p>
+                The <em>logistic</em> function drives outputs towards one for
+                positive inputs and towards zero for negative inputs.
+              </p>
+              <figure role="group">
+                <div class="arithmatex">$$ f(x)=\frac{1}{1+e^{-x}} $$</div>
+                <img
+                  src="images/logistic.svg"
+                  alt="Graph of the logistic function."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 2.</strong> Graph of the logistic function.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                We use this to emphasise high confidence values, driving low
+                values towards zero.
+              </p>
+              <p>
+                The logistic function is often referred to as the
+                <em>sigmoid</em> function because of the 'S' shape.
+              </p>
+              <h3 id="the-hyperbolic-tangent-tanh-function">
+                The hyperbolic tangent (tanh) function
+              </h3>
+              <p>
+                The <em>hyperbolic tangent</em> function, or <em>tanh</em> for
+                short, squashes the input into the interval
+                <span class="arithmatex">\((-1, 1)\)</span>, driving positive
+                inputs towards 1 and negative inputs towards -1.
+              </p>
+              <figure role="group">
+                <div class="arithmatex">
+                  $$ \tanh(x) = \frac{(e^{2x} - 1)}{(e^{2x} + 1)} \in [-1,1] $$
                 </div>
-            </div>
-        </footer>
+                <img
+                  src="images/tanh.svg"
+                  alt="Graph of the hyperbolic tangent function."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 3.</strong> Graph of the hyperbolic tangent
+                    function.
+                  </p>
+                </figcaption>
+              </figure>
 
+              <h3 id="the-rectified-linear-unit-relu-function">
+                The Rectified Linear Unit (ReLU) function
+              </h3>
+              <p>
+                The <em>rectified linear unit</em> function, or
+                <em>ReLU</em> for short, simply passes through positive inputs
+                unchanged and outputs zero for negative inputs:
+              </p>
+              <figure role="group">
+                <div class="arithmatex">$$ \func{ReLU}(x)=\max(0,x) $$</div>
+                <img
+                  src="images/relu.svg"
+                  alt="Graph of the Rectified Linear Unit function."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 4.</strong> Graph of the Rectified Linear
+                    Unit function.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                We'll see uses for all three activation functions during the
+                module.
+              </p>
+              <h2 id="terminology">Terminology</h2>
+              <p>
+                The kind of multilayer network introduced above is normally
+                referred to as a <em>Multilayer Perceptron (MLP)</em>. The
+                affine layers are referred to as <em>Linear</em> layers in
+                PyTorch and Tensorflow, and <em>Dense</em> layers in Keras. They
+                are also often referred to as
+                <em>fully-connected layers</em> because every scalar value in
+                the output from the layer is a function of every scalar value in
+                the input to the layer. We will abbreviate fully-connected layer
+                to <em>fcl</em> in network diagrams.
+              </p>
+              <h2 id="training-and-testing">Training and testing</h2>
+              <p>
+                For a chosen dataset and classifier architecture, we divide the
+                dataset into two parts: the first part for training and the
+                second part for testing. We define a measure of performance
+                which we call the <em>loss function</em>. The idea is to find
+                values for the weights and bias values of the classifier that
+                minimise the loss function computed on the training data. We
+                then apply the resulting classifier to the test data to obtain a
+                final measure of performance. It is important not to use the
+                test data in any way during training.
+              </p>
+              <p>
+                Unfortunately, using this procedure, we won’t know how well
+                we’ve generalised from the training data until it's too late and
+                we have what may be a poor test result. In particular, the
+                classifier may have <em>over-fitted</em> the training data in
+                the sense that it produces a low loss (on the training data) but
+                doesn’t generalise well to new data. The usual way around this
+                is to further split the training data into two. The first part
+                (confusingly also referred to as the training data) is used to
+                minimise the loss function, and the second part (validation set)
+                is used to check that the training has produced a good
+                generalisation from the training data. We can explore a range of
+                hyper-parameters (meta-parameters) and architectures to see what
+                works best. After multiple rounds of training and evaluation on
+                the validation set, the network is applied to the test data to
+                produce a final measure of performance.
+              </p>
+              <p>
+                For the multiclass, multidimensional classifier introduced
+                above, we must estimate the optimal values for the parameters
+                associated with each of the
+                <span class="arithmatex">\(K\)</span> hyperplanes:
+                <span class="arithmatex"
+                  >\(\{(\myvec{w}_c , b_c) \}_{1 \leq c \leq K}\)</span
+                >
+                in each layer.
+              </p>
+              <h2 id="maximum-likelihood-loss-function">
+                Maximum likelihood loss function
+              </h2>
+              <p>
+                We focus on classifiers for which the output is a probability
+                distribution over class labels.
+              </p>
+              <figure role="group">
+                <img src="images/DL_IMG042.png" alt="Classifier pipeline." />
+                <figcaption>
+                  <p>
+                    <strong>Figure 5.</strong> Classifier pipeline from an image
+                    to a probability distribution over the possible classes. The
+                    classifier is configured with a set of values for its
+                    parameters (weights and bias values).
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                For an input
+                <span class="arithmatex">\(\myvec{x} \in \R^n\)</span> let the
+                probability from our classifier for a given class label
+                <span class="arithmatex">\(y \in \{1,\dots ,K \}\)</span> and
+                model parameters
+                <span class="arithmatex">\(\boldsymbol{\theta}\)</span> be
+                <span class="arithmatex"
+                  >\(p(y|\myvec{x};\boldsymbol{\theta})\)</span
+                >. Thus,
+                <span class="arithmatex"
+                  >\(p(.|\myvec{x};\boldsymbol{\theta})\)</span
+                >
+                is a categorical probability distribution (i.e. a multinomial
+                distribution with one draw).
+              </p>
+              <p>
+                Given training data
+                <span class="arithmatex"
+                  >\(\{\myvec{x}^{(1)}, \myvec{x}^{(2)},
+                  \dots,\myvec{x}^{(m)}\},
+                  \{y^{(1)},y^{(2)},\dots,y^{(m)}\}\)</span
+                >
+                containing <span class="arithmatex">\(m\)</span> labelled
+                examples, the joint probability of these outputs given these
+                inputs is:
+              </p>
+              <div class="arithmatex">
+                \[ \prod_{i=1}^m
+                p(y^{(i)}|\myvec{x}^{(i)};\boldsymbol{\theta})\]
+              </div>
+              <p>
+                We think of this as a function of
+                <span class="arithmatex">\(\boldsymbol\theta\)</span> since the
+                training data is fixed, and we are interested in maximising the
+                joint probability over
+                <span class="arithmatex">\(\boldsymbol\theta\)</span>. Thus, we
+                refer to this as a <em>likelihood</em> function since it can't
+                be considered to be a probability density function, which would
+                have to have unit area.
+              </p>
+              <p>
+                In training the classifier, we need to maximise the likelihood
+                function to find the <em>maximum likelihood</em> solution,
+                denoted by
+                <span class="arithmatex">\(\boldsymbol\theta_{ML}\)</span>.
+              </p>
+              <div class="arithmatex">
+                \[ \boldsymbol\theta_{ML} = \underset {\boldsymbol\theta}
+                {\arg\max} \prod_{i=1}^m
+                p(y^{(i)}|\myvec{x}^{(i)};\boldsymbol{\theta})\]
+              </div>
+              <p>
+                Before doing this, we avoid the product by taking the log of the
+                likelihood, which enables us to rewrite the product as a sum (as
+                in <span class="arithmatex">\(log(ab)=log(a)+log(b)\)</span>).
+              </p>
+              <div class="arithmatex">
+                \[ \boldsymbol\theta_{ML} = \underset {\boldsymbol\theta}
+                {\arg\max} \log \bigg (\prod_{i=1}^m
+                p(y^{(i)}|\myvec{x}^{(i)};\boldsymbol{\theta})\bigg ) \]
+              </div>
+              <div class="arithmatex">
+                \[ = \underset {\boldsymbol\theta} {\arg\max} \sum_{i=1}^m
+                \log(p(y^{(i)}|\myvec{x}^{(i)};\boldsymbol{\theta})\]
+              </div>
+              <p>
+                Note that the <span class="arithmatex">\(\log\)</span> function
+                is monotonically increasing (i.e.
+                <span class="arithmatex"
+                  >\(x \ge y \implies \log(x) \ge \log(y)\)</span
+                >).
+              </p>
+              <figure role="group">
+                <img
+                  src="images/log.svg"
+                  alt="The log function is monotonically increasing."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 6.</strong> Graph of the (natural) log
+                    function.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                Consequently, taking the log of the joint likelihood doesn't
+                change the optimal value
+                <span class="arithmatex">\(\boldsymbol\theta_{ML}\)</span> that
+                we seek.
+              </p>
+              <p>
+                We finish by negating the log likelihood to turn the
+                maximisation into a minimisation:
+              </p>
+              <div class="arithmatex">
+                \[ \boldsymbol\theta_{ML} = \underset {\boldsymbol\theta}
+                {\arg\min} -\sum_{i=1}^m
+                \log(p(y^{(i)}|\myvec{x}^{(i)};\boldsymbol{\theta}))\]
+              </div>
+              <p>
+                The term we are minimising in this final equation is known as
+                the <em>negative log likelihood</em> loss function or NLL for
+                short. It is equivalent to the so-called
+                <em>cross entropy</em> loss function.
+              </p>
+              <p class="note">
+                <strong>Note:</strong> in PyTorch, NLL takes log probability as
+                input, whereas cross-entropy loss takes raw confidence values.
+              </p>
+              <h2 id="stochastic-gradient-descent-sdg">
+                Stochastic gradient descent (SDG)
+              </h2>
+              <p>
+                To find the maximum likelihood solution
+                <span class="arithmatex">\(\boldsymbol\theta_{ML}\)</span>, we
+                use gradient descent on the loss function. Instead of doing this
+                with a loss computed from all of the training data, we break the
+                training dataset down into fixed sized chunks
+                (<em>minibatches</em>) and perform gradient descent sequentially
+                over each one in turn, each time starting with the previous
+                estimate. The size of minibatches depends on the size of the
+                problem and is often determined by the amount of data that will
+                fit into a GPU.
+              </p>
+              <p>
+                Due to the small size of minibatches, there is some
+                stochasticity (randomness) in the gradient descent (hence the
+                name). This can help in generalisation.
+              </p>
+              <p>
+                After all examples from the training dataset have been used
+                once, this marks the end of an <em>epoch</em>. The same
+                procedure continues until a fixed number of epochs is reached or
+                until the loss is no longer decreasing.
+              </p>
+              <p>
+                The input to the gradient descent is therefore a whole minibatch
+                of data that is propagated jointly through the classifier to
+                deliver a combined loss at the end. To build the computational
+                graph required for backpropagation, we could iterate through the
+                data elements in the minibatch one by one in order to compute
+                the loss function on the set of outputs; remember that the loss
+                function is computed on the outputs from the whole minibatch of
+                data. It is more efficient however to perform the layerwise
+                computations together, computing the first layer on the whole
+                minibatch before moving on to the second layer and so on. To do
+                this, we concatenate the minibatch into a single tensor.
+              </p>
+              <h2 id="applying-multilayer-networks-to-mnist">
+                Applying multilayer networks to MNIST
+              </h2>
+              <p>
+                In this section, we build classifiers for the MNIST dataset. We
+                will compare classifiers with one and two fully connected
+                layers. The architectures of the two classifiers are illustrated
+                as follows:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/linear_classifiers_MNIST.svg"
+                  alt="Single-layer and two-layer classifiers for MNIST."
+                  aria-describedby="fig-7-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 7.</strong> Classifiers with one full
+                    connected layer (left) and two fully connected layers
+                    (right).
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-7-description">
+                      <p>
+                        The 1-layer pipeline on the left starts with an MNIST
+                        28x28 grey-level (i.e. one channel) input image. This is
+                        flattened into a vector of size 784, passed through a
+                        fully-connected layer to a vector of size 10, and then
+                        through softmax to output a probability distribution of
+                        size 10. The 2-layer pipeline is similar, except that
+                        the first fully-connected layer outputs a vector of size
+                        300, which passes through a sigmoid function before
+                        passing through a second fully-connected layer to a
+                        vector of size 10, and finally the softmax function.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                The size of the tensor at each stage is shown in red. Note that
+                we are showing the tensor sizes for a single input passing
+                through the network rather than a minibatch of inputs. In
+                PyTorch, the actual input size will be
+                <span class="arithmatex"
+                  >\(N \times 1 \times 28 \times 28\)</span
+                >, where <span class="arithmatex">\(N\)</span> is the number of
+                samples in the minibatch.
+              </p>
+              <p>
+                The following graph shows the reduction in the loss over 200
+                epochs of stochastic gradient descent on the two classifiers.
+                The classification accuracies are 92.6% and 97.8% respectively.
+                As expected, the accuracy increases with the move from one to
+                two layers.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/training_loss_MNIST.svg"
+                  alt="Graph of the loss over 200 epochs of SGD."
+                  aria-describedby="fig-8-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 8.</strong> Graph of the loss over 200 epochs
+                    of SGD for a 1-layer network (red) and 2-layer network
+                    (green).
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-8-description">
+                      <p>
+                        A graph plotting the mean loss on the training data
+                        after each epoch for the 1-layer and 2-layer networks
+                        shown in Figure 7. The 1-layer network starts out with
+                        lower loss but immediately levels out. It is rapidly
+                        overtaken by the 2-layer network, for which the loss
+                        continues to decrease over 200 epochs.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <h2 id="momentum-in-gradient-descent">
+                Momentum in gradient descent
+              </h2>
+              <p>
+                Gradient descent updates
+                <span class="arithmatex">\(\boldsymbol\theta\)</span> according
+                to the gradient of the loss at its current value:
+              </p>
+              <div class="arithmatex">
+                \[ \boldsymbol\theta ' = \boldsymbol\theta - \epsilon
+                \nabla_{\boldsymbol\theta} f(\boldsymbol\theta) \]
+              </div>
+              <p>
+                Several variations of gradient descent are motivated by thinking
+                of <span class="arithmatex">\(\boldsymbol\theta\)</span> as
+                having momentum. Thus, the movement of
+                <span class="arithmatex">\(\boldsymbol\theta\)</span> through
+                the parameter space is interpreted as a body in motion, with
+                velocity <span class="arithmatex">\(\myvec{v}\)</span>. On each
+                iteration it slows down a bit and gets nudged in the direction
+                of the negative gradient (the direction of fastest decrease in
+                <span class="arithmatex">\(f(\boldsymbol\theta)\)</span> ).
+              </p>
+              <div class="arithmatex">
+                \[ \myvec{v}' = \alpha \myvec{v} - \epsilon
+                \nabla_{\boldsymbol\theta} f(\boldsymbol\theta) \quad \alpha
+                \in[0,1) \]
+              </div>
+              <p>
+                The update to
+                <span class="arithmatex">\(\boldsymbol\theta\)</span> on each
+                iteration is now:
+              </p>
+              <div class="arithmatex">
+                \[ \boldsymbol\theta' = \boldsymbol\theta + \myvec{v}' \]
+              </div>
+              <p>
+                Nestorov momentum is a slight variation on this. The gradient is
+                evaluated after the current velocity is applied, thus:
+              </p>
+              <div class="arithmatex">
+                \[ \myvec{v}' = \alpha \myvec{v} - \epsilon
+                \nabla_{\boldsymbol\theta} f(\boldsymbol\theta + \alpha
+                \myvec{v}) \quad \alpha \in[0,1) \]
+              </div>
+              <div class="admonition abstract">
+                <p class="admonition-title">Reading</p>
+                <p>
+                  To set the scene for what is to come in the module, and to
+                  look at the wider implications of deep learning and AI in
+                  general, read the 2019 paper by Eric Topol on the application
+                  of AI to medicine [1]. Topol is a clinician and has an
+                  interesting vision for the future of medicine in the light of
+                  progress in AI.
+                </p>
+              </div>
+              <h2 id="reference">Reference</h2>
+              <p>
+                [1]
+                <a href="https://doi.org/10.1038/s41591-018-0300-7"
+                  ><em
+                    >Topol, E.J. High-performance medicine: the convergence of
+                    human and artificial intelligence. Nat Med 25, 44–56
+                    (2019).</em
+                  ></a
+                >
+              </p>
+            </article>
+          </div>
+        </div>
+      </main>
+
+      <footer class="md-footer">
+        <div class="md-footer-nav">
+          <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+            <a
+              href="Performance.html"
+              class="md-footer-nav__link md-footer-nav__link--prev"
+              rel="prev"
+            >
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"
+                  />
+                </svg>
+              </div>
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction"> Previous </span>
+                  Measuring classifier performance
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="../unit3/Convolution.html"
+              class="md-footer-nav__link md-footer-nav__link--next"
+              rel="next"
+            >
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction"> Next </span>
+                  Convolution
+                </div>
+              </div>
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"
+                  />
+                </svg>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+        <div class="md-footer-meta md-typeset">
+          <div class="md-footer-meta__inner md-grid">
+            <div class="md-footer-copyright">
+              <div class="md-footer-copyright__highlight">
+                Copyright © University of Leeds
+              </div>
+
+              Made with
+              <a
+                href="https://squidfunk.github.io/mkdocs-material/"
+                target="_blank"
+                rel="noopener"
+              >
+                Material for MkDocs
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
     <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script>
     <script id="__lang" type="application/json">
-        {
-            "clipboard.copy": "Copy to clipboard",
-            "clipboard.copied": "Copied to clipboard",
-            "search.config.lang": "en",
-            "search.config.pipeline": "trimmer, stopWordFilter",
-            "search.config.separator": "[\\s\\-]+",
-            "search.placeholder": "Search",
-            "search.result.placeholder": "Type to start searching",
-            "search.result.none": "No matching documents",
-            "search.result.one": "1 matching document",
-            "search.result.other": "# matching documents",
-            "search.result.more.one": "1 more on this page",
-            "search.result.more.other": "# more on this page",
-            "search.result.term.missing": "Missing"
-        }
+      {
+        "clipboard.copy": "Copy to clipboard",
+        "clipboard.copied": "Copied to clipboard",
+        "search.config.lang": "en",
+        "search.config.pipeline": "trimmer, stopWordFilter",
+        "search.config.separator": "[\\s\\-]+",
+        "search.placeholder": "Search",
+        "search.result.placeholder": "Type to start searching",
+        "search.result.none": "No matching documents",
+        "search.result.one": "1 matching document",
+        "search.result.other": "# matching documents",
+        "search.result.more.one": "1 more on this page",
+        "search.result.more.other": "# more on this page",
+        "search.result.term.missing": "Missing"
+      }
     </script>
 
     <script>
-        app = initialize({
-            base: "../..",
-            features: ['navigation.sections'],
-            search: Object.assign({
-                worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
-            }, typeof search !== "undefined" && search)
-        })
+      app = initialize({
+        base: "../..",
+        features: ["navigation.sections"],
+        search: Object.assign(
+          {
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js",
+          },
+          typeof search !== "undefined" && search
+        ),
+      });
     </script>
 
     <script src="../../javascript/tablecontentsoverride.js"></script>
@@ -914,8 +1211,5 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-</body>
-
+  </body>
 </html>
