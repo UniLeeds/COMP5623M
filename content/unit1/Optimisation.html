@@ -1,844 +1,1180 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-
-
-
-    <link rel="shortcut icon" href="../../img/favicon.jpg">
-    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
-
-
+    <link rel="shortcut icon" href="../../img/favicon.jpg" />
+    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4" />
 
     <title>Optimisation - Artificial Intelligence</title>
 
+    <link
+      rel="stylesheet"
+      href="../../assets/stylesheets/main.15aa0b43.min.css"
+    />
 
+    <link
+      rel="stylesheet"
+      href="../../assets/stylesheets/palette.75751829.min.css"
+    />
 
-    <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
-
-
-    <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
-
-
-
-
-
-
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback"
+    />
     <style>
-        body,
-        input {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
-        }
+      body,
+      input {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica,
+          Arial, sans-serif;
+      }
 
-        code,
-        kbd,
-        pre {
-            font-family: "", SFMono-Regular, Consolas, Menlo, monospace
-        }
+      code,
+      kbd,
+      pre {
+        font-family: "", SFMono-Regular, Consolas, Menlo, monospace;
+      }
     </style>
 
+    <link rel="stylesheet" href="../../css/extra.css" />
+  </head>
 
-
-
-    <link rel="stylesheet" href="../../css/extra.css">
-
-
-
-
-
-</head>
-
-
-
-
-
-
-
-<body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-
-
-
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+  <body
+    dir="ltr"
+    data-md-color-scheme=""
+    data-md-color-primary="none"
+    data-md-color-accent="none"
+  >
+    <input
+      class="md-toggle"
+      data-md-toggle="drawer"
+      type="checkbox"
+      id="__drawer"
+      autocomplete="off"
+    />
+    <input
+      class="md-toggle"
+      data-md-toggle="search"
+      type="checkbox"
+      id="__search"
+      autocomplete="off"
+    />
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-
-
-        <a href="#optimisation" class="md-skip">
-          Skip to content
-        </a>
-
+      <a href="#optimisation" class="md-skip"> Skip to content </a>
     </div>
     <div data-md-component="announce">
-
-        <aside class="md-announce">
-            <div class="md-announce__inner md-grid md-typeset">
-
-                <div id="versionIndicator"> <b>Version:</b>27.10.21.a </div>
-                <img id="customlogo" src="../../img/logo.svg" alt="University of Leeds logo.">
-
-            </div>
-        </aside>
-
+      <aside class="md-announce">
+        <div class="md-announce__inner md-grid md-typeset">
+          <div id="versionIndicator"><b>Version:</b>27.10.21.a</div>
+          <img
+            id="customlogo"
+            src="../../img/logo.svg"
+            alt="University of Leeds logo."
+          />
+        </div>
+      </aside>
     </div>
 
-
-
-
-
     <header class="md-header" data-md-component="header">
-        <nav class="md-header-nav md-grid" aria-label="Header">
-            <a href="../../index.html" title="Artificial Intelligence" class="md-header-nav__button md-logo" aria-label="Artificial Intelligence">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-            <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-            <div class="md-header-nav__title" data-md-component="header-title">
-                <div class="md-header-nav__ellipsis">
-                    <div class="md-header-nav__topic">
-                        <span class="md-ellipsis">
-            Artificial Intelligence
-          </span>
-                    </div>
-                    <div class="md-header-nav__topic">
-                        <span class="md-ellipsis">
-            
-              Optimisation
-            
-          </span>
-                    </div>
-                </div>
+      <nav class="md-header-nav md-grid" aria-label="Header">
+        <a
+          href="../../index.html"
+          title="Artificial Intelligence"
+          class="md-header-nav__button md-logo"
+          aria-label="Artificial Intelligence"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"
+            />
+          </svg>
+        </a>
+        <label class="md-header-nav__button md-icon" for="__drawer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" />
+          </svg>
+        </label>
+        <div class="md-header-nav__title" data-md-component="header-title">
+          <div class="md-header-nav__ellipsis">
+            <div class="md-header-nav__topic">
+              <span class="md-ellipsis"> Artificial Intelligence </span>
             </div>
-
-            <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-
-            <div class="md-search" data-md-component="search" role="dialog">
-                <label class="md-search__overlay" for="__search"></label>
-                <div class="md-search__inner" role="search">
-                    <form class="md-search__form" name="search">
-                        <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
-                        <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-                        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-                    </form>
-                    <div class="md-search__output">
-                        <div class="md-search__scrollwrap" data-md-scrollfix>
-                            <div class="md-search-result" data-md-component="search-result">
-                                <div class="md-search-result__meta">
-                                    Initializing search
-                                </div>
-                                <ol class="md-search-result__list"></ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="md-header-nav__topic">
+              <span class="md-ellipsis"> Optimisation </span>
             </div>
+          </div>
+        </div>
 
+        <label class="md-header-nav__button md-icon" for="__search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"
+            />
+          </svg>
+        </label>
 
-        </nav>
+        <div class="md-search" data-md-component="search" role="dialog">
+          <label class="md-search__overlay" for="__search"></label>
+          <div class="md-search__inner" role="search">
+            <form class="md-search__form" name="search">
+              <input
+                type="text"
+                class="md-search__input"
+                name="query"
+                aria-label="Search"
+                placeholder="Search"
+                autocapitalize="off"
+                autocorrect="off"
+                autocomplete="off"
+                spellcheck="false"
+                data-md-component="search-query"
+                data-md-state="active"
+                required
+              />
+              <label class="md-search__icon md-icon" for="__search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"
+                  />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"
+                  />
+                </svg>
+              </label>
+              <button
+                type="reset"
+                class="md-search__icon md-icon"
+                aria-label="Clear"
+                data-md-component="search-reset"
+                tabindex="-1"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+                  />
+                </svg>
+              </button>
+            </form>
+            <div class="md-search__output">
+              <div class="md-search__scrollwrap" data-md-scrollfix>
+                <div class="md-search-result" data-md-component="search-result">
+                  <div class="md-search-result__meta">Initializing search</div>
+                  <ol class="md-search-result__list"></ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <div class="md-container" data-md-component="container">
-
-
-
-
-        <main class="md-main" data-md-component="main">
-            <div class="md-main__inner md-grid">
-
-
-
-                <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                    <div class="md-sidebar__scrollwrap">
-                        <div class="md-sidebar__inner">
-
-
-
-
-
-
-
-                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-                                <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-    Artificial Intelligence
-  </label>
-
-                                <ul class="md-nav__list" data-md-scrollfix>
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../../index.html" class="md-nav__link">
-      Introduction
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item md-nav__item--active">
-
-                                        <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-
-
-
-
-                                        <label class="md-nav__link md-nav__link--active" for="__toc">
-        Optimisation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-
-                                        <a href="Optimisation.html" class="md-nav__link md-nav__link--active">
-      Optimisation
-    </a>
-
-
-                                        <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
-
-
-
-
-                                            <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-                                            <ul class="md-nav__list" data-md-scrollfix>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#the-general-problem" class="md-nav__link">
-    The general problem
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#backpropagation" class="md-nav__link">
-    Backpropagation
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#functions-of-vectors" class="md-nav__link">
-    Functions of vectors
-  </a>
-
-                                                </li>
-
-                                            </ul>
-
-                                        </nav>
-
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit2/LinearClassifier.html" class="md-nav__link">
-      Linear classifier
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit2/Performance.html" class="md-nav__link">
-      Measuring classifier performance
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit2/MultiLayerNetworks.html" class="md-nav__link">
-      Multilayer networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit3/Convolution.html" class="md-nav__link">
-      Convolution
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit3/CNN.html" class="md-nav__link">
-      Convolutional neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit3/Segmentation.html" class="md-nav__link">
-      Image segmentation
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/Introduction.html" class="md-nav__link">
-      Sequential data
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/RNN.html" class="md-nav__link">
-      Recurrent neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/TextClassification.html" class="md-nav__link">
-      Text classification
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/Transformers.html" class="md-nav__link">
-      Transformers
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit5/RelationalData.html" class="md-nav__link">
-      Relational data
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit5/GNN.html" class="md-nav__link">
-      Graph neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit6/GAN.html" class="md-nav__link">
-      Generative adversarial networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit6/Cyclegan.html" class="md-nav__link">
-      Image-to-image translation
-    </a>
-                                    </li>
-
-
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                    <div class="md-sidebar__scrollwrap">
-                        <div class="md-sidebar__inner">
-
-                            <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
-
-
-
-
-                                <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-                                <ul class="md-nav__list" data-md-scrollfix>
-
-                                    <li class="md-nav__item">
-                                        <a href="#the-general-problem" class="md-nav__link">
-    The general problem
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#backpropagation" class="md-nav__link">
-    Backpropagation
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#functions-of-vectors" class="md-nav__link">
-    Functions of vectors
-  </a>
-
-                                    </li>
-
-                                </ul>
-
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="md-content">
-                    <article class="md-content__inner md-typeset">
-
-
-
-                        <h1 id="optimisation">Optimisation</h1>
-                        <p>Optimisation is fundamental to machine learning. First we look at the general problem of optimisation and later apply it to machine learning.</p>
-                        <h2 id="the-general-problem">The general problem</h2>
-                        <p>In its simplest form, the optimisation problem can be expressed as follows. Given some function <span class="arithmatex">\(f:\R\rightarrow\R\)</span> find the value of <span class="arithmatex">\(x\)</span> that gives the minimum
-                            (or maximum) output from <span class="arithmatex">\(f\)</span>, expressed succinctly as:</p>
-                        <div class="arithmatex">\[x^*=\underset{x} {\operatorname{argmin}}f(x)\]</div>
-                        <p>When seeking the minimum, <span class="arithmatex">\(f\)</span> is often referred to as a <em>cost function</em> or <em>loss function</em>.</p>
-                        <p>In general, we seek a <em>global</em> minimum and need to be wary of <em>local</em> minima, as depicted below:</p>
-                        <figure role="group">
-                            <img src="images/minimise1D.png" alt="Finding the minimum of a function in 1D. See image description link below for full details." aria-describedby="fig-1-description" />
-                            <figcaption>
-                                <p><strong>Figure 1</strong>. Finding the minimum of a function in 1D.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-1-description">
-                                        <p>The graph depicts two kinds of minima of a function with a single argument, a local minimum and a global minimum.</p>
-                                    </div>
-                                </div>
-                                <p style="margin-top:6px;">Please note: for accessibility purposes, detailed image descriptions are provided throughout the module adjacent to images that are too complex to be sufficiently described in alt-text.</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>For functions with n-dimensional input and a scalar output <span class="arithmatex">\(f:\R^n\rightarrow\R\)</span> find the value of <span class="arithmatex">\(\myvec{x}\)</span> that gives the minimum (or maximum) output from
-                            the function:</p>
-                        <div class="arithmatex">\[\myvec{x}^*=\underset{\myvec{x\in\R^n}} {\operatorname{argmin}}f(\myvec{x})\]</div>
-                        <p>The diagram below illustrates the minimisation problem for <span class="arithmatex">\(n=2\)</span>:</p>
-                        <figure role="group">
-                            <img src="images/minimise2D.png" alt="Finding the minimum of a function in 2D. See image description link below for full details." aria-describedby="fig-2-description" />
-                            <figcaption>
-                                <p><strong>Figure 2.</strong> Finding the minimum of a function in 2D.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-2-description">
-                                        <p>A convex (bowl shaped) function of two arguments, showing a global minimum at the bottom of the bowl. </p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>The simple form of the problem introduced at the start is equivalent to the multi-dimensional problem with <span class="arithmatex">\(n=1\)</span>.</p>
-                        <p>Gradient descent is a general method for finding the minimum of a function. The idea is to start with some random <span class="arithmatex">\(\myvec{x}\in \R^n\)</span> and make repeated small changes to <span class="arithmatex">\(\myvec{x}\)</span>                            in the direction of fastest decrease in <span class="arithmatex">\(f(\myvec{x})\)</span> at <span class="arithmatex">\(\myvec{x}\)</span>. The following diagram illustrates this idea for <span class="arithmatex">\(n=2\)</span>:</p>
-                        <figure role="group">
-                            <img src="images/rosenbrock-nag.png" alt="Image of 2-D surface and rolling down hill." />
-                            <figcaption>
-                                <p><strong>Figure 3.</strong> Illustrating gradient descent on a 2D function, showing the trajectory leading towards the minimum value.</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>The direction of fastest increase in <span class="arithmatex">\(f\)</span> is given by the <em>gradient vector</em>:</p>
-                        <div class="arithmatex">\[\nabla_\myvec{x} f(\myvec{x}) = \begin{bmatrix} \frac {\partial f}{\partial x_1} (\myvec{x})\\ \vdots \\ \frac {\partial f}{\partial x_n} (\myvec{x}) \end{bmatrix}\]</div>
-                        <p>Note that the partial derivatives are evaluated for the given value of <span class="arithmatex">\(\myvec{x}\)</span>.</p>
-                        <p>Each of the partial derivatives in the gradient vector gives the ratio of the change in <span class="arithmatex">\(f\)</span> for an infinitesimal change in one of the components of <span class="arithmatex">\(\myvec{x}\)</span>.</p>
-                        <p>The magnitude of the gradient vector is the rate of increase in <span class="arithmatex">\(f\)</span>.</p>
-                        <p>Thus, in gradient descent we repeatedly make a small step from <span class="arithmatex">\(\myvec{x}\)</span> to a new point <span class="arithmatex">\(\myvec{x'}\)</span> defined as follows:</p>
-                        <div class="arithmatex">\[\myvec{x'}=\myvec{x}-\eta \nabla f(\myvec{x})\]</div>
-                        <p><span class="arithmatex">\(\eta\)</span> simply scales the step size and is generally a small number (e.g. <span class="arithmatex">\(\eta=0.002\)</span>). Notice that the displacement is subtracted so that we move downhill.</p>
-                        <p>For example, in 2-D suppose:</p>
-                        <div class="arithmatex">\[f(x,y)=3x^2+xy\]</div>
-                        <p>The gradient vector with respect to <span class="arithmatex">\(\myvec{x}\)</span> is then given by:</p>
-                        <div class="arithmatex">\[\nabla_\myvec{x} f(x,y)=\begin{bmatrix} 6x+y \\ x \end {bmatrix}\]</div>
-                        <p>Thus, the gradient vector at <span class="arithmatex">\((3,4)\)</span> is <span class="arithmatex">\(\begin{bmatrix} 22 \\ 3 \end {bmatrix}\)</span>. At <span class="arithmatex">\((2,3)\)</span> the gradient vector is <span class="arithmatex">\(\begin{bmatrix} 15 \\ 2 \end {bmatrix}\)</span></p>
-                        <p>For convenience, we will refer to partial derivative of the output with respect to the value at any intermediate node (including input nodes) as the <em>gradient</em> at that node.</p>
-                        <h2 id="backpropagation">Backpropagation</h2>
-                        <p>The functions we deal with in deep neural networks have many variables and a deep compositional structure. To compute gradients efficiently, we represent the evaluation of a given function as a <em>computation graph</em> (or <em>computational graph</em>).
-                            The computation graph is a Directed Acyclic Graph or DAG for short. For example, the evaluation of the function <span class="arithmatex">\(e=(a+b)*(b+1)\)</span> at <span class="arithmatex">\(a=2, b=3\)</span> can be represented
-                            as follows:</p>
-                        <figure role="group">
-                            <img src="images/Picture2.svg" alt="DAG for the example above." width="500px" aria-describedby="fig-4-description" />
-                            <figcaption>
-                                <p><strong>Figure 4.</strong> The computation graph representing the evaluation of a simple 2D function.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-4-description">
-                                        <p>A graph structure with five nodes, starting with the inputs a=2 and b=3 in two nodes on the left. Directed edges point from both of these 'input' nodes to a third node containing c=a+b, c=5. A single directed edge
-                                            points from b=3 to a fourth node containing d=b+1, d=4. Nodes three and four are in the middle of the graph. On the right of the graph is a single output node with directed edges leading from the third and fourth
-                                            nodes. This fifth node contains e=c*d, e=20. </p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>This shows how the values of the input variables are mapped through intermediate steps to produce an output.</p>
-                        <p>We will use this graph to compute gradients in an efficient way.</p>
-                        <p>First, consider the special case of a function that is a composition of two elementary functions each taking a single argument, as in the following example:</p>
-                        <figure role="group">
-                            <img src="images/Picture3.svg" alt="Three nodes in a row labelled x, y and z, with a directed edge from x to y labelled with the partial derivative of y with respect to x, and from y to z labelled with the partial derivative of z with respect to y." width="400px"
-                            />
-                            <figcaption>
-                                <p><strong>Figure 5.</strong> The chain of partial derivatives leading from x to z via y.</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>The derivatives between neighbouring variables are shown on the edges that link them. By virtue of the <em>chain rule</em>, the gradient at <span class="arithmatex">\(x\)</span> is simply the product of the two intermediate partial
-                            derivatives:</p>
-                        <div class="arithmatex">\[\frac{\partial z}{\partial x} = \frac{\partial z}{\partial y}\frac{\partial y}{\partial x}\]</div>
-                        <p>An intuitive example of this is due to George Simmons [1]: <em>"if a car travels twice as fast as a bicycle and the bicycle is four times as fast as a walking man, then the car travels 2 × 4 = 8 times as fast as the man."</em></p>
-                        <p>For 'linear' compositions of more than two elementary functions, repeated application of the chain rule means that the gradient at any node is simply the product of partial derivatives on the edges between that node and the output
-                            node. The special case of the gradient for the input node is illustrated below:</p>
-                        <div class="arithmatex">\[\frac{\partial x_k}{\partial x_1} = \frac{\partial x_2}{\partial x_1} \cdots\frac{\partial x_{k-1}}{\partial x_{k-2}} \frac{\partial x_k}{\partial x_{k-1}}\]</div>
-                        <figure role="group">
-                            <img src="images/Picture4.svg" alt="Linear DAG." aria-describedby="fig-6-description" />
-
-                            <figcaption>
-                                <p><strong>Figure 6.</strong> Applying the chain rule to a composition of multiple functions.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-6-description">
-                                        <p>A row of nodes connected left to right with directed edges between consecutive pairs of nodes. Partial derivatives between consecutive pairs of nodes are depicted as red arrows between the nodes. The partial derivative
-                                            of the output node on the right with respect to the input node on the left is represented by a single red arrow leading from output to input.</p>
-                                        <p>The equation again for context:</p>
-                                        <div class="arithmatex">
-                                            $$\frac{\partial x_k}{\partial x_1} = \frac{\partial x_2}{\partial x_1} \cdots \frac{\partial x_{k-1}}{\partial x_{k-2}} \frac{\partial x_k}{\partial x_{k-1}} $$
-                                        </div>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p><em>Backpropagation</em> computes such gradients by propagating backwards from the output, each time multiplying by the next edge derivative in the chain. The iteration is initialised by placing a gradient of 1 at the output node
-                            (i.e. <span class="arithmatex">\(\frac{\partial x_k}{\partial x_k}=1\)</span>).</p>
-                        <p>This iteration is expressed in the following algorithm:</p>
-                        <figure role="group">
-                            <img src="images/backprop.svg" alt="Backpropagation algorithm for a chain of functions" width="400px" aria-describedby="fig-7-description" />
-                            <figcaption>
-                                <p><strong>Figure 7.</strong> Backpropagation algorithm for a chain of functions.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-7-description">
-                                        <p>The output is node k. The partial derivative of node k with respect to itself is set to 1. The previous node is defined as node s. So long as s is greater than or equal to 1, set the partial derivative of node k
-                                            with respect to node s as the product of the partial derivate of node s+1 with respect to node s, and the partial derivative of node k with respect to node s+1. decrement s and repeat. Note that on the first
-                                            time through s+1=k. </p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>For any tree-structured computation graph, we can propagate backwards in the same way, using the chain rule along the unique paths from the output (root) to the inputs (leaves). This is illustrated below:</p>
-                        <figure role="group">
-                            <img src="images/backprop2.svg" alt="Backpropagation in trees." width="300px" aria-describedby="fig-8-description" />
-                            <figcaption>
-                                <p><strong>Figure 8.</strong> Backpropagation in a tree-structured computation graph.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-8-description">
-                                        <p>A tree-structured DAG leading from 16 input nodes on the left to a single output node on the right. The backpropagation of the gradients from the output node to a single input node is illustrated by a curved path
-                                            from right to left, passing via intermediate nodes in the tree. Such a path is shown for two of the input nodes. </p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>Notice that the product that defines the gradient at any intermediate node of the tree is shared by all of the nodes (including leaf nodes) that can be reached via this node. Such products only need to be evaluated once.</p>
-                        <p>In general, the computation graph may contain functions with two or more arguments that depend on the same variables from earlier in the computation graph, as in the graph below:</p>
-                        <figure role="group">
-                            <img src="images/multivariable.svg" alt="Multi-variable computation graph." />
-                            <figcaption>
-                                <p><strong>Figure 9.</strong> Multi-variable computation graph.</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>Here, there is more than one chain from <span class="arithmatex">\(h\)</span> to the output <span class="arithmatex">\(z\)</span>. In such cases, we use a generalisation of the chain rule to:</p>
-                        <div class="arithmatex">\[ \frac{\partial z}{\partial h}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial h}+ \frac{\partial z}{\partial y}\frac{\partial y}{\partial h} \]</div>
-                        <p>Intuitively, we are adding the products from the two chains.</p>
-                        <p>In general, the gradient at each node is the sum of all chain-products leading to the output. During backpropagation, we accumulate (sum) these contributions to the gradient.</p>
-                        <p>Again, backpropagation computes all of these gradients efficiently by working backwards from the output, compounding the product of derivatives along every branch of the DAG and accumulating (adding) gradients at nodes that have
-                            multiple paths to the output. The sequence in which nodes are visiting during backpropagation is the reverse of the sequence they are visited during forward computation from inputs to the output. This guarantees that gradients
-                            are fully accumulated at intermediate nodes before we move on and backpropagate to earlier nodes.</p>
-                        <p>Below, we see this process for the earlier example:</p>
-                        <figure role="group">
-                            <img src="images/Picture1.svg" alt="Illustrating backprogation." width="550px" aria-describedby="fig-10-description" />
-                            <figcaption>
-                                <p><strong>Figure 10.</strong> Backpropagation for the computation graph in Figure 4. </p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-10-description">
-                                        <p>The computation graph from Figure 4 is shown again. The partial derivatives between consecutive pairs of nodes are shown. For example, between node c and node e, the partial derivative is given by d, which is 4
-                                            (remember that e=c*d). The partial derivatives (gradients) of the output with respect to all nodes are shown in red at each node. Thus, the gradient at node a is the product of the gradient at node c and the
-                                            partial derivative of node c with respect to node a (i.e. 4 = 1*4). At node b, the gradient is a sum of two gradients, that via node c and that via node d, giving 9 in total.</p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <h2 id="functions-of-vectors">Functions of vectors</h2>
-                        <p>Often, the scalar variables in a computation graph will naturally group into array structures, for example a
-                            <span class="arithmatex">\(256 \times 256\)</span> array of light intensities that make up an image. It is convenient and efficient to express the computation graph in terms of such arrays and the elementary functions that
-                            operate on them. In machine learning, such arrays are referred to as <em>tensors</em> and may have several dimensions. A 1D tensor is a vector and 2D tensor is a matrix.</p>
-                        <p>Consider the following example:</p>
-                        <div class="arithmatex">\[e=(\myvec{A}\myvec{x})^T(\myvec{x}+\myvec{y})\]</div>
-                        <div class="arithmatex">\[\myvec{A}=\begin{bmatrix} 1 &amp; 1 \\ 2 &amp; 2 \end{bmatrix}\]</div>
-                        <p>We can represent this as a computation graph as follows:</p>
-                        <figure role="group">
-                            <img src="images/Picture5.svg" alt="Tensor computation graph." width="550px" aria-describedby="fig-11-description" />
-                            <figcaption>
-                                <p><strong>Figure 11.</strong> Tensor computation graph.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-11-description">
-                                        <p>A computation graph with five nodes. Two input nodes on the left have vector values: x=(1,2) and y=(3,5). The third node u=(3,6) (in the middle) is a function of x obtained bu pre-multiplying x by the square matrix
-                                            A. The fourth node v=(4,7) (also in the middle) is defined as the sum of x and y. Finally, the fifth node e=54 (on the right) is an output scalar value obtained from the dot product of u and v. </p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>Backpropagation on such computation graphs is analogous to the scalar case we've already considered. Suppose we have backpropagated to <span class="arithmatex">\(\myvec{u}\)</span> and now have the gradient
-                            <span class="arithmatex">\(\begin{bmatrix} \frac{\partial e}{\partial u_1} &amp; \frac{\partial e}{\partial u_2} \end{bmatrix}^T\)</span>. The implicit scalar computation graph underlying the elementary function at <span class="arithmatex">\(\myvec{u}\)</span>                            looks like this:</p>
-                        <figure role="group">
-                            <img src="images/Picture6.svg" alt="Underlying scalar graph with the components of x as two nodes on the left fully connected to the components of y as two nodes on the right." width="250px" />
-                            <figcaption>
-                                <p><strong>Figure 12.</strong> The underlying scalar computation graph for a pair of vector nodes.</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>By the multi-variable chain rule, we propagate back to the components of <span class="arithmatex">\(\myvec{x}\)</span> as follows:</p>
-                        <div class="arithmatex">\[ \begin{bmatrix} \frac{\partial e}{\partial x_1} \\ \frac{\partial e}{\partial x_2} \end{bmatrix} = \begin{bmatrix} \frac{\partial u_1}{\partial x_1} \frac{\partial e}{\partial u_1} + \frac{\partial u_2}{\partial x_1} \frac{\partial
-                            e}{\partial u_2} \\ \frac{\partial u_1}{\partial x_2} \frac{\partial e}{\partial u_1} + \frac{\partial u_2}{\partial x_2} \frac{\partial e}{\partial u_2} \end{bmatrix} = \begin{bmatrix} \frac{\partial u_1}{\partial x_1} &amp;
-                            \frac{\partial u_1}{\partial x_2} \\ \frac{\partial u_2}{\partial x_1} &amp; \frac{\partial u_2}{\partial x_2} \end{bmatrix}^T \begin{bmatrix} \frac{\partial e}{\partial u_1} \\ \frac{\partial e}{\partial u_2} \end{bmatrix}
-                            \]
-                        </div>
-                        <p>The <span class="arithmatex">\(2 \times 2\)</span> matrix in this equation is known as the <em>Jacobian</em> matrix. In general, for <span class="arithmatex">\(\myvec{x}\in \mathbb{R}^n\)</span> and <span class="arithmatex">\(\myvec{u}\in \mathbb{R}^m\)</span>                            we have:</p>
-                        <div class="arithmatex">\[\begin{bmatrix} \frac{\partial e}{\partial x_1} \\ \vdots \\ \frac{\partial e}{\partial x_n} \end{bmatrix} = \begin{bmatrix}\frac{\partial u_1}{\partial x_1} &amp; \cdots &amp; \frac{\partial u_1}{\partial x_n} \\ \vdots &amp;
-                            \ddots &amp; \vdots \\ \frac{\partial u_m}{\partial x_1} &amp; \cdots &amp; \frac{\partial u_m}{\partial x_n} \end{bmatrix}^T \begin{bmatrix} \frac{\partial e}{\partial u_1} \\ \vdots \\ \frac{\partial e}{\partial u_m} \end{bmatrix}\]</div>
-                        <p>Here the Jacobian is a <span class="arithmatex">\(m \times n\)</span> matrix.</p>
-                        <p>Remember that we must still accumulate gradients as we compute them to allow for different routes to the output. For example in the computation graph above, <span class="arithmatex">\(\myvec{x}\)</span> contributes to both
-                            <span
-                                class="arithmatex">\(\myvec{u}\)</span> and <span class="arithmatex">\(\myvec{v}\)</span>, giving two routes to <span class="arithmatex">\(e\)</span>.</p>
-                        <p>Finally, vanilla gradient descent may not end up at a global minimum, particularly with function landscapes such as the following [2]:</p>
-                        <figure role="group">
-                            <img src="images/Picture8.png" alt="rough landscapes." width="500" />
-                            <figcaption>
-                                <p><strong>Figure 13.</strong> A 2D function with many local minima. This function is from an optimisation problem arising in deep learning and comes from Li et al. [2].</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>[1] <em>George F. Simmons, Calculus with Analytic Geometry, McGraw-Hill, New York (1985), p93</em></p>
-                        <p>[2] <a href="https://papers.nips.cc/paper/2018/hash/a41b3bb3e6b050b6c9067c67f663b915-Abstract.html"><em>Hao Li, et al. Visualizing the Loss Landscape of Neural Nets, NeurIPS (2018), p6</em></a></p>
-
-
-
-
-
-
-
-                    </article>
-                </div>
-            </div>
-        </main>
-
-
-        <footer class="md-footer">
-
-            <div class="md-footer-nav">
-                <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-
-                    <a href="../../index.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-                        <div class="md-footer-nav__button md-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-                        </div>
-                        <div class="md-footer-nav__title">
-                            <div class="md-ellipsis">
-                                <span class="md-footer-nav__direction">
-                  Previous
-                </span> Introduction
-                            </div>
-                        </div>
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          <div
+            class="md-sidebar md-sidebar--primary"
+            data-md-component="navigation"
+          >
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav
+                  class="md-nav md-nav--primary"
+                  aria-label="Navigation"
+                  data-md-level="0"
+                >
+                  <label class="md-nav__title" for="__drawer">
+                    <a
+                      href="../../index.html"
+                      title="Artificial Intelligence"
+                      class="md-nav__button md-logo"
+                      aria-label="Artificial Intelligence"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"
+                        />
+                      </svg>
                     </a>
+                    Artificial Intelligence
+                  </label>
 
+                  <ul class="md-nav__list" data-md-scrollfix>
+                    <li class="md-nav__item">
+                      <a href="../../index.html" class="md-nav__link">
+                        Introduction
+                      </a>
+                    </li>
 
-                    <a href="../unit2/LinearClassifier.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-                        <div class="md-footer-nav__title">
-                            <div class="md-ellipsis">
-                                <span class="md-footer-nav__direction">
-                  Next
-                </span> Linear classifier
-                            </div>
-                        </div>
-                        <div class="md-footer-nav__button md-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-                        </div>
-                    </a>
+                    <li class="md-nav__item md-nav__item--active">
+                      <input
+                        class="md-nav__toggle md-toggle"
+                        data-md-toggle="toc"
+                        type="checkbox"
+                        id="__toc"
+                      />
 
+                      <label
+                        class="md-nav__link md-nav__link--active"
+                        for="__toc"
+                      >
+                        Optimisation
+                        <span class="md-nav__icon md-icon"></span>
+                      </label>
+
+                      <a
+                        href="Optimisation.html"
+                        class="md-nav__link md-nav__link--active"
+                      >
+                        Optimisation
+                      </a>
+
+                      <nav
+                        class="md-nav md-nav--secondary"
+                        aria-label="Table of contents"
+                      >
+                        <label class="md-nav__title" for="__toc">
+                          <span class="md-nav__icon md-icon"></span>
+                          Table of contents
+                        </label>
+                        <ul class="md-nav__list" data-md-scrollfix>
+                          <li class="md-nav__item">
+                            <a href="#the-general-problem" class="md-nav__link">
+                              The general problem
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a href="#backpropagation" class="md-nav__link">
+                              Backpropagation
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#functions-of-vectors"
+                              class="md-nav__link"
+                            >
+                              Functions of vectors
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit2/LinearClassifier.html"
+                        class="md-nav__link"
+                      >
+                        Linear classifier
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit2/Performance.html" class="md-nav__link">
+                        Measuring classifier performance
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit2/MultiLayerNetworks.html"
+                        class="md-nav__link"
+                      >
+                        Multilayer networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit3/Convolution.html" class="md-nav__link">
+                        Convolution
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit3/CNN.html" class="md-nav__link">
+                        Convolutional neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit3/Segmentation.html" class="md-nav__link">
+                        Image segmentation
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/Introduction.html" class="md-nav__link">
+                        Sequential data
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/RNN.html" class="md-nav__link">
+                        Recurrent neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit4/TextClassification.html"
+                        class="md-nav__link"
+                      >
+                        Text classification
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/Transformers.html" class="md-nav__link">
+                        Transformers
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit5/RelationalData.html"
+                        class="md-nav__link"
+                      >
+                        Relational data
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit5/GNN.html" class="md-nav__link">
+                        Graph neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit6/GAN.html" class="md-nav__link">
+                        Generative adversarial networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit6/Cyclegan.html" class="md-nav__link">
+                        Image-to-image translation
+                      </a>
+                    </li>
+                  </ul>
                 </nav>
+              </div>
             </div>
+          </div>
 
-            <div class="md-footer-meta md-typeset">
-                <div class="md-footer-meta__inner md-grid">
-                    <div class="md-footer-copyright">
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav
+                  class="md-nav md-nav--secondary"
+                  aria-label="Table of contents"
+                >
+                  <label class="md-nav__title" for="__toc">
+                    <span class="md-nav__icon md-icon"></span>
+                    Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix>
+                    <li class="md-nav__item">
+                      <a href="#the-general-problem" class="md-nav__link">
+                        The general problem
+                      </a>
+                    </li>
 
-                        <div class="md-footer-copyright__highlight">
-                            Copyright © University of Leeds
-                        </div>
+                    <li class="md-nav__item">
+                      <a href="#backpropagation" class="md-nav__link">
+                        Backpropagation
+                      </a>
+                    </li>
 
-                        Made with
-                        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+                    <li class="md-nav__item">
+                      <a href="#functions-of-vectors" class="md-nav__link">
+                        Functions of vectors
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              <h1 id="optimisation">Optimisation</h1>
+              <p>
+                Optimisation is fundamental to machine learning. First we look
+                at the general problem of optimisation and later apply it to
+                machine learning.
+              </p>
+              <h2 id="the-general-problem">The general problem</h2>
+              <p>
+                In its simplest form, the optimisation problem can be expressed
+                as follows. Given some function
+                <span class="arithmatex">\(f:\R\rightarrow\R\)</span> find the
+                value of <span class="arithmatex">\(x\)</span> that gives the
+                minimum (or maximum) output from
+                <span class="arithmatex">\(f\)</span>, expressed succinctly as:
+              </p>
+              <div class="arithmatex">
+                \[x^*=\underset{x} {\operatorname{argmin}}f(x)\]
+              </div>
+              <p>
+                When seeking the minimum,
+                <span class="arithmatex">\(f\)</span> is often referred to as a
+                <em>cost function</em> or <em>loss function</em>.
+              </p>
+              <p>
+                In general, we seek a <em>global</em> minimum and need to be
+                wary of <em>local</em> minima, as depicted below:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/minimise1D.png"
+                  alt="Finding the minimum of a function in 1D. See image description link below for full details."
+                  aria-describedby="fig-1-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 1</strong>. Finding the minimum of a function
+                    in 1D.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-1-description">
+                      <p>
+                        The graph depicts two kinds of minima of a function with
+                        a single argument, a local minimum and a global minimum.
+                      </p>
                     </div>
+                  </div>
+                  <p style="margin-top: 6px">
+                    Please note: for accessibility purposes, detailed image
+                    descriptions are provided throughout the module adjacent to
+                    images that are too complex to be sufficiently described in
+                    alt-text.
+                  </p>
+                </figcaption>
+              </figure>
 
+              <p>
+                For functions with n-dimensional input and a scalar output
+                <span class="arithmatex">\(f:\R^n\rightarrow\R\)</span> find the
+                value of <span class="arithmatex">\(\myvec{x}\)</span> that
+                gives the minimum (or maximum) output from the function:
+              </p>
+              <div class="arithmatex">
+                \[\myvec{x}^*=\underset{\myvec{x\in\R^n}}
+                {\operatorname{argmin}}f(\myvec{x})\]
+              </div>
+              <p>
+                The diagram below illustrates the minimisation problem for
+                <span class="arithmatex">\(n=2\)</span>:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/minimise2D.png"
+                  alt="Finding the minimum of a function in 2D. See image description link below for full details."
+                  aria-describedby="fig-2-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 2.</strong> Finding the minimum of a function
+                    in 2D.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-2-description">
+                      <p>
+                        A convex (bowl shaped) function of two arguments,
+                        showing a global minimum at the bottom of the bowl.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                The simple form of the problem introduced at the start is
+                equivalent to the multi-dimensional problem with
+                <span class="arithmatex">\(n=1\)</span>.
+              </p>
+              <p>
+                Gradient descent is a general method for finding the minimum of
+                a function. The idea is to start with some random
+                <span class="arithmatex">\(\myvec{x}\in \R^n\)</span> and make
+                repeated small changes to
+                <span class="arithmatex">\(\myvec{x}\)</span> in the direction
+                of fastest decrease in
+                <span class="arithmatex">\(f(\myvec{x})\)</span> at
+                <span class="arithmatex">\(\myvec{x}\)</span>. The following
+                diagram illustrates this idea for
+                <span class="arithmatex">\(n=2\)</span>:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/rosenbrock-nag.png"
+                  alt="Image of 2-D surface and rolling down hill."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 3.</strong> Illustrating gradient descent on
+                    a 2D function, showing the trajectory leading towards the
+                    minimum value.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                The direction of fastest increase in
+                <span class="arithmatex">\(f\)</span> is given by the
+                <em>gradient vector</em>:
+              </p>
+              <div class="arithmatex">
+                \[\nabla_\myvec{x} f(\myvec{x}) = \begin{bmatrix} \frac
+                {\partial f}{\partial x_1} (\myvec{x})\\ \vdots \\ \frac
+                {\partial f}{\partial x_n} (\myvec{x}) \end{bmatrix}\]
+              </div>
+              <p>
+                Note that the partial derivatives are evaluated for the given
+                value of <span class="arithmatex">\(\myvec{x}\)</span>.
+              </p>
+              <p>
+                Each of the partial derivatives in the gradient vector gives the
+                ratio of the change in <span class="arithmatex">\(f\)</span> for
+                an infinitesimal change in one of the components of
+                <span class="arithmatex">\(\myvec{x}\)</span>.
+              </p>
+              <p>
+                The magnitude of the gradient vector is the rate of increase in
+                <span class="arithmatex">\(f\)</span>.
+              </p>
+              <p>
+                Thus, in gradient descent we repeatedly make a small step from
+                <span class="arithmatex">\(\myvec{x}\)</span> to a new point
+                <span class="arithmatex">\(\myvec{x'}\)</span> defined as
+                follows:
+              </p>
+              <div class="arithmatex">
+                \[\myvec{x'}=\myvec{x}-\eta \nabla f(\myvec{x})\]
+              </div>
+              <p>
+                <span class="arithmatex">\(\eta\)</span> simply scales the step
+                size and is generally a small number (e.g.
+                <span class="arithmatex">\(\eta=0.002\)</span>). Notice that the
+                displacement is subtracted so that we move downhill.
+              </p>
+              <p>For example, in 2-D suppose:</p>
+              <div class="arithmatex">\[f(x,y)=3x^2+xy\]</div>
+              <p>
+                The gradient vector with respect to
+                <span class="arithmatex">\(\myvec{x}\)</span> is then given by:
+              </p>
+              <div class="arithmatex">
+                \[\nabla_\myvec{x} f(x,y)=\begin{bmatrix} 6x+y \\ x \end
+                {bmatrix}\]
+              </div>
+              <p>
+                Thus, the gradient vector at
+                <span class="arithmatex">\((3,4)\)</span> is
+                <span class="arithmatex"
+                  >\(\begin{bmatrix} 22 \\ 3 \end {bmatrix}\)</span
+                >. At <span class="arithmatex">\((2,3)\)</span> the gradient
+                vector is
+                <span class="arithmatex"
+                  >\(\begin{bmatrix} 15 \\ 2 \end {bmatrix}\)</span
+                >
+              </p>
+              <p>
+                For convenience, we will refer to partial derivative of the
+                output with respect to the value at any intermediate node
+                (including input nodes) as the <em>gradient</em> at that node.
+              </p>
+              <h2 id="backpropagation">Backpropagation</h2>
+              <p>
+                The functions we deal with in deep neural networks have many
+                variables and a deep compositional structure. To compute
+                gradients efficiently, we represent the evaluation of a given
+                function as a <em>computation graph</em> (or
+                <em>computational graph</em>). The computation graph is a
+                Directed Acyclic Graph or DAG for short. For example, the
+                evaluation of the function
+                <span class="arithmatex">\(e=(a+b)*(b+1)\)</span> at
+                <span class="arithmatex">\(a=2, b=3\)</span> can be represented
+                as follows:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/Picture2.svg"
+                  alt="DAG for the example above."
+                  width="500px"
+                  aria-describedby="fig-4-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 4.</strong> The computation graph
+                    representing the evaluation of a simple 2D function.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-4-description">
+                      <p>
+                        A graph structure with five nodes, starting with the
+                        inputs a=2 and b=3 in two nodes on the left. Directed
+                        edges point from both of these 'input' nodes to a third
+                        node containing c=a+b, c=5. A single directed edge
+                        points from b=3 to a fourth node containing d=b+1, d=4.
+                        Nodes three and four are in the middle of the graph. On
+                        the right of the graph is a single output node with
+                        directed edges leading from the third and fourth nodes.
+                        This fifth node contains e=c*d, e=20.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                This shows how the values of the input variables are mapped
+                through intermediate steps to produce an output.
+              </p>
+              <p>
+                We will use this graph to compute gradients in an efficient way.
+              </p>
+              <p>
+                First, consider the special case of a function that is a
+                composition of two elementary functions each taking a single
+                argument, as in the following example:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/Picture3.svg"
+                  alt="Three nodes in a row labelled x, y and z, with a directed edge from x to y labelled with the partial derivative of y with respect to x, and from y to z labelled with the partial derivative of z with respect to y."
+                  width="400px"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 5.</strong> The chain of partial derivatives
+                    leading from x to z via y.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                The derivatives between neighbouring variables are shown on the
+                edges that link them. By virtue of the <em>chain rule</em>, the
+                gradient at <span class="arithmatex">\(x\)</span> is simply the
+                product of the two intermediate partial derivatives:
+              </p>
+              <div class="arithmatex">
+                \[\frac{\partial z}{\partial x} = \frac{\partial z}{\partial
+                y}\frac{\partial y}{\partial x}\]
+              </div>
+              <p>
+                An intuitive example of this is due to George Simmons [1]:
+                <em
+                  >"if a car travels twice as fast as a bicycle and the bicycle
+                  is four times as fast as a walking man, then the car travels 2
+                  × 4 = 8 times as fast as the man."</em
+                >
+              </p>
+              <p>
+                For 'linear' compositions of more than two elementary functions,
+                repeated application of the chain rule means that the gradient
+                at any node is simply the product of partial derivatives on the
+                edges between that node and the output node. The special case of
+                the gradient for the input node is illustrated below:
+              </p>
+              <div class="arithmatex">
+                \[\frac{\partial x_k}{\partial x_1} = \frac{\partial
+                x_2}{\partial x_1} \cdots\frac{\partial x_{k-1}}{\partial
+                x_{k-2}} \frac{\partial x_k}{\partial x_{k-1}}\]
+              </div>
+              <figure role="group">
+                <img
+                  src="images/Picture4.svg"
+                  alt="Linear DAG."
+                  aria-describedby="fig-6-description"
+                />
+
+                <figcaption>
+                  <p>
+                    <strong>Figure 6.</strong> Applying the chain rule to a
+                    composition of multiple functions.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-6-description">
+                      <p>
+                        A row of nodes connected left to right with directed
+                        edges between consecutive pairs of nodes. Partial
+                        derivatives between consecutive pairs of nodes are
+                        depicted as red arrows between the nodes. The partial
+                        derivative of the output node on the right with respect
+                        to the input node on the left is represented by a single
+                        red arrow leading from output to input.
+                      </p>
+                      <p>The equation again for context:</p>
+                      <div class="arithmatex">
+                        $$\frac{\partial x_k}{\partial x_1} = \frac{\partial
+                        x_2}{\partial x_1} \cdots \frac{\partial
+                        x_{k-1}}{\partial x_{k-2}} \frac{\partial x_k}{\partial
+                        x_{k-1}} $$
+                      </div>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                <em>Backpropagation</em> computes such gradients by propagating
+                backwards from the output, each time multiplying by the next
+                edge derivative in the chain. The iteration is initialised by
+                placing a gradient of 1 at the output node (i.e.
+                <span class="arithmatex"
+                  >\(\frac{\partial x_k}{\partial x_k}=1\)</span
+                >).
+              </p>
+              <p>This iteration is expressed in the following algorithm:</p>
+              <figure role="group">
+                <img
+                  src="images/backprop.svg"
+                  alt="Backpropagation algorithm for a chain of functions"
+                  width="400px"
+                  aria-describedby="fig-7-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 7.</strong> Backpropagation algorithm for a
+                    chain of functions.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-7-description">
+                      <p>
+                        The output is node k. The partial derivative of node k
+                        with respect to itself is set to 1. The previous node is
+                        defined as node s. So long as s is greater than or equal
+                        to 1, set the partial derivative of node k with respect
+                        to node s as the product of the partial derivate of node
+                        s+1 with respect to node s, and the partial derivative
+                        of node k with respect to node s+1. decrement s and
+                        repeat. Note that on the first time through s+1=k.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                For any tree-structured computation graph, we can propagate
+                backwards in the same way, using the chain rule along the unique
+                paths from the output (root) to the inputs (leaves). This is
+                illustrated below:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/backprop2.svg"
+                  alt="Backpropagation in trees."
+                  width="300px"
+                  aria-describedby="fig-8-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 8.</strong> Backpropagation in a
+                    tree-structured computation graph.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-8-description">
+                      <p>
+                        A tree-structured DAG leading from 16 input nodes on the
+                        left to a single output node on the right. The
+                        backpropagation of the gradients from the output node to
+                        a single input node is illustrated by a curved path from
+                        right to left, passing via intermediate nodes in the
+                        tree. Such a path is shown for two of the input nodes.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                Notice that the product that defines the gradient at any
+                intermediate node of the tree is shared by all of the nodes
+                (including leaf nodes) that can be reached via this node. Such
+                products only need to be evaluated once.
+              </p>
+              <p>
+                In general, the computation graph may contain functions with two
+                or more arguments that depend on the same variables from earlier
+                in the computation graph, as in the graph below:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/multivariable.svg"
+                  alt="Multi-variable computation graph."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 9.</strong> Multi-variable computation graph.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                Here, there is more than one chain from
+                <span class="arithmatex">\(h\)</span> to the output
+                <span class="arithmatex">\(z\)</span>. In such cases, we use a
+                generalisation of the chain rule to:
+              </p>
+              <div class="arithmatex">
+                \[ \frac{\partial z}{\partial h}=\frac{\partial z}{\partial
+                x}\frac{\partial x}{\partial h}+ \frac{\partial z}{\partial
+                y}\frac{\partial y}{\partial h} \]
+              </div>
+              <p>
+                Intuitively, we are adding the products from the two chains.
+              </p>
+              <p>
+                In general, the gradient at each node is the sum of all
+                chain-products leading to the output. During backpropagation, we
+                accumulate (sum) these contributions to the gradient.
+              </p>
+              <p>
+                Again, backpropagation computes all of these gradients
+                efficiently by working backwards from the output, compounding
+                the product of derivatives along every branch of the DAG and
+                accumulating (adding) gradients at nodes that have multiple
+                paths to the output. The sequence in which nodes are visiting
+                during backpropagation is the reverse of the sequence they are
+                visited during forward computation from inputs to the output.
+                This guarantees that gradients are fully accumulated at
+                intermediate nodes before we move on and backpropagate to
+                earlier nodes.
+              </p>
+              <p>Below, we see this process for the earlier example:</p>
+              <figure role="group">
+                <img
+                  src="images/Picture1.svg"
+                  alt="Illustrating backprogation."
+                  width="550px"
+                  aria-describedby="fig-10-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 10.</strong> Backpropagation for the
+                    computation graph in Figure 4.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-10-description">
+                      <p>
+                        The computation graph from Figure 4 is shown again. The
+                        partial derivatives between consecutive pairs of nodes
+                        are shown. For example, between node c and node e, the
+                        partial derivative is given by d, which is 4 (remember
+                        that e=c*d). The partial derivatives (gradients) of the
+                        output with respect to all nodes are shown in red at
+                        each node. Thus, the gradient at node a is the product
+                        of the gradient at node c and the partial derivative of
+                        node c with respect to node a (i.e. 4 = 1*4). At node b,
+                        the gradient is a sum of two gradients, that via node c
+                        and that via node d, giving 9 in total.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <h2 id="functions-of-vectors">Functions of vectors</h2>
+              <p>
+                Often, the scalar variables in a computation graph will
+                naturally group into array structures, for example a
+                <span class="arithmatex">\(256 \times 256\)</span> array of
+                light intensities that make up an image. It is convenient and
+                efficient to express the computation graph in terms of such
+                arrays and the elementary functions that operate on them. In
+                machine learning, such arrays are referred to as
+                <em>tensors</em> and may have several dimensions. A 1D tensor is
+                a vector and 2D tensor is a matrix.
+              </p>
+              <p>Consider the following example:</p>
+              <div class="arithmatex">
+                \[e=(\myvec{A}\myvec{x})^T(\myvec{x}+\myvec{y})\]
+              </div>
+              <div class="arithmatex">
+                \[\myvec{A}=\begin{bmatrix} 1 &amp; 1 \\ 2 &amp; 2
+                \end{bmatrix}\]
+              </div>
+              <p>We can represent this as a computation graph as follows:</p>
+              <figure role="group">
+                <img
+                  src="images/Picture5.svg"
+                  alt="Tensor computation graph."
+                  width="550px"
+                  aria-describedby="fig-11-description"
+                />
+                <figcaption>
+                  <p><strong>Figure 11.</strong> Tensor computation graph.</p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-11-description">
+                      <p>
+                        A computation graph with five nodes. Two input nodes on
+                        the left have vector values: x=(1,2) and y=(3,5). The
+                        third node u=(3,6) (in the middle) is a function of x
+                        obtained bu pre-multiplying x by the square matrix A.
+                        The fourth node v=(4,7) (also in the middle) is defined
+                        as the sum of x and y. Finally, the fifth node e=54 (on
+                        the right) is an output scalar value obtained from the
+                        dot product of u and v.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                Backpropagation on such computation graphs is analogous to the
+                scalar case we've already considered. Suppose we have
+                backpropagated to
+                <span class="arithmatex">\(\myvec{u}\)</span> and now have the
+                gradient
+                <span class="arithmatex"
+                  >\(\begin{bmatrix} \frac{\partial e}{\partial u_1} &amp;
+                  \frac{\partial e}{\partial u_2} \end{bmatrix}^T\)</span
+                >. The implicit scalar computation graph underlying the
+                elementary function at
+                <span class="arithmatex">\(\myvec{u}\)</span> looks like this:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/Picture6.svg"
+                  alt="Underlying scalar graph with the components of x as two nodes on the left fully connected to the components of y as two nodes on the right."
+                  width="250px"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 12.</strong> The underlying scalar
+                    computation graph for a pair of vector nodes.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                By the multi-variable chain rule, we propagate back to the
+                components of <span class="arithmatex">\(\myvec{x}\)</span> as
+                follows:
+              </p>
+              <div class="arithmatex">
+                \[ \begin{bmatrix} \frac{\partial e}{\partial x_1} \\
+                \frac{\partial e}{\partial x_2} \end{bmatrix} = \begin{bmatrix}
+                \frac{\partial u_1}{\partial x_1} \frac{\partial e}{\partial
+                u_1} + \frac{\partial u_2}{\partial x_1} \frac{\partial
+                e}{\partial u_2} \\ \frac{\partial u_1}{\partial x_2}
+                \frac{\partial e}{\partial u_1} + \frac{\partial u_2}{\partial
+                x_2} \frac{\partial e}{\partial u_2} \end{bmatrix} =
+                \begin{bmatrix} \frac{\partial u_1}{\partial x_1} &amp;
+                \frac{\partial u_1}{\partial x_2} \\ \frac{\partial
+                u_2}{\partial x_1} &amp; \frac{\partial u_2}{\partial x_2}
+                \end{bmatrix}^T \begin{bmatrix} \frac{\partial e}{\partial u_1}
+                \\ \frac{\partial e}{\partial u_2} \end{bmatrix} \]
+              </div>
+              <p>
+                The <span class="arithmatex">\(2 \times 2\)</span> matrix in
+                this equation is known as the <em>Jacobian</em> matrix. In
+                general, for
+                <span class="arithmatex">\(\myvec{x}\in \mathbb{R}^n\)</span>
+                and
+                <span class="arithmatex">\(\myvec{u}\in \mathbb{R}^m\)</span> we
+                have:
+              </p>
+              <div class="arithmatex">
+                \[\begin{bmatrix} \frac{\partial e}{\partial x_1} \\ \vdots \\
+                \frac{\partial e}{\partial x_n} \end{bmatrix} =
+                \begin{bmatrix}\frac{\partial u_1}{\partial x_1} &amp; \cdots
+                &amp; \frac{\partial u_1}{\partial x_n} \\ \vdots &amp; \ddots
+                &amp; \vdots \\ \frac{\partial u_m}{\partial x_1} &amp; \cdots
+                &amp; \frac{\partial u_m}{\partial x_n} \end{bmatrix}^T
+                \begin{bmatrix} \frac{\partial e}{\partial u_1} \\ \vdots \\
+                \frac{\partial e}{\partial u_m} \end{bmatrix}\]
+              </div>
+              <p>
+                Here the Jacobian is a
+                <span class="arithmatex">\(m \times n\)</span> matrix.
+              </p>
+              <p>
+                Remember that we must still accumulate gradients as we compute
+                them to allow for different routes to the output. For example in
+                the computation graph above,
+                <span class="arithmatex">\(\myvec{x}\)</span> contributes to
+                both <span class="arithmatex">\(\myvec{u}\)</span> and
+                <span class="arithmatex">\(\myvec{v}\)</span>, giving two routes
+                to <span class="arithmatex">\(e\)</span>.
+              </p>
+              <p>
+                Finally, vanilla gradient descent may not end up at a global
+                minimum, particularly with function landscapes such as the
+                following [2]:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/Picture8.png"
+                  alt="rough landscapes."
+                  width="500"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 13.</strong> A 2D function with many local
+                    minima. This function is from an optimisation problem
+                    arising in deep learning and comes from Li et al. [2].
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                [1]
+                <em
+                  >George F. Simmons, Calculus with Analytic Geometry,
+                  McGraw-Hill, New York (1985), p93</em
+                >
+              </p>
+              <p>
+                [2]
+                <a
+                  href="https://papers.nips.cc/paper/2018/hash/a41b3bb3e6b050b6c9067c67f663b915-Abstract.html"
+                  ><em
+                    >Hao Li, et al. Visualizing the Loss Landscape of Neural
+                    Nets, NeurIPS (2018), p6</em
+                  ></a
+                >
+              </p>
+            </article>
+          </div>
+        </div>
+      </main>
+
+      <footer class="md-footer">
+        <div class="md-footer-nav">
+          <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+            <a
+              href="../../index.html"
+              class="md-footer-nav__link md-footer-nav__link--prev"
+              rel="prev"
+            >
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"
+                  />
+                </svg>
+              </div>
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction"> Previous </span>
+                  Introduction
                 </div>
-            </div>
-        </footer>
+              </div>
+            </a>
 
+            <a
+              href="../unit2/LinearClassifier.html"
+              class="md-footer-nav__link md-footer-nav__link--next"
+              rel="next"
+            >
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction"> Next </span> Linear
+                  classifier
+                </div>
+              </div>
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"
+                  />
+                </svg>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+        <div class="md-footer-meta md-typeset">
+          <div class="md-footer-meta__inner md-grid">
+            <div class="md-footer-copyright">
+              <div class="md-footer-copyright__highlight">
+                Copyright © University of Leeds
+              </div>
+
+              Made with
+              <a
+                href="https://squidfunk.github.io/mkdocs-material/"
+                target="_blank"
+                rel="noopener"
+              >
+                Material for MkDocs
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
     <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script>
     <script id="__lang" type="application/json">
-        {
-            "clipboard.copy": "Copy to clipboard",
-            "clipboard.copied": "Copied to clipboard",
-            "search.config.lang": "en",
-            "search.config.pipeline": "trimmer, stopWordFilter",
-            "search.config.separator": "[\\s\\-]+",
-            "search.placeholder": "Search",
-            "search.result.placeholder": "Type to start searching",
-            "search.result.none": "No matching documents",
-            "search.result.one": "1 matching document",
-            "search.result.other": "# matching documents",
-            "search.result.more.one": "1 more on this page",
-            "search.result.more.other": "# more on this page",
-            "search.result.term.missing": "Missing"
-        }
+      {
+        "clipboard.copy": "Copy to clipboard",
+        "clipboard.copied": "Copied to clipboard",
+        "search.config.lang": "en",
+        "search.config.pipeline": "trimmer, stopWordFilter",
+        "search.config.separator": "[\\s\\-]+",
+        "search.placeholder": "Search",
+        "search.result.placeholder": "Type to start searching",
+        "search.result.none": "No matching documents",
+        "search.result.one": "1 matching document",
+        "search.result.other": "# matching documents",
+        "search.result.more.one": "1 more on this page",
+        "search.result.more.other": "# more on this page",
+        "search.result.term.missing": "Missing"
+      }
     </script>
 
     <script>
-        app = initialize({
-            base: "../..",
-            features: ['navigation.sections'],
-            search: Object.assign({
-                worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
-            }, typeof search !== "undefined" && search)
-        })
+      app = initialize({
+        base: "../..",
+        features: ["navigation.sections"],
+        search: Object.assign(
+          {
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js",
+          },
+          typeof search !== "undefined" && search
+        ),
+      });
     </script>
 
     <script src="../../javascript/tablecontentsoverride.js"></script>
@@ -850,8 +1186,5 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-</body>
-
+  </body>
 </html>

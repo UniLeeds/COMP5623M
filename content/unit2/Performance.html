@@ -1,897 +1,1050 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-
-
-
-    <link rel="shortcut icon" href="../../img/favicon.jpg">
-    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
-
-
+    <link rel="shortcut icon" href="../../img/favicon.jpg" />
+    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4" />
 
     <title>Measuring classifier performance - Artificial Intelligence</title>
 
+    <link
+      rel="stylesheet"
+      href="../../assets/stylesheets/main.15aa0b43.min.css"
+    />
 
+    <link
+      rel="stylesheet"
+      href="../../assets/stylesheets/palette.75751829.min.css"
+    />
 
-    <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
-
-
-    <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
-
-
-
-
-
-
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback"
+    />
     <style>
-        body,
-        input {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
-        }
+      body,
+      input {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica,
+          Arial, sans-serif;
+      }
 
-        code,
-        kbd,
-        pre {
-            font-family: "", SFMono-Regular, Consolas, Menlo, monospace
-        }
+      code,
+      kbd,
+      pre {
+        font-family: "", SFMono-Regular, Consolas, Menlo, monospace;
+      }
     </style>
 
+    <link rel="stylesheet" href="../../css/extra.css" />
+  </head>
 
-
-
-    <link rel="stylesheet" href="../../css/extra.css">
-
-
-
-
-
-</head>
-
-
-
-
-
-
-
-<body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-
-
-
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+  <body
+    dir="ltr"
+    data-md-color-scheme=""
+    data-md-color-primary="none"
+    data-md-color-accent="none"
+  >
+    <input
+      class="md-toggle"
+      data-md-toggle="drawer"
+      type="checkbox"
+      id="__drawer"
+      autocomplete="off"
+    />
+    <input
+      class="md-toggle"
+      data-md-toggle="search"
+      type="checkbox"
+      id="__search"
+      autocomplete="off"
+    />
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-
-
-        <a href="#measuring-classifier-performance" class="md-skip">
-          Skip to content
-        </a>
-
+      <a href="#measuring-classifier-performance" class="md-skip">
+        Skip to content
+      </a>
     </div>
     <div data-md-component="announce">
-
-        <aside class="md-announce">
-            <div class="md-announce__inner md-grid md-typeset">
-
-                <div id="versionIndicator"> <b>Version:</b>27.10.21.a </div>
-                <img id="customlogo" src="../../img/logo.svg" alt="University of Leeds logo.">
-
-            </div>
-        </aside>
-
+      <aside class="md-announce">
+        <div class="md-announce__inner md-grid md-typeset">
+          <div id="versionIndicator"><b>Version:</b>27.10.21.a</div>
+          <img
+            id="customlogo"
+            src="../../img/logo.svg"
+            alt="University of Leeds logo."
+          />
+        </div>
+      </aside>
     </div>
 
-
-
-
-
     <header class="md-header" data-md-component="header">
-        <nav class="md-header-nav md-grid" aria-label="Header">
-            <a href="../../index.html" title="Artificial Intelligence" class="md-header-nav__button md-logo" aria-label="Artificial Intelligence">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-            <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-            <div class="md-header-nav__title" data-md-component="header-title">
-                <div class="md-header-nav__ellipsis">
-                    <div class="md-header-nav__topic">
-                        <span class="md-ellipsis">
-            Artificial Intelligence
-          </span>
-                    </div>
-                    <div class="md-header-nav__topic">
-                        <span class="md-ellipsis">
-            
-              Measuring classifier performance
-            
-          </span>
-                    </div>
-                </div>
+      <nav class="md-header-nav md-grid" aria-label="Header">
+        <a
+          href="../../index.html"
+          title="Artificial Intelligence"
+          class="md-header-nav__button md-logo"
+          aria-label="Artificial Intelligence"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"
+            />
+          </svg>
+        </a>
+        <label class="md-header-nav__button md-icon" for="__drawer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" />
+          </svg>
+        </label>
+        <div class="md-header-nav__title" data-md-component="header-title">
+          <div class="md-header-nav__ellipsis">
+            <div class="md-header-nav__topic">
+              <span class="md-ellipsis"> Artificial Intelligence </span>
             </div>
-
-            <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-
-            <div class="md-search" data-md-component="search" role="dialog">
-                <label class="md-search__overlay" for="__search"></label>
-                <div class="md-search__inner" role="search">
-                    <form class="md-search__form" name="search">
-                        <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
-                        <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-                        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-                    </form>
-                    <div class="md-search__output">
-                        <div class="md-search__scrollwrap" data-md-scrollfix>
-                            <div class="md-search-result" data-md-component="search-result">
-                                <div class="md-search-result__meta">
-                                    Initializing search
-                                </div>
-                                <ol class="md-search-result__list"></ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="md-header-nav__topic">
+              <span class="md-ellipsis">
+                Measuring classifier performance
+              </span>
             </div>
+          </div>
+        </div>
 
+        <label class="md-header-nav__button md-icon" for="__search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"
+            />
+          </svg>
+        </label>
 
-        </nav>
+        <div class="md-search" data-md-component="search" role="dialog">
+          <label class="md-search__overlay" for="__search"></label>
+          <div class="md-search__inner" role="search">
+            <form class="md-search__form" name="search">
+              <input
+                type="text"
+                class="md-search__input"
+                name="query"
+                aria-label="Search"
+                placeholder="Search"
+                autocapitalize="off"
+                autocorrect="off"
+                autocomplete="off"
+                spellcheck="false"
+                data-md-component="search-query"
+                data-md-state="active"
+                required
+              />
+              <label class="md-search__icon md-icon" for="__search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"
+                  />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"
+                  />
+                </svg>
+              </label>
+              <button
+                type="reset"
+                class="md-search__icon md-icon"
+                aria-label="Clear"
+                data-md-component="search-reset"
+                tabindex="-1"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+                  />
+                </svg>
+              </button>
+            </form>
+            <div class="md-search__output">
+              <div class="md-search__scrollwrap" data-md-scrollfix>
+                <div class="md-search-result" data-md-component="search-result">
+                  <div class="md-search-result__meta">Initializing search</div>
+                  <ol class="md-search-result__list"></ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <div class="md-container" data-md-component="container">
-
-
-
-
-        <main class="md-main" data-md-component="main">
-            <div class="md-main__inner md-grid">
-
-
-
-                <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                    <div class="md-sidebar__scrollwrap">
-                        <div class="md-sidebar__inner">
-
-
-
-
-
-
-
-                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-                                <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-    Artificial Intelligence
-  </label>
-
-                                <ul class="md-nav__list" data-md-scrollfix>
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../../index.html" class="md-nav__link">
-      Introduction
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit1/Optimisation.html" class="md-nav__link">
-      Optimisation
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="LinearClassifier.html" class="md-nav__link">
-      Linear classifier
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item md-nav__item--active">
-
-                                        <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-
-
-
-
-                                        <label class="md-nav__link md-nav__link--active" for="__toc">
-        Measuring classifier performance
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-
-                                        <a href="Performance.html" class="md-nav__link md-nav__link--active">
-      Measuring classifier performance
-    </a>
-
-
-                                        <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
-
-
-
-
-                                            <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-                                            <ul class="md-nav__list" data-md-scrollfix>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#confusion-matrix" class="md-nav__link">
-    Confusion matrix
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#accuracy" class="md-nav__link">
-    Accuracy
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#special-case-binary-classification" class="md-nav__link">
-    Special case: binary classification
-  </a>
-
-                                                    <nav class="md-nav" aria-label="Special case: binary classification">
-                                                        <ul class="md-nav__list">
-
-                                                            <li class="md-nav__item">
-                                                                <a href="#true-positive-rate-and-false-positive-rate" class="md-nav__link">
-    True positive rate and false positive rate
-  </a>
-
-                                                            </li>
-
-                                                            <li class="md-nav__item">
-                                                                <a href="#precision-and-recall" class="md-nav__link">
-    Precision and recall
-  </a>
-
-                                                            </li>
-
-                                                        </ul>
-                                                    </nav>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#precision-and-recall-in-multiclass-classification" class="md-nav__link">
-    Precision and recall in multiclass classification
-  </a>
-
-                                                </li>
-
-                                            </ul>
-
-                                        </nav>
-
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="MultiLayerNetworks.html" class="md-nav__link">
-      Multilayer networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit3/Convolution.html" class="md-nav__link">
-      Convolution
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit3/CNN.html" class="md-nav__link">
-      Convolutional neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit3/Segmentation.html" class="md-nav__link">
-      Image segmentation
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/Introduction.html" class="md-nav__link">
-      Sequential data
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/RNN.html" class="md-nav__link">
-      Recurrent neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/TextClassification.html" class="md-nav__link">
-      Text classification
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/Transformers.html" class="md-nav__link">
-      Transformers
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit5/RelationalData.html" class="md-nav__link">
-      Relational data
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit5/GNN.html" class="md-nav__link">
-      Graph neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit6/GAN.html" class="md-nav__link">
-      Generative adversarial networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit6/Cyclegan.html" class="md-nav__link">
-      Image-to-image translation
-    </a>
-                                    </li>
-
-
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                    <div class="md-sidebar__scrollwrap">
-                        <div class="md-sidebar__inner">
-
-                            <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
-
-
-
-
-                                <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-                                <ul class="md-nav__list" data-md-scrollfix>
-
-                                    <li class="md-nav__item">
-                                        <a href="#confusion-matrix" class="md-nav__link">
-    Confusion matrix
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#accuracy" class="md-nav__link">
-    Accuracy
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#special-case-binary-classification" class="md-nav__link">
-    Special case: binary classification
-  </a>
-
-                                        <nav class="md-nav" aria-label="Special case: binary classification">
-                                            <ul class="md-nav__list">
-
-                                                <li class="md-nav__item">
-                                                    <a href="#true-positive-rate-and-false-positive-rate" class="md-nav__link">
-    True positive rate and false positive rate
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#precision-and-recall" class="md-nav__link">
-    Precision and recall
-  </a>
-
-                                                </li>
-
-                                            </ul>
-                                        </nav>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#precision-and-recall-in-multiclass-classification" class="md-nav__link">
-    Precision and recall in multiclass classification
-  </a>
-
-                                    </li>
-
-                                </ul>
-
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="md-content">
-                    <article class="md-content__inner md-typeset">
-
-
-
-                        <h1 id="measuring-classifier-performance">Measuring classifier performance</h1>
-                        <h2 id="confusion-matrix">Confusion matrix</h2>
-                        <p>A simple and informative way of setting out the performance of a multiclass classifier is with a <em>confusion matrix</em> that sets out the number of correct predictions and the number of incorrect predictions (confusions) as
-                            a matrix such as this:</p>
-                        <table>
-                            <col>
-                            <col>
-                            <colgroup span="3"></colgroup>
-                            <tr>
-                                <td rowspan="2" style="border:none;"></td>
-                                <td rowspan="2"></td>
-                                <th colspan="3" scope="colgroup">Predicted class</th>
-                            </tr>
-                            <tr>
-                                <th scope="col">Car</th>
-                                <th scope="col">Bicycle</th>
-                                <th scope="col">Truck</th>
-                            </tr>
-                            <tbody>
-                                <tr>
-                                    <th rowspan="3" scope="rowgroup" style="vertical-align: middle;">Actual class</th>
-                                    <th scope="row">Car</th>
-                                    <td>8</td>
-                                    <td>2</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Bicycle</th>
-                                    <td>1</td>
-                                    <td>7</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Truck</th>
-                                    <td>2</td>
-                                    <td>0</td>
-                                    <td>12</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <p>In this example, eight cars were predicted correctly and two cars were incorrectly predicted to be bicycles.</p>
-                        <h2 id="accuracy">Accuracy</h2>
-                        <p>From the confusion matrix we can compute <em>accuracy</em>, the proportion of correct predictions and <em>error rate</em>, the proportion of incorrect predictions. Note that: </p>
-                        <div class="arithmatex">\[accuracy = 1 - error\:rate\]</div>
-                        <p>From the confusion matrix above we have:</p>
-                        <div class="arithmatex">\[ accuracy = \frac{\#(correct\:predictions)}{\#(dataset)} = \frac{27}{35} \]</div>
-                        <div class="arithmatex">\[error\:rate = \frac{\#(incorrect\:predictions)}{\#(dataset)} = \frac{8}{35}\]</div>
-                        <h2 id="special-case-binary-classification">Special case: binary classification</h2>
-                        <p>In the special case of binary classification (two classes), we are often most interested in one of the two classes. For example, for a classifier looking for faulty widgets on a production line, we are particularly interested in
-                            performance with respect to the faulty widgets.</p>
-                        <p>To emphasise the relative importance of the two classes, we normally refer to the class we are interested in as the <em>positive</em> class and the other one as the <em>negative</em> class. The different outcomes corresponding
-                            to each cell in the confusion matrix are then referred to as indicated below:</p>
-                        <table>
-                            <col>
-                            <col>
-                            <colgroup span="2"></colgroup>
-                            <tr>
-                                <td rowspan="2" style="border:none;"></td>
-                                <td rowspan="2"></td>
-                                <th colspan="2" scope="colgroup">Predicted class</th>
-                            </tr>
-                            <tr>
-                                <th scope="col">Positive</th>
-                                <th scope="col">Negative</th>
-                            </tr>
-                            <tbody>
-                                <tr>
-                                    <th rowspan="2" scope="rowgroup" style="vertical-align: middle;">Actual class</th>
-                                    <th scope="row">Positive</th>
-                                    <td>TP = #(true positives)</td>
-                                    <td>FN = #(false negatives)</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Negative</th>
-                                    <td>FP = #(false positives)</td>
-                                    <td>TN = #(true negatives)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <p>Two ways of measuring the performance of binary classifiers are widely used.</p>
-                        <h3 id="true-positive-rate-and-false-positive-rate">True positive rate and false positive rate</h3>
-                        <p>The <em>true positive rate (TPR)</em> is the proportion of actual positives that are correctly predicted. In the example of faulty widgets, it is the proportion of faulty widgets that are correctly identified. The <em>false positive rate</em>                            (FPR) is the proportion of actual negatives that are predicted as positive. We could consider this to be the false alarm rate. In looking for faulty widgets, it is the proportion of perfect widgets (negatives) that are incorrectly
-                            classified as faulty.</p>
-                        <p>The true positive rate is also known as the <em>sensitivity</em>.</p>
-                        <p>There is a trade-off between the two measures TPR and FPR that depends on how strict we are in classifying things into the positive class. In classification, we have simply taken the category with the highest probability, which
-                            for binary classification means the category with probability greater than 0.5 (if the probabilities are equal we can choose either). Instead of doing this, we can set a higher threshold to be classified as positive, demanding
-                            greater confidence before assigning to this category. This recognises the implications of getting it wrong and enables us to strike a balance between TPR and FPR. We can reduce the number of false alarms (FPR) by increasing
-                            the threshold (a good thing), but at the cost of missing more of the positives and thereby reducing TPR (a bad thing). We can visualise this trade-off by varying the threshold and plotting TPR against FPR as a curve, as illustrated
-                            below. This is known as a Receiver Operating Characteristic (ROC) curve.</p>
-                        <figure role="group">
-                            <img src="images/roc.svg" alt="ROC curve." aria-describedby="fig-1 description" />
-                            <figcaption>
-                                <p><strong>Figure 1.</strong> ROC curve.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-2-description">
-                                        <p>ROC curve (in red) plotting TPR against FPR. ROC curve in green is for a baseline classifier that outputs random confidence values.</p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>This ROC plot shows the performance (in green) of a baseline classifier that simply outputs random confidence values. Clearly we need our ROC curve to pass as near as possible to the top-left, and away from this baseline. A good
-                            way to summarise the performance of a classifier is to take the area under the ROC curve (often abbreviated as AUC), which is a real number in the interval <span class="arithmatex">\([0,1]\)</span>. The closer to <span class="arithmatex">\(1\)</span>,
-                            the better the performance.</p>
-                        <h3 id="precision-and-recall">Precision and recall</h3>
-                        <p>For some applications, there may be a large imbalance in the numbers of actual positives and negatives. Typically, there are many more negatives than positives as we would hope is the case for faulty widgets on a production line,
-                            as in the confusion matrix below:</p>
-                        <table>
-                            <col>
-                            <col>
-                            <colgroup span="2"></colgroup>
-                            <tr>
-                                <td rowspan="2" style="border:none;"></td>
-                                <td rowspan="2"></td>
-                                <th colspan="2" scope="colgroup">Predicted class</th>
-                            </tr>
-                            <tr>
-                                <th scope="col">Positive</th>
-                                <th scope="col">Negative</th>
-                            </tr>
-                            <tbody>
-                                <tr>
-                                    <th rowspan="2" scope="rowgroup" style="vertical-align: middle;">Actual class</th>
-                                    <th scope="row">Positive</th>
-                                    <td>10</td>
-                                    <td>40</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Negative</th>
-                                    <td>90</td>
-                                    <td>860</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <p>In this case, the FPR isn't very informative and is simply a small number (<span class="arithmatex">\(\frac{90}{90+860}\)</span>). We still care about the proportion of positives that are correctly identified (TPR), but also need
-                            to know the proportion of predicted positives that are correct, a measure that is independent of the number of perfect widgets (i.e. negatives).</p>
-                        <p>The <em>recall</em> is the proportion of <strong>actual</strong> positives classified correctly.</p>
-                        <div class="arithmatex">\[ recall = \frac{TP}{TP+FN} \]</div>
-                        <p>The <em>precision</em> is the proportion of <strong>predicted</strong> positives classified correctly.</p>
-                        <div class="arithmatex">\[ precision = \frac{TP}{TP+FP} \]</div>
-                        <p>Notice that recall is simply another name for TPR (and sensitivity). Both precision and recall are independent of the number of true negatives (<span class="arithmatex">\(TN\)</span>).</p>
-                        <p>We can again trade-off precision against recall by varying the acceptance probability threshold for the positive class, giving a <em>precision-recall (PR) curve</em>. As for the ROC curve we can summarise this by the <em>area under the PR curve</em>.
-                            Because this area can also be seen as an average value for the precision across the range of recall values it is often referred to as <em>Average Precision</em>.</p>
-                        <p>In the following example, we are required to spot when an image contains a car (positive) and when it does not (negative). This might be part of an application at a pedestrian crossing, detecting approaching cars to warn pedestrians.
-                            The rank order of probabilities for the positive class (car) on a test set of eight images is illustrated below (four contain a car and four do not):</p>
-                        <figure role="group">
-                            <img src="images/DL_IMG047.png" alt="Precision & recall values for varying probability threshold." aria-describedby="fig-2-description" />
-                            <figcaption>
-                                <p><strong>Figure 2.</strong> Precision and recall for varying probability threshold.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-2-description">
-                                        <p>A stack of 8 images, some of which depict a car. The images are ordered by the probability of being a car, as output by a classifier. The 9 distinct precision and recall values obtained by setting increasing threshold
-                                            values from 0 to 1 are shown alongside the stack. </p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>The corresponding PR curve looks like this:</p>
-                        <figure role="group">
-                            <img src="images/precisionrecallcurve.svg" alt="Precision-recall curve." aria-describedby="fig-3-description" />
-                            <figcaption>
-                                <p><strong>Figure 3.</strong> Precision-recall curve corresponding to the varying threshold values tabulated in Figure 2.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-3-description">
-                                        <p> A graph with precision values plotted on the y-axis corresponding to the recall values on the x-axis. This is the precision-recall curve. </p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>It is often convenient to summarise the value of precision and recall as a single value. The <em>F-score</em> is the harmonic mean of precision and recall, given by:</p>
-                        <div class="arithmatex">\[ F = \frac{2}{precision^{-1} + recall^{-1}} = 2\cdot\frac{precision \cdot recall}{precision + recall} \]</div>
-                        <p>The reason for using the harmonic mean instead of the arithmetic mean is to penalise situations where either the precision or recall are low. This can be seen from the following visualisation of F-scores for all combinations of
-                            precision and recall values.</p>
-                        <p><img alt="Visualisation of the F-score for different precision and recall values" src="images/f1.svg" /></p>
-                        <h2 id="precision-and-recall-in-multiclass-classification">Precision and recall in multiclass classification</h2>
-                        <p>Precision and recall are also used as a performance measure with respect to individual classes in multi-class classification. In the three class example at the start, we can compute recall and precision values for the truck class
-                            just as we did for the positive class in binary classification:</p>
-                        <div class="arithmatex">\[recall\:for\:truck = \frac{\#(correctly\:predicted\:trucks)}{\#(actual\:trucks)} \]</div>
-                        <div class="arithmatex">\[precision\:for\:truck = \frac{\#(correctly\:predicted\:trucks)}{\#(predicted\:trucks)} \]</div>
-                        <p>These statistics are particularly useful when we have an <em>unbalanced</em> dataset, with very different numbers of examples in each class. Consider for example the following confusion matrix:</p>
-                        <table>
-                            <col>
-                            <col>
-                            <colgroup span="3"></colgroup>
-                            <tr>
-                                <td rowspan="2" style="border:none;"></td>
-                                <td rowspan="2"></td>
-                                <th colspan="3" scope="colgroup">Predicted class</th>
-                            </tr>
-                            <tr>
-                                <th scope="col">Car</th>
-                                <th scope="col">Bicycle</th>
-                                <th scope="col">Truck</th>
-                            </tr>
-                            <tbody>
-                                <tr>
-                                    <th rowspan="3" scope="rowgroup" style="vertical-align: middle;">Actual class</th>
-                                    <th scope="row">Car</th>
-                                    <td>1000</td>
-                                    <td>5</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Bicycle</th>
-                                    <td>10</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Truck</th>
-                                    <td>10</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <p>In this case there are many more cars than trucks and bicycles. The classifier makes the wrong prediction for every truck and bicycle, yet the accuracy is high:</p>
-                        <div class="arithmatex">\[ accuracy = \frac{1000}{1030} = 0.97 \]</div>
-                        <p>In this case, the accuracy is misleading. Fortunately the recall for the truck and bicycle classes show that the performance on these two classes is poor.</p>
-                        <div class="arithmatex">\[ recall\:for\:car = \frac{1000}{1010} = 0.99\]</div>
-                        <div class="arithmatex">\[ recall\:for\:truck = \frac{0}{10} = 0\]</div>
-                        <div class="arithmatex">\[ recall\:for\:bicycle = \frac{0}{10} = 0\]</div>
-                        <p>A good way to summarise the performance with unbalanced datasets is to take the mean of the recall values for each class. This is known as the <em>balanced accuracy</em>.</p>
-                        <p>For the example above, the balanced accuracy is given by:</p>
-                        <div class="arithmatex">\[ balanced\:accuracy = \frac{0.99 + 0 +0}{3} = 0.33\]</div>
-                        <p>This is very different from the accuracy value and a more representative measure of performance in this case.</p>
-                        <p>When there is an equal number of examples in each class, the balanced accuracy is identical to the accuracy.</p>
-
-
-
-
-
-
-
-                    </article>
-                </div>
-            </div>
-        </main>
-
-
-        <footer class="md-footer">
-
-            <div class="md-footer-nav">
-                <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-
-                    <a href="LinearClassifier.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-                        <div class="md-footer-nav__button md-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-                        </div>
-                        <div class="md-footer-nav__title">
-                            <div class="md-ellipsis">
-                                <span class="md-footer-nav__direction">
-                  Previous
-                </span> Linear classifier
-                            </div>
-                        </div>
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          <div
+            class="md-sidebar md-sidebar--primary"
+            data-md-component="navigation"
+          >
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav
+                  class="md-nav md-nav--primary"
+                  aria-label="Navigation"
+                  data-md-level="0"
+                >
+                  <label class="md-nav__title" for="__drawer">
+                    <a
+                      href="../../index.html"
+                      title="Artificial Intelligence"
+                      class="md-nav__button md-logo"
+                      aria-label="Artificial Intelligence"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"
+                        />
+                      </svg>
                     </a>
+                    Artificial Intelligence
+                  </label>
 
+                  <ul class="md-nav__list" data-md-scrollfix>
+                    <li class="md-nav__item">
+                      <a href="../../index.html" class="md-nav__link">
+                        Introduction
+                      </a>
+                    </li>
 
-                    <a href="MultiLayerNetworks.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-                        <div class="md-footer-nav__title">
-                            <div class="md-ellipsis">
-                                <span class="md-footer-nav__direction">
-                  Next
-                </span> Multilayer networks
-                            </div>
-                        </div>
-                        <div class="md-footer-nav__button md-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-                        </div>
-                    </a>
+                    <li class="md-nav__item">
+                      <a href="../unit1/Optimisation.html" class="md-nav__link">
+                        Optimisation
+                      </a>
+                    </li>
 
+                    <li class="md-nav__item">
+                      <a href="LinearClassifier.html" class="md-nav__link">
+                        Linear classifier
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item md-nav__item--active">
+                      <input
+                        class="md-nav__toggle md-toggle"
+                        data-md-toggle="toc"
+                        type="checkbox"
+                        id="__toc"
+                      />
+
+                      <label
+                        class="md-nav__link md-nav__link--active"
+                        for="__toc"
+                      >
+                        Measuring classifier performance
+                        <span class="md-nav__icon md-icon"></span>
+                      </label>
+
+                      <a
+                        href="Performance.html"
+                        class="md-nav__link md-nav__link--active"
+                      >
+                        Measuring classifier performance
+                      </a>
+
+                      <nav
+                        class="md-nav md-nav--secondary"
+                        aria-label="Table of contents"
+                      >
+                        <label class="md-nav__title" for="__toc">
+                          <span class="md-nav__icon md-icon"></span>
+                          Table of contents
+                        </label>
+                        <ul class="md-nav__list" data-md-scrollfix>
+                          <li class="md-nav__item">
+                            <a href="#confusion-matrix" class="md-nav__link">
+                              Confusion matrix
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a href="#accuracy" class="md-nav__link">
+                              Accuracy
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#special-case-binary-classification"
+                              class="md-nav__link"
+                            >
+                              Special case: binary classification
+                            </a>
+
+                            <nav
+                              class="md-nav"
+                              aria-label="Special case: binary classification"
+                            >
+                              <ul class="md-nav__list">
+                                <li class="md-nav__item">
+                                  <a
+                                    href="#true-positive-rate-and-false-positive-rate"
+                                    class="md-nav__link"
+                                  >
+                                    True positive rate and false positive rate
+                                  </a>
+                                </li>
+
+                                <li class="md-nav__item">
+                                  <a
+                                    href="#precision-and-recall"
+                                    class="md-nav__link"
+                                  >
+                                    Precision and recall
+                                  </a>
+                                </li>
+                              </ul>
+                            </nav>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#precision-and-recall-in-multiclass-classification"
+                              class="md-nav__link"
+                            >
+                              Precision and recall in multiclass classification
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="MultiLayerNetworks.html" class="md-nav__link">
+                        Multilayer networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit3/Convolution.html" class="md-nav__link">
+                        Convolution
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit3/CNN.html" class="md-nav__link">
+                        Convolutional neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit3/Segmentation.html" class="md-nav__link">
+                        Image segmentation
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/Introduction.html" class="md-nav__link">
+                        Sequential data
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/RNN.html" class="md-nav__link">
+                        Recurrent neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit4/TextClassification.html"
+                        class="md-nav__link"
+                      >
+                        Text classification
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/Transformers.html" class="md-nav__link">
+                        Transformers
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit5/RelationalData.html"
+                        class="md-nav__link"
+                      >
+                        Relational data
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit5/GNN.html" class="md-nav__link">
+                        Graph neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit6/GAN.html" class="md-nav__link">
+                        Generative adversarial networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit6/Cyclegan.html" class="md-nav__link">
+                        Image-to-image translation
+                      </a>
+                    </li>
+                  </ul>
                 </nav>
+              </div>
             </div>
+          </div>
 
-            <div class="md-footer-meta md-typeset">
-                <div class="md-footer-meta__inner md-grid">
-                    <div class="md-footer-copyright">
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav
+                  class="md-nav md-nav--secondary"
+                  aria-label="Table of contents"
+                >
+                  <label class="md-nav__title" for="__toc">
+                    <span class="md-nav__icon md-icon"></span>
+                    Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix>
+                    <li class="md-nav__item">
+                      <a href="#confusion-matrix" class="md-nav__link">
+                        Confusion matrix
+                      </a>
+                    </li>
 
-                        <div class="md-footer-copyright__highlight">
-                            Copyright © University of Leeds
-                        </div>
+                    <li class="md-nav__item">
+                      <a href="#accuracy" class="md-nav__link"> Accuracy </a>
+                    </li>
 
-                        Made with
-                        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+                    <li class="md-nav__item">
+                      <a
+                        href="#special-case-binary-classification"
+                        class="md-nav__link"
+                      >
+                        Special case: binary classification
+                      </a>
+
+                      <nav
+                        class="md-nav"
+                        aria-label="Special case: binary classification"
+                      >
+                        <ul class="md-nav__list">
+                          <li class="md-nav__item">
+                            <a
+                              href="#true-positive-rate-and-false-positive-rate"
+                              class="md-nav__link"
+                            >
+                              True positive rate and false positive rate
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#precision-and-recall"
+                              class="md-nav__link"
+                            >
+                              Precision and recall
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="#precision-and-recall-in-multiclass-classification"
+                        class="md-nav__link"
+                      >
+                        Precision and recall in multiclass classification
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              <h1 id="measuring-classifier-performance">
+                Measuring classifier performance
+              </h1>
+              <h2 id="confusion-matrix">Confusion matrix</h2>
+              <p>
+                A simple and informative way of setting out the performance of a
+                multiclass classifier is with a <em>confusion matrix</em> that
+                sets out the number of correct predictions and the number of
+                incorrect predictions (confusions) as a matrix such as this:
+              </p>
+              <table>
+                <col />
+                <col />
+                <colgroup span="3"></colgroup>
+                <tr>
+                  <td rowspan="2" style="border: none"></td>
+                  <td rowspan="2"></td>
+                  <th colspan="3" scope="colgroup">Predicted class</th>
+                </tr>
+                <tr>
+                  <th scope="col">Car</th>
+                  <th scope="col">Bicycle</th>
+                  <th scope="col">Truck</th>
+                </tr>
+                <tbody>
+                  <tr>
+                    <th
+                      rowspan="3"
+                      scope="rowgroup"
+                      style="vertical-align: middle"
+                    >
+                      Actual class
+                    </th>
+                    <th scope="row">Car</th>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Bicycle</th>
+                    <td>1</td>
+                    <td>7</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Truck</th>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>12</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>
+                In this example, eight cars were predicted correctly and two
+                cars were incorrectly predicted to be bicycles.
+              </p>
+              <h2 id="accuracy">Accuracy</h2>
+              <p>
+                From the confusion matrix we can compute <em>accuracy</em>, the
+                proportion of correct predictions and <em>error rate</em>, the
+                proportion of incorrect predictions. Note that:
+              </p>
+              <div class="arithmatex">\[accuracy = 1 - error\:rate\]</div>
+              <p>From the confusion matrix above we have:</p>
+              <div class="arithmatex">
+                \[ accuracy = \frac{\#(correct\:predictions)}{\#(dataset)} =
+                \frac{27}{35} \]
+              </div>
+              <div class="arithmatex">
+                \[error\:rate = \frac{\#(incorrect\:predictions)}{\#(dataset)} =
+                \frac{8}{35}\]
+              </div>
+              <h2 id="special-case-binary-classification">
+                Special case: binary classification
+              </h2>
+              <p>
+                In the special case of binary classification (two classes), we
+                are often most interested in one of the two classes. For
+                example, for a classifier looking for faulty widgets on a
+                production line, we are particularly interested in performance
+                with respect to the faulty widgets.
+              </p>
+              <p>
+                To emphasise the relative importance of the two classes, we
+                normally refer to the class we are interested in as the
+                <em>positive</em> class and the other one as the
+                <em>negative</em> class. The different outcomes corresponding to
+                each cell in the confusion matrix are then referred to as
+                indicated below:
+              </p>
+              <table>
+                <col />
+                <col />
+                <colgroup span="2"></colgroup>
+                <tr>
+                  <td rowspan="2" style="border: none"></td>
+                  <td rowspan="2"></td>
+                  <th colspan="2" scope="colgroup">Predicted class</th>
+                </tr>
+                <tr>
+                  <th scope="col">Positive</th>
+                  <th scope="col">Negative</th>
+                </tr>
+                <tbody>
+                  <tr>
+                    <th
+                      rowspan="2"
+                      scope="rowgroup"
+                      style="vertical-align: middle"
+                    >
+                      Actual class
+                    </th>
+                    <th scope="row">Positive</th>
+                    <td>TP = #(true positives)</td>
+                    <td>FN = #(false negatives)</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Negative</th>
+                    <td>FP = #(false positives)</td>
+                    <td>TN = #(true negatives)</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>
+                Two ways of measuring the performance of binary classifiers are
+                widely used.
+              </p>
+              <h3 id="true-positive-rate-and-false-positive-rate">
+                True positive rate and false positive rate
+              </h3>
+              <p>
+                The <em>true positive rate (TPR)</em> is the proportion of
+                actual positives that are correctly predicted. In the example of
+                faulty widgets, it is the proportion of faulty widgets that are
+                correctly identified. The <em>false positive rate</em> (FPR) is
+                the proportion of actual negatives that are predicted as
+                positive. We could consider this to be the false alarm rate. In
+                looking for faulty widgets, it is the proportion of perfect
+                widgets (negatives) that are incorrectly classified as faulty.
+              </p>
+              <p>
+                The true positive rate is also known as the
+                <em>sensitivity</em>.
+              </p>
+              <p>
+                There is a trade-off between the two measures TPR and FPR that
+                depends on how strict we are in classifying things into the
+                positive class. In classification, we have simply taken the
+                category with the highest probability, which for binary
+                classification means the category with probability greater than
+                0.5 (if the probabilities are equal we can choose either).
+                Instead of doing this, we can set a higher threshold to be
+                classified as positive, demanding greater confidence before
+                assigning to this category. This recognises the implications of
+                getting it wrong and enables us to strike a balance between TPR
+                and FPR. We can reduce the number of false alarms (FPR) by
+                increasing the threshold (a good thing), but at the cost of
+                missing more of the positives and thereby reducing TPR (a bad
+                thing). We can visualise this trade-off by varying the threshold
+                and plotting TPR against FPR as a curve, as illustrated below.
+                This is known as a Receiver Operating Characteristic (ROC)
+                curve.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/roc.svg"
+                  alt="ROC curve."
+                  aria-describedby="fig-1 description"
+                />
+                <figcaption>
+                  <p><strong>Figure 1.</strong> ROC curve.</p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-2-description">
+                      <p>
+                        ROC curve (in red) plotting TPR against FPR. ROC curve
+                        in green is for a baseline classifier that outputs
+                        random confidence values.
+                      </p>
                     </div>
+                  </div>
+                </figcaption>
+              </figure>
 
+              <p>
+                This ROC plot shows the performance (in green) of a baseline
+                classifier that simply outputs random confidence values. Clearly
+                we need our ROC curve to pass as near as possible to the
+                top-left, and away from this baseline. A good way to summarise
+                the performance of a classifier is to take the area under the
+                ROC curve (often abbreviated as AUC), which is a real number in
+                the interval <span class="arithmatex">\([0,1]\)</span>. The
+                closer to <span class="arithmatex">\(1\)</span>, the better the
+                performance.
+              </p>
+              <h3 id="precision-and-recall">Precision and recall</h3>
+              <p>
+                For some applications, there may be a large imbalance in the
+                numbers of actual positives and negatives. Typically, there are
+                many more negatives than positives as we would hope is the case
+                for faulty widgets on a production line, as in the confusion
+                matrix below:
+              </p>
+              <table>
+                <col />
+                <col />
+                <colgroup span="2"></colgroup>
+                <tr>
+                  <td rowspan="2" style="border: none"></td>
+                  <td rowspan="2"></td>
+                  <th colspan="2" scope="colgroup">Predicted class</th>
+                </tr>
+                <tr>
+                  <th scope="col">Positive</th>
+                  <th scope="col">Negative</th>
+                </tr>
+                <tbody>
+                  <tr>
+                    <th
+                      rowspan="2"
+                      scope="rowgroup"
+                      style="vertical-align: middle"
+                    >
+                      Actual class
+                    </th>
+                    <th scope="row">Positive</th>
+                    <td>10</td>
+                    <td>40</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Negative</th>
+                    <td>90</td>
+                    <td>860</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>
+                In this case, the FPR isn't very informative and is simply a
+                small number (<span class="arithmatex"
+                  >\(\frac{90}{90+860}\)</span
+                >). We still care about the proportion of positives that are
+                correctly identified (TPR), but also need to know the proportion
+                of predicted positives that are correct, a measure that is
+                independent of the number of perfect widgets (i.e. negatives).
+              </p>
+              <p>
+                The <em>recall</em> is the proportion of
+                <strong>actual</strong> positives classified correctly.
+              </p>
+              <div class="arithmatex">\[ recall = \frac{TP}{TP+FN} \]</div>
+              <p>
+                The <em>precision</em> is the proportion of
+                <strong>predicted</strong> positives classified correctly.
+              </p>
+              <div class="arithmatex">\[ precision = \frac{TP}{TP+FP} \]</div>
+              <p>
+                Notice that recall is simply another name for TPR (and
+                sensitivity). Both precision and recall are independent of the
+                number of true negatives (<span class="arithmatex">\(TN\)</span
+                >).
+              </p>
+              <p>
+                We can again trade-off precision against recall by varying the
+                acceptance probability threshold for the positive class, giving
+                a <em>precision-recall (PR) curve</em>. As for the ROC curve we
+                can summarise this by the <em>area under the PR curve</em>.
+                Because this area can also be seen as an average value for the
+                precision across the range of recall values it is often referred
+                to as <em>Average Precision</em>.
+              </p>
+              <p>
+                In the following example, we are required to spot when an image
+                contains a car (positive) and when it does not (negative). This
+                might be part of an application at a pedestrian crossing,
+                detecting approaching cars to warn pedestrians. The rank order
+                of probabilities for the positive class (car) on a test set of
+                eight images is illustrated below (four contain a car and four
+                do not):
+              </p>
+              <figure role="group">
+                <img
+                  src="images/DL_IMG047.png"
+                  alt="Precision & recall values for varying probability threshold."
+                  aria-describedby="fig-2-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 2.</strong> Precision and recall for varying
+                    probability threshold.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-2-description">
+                      <p>
+                        A stack of 8 images, some of which depict a car. The
+                        images are ordered by the probability of being a car, as
+                        output by a classifier. The 9 distinct precision and
+                        recall values obtained by setting increasing threshold
+                        values from 0 to 1 are shown alongside the stack.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>The corresponding PR curve looks like this:</p>
+              <figure role="group">
+                <img
+                  src="images/precisionrecallcurve.svg"
+                  alt="Precision-recall curve."
+                  aria-describedby="fig-3-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 3.</strong> Precision-recall curve
+                    corresponding to the varying threshold values tabulated in
+                    Figure 2.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-3-description">
+                      <p>
+                        A graph with precision values plotted on the y-axis
+                        corresponding to the recall values on the x-axis. This
+                        is the precision-recall curve.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                It is often convenient to summarise the value of precision and
+                recall as a single value. The <em>F-score</em> is the harmonic
+                mean of precision and recall, given by:
+              </p>
+              <div class="arithmatex">
+                \[ F = \frac{2}{precision^{-1} + recall^{-1}} =
+                2\cdot\frac{precision \cdot recall}{precision + recall} \]
+              </div>
+              <p>
+                The reason for using the harmonic mean instead of the arithmetic
+                mean is to penalise situations where either the precision or
+                recall are low. This can be seen from the following
+                visualisation of F-scores for all combinations of precision and
+                recall values.
+              </p>
+              <p>
+                <img
+                  alt="Visualisation of the F-score for different precision and recall values"
+                  src="images/f1.svg"
+                />
+              </p>
+              <h2 id="precision-and-recall-in-multiclass-classification">
+                Precision and recall in multiclass classification
+              </h2>
+              <p>
+                Precision and recall are also used as a performance measure with
+                respect to individual classes in multi-class classification. In
+                the three class example at the start, we can compute recall and
+                precision values for the truck class just as we did for the
+                positive class in binary classification:
+              </p>
+              <div class="arithmatex">
+                \[recall\:for\:truck =
+                \frac{\#(correctly\:predicted\:trucks)}{\#(actual\:trucks)} \]
+              </div>
+              <div class="arithmatex">
+                \[precision\:for\:truck =
+                \frac{\#(correctly\:predicted\:trucks)}{\#(predicted\:trucks)}
+                \]
+              </div>
+              <p>
+                These statistics are particularly useful when we have an
+                <em>unbalanced</em> dataset, with very different numbers of
+                examples in each class. Consider for example the following
+                confusion matrix:
+              </p>
+              <table>
+                <col />
+                <col />
+                <colgroup span="3"></colgroup>
+                <tr>
+                  <td rowspan="2" style="border: none"></td>
+                  <td rowspan="2"></td>
+                  <th colspan="3" scope="colgroup">Predicted class</th>
+                </tr>
+                <tr>
+                  <th scope="col">Car</th>
+                  <th scope="col">Bicycle</th>
+                  <th scope="col">Truck</th>
+                </tr>
+                <tbody>
+                  <tr>
+                    <th
+                      rowspan="3"
+                      scope="rowgroup"
+                      style="vertical-align: middle"
+                    >
+                      Actual class
+                    </th>
+                    <th scope="row">Car</th>
+                    <td>1000</td>
+                    <td>5</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Bicycle</th>
+                    <td>10</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Truck</th>
+                    <td>10</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>
+                In this case there are many more cars than trucks and bicycles.
+                The classifier makes the wrong prediction for every truck and
+                bicycle, yet the accuracy is high:
+              </p>
+              <div class="arithmatex">
+                \[ accuracy = \frac{1000}{1030} = 0.97 \]
+              </div>
+              <p>
+                In this case, the accuracy is misleading. Fortunately the recall
+                for the truck and bicycle classes show that the performance on
+                these two classes is poor.
+              </p>
+              <div class="arithmatex">
+                \[ recall\:for\:car = \frac{1000}{1010} = 0.99\]
+              </div>
+              <div class="arithmatex">
+                \[ recall\:for\:truck = \frac{0}{10} = 0\]
+              </div>
+              <div class="arithmatex">
+                \[ recall\:for\:bicycle = \frac{0}{10} = 0\]
+              </div>
+              <p>
+                A good way to summarise the performance with unbalanced datasets
+                is to take the mean of the recall values for each class. This is
+                known as the <em>balanced accuracy</em>.
+              </p>
+              <p>For the example above, the balanced accuracy is given by:</p>
+              <div class="arithmatex">
+                \[ balanced\:accuracy = \frac{0.99 + 0 +0}{3} = 0.33\]
+              </div>
+              <p>
+                This is very different from the accuracy value and a more
+                representative measure of performance in this case.
+              </p>
+              <p>
+                When there is an equal number of examples in each class, the
+                balanced accuracy is identical to the accuracy.
+              </p>
+            </article>
+          </div>
+        </div>
+      </main>
+
+      <footer class="md-footer">
+        <div class="md-footer-nav">
+          <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+            <a
+              href="LinearClassifier.html"
+              class="md-footer-nav__link md-footer-nav__link--prev"
+              rel="prev"
+            >
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"
+                  />
+                </svg>
+              </div>
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction"> Previous </span>
+                  Linear classifier
                 </div>
-            </div>
-        </footer>
+              </div>
+            </a>
 
+            <a
+              href="MultiLayerNetworks.html"
+              class="md-footer-nav__link md-footer-nav__link--next"
+              rel="next"
+            >
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction"> Next </span>
+                  Multilayer networks
+                </div>
+              </div>
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"
+                  />
+                </svg>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+        <div class="md-footer-meta md-typeset">
+          <div class="md-footer-meta__inner md-grid">
+            <div class="md-footer-copyright">
+              <div class="md-footer-copyright__highlight">
+                Copyright © University of Leeds
+              </div>
+
+              Made with
+              <a
+                href="https://squidfunk.github.io/mkdocs-material/"
+                target="_blank"
+                rel="noopener"
+              >
+                Material for MkDocs
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
     <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script>
     <script id="__lang" type="application/json">
-        {
-            "clipboard.copy": "Copy to clipboard",
-            "clipboard.copied": "Copied to clipboard",
-            "search.config.lang": "en",
-            "search.config.pipeline": "trimmer, stopWordFilter",
-            "search.config.separator": "[\\s\\-]+",
-            "search.placeholder": "Search",
-            "search.result.placeholder": "Type to start searching",
-            "search.result.none": "No matching documents",
-            "search.result.one": "1 matching document",
-            "search.result.other": "# matching documents",
-            "search.result.more.one": "1 more on this page",
-            "search.result.more.other": "# more on this page",
-            "search.result.term.missing": "Missing"
-        }
+      {
+        "clipboard.copy": "Copy to clipboard",
+        "clipboard.copied": "Copied to clipboard",
+        "search.config.lang": "en",
+        "search.config.pipeline": "trimmer, stopWordFilter",
+        "search.config.separator": "[\\s\\-]+",
+        "search.placeholder": "Search",
+        "search.result.placeholder": "Type to start searching",
+        "search.result.none": "No matching documents",
+        "search.result.one": "1 matching document",
+        "search.result.other": "# matching documents",
+        "search.result.more.one": "1 more on this page",
+        "search.result.more.other": "# more on this page",
+        "search.result.term.missing": "Missing"
+      }
     </script>
 
     <script>
-        app = initialize({
-            base: "../..",
-            features: ['navigation.sections'],
-            search: Object.assign({
-                worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
-            }, typeof search !== "undefined" && search)
-        })
+      app = initialize({
+        base: "../..",
+        features: ["navigation.sections"],
+        search: Object.assign(
+          {
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js",
+          },
+          typeof search !== "undefined" && search
+        ),
+      });
     </script>
 
     <script src="../../javascript/tablecontentsoverride.js"></script>
@@ -903,8 +1056,5 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-</body>
-
+  </body>
 </html>
