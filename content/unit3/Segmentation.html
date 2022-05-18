@@ -1,868 +1,1211 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-
-
-
-    <link rel="shortcut icon" href="../../img/favicon.jpg">
-    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
-
-
+    <link rel="shortcut icon" href="../../img/favicon.jpg" />
+    <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4" />
 
     <title>Image segmentation - Artificial Intelligence</title>
 
+    <link
+      rel="stylesheet"
+      href="../../assets/stylesheets/main.15aa0b43.min.css"
+    />
 
+    <link
+      rel="stylesheet"
+      href="../../assets/stylesheets/palette.75751829.min.css"
+    />
 
-    <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
-
-
-    <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
-
-
-
-
-
-
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter:300,400,400i,700%7C&display=fallback"
+    />
     <style>
-        body,
-        input {
-            font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif
-        }
+      body,
+      input {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, Helvetica,
+          Arial, sans-serif;
+      }
 
-        code,
-        kbd,
-        pre {
-            font-family: "", SFMono-Regular, Consolas, Menlo, monospace
-        }
+      code,
+      kbd,
+      pre {
+        font-family: "", SFMono-Regular, Consolas, Menlo, monospace;
+      }
     </style>
 
+    <link rel="stylesheet" href="../../css/extra.css" />
+  </head>
 
-
-
-    <link rel="stylesheet" href="../../css/extra.css">
-
-
-
-
-
-</head>
-
-
-
-
-
-
-
-<body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-
-
-
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+  <body
+    dir="ltr"
+    data-md-color-scheme=""
+    data-md-color-primary="none"
+    data-md-color-accent="none"
+  >
+    <input
+      class="md-toggle"
+      data-md-toggle="drawer"
+      type="checkbox"
+      id="__drawer"
+      autocomplete="off"
+    />
+    <input
+      class="md-toggle"
+      data-md-toggle="search"
+      type="checkbox"
+      id="__search"
+      autocomplete="off"
+    />
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-
-
-        <a href="#image-segmentation" class="md-skip">
-          Skip to content
-        </a>
-
+      <a href="#image-segmentation" class="md-skip"> Skip to content </a>
     </div>
     <div data-md-component="announce">
-
-        <aside class="md-announce">
-            <div class="md-announce__inner md-grid md-typeset">
-
-                <div id="versionIndicator"> <b>Version:</b>27.10.21.a </div>
-                <img id="customlogo" src="../../img/logo.svg" alt="University of Leeds logo.">
-
-            </div>
-        </aside>
-
+      <aside class="md-announce">
+        <div class="md-announce__inner md-grid md-typeset">
+          <div id="versionIndicator"><b>Version:</b>27.10.21.a</div>
+          <img
+            id="customlogo"
+            src="../../img/logo.svg"
+            alt="University of Leeds logo."
+          />
+        </div>
+      </aside>
     </div>
 
-
-
-
-
     <header class="md-header" data-md-component="header">
-        <nav class="md-header-nav md-grid" aria-label="Header">
-            <a href="../../index.html" title="Artificial Intelligence" class="md-header-nav__button md-logo" aria-label="Artificial Intelligence">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-            <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-            <div class="md-header-nav__title" data-md-component="header-title">
-                <div class="md-header-nav__ellipsis">
-                    <div class="md-header-nav__topic">
-                        <span class="md-ellipsis">
-            Artificial Intelligence
-          </span>
-                    </div>
-                    <div class="md-header-nav__topic">
-                        <span class="md-ellipsis">
-            
-              Image segmentation
-            
-          </span>
-                    </div>
-                </div>
+      <nav class="md-header-nav md-grid" aria-label="Header">
+        <a
+          href="../../index.html"
+          title="Artificial Intelligence"
+          class="md-header-nav__button md-logo"
+          aria-label="Artificial Intelligence"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"
+            />
+          </svg>
+        </a>
+        <label class="md-header-nav__button md-icon" for="__drawer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" />
+          </svg>
+        </label>
+        <div class="md-header-nav__title" data-md-component="header-title">
+          <div class="md-header-nav__ellipsis">
+            <div class="md-header-nav__topic">
+              <span class="md-ellipsis"> Artificial Intelligence </span>
             </div>
-
-            <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-
-            <div class="md-search" data-md-component="search" role="dialog">
-                <label class="md-search__overlay" for="__search"></label>
-                <div class="md-search__inner" role="search">
-                    <form class="md-search__form" name="search">
-                        <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
-                        <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-                        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-                    </form>
-                    <div class="md-search__output">
-                        <div class="md-search__scrollwrap" data-md-scrollfix>
-                            <div class="md-search-result" data-md-component="search-result">
-                                <div class="md-search-result__meta">
-                                    Initializing search
-                                </div>
-                                <ol class="md-search-result__list"></ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="md-header-nav__topic">
+              <span class="md-ellipsis"> Image segmentation </span>
             </div>
+          </div>
+        </div>
 
+        <label class="md-header-nav__button md-icon" for="__search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"
+            />
+          </svg>
+        </label>
 
-        </nav>
+        <div class="md-search" data-md-component="search" role="dialog">
+          <label class="md-search__overlay" for="__search"></label>
+          <div class="md-search__inner" role="search">
+            <form class="md-search__form" name="search">
+              <input
+                type="text"
+                class="md-search__input"
+                name="query"
+                aria-label="Search"
+                placeholder="Search"
+                autocapitalize="off"
+                autocorrect="off"
+                autocomplete="off"
+                spellcheck="false"
+                data-md-component="search-query"
+                data-md-state="active"
+                required
+              />
+              <label class="md-search__icon md-icon" for="__search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"
+                  />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"
+                  />
+                </svg>
+              </label>
+              <button
+                type="reset"
+                class="md-search__icon md-icon"
+                aria-label="Clear"
+                data-md-component="search-reset"
+                tabindex="-1"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+                  />
+                </svg>
+              </button>
+            </form>
+            <div class="md-search__output">
+              <div class="md-search__scrollwrap" data-md-scrollfix>
+                <div class="md-search-result" data-md-component="search-result">
+                  <div class="md-search-result__meta">Initializing search</div>
+                  <ol class="md-search-result__list"></ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <div class="md-container" data-md-component="container">
-
-
-
-
-        <main class="md-main" data-md-component="main">
-            <div class="md-main__inner md-grid">
-
-
-
-                <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                    <div class="md-sidebar__scrollwrap">
-                        <div class="md-sidebar__inner">
-
-
-
-
-
-
-
-                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-                                <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Artificial Intelligence" class="md-nav__button md-logo" aria-label="Artificial Intelligence">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
-
-    </a>
-    Artificial Intelligence
-  </label>
-
-                                <ul class="md-nav__list" data-md-scrollfix>
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../../index.html" class="md-nav__link">
-      Introduction
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit1/Optimisation.html" class="md-nav__link">
-      Optimisation
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit2/LinearClassifier.html" class="md-nav__link">
-      Linear classifier
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit2/Performance.html" class="md-nav__link">
-      Measuring classifier performance
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit2/MultiLayerNetworks.html" class="md-nav__link">
-      Multilayer networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="Convolution.html" class="md-nav__link">
-      Convolution
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="CNN.html" class="md-nav__link">
-      Convolutional neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item md-nav__item--active">
-
-                                        <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-
-
-
-
-                                        <label class="md-nav__link md-nav__link--active" for="__toc">
-        Image segmentation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-
-                                        <a href="Segmentation.html" class="md-nav__link md-nav__link--active">
-      Image segmentation
-    </a>
-
-
-                                        <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
-
-
-
-
-                                            <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-                                            <ul class="md-nav__list" data-md-scrollfix>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#performance-measurement" class="md-nav__link">
-    Performance measurement
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#patch-wise-classification" class="md-nav__link">
-    Patch-wise classification
-  </a>
-
-                                                    <nav class="md-nav" aria-label="Patch-wise classification">
-                                                        <ul class="md-nav__list">
-
-                                                            <li class="md-nav__item">
-                                                                <a href="#mean-squared-error-mse-loss-function" class="md-nav__link">
-    Mean Squared Error (MSE) loss function
-  </a>
-
-                                                            </li>
-
-                                                        </ul>
-                                                    </nav>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#encoder-decoder-and-u-net-architecture" class="md-nav__link">
-    Encoder-decoder and U-Net architecture
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#bilinear-interpolation" class="md-nav__link">
-    Bilinear interpolation
-  </a>
-
-                                                </li>
-
-                                                <li class="md-nav__item">
-                                                    <a href="#references" class="md-nav__link">
-    References
-  </a>
-
-                                                </li>
-
-                                            </ul>
-
-                                        </nav>
-
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/Introduction.html" class="md-nav__link">
-      Sequential data
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/RNN.html" class="md-nav__link">
-      Recurrent neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/TextClassification.html" class="md-nav__link">
-      Text classification
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit4/Transformers.html" class="md-nav__link">
-      Transformers
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit5/RelationalData.html" class="md-nav__link">
-      Relational data
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit5/GNN.html" class="md-nav__link">
-      Graph neural networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit6/GAN.html" class="md-nav__link">
-      Generative adversarial networks
-    </a>
-                                    </li>
-
-
-
-
-
-
-
-
-                                    <li class="md-nav__item">
-                                        <a href="../unit6/Cyclegan.html" class="md-nav__link">
-      Image-to-image translation
-    </a>
-                                    </li>
-
-
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                    <div class="md-sidebar__scrollwrap">
-                        <div class="md-sidebar__inner">
-
-                            <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-
-
-
-
-
-                                <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-                                <ul class="md-nav__list" data-md-scrollfix>
-
-                                    <li class="md-nav__item">
-                                        <a href="#performance-measurement" class="md-nav__link">
-    Performance measurement
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#patch-wise-classification" class="md-nav__link">
-    Patch-wise classification
-  </a>
-
-                                        <nav class="md-nav" aria-label="Patch-wise classification">
-                                            <ul class="md-nav__list">
-
-                                                <li class="md-nav__item">
-                                                    <a href="#mean-squared-error-mse-loss-function" class="md-nav__link">
-    Mean Squared Error (MSE) loss function
-  </a>
-
-                                                </li>
-
-                                            </ul>
-                                        </nav>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#encoder-decoder-and-u-net-architecture" class="md-nav__link">
-    Encoder-decoder and U-Net architecture
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#bilinear-interpolation" class="md-nav__link">
-    Bilinear interpolation
-  </a>
-
-                                    </li>
-
-                                    <li class="md-nav__item">
-                                        <a href="#references" class="md-nav__link">
-    References
-  </a>
-
-                                    </li>
-
-                                </ul>
-
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="md-content">
-                    <article class="md-content__inner md-typeset">
-
-
-
-                        <h1 id="image-segmentation">Image segmentation</h1>
-                        <p>The <em>semantic segmentation</em> task is to label each and every pixel in a given image with the object class to which it belongs, including a catch-all class for the background. The examples below are from the Pascal VOC 2011
-                            dataset. On the left are the original images and on the right are the ground-truth segmentations, where each pixel is colour-coded with the object class to which it belongs.</p>
-                        <figure role="group">
-                            <img src="images/segmentation.svg" alt="An image depicting a person on a motorbike, next to the semantic segmentic into three regions corresponding to the person, the motorbike and the background. Similarly, an image of a living room segmented into table, chair, sofa, background and a miscellaneous class coming from the legs of the sofa and specular reflection from a wall cabinet."
-                            />
-                            <figcaption>
-                                <p><strong>Figure 1.</strong> Illustrating the semantic segmentation of two natural images. </p>
-                                <p> From <a href="http://host.robots.ox.ac.uk/pascal/VOC/index.html">Pascal VOC dataset</a>. </p>
-                            </figcaption>
-                        </figure>
-
-                        <h2 id="performance-measurement">Performance measurement</h2>
-                        <p>The performance of a method for semantic segmentation is normally measured using the so-called <em>Jaccard index</em>, which is a statistic for measuring the similarity between a pair of sets, <span class="arithmatex">\(A\)</span>                            and <span class="arithmatex">\(B\)</span>.</p>
-                        <p>The Jaccard index is defined as the size of the intersection over the size of the union of the two sets, expressed formally as:</p>
-                        <div class="arithmatex">\[ J(A,B) = \frac{|A\cap B|}{|A\cup B|} \]</div>
-                        <p>The Jaccard Index is also referred to as <em>Intersection over Union</em>.</p>
-                        <p>Applied to semantic segmentation, we ignore the background class (shown in black in the example above) and focus only on the labels associated with the objects of interest. For each label, we compute the Jaccard index of the set
-                            of pixels with that label in the segmentation with the set of pixels with this label in the ground-truth. The overall performance statistic is the mean of these indices over all object classes.</p>
-                        <p>Often the object pixels will be represented by rectangles or arbitrary closed contours as shown below:</p>
-                        <figure role="group">
-                            <img src="images/jaccard.svg" alt="Two overlapping squares A and B, with the intersection shown. Two overlapping closed regions A and B with curved boundaries and with intersection shown." />
-                            <figcaption>
-                                <p><strong>Figure 2.</strong> The Jaccard index is computed from a pair of sets. In this case the sets are represented by overlapping closed regions in 2D.</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>In general however, the pixels from a class may form two or more disjointed regions in the image and/or ground-truth.</p>
-                        <h2 id="patch-wise-classification">Patch-wise classification</h2>
-                        <p>One approach to semantic segmentation is to simply train a classifier on small square patches surrounding each pixel, together with the class label assigned to the pixel. This is the approach adopted by <em>Ning et al.</em> [1].</p>
-                        <p>The aim here was to segment microscope images of <em>C. elegans</em> embryos. <em>C. elegans</em> is a tiny worm that is barely visible to the human eye. The pixels of the images are to be segmented with five class labels: nucleus,
-                            nuclear membrane, cytoplasm, cell wall, and external medium. The embryo images are grey-scale (i.e. one channel) and vary in size, but are typically around <span class="arithmatex">\(300 \times 300\)</span>.</p>
-                        <div class="admonition note">
-                            <p class="admonition-title">Note</p>
-                            <p>The 50 images are taken from five videos of varying sizes (10 image frames per video). A size of <span class="arithmatex">\(300 \times 300\)</span> is assumed below for simplicity.</p>
-                        </div>
-                        <p>Examples of embyo images together with segmentations are shown below. The second and third rows show the segmentation results using different ground-truths for training.</p>
-                        <figure role="group">
-                            <img src="images/embryos.png" alt="Images of C. elegans embryos and segmentation results with colour-coded regions." />
-                            <figcaption>
-                                <p><strong>Figure 3.</strong> Two segmentations of C. elegans embryo images into five classes: nucleus, nuclear membrane, cytoplasm, cell wall and external medium.</p>
-                                <p>From Ning et al. [1].</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>In experiments, Ning et al. extract patches around each pixel of size <span class="arithmatex">\(40 \times 40\)</span>. The patches are classified using a CNN with three convolution layers with no padding.</p>
-                        <figure role="group">
-                            <img src="images/embryocnn1.svg" alt="cnn for embryo classification patchwise." aria-describedby="fig-4-description" />
-                            <figcaption>
-                                <p><strong>Figure 4.</strong> CNN for patchwise classification of pixels, giving a semantic segmentation.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-4-description">
-                                        <p>CNN architecture taking in a 40x40 patch surrounding the pixel to be classified. The first stage is convolution with a 7x7 kernel into 6 feature maps. Second stage is 2x2 mean-pooling with a stride of 2. Third stage
-                                            is convolution with a 6x6 kernel into 16 feature maps. This is followed by 2x2 mean-pooling, then another convolution with 6x6 kernel into 40 feature maps. Final stage is a fully connected layer from 40 into
-                                            the five class confidences for the target pixel. The tanh activation function is used throughout and the convolutions are all without padding, meaning that the output from the final convolution consists of 40
-                                            1x1 feature maps. </p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>The final convolutional layer outputs 40 feature maps each containing a single value. From just 50 training images, 190,440 <span class="arithmatex">\(40 \times 40\)</span> patches are obtained, each associated with the label assigned
-                            to a centre pixel. Training uses the <em>mean squared error</em> loss function (see below).</p>
-                        <p>The output is a set of maps of class confidences, illustrated below:</p>
-                        <figure role="group">
-                            <img src="images/classconfidences.svg" alt="Five images depicting the output confidences of the five classes. The corresponding structures are clearly visible in each confidence map." />
-                            <figcaption>
-                                <p><strong>Figure 5.</strong> Illustrating the output confidence values for each of the five classes. Higher confidences are represented by lighter pixels. </p>
-                                <p> From Ning et al., 2005. </p>
-                            </figcaption>
-                        </figure>
-
-                        <p>The whole process can be made much more efficient by inputting a whole embryo image into the network at once. This is at the expense of a four-fold reduction in resolution of the final segmentation map due to the two pooling steps.
-                            However, it results in the same computation leading to each target pixel.</p>
-                        <figure role="group">
-                            <img src="images/embryocnn2.svg" alt="CNN for embryo classification." aria-describedby="fig-6-description" />
-                            <figcaption>
-                                <p><strong>Figure 6.</strong> CNN for segmenting the whole image at once without breaking into patches.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-6-description">
-                                        <p>The architecture of the network is the same as in Figure 4 up until the fully connected layer. The difference is that the whole 300x300 image is passed into the network instead of a single patch. This means that
-                                            the tensors at each stage are much larger. The fully-connected layer (fcl) is replaced by a 1x1 convolution, which effectively replicates the fcl at each location, computing an affine function of the values
-                                            across the 40 feature maps. The output is a 5x66x66 tensor providing class confidences over a 66x66 confidence map. </p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <h3 id="mean-squared-error-mse-loss-function">Mean Squared Error (MSE) loss function</h3>
-                        <p>Assume input <span class="arithmatex">\(\myvec{x}\)</span>, network output <span class="arithmatex">\(f(\myvec{x})\)</span> and training data <span class="arithmatex">\(\{\myvec{x}^{(1)},\dots,\myvec{x}^{(m)}\}\)</span>,
-                            <span
-                                class="arithmatex">\(\{\myvec{y}^{(1)},\dots, \myvec{y}^{(m)}\}\)</span> containing <span class="arithmatex">\(m\)</span> examples. The <em>Mean Squared Error</em> loss is defined as:</p>
-                        <div class="arithmatex">\[ \frac{1}{m}\sum_{i=1}^m ||\myvec{y}^{(i)} - f(\myvec{x}^{(i)})||^2 \]</div>
-                        <p>For example, if we want the output <span class="arithmatex">\(\myvec{y} = f(\myvec{x})\)</span> to be a probability distribution over class labels, we provide one-hot vectors as the ground-truth. For example, the class cytoplasm
-                            is represented by the ground-truth output vector <span class="arithmatex">\((0,0,1,0,0)\)</span>. This is ideally what we would like the network to output when cytoplasm is the true class. This is an alternative to negative
-                            log likelihood loss (cross-entropy loss).</p>
-                        <p>The one-hot encoding for elements from an ordered set (e.g. class labels) is defined in the section on Text classification.</p>
-                        <h2 id="encoder-decoder-and-u-net-architecture">Encoder-decoder and U-Net architecture</h2>
-                        <p>A second way to produce a semantic segmentation is using an encoder-decoder architecture, which we depict as follows:</p>
-                        <figure role="group">
-                            <img src="images/encoderdecoder.svg" alt="The encoder-decoder architecture divides the network into two parts: an encoder that downsizes the image into a compact embedding layer followed by a decoder the expands from the embedding layer back to a semantic segmentation that has the same resolution as the input image."
-                            />
-                            <figcaption>
-                                <p><strong>Figure 7.</strong> Encoder-decoder architecture for semantic segmentation.</p>
-                                <p> The images are from the <a href="http://host.robots.ox.ac.uk/pascal/VOC/index.html"> Pascal VOC dataset </a>.
-                            </figcaption>
-                        </figure>
-
-                        <p>The idea is that the encoder produces a compact encoding of the input image within an <em>embedding</em> layer and the decoder expands this encoding into a semantic segmentation. The encoder and decoder will typically be multilayer
-                            CNNs. Conceptually, the encoding is a compressed representation of the input that succinctly captures patterns in the image structure from which the decoder can construct the required semantic segmentation. By forcing the information
-                            flow through the constriction, we encourage the emergence of common patterns that encode the image. This is the same intuition that underlies the semantic embedding of the words in a piece of text that we will be examining
-                            in the section on Text classification.</p>
-                        <p>A powerful extension of this idea is the <em>U-Net</em> architecture, which is essentially an encoder-decoder network with shortcuts that link successive layers of the encoder to the corresponding layers of the decoder. This is
-                            naturally represented by depicting the network as a 'U' shape - hence the name. The original idea for the U-Net architecture for semantic segmentation is due to <em>Ronnerberger et al.</em> [2].</p>
-                        <p>We will look at a newer version used within a system for diagnosis and referral in retinal disease due to <em>Faux et al.</em> [3].</p>
-                        <p>The images are obtained from a technique known as <em>Optimal coherence tomography (OCT)</em> and are each 3D scans of the tissue around the macular in the back of the eye. Each image is of size <span class="arithmatex">\(488 \times 512 \times 128\)</span>                            slices. Given an OCT image, the aim of the system is to produce one of four referal options: <strong>urgent</strong>, <strong>semi-urgent</strong>, <strong>routine</strong> or <strong>observation only</strong>; and 10 diagnostic
-                            options (e.g. <strong>geographic atrophy</strong>, <strong>normal</strong>). The system works in two stages. The first stage produces a semantic segmentation of the 3D OCT image. The second stage is a pair of classifiers generating
-                            probability distributions for the referall options and for the diagnostic options. The two stages are illustrated in the following diagram:</p>
-                        <figure role="group">
-                            <img src="images/eyediseasenetwork.png" alt="Diagnosis of eye disease schematic." aria-describedby="fig-8-description" />
-                            <figcaption>
-                                <p><strong>Figure 8.</strong> The classifier works in two stages. The first stage produces a tissue (semantic) segmentation map from the 3D OCT scan. This is trained using a corpus of manually segmented images and uses a U-net
-                                    architecture. The second stage is a CNN-based classifier of the tissue maps into referral and diagnosis confidence/probability values. This stage is trained using tissue segmentations with confirmed diagnosis and referral
-                                    decisions from patient records. </p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-8-description">
-                                        <p>A 3D OCT scan is depicted on the left, mapping into a 3D tissue segmentation map in the middle, which maps into referrall and diagnosis values on the right. The training data is shown above the two mappings in each
-                                            stage. </p>
-                                    </div>
-                                </div>
-                                <p>From <em>Faux et al. </em> [3].</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>The two parts of the system were trained separately. Training the U-Net made use of 877 manually segmented training images, and training the classifier made use of 14,884 semantic segmentations (tissue maps) with the confirmed
-                            diagnosis and referral labels (decisions).</p>
-                        <p>The U-Net architecture used for semantic segmentation is shown below:</p>
-                        <figure role="group">
-                            <img src="images/eyediseaseunet.png" alt="U-Net architecture." aria-describedby="fig-9-description" />
-                            <figcaption>
-                                <p><strong>Figure 9.</strong> The U-Net architecture used for producing tissue segmentation maps from OCT scans.</p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-9-description">
-                                        <p>The architecture is similar to the original U-Net model. The input on the top-left consists of 9 consecutive slices from the OCT scan, each of size 448x512. This passes through three convolutions with 32 channels
-                                            (feature maps). The progressive bilinear downsampling through 8 levels, ends with 1 slice of size 1x1 and 4092 channels (bottom middle). This 4092 vector passes through 5 fully-connected layers before being
-                                            progressively upsampled through 8 corresponding layers to produce a single output slice of the tissue segmentation map at the top-right. Cross-links feed the final feature maps at each level on the downside
-                                            (left) across to be concatanated with the initial feature maps at each level of the upside (right). </p>
-                                    </div>
-                                </div>
-                                <p>From <em>Faux et al.</em> [3].</p>
-                            </figcaption>
-                        </figure>
-
-                        <p>The U-Net is configured to produce 2D segmentations corresponding to single 2D slices of the OCT scan. The input to the U-Net is a set of nine slices, four either side of the target slice. Thus, the U-Net runs multiple times to
-                            build up a 3D segmentation map, slice by slice, from a 3D OCT scan. In detail, the input is a 3D tensor of size <span class="arithmatex">\(448 \times 512 \times 9\)</span>. At the first level, the input tensor goes into a sequence
-                            of three convolutional layers, each performing 3D convolutions into 32 channels with <span class="arithmatex">\(3 \times 3 \times 1\)</span> kernels. Note that the first layer operates directly on the section of the OCT scan.
-                            As usual, the second and third layers sum convolutions over the 32 channels from the previous layer - this can be thought of as performing a 4D convolution over all 32 channels.</p>
-                        <p>The result from level one is a 4D <em>activation map</em> of size <span class="arithmatex">\(448 \times 512 \times 9 \times 32\)</span>. The spatial dimensions are now downsampled by a factor of two using bilinear interpolation,
-                            giving an activation map of size <span class="arithmatex">\(224 \times 256 \times 9 \times 32\)</span>. The three convolutional layers are repeated and the result is again downsampled by a factor of two giving an activation
-                            map of size <span class="arithmatex">\(112 \times 128 \times 9 \times 32\)</span>. These are now downsampled again giving an activation map of size size <span class="arithmatex">\(56 \times 64 \times 9 \times 32\)</span>. Three
-                            more convolutions are performed, this time into 64 channels. This is followed by a convolutional layer with <span class="arithmatex">\(1 \times 1 \times 3\)</span> kernel size to combine data across the slice dimension, generating
-                            an activation map of size <span class="arithmatex">\(56 \times 64 \times 7 \times 64\)</span>. Notice the reduction in the size of the slice dimension due to not using padding in this final convolutional layer. The same process
-                            is repeated in the next three levels, ending up with an activiation map of size <span class="arithmatex">\(7 \times 8 \times 1 \times 128\)</span>. This is downsampled once more, flattened and passed through five fully connected
-                            layers.</p>
-                        <p>The result now travels back up through the levels, with bilinear upsampling replacing downsampling and analogous convolutional layers. The final output has the same spatial size as the input image and depth equal to the number
-                            of classes. Taking the maximum over the depth dimension gives the label at each spatial location.</p>
-                        <p>So far we have ignored the cross-links. These simply take the final activation maps at each level on the encoder side and concatenate with the input activation maps at the same level on the decoder side. The idea is that detailed
-                            feature maps obtained during encoding are available directly at the decoder stage, where they are combined with contextual information that passes from higher levels. Conceptually, you can think of the class probabilities assigned
-                            to each pixel as being influenced by a combination of information from different spatial scales, ranging from the evidence in the immediate vicinity of the pixel (from the cross-link) to global aspects of the image (from the
-                            chain leading up from the embedding at the base of the 'U').</p>
-                        <p>The classification stage is a CNN classifier applied directly to a one-hot encoding of the segmentation map. The segmentation map is subsampled from <span class="arithmatex">\(448 \times 512 \times 128\)</span> to <span class="arithmatex">\(300 \times 350 \times 43\)</span>.</p>
-                        <div class="admonition abstract">
-                            <p class="admonition-title">Reading</p>
-                            <p>You should read the Nature paper that describes this system (<em>Faux et al.</em> [3]). We will discuss the paper in the webinar next week. The main paper gives a lot of background and outlines the way in which the system works.
-                                The technical details are contained within a methods section at the end and there are many additional figures (including the U-Net architecture) and videos in the supplementary material.</p>
-                        </div>
-                        <h2 id="bilinear-interpolation">Bilinear interpolation</h2>
-                        <p>An important part of the segmentation network is the downsampling and upsampling using bilinear interpolation. The definition of bilinear interpolation is as follows:</p>
-                        <p>Given <span class="arithmatex">\(z_{ij}\in \mathbb{R}\)</span>, defined over a 2D rectangular grid of points <span class="arithmatex">\({(x_i ,y_j)}\)</span>, we seek to derive a new grid of points at higher or lower resolution.
-                            For some point <span class="arithmatex">\((x,y)\)</span> in the new grid, the bilinear interpolated value <span class="arithmatex">\(z\)</span> at this location is given by linearly interpolating at the <span class="arithmatex">\(x\)</span>                            intercept between the values at the grid points above and below the new point, to give <span class="arithmatex">\(z'\)</span> and <span class="arithmatex">\(z''\)</span>, and then linearly interpolating between <span class="arithmatex">\(z'\)</span>                            and <span class="arithmatex">\(z''\)</span> at the <span class="arithmatex">\(y\)</span> intercept to give <span class="arithmatex">\(z\)</span>.</p>
-                        <figure role="group">
-                            <img src="images/bilinear.svg" alt="Illustrating bilinear interpolation" aria-describedby="fig-9-description" />
-                            <figcaption>
-                                <p><strong>Figure 10.</strong>Bilinear interpolation of the function at a given point works with a grid of values. First the function is approximated between adjacent horizontal grid points on the grid lines above and below
-                                    the target point by linear interpolation, z' and z''. Then the function value z at the target point is approximated by linear interpolation between the values z' and z''. </p>
-                                <button class="accordion-button">View image description</button>
-                                <div class="accordion-panel">
-                                    <div id="fig-10-description">
-                                        <p>A 4x4 grid of known points is shown. A target point (x,y) within the inner grid square is labelled with the value z, which is to be found. The grid line at the bottom of the inner square shows the value z' obtained
-                                            at horizontal coordinate position x and the grid line at the top of the inner square shows the value z'' also at x. A vertical dotted line through z', z, and z'' represents the final linear interpolation that
-                                            gives the required value of z. </p>
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-
-                        <p>Note that the bilinear interpolation in the U-Net enters into the gradient function since it changes the activation maps.</p>
-                        <p>In downsampling of images, it may be necessary to smooth the image first using Gaussian convolution to prevent aliasing effects that arise from high spatial frequency content in the image. It seems probable that this wasn't done
-                            here.</p>
-                        <h2 id="references">References</h2>
-                        <p>[1] <a href="https://hal.archives-ouvertes.fr/hal-00114920/document"><em>Ning, F., D. Delhomme, Y. Lecun, F. Piano, L. Bottou, and P.E. Barbano. 2005. Toward Automatic Phenotyping of Developing Embryos from Videos. IEEE Transactions on Image Processing 14 (9) (September): 1360–71.</em></a></p>
-                        <p>[2] <a href="https://doi.org/10.1007/978-3-319-24574-4_28"><em>Ronneberger, Olaf, Philipp Fischer, and Thomas Brox. U-Net: Convolutional Networks for Biomedical Image Segmentation. In Medical Image Computing and Computer-Assisted Intervention – MICCAI 2015, edited by Nassir Navab, Joachim Hornegger, William M. Wells, and Alejandro F. Frangi, 234–41. Lecture Notes in Computer Science. Cham: Springer International Publishing, 2015.</em></a></p>
-                        <p>[3] <a href="https://www.nature.com/articles/s41591-018-0107-6"><em>De Faux et al., Clinically applicable deep learning for diagnosis and referral in retinal disease, Nature Medicine, volume 24, 2018</em></a></p>
-
-
-
-
-
-
-
-                    </article>
-                </div>
-            </div>
-        </main>
-
-
-        <footer class="md-footer">
-
-            <div class="md-footer-nav">
-                <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-
-                    <a href="CNN.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-                        <div class="md-footer-nav__button md-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-                        </div>
-                        <div class="md-footer-nav__title">
-                            <div class="md-ellipsis">
-                                <span class="md-footer-nav__direction">
-                  Previous
-                </span> Convolutional neural networks
-                            </div>
-                        </div>
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          <div
+            class="md-sidebar md-sidebar--primary"
+            data-md-component="navigation"
+          >
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav
+                  class="md-nav md-nav--primary"
+                  aria-label="Navigation"
+                  data-md-level="0"
+                >
+                  <label class="md-nav__title" for="__drawer">
+                    <a
+                      href="../../index.html"
+                      title="Artificial Intelligence"
+                      class="md-nav__button md-logo"
+                      aria-label="Artificial Intelligence"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"
+                        />
+                      </svg>
                     </a>
+                    Artificial Intelligence
+                  </label>
 
+                  <ul class="md-nav__list" data-md-scrollfix>
+                    <li class="md-nav__item">
+                      <a href="../../index.html" class="md-nav__link">
+                        Introduction
+                      </a>
+                    </li>
 
-                    <a href="../unit4/Introduction.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-                        <div class="md-footer-nav__title">
-                            <div class="md-ellipsis">
-                                <span class="md-footer-nav__direction">
-                  Next
-                </span> Sequential data
-                            </div>
-                        </div>
-                        <div class="md-footer-nav__button md-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-                        </div>
-                    </a>
+                    <li class="md-nav__item">
+                      <a href="../unit1/Optimisation.html" class="md-nav__link">
+                        Optimisation
+                      </a>
+                    </li>
 
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit2/LinearClassifier.html"
+                        class="md-nav__link"
+                      >
+                        Linear classifier
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit2/Performance.html" class="md-nav__link">
+                        Measuring classifier performance
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit2/MultiLayerNetworks.html"
+                        class="md-nav__link"
+                      >
+                        Multilayer networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="Convolution.html" class="md-nav__link">
+                        Convolution
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="CNN.html" class="md-nav__link">
+                        Convolutional neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item md-nav__item--active">
+                      <input
+                        class="md-nav__toggle md-toggle"
+                        data-md-toggle="toc"
+                        type="checkbox"
+                        id="__toc"
+                      />
+
+                      <label
+                        class="md-nav__link md-nav__link--active"
+                        for="__toc"
+                      >
+                        Image segmentation
+                        <span class="md-nav__icon md-icon"></span>
+                      </label>
+
+                      <a
+                        href="Segmentation.html"
+                        class="md-nav__link md-nav__link--active"
+                      >
+                        Image segmentation
+                      </a>
+
+                      <nav
+                        class="md-nav md-nav--secondary"
+                        aria-label="Table of contents"
+                      >
+                        <label class="md-nav__title" for="__toc">
+                          <span class="md-nav__icon md-icon"></span>
+                          Table of contents
+                        </label>
+                        <ul class="md-nav__list" data-md-scrollfix>
+                          <li class="md-nav__item">
+                            <a
+                              href="#performance-measurement"
+                              class="md-nav__link"
+                            >
+                              Performance measurement
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#patch-wise-classification"
+                              class="md-nav__link"
+                            >
+                              Patch-wise classification
+                            </a>
+
+                            <nav
+                              class="md-nav"
+                              aria-label="Patch-wise classification"
+                            >
+                              <ul class="md-nav__list">
+                                <li class="md-nav__item">
+                                  <a
+                                    href="#mean-squared-error-mse-loss-function"
+                                    class="md-nav__link"
+                                  >
+                                    Mean Squared Error (MSE) loss function
+                                  </a>
+                                </li>
+                              </ul>
+                            </nav>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#encoder-decoder-and-u-net-architecture"
+                              class="md-nav__link"
+                            >
+                              Encoder-decoder and U-Net architecture
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a
+                              href="#bilinear-interpolation"
+                              class="md-nav__link"
+                            >
+                              Bilinear interpolation
+                            </a>
+                          </li>
+
+                          <li class="md-nav__item">
+                            <a href="#references" class="md-nav__link">
+                              References
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/Introduction.html" class="md-nav__link">
+                        Sequential data
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/RNN.html" class="md-nav__link">
+                        Recurrent neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit4/TextClassification.html"
+                        class="md-nav__link"
+                      >
+                        Text classification
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit4/Transformers.html" class="md-nav__link">
+                        Transformers
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="../unit5/RelationalData.html"
+                        class="md-nav__link"
+                      >
+                        Relational data
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit5/GNN.html" class="md-nav__link">
+                        Graph neural networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit6/GAN.html" class="md-nav__link">
+                        Generative adversarial networks
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="../unit6/Cyclegan.html" class="md-nav__link">
+                        Image-to-image translation
+                      </a>
+                    </li>
+                  </ul>
                 </nav>
+              </div>
             </div>
+          </div>
 
-            <div class="md-footer-meta md-typeset">
-                <div class="md-footer-meta__inner md-grid">
-                    <div class="md-footer-copyright">
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav
+                  class="md-nav md-nav--secondary"
+                  aria-label="Table of contents"
+                >
+                  <label class="md-nav__title" for="__toc">
+                    <span class="md-nav__icon md-icon"></span>
+                    Table of contents
+                  </label>
+                  <ul class="md-nav__list" data-md-scrollfix>
+                    <li class="md-nav__item">
+                      <a href="#performance-measurement" class="md-nav__link">
+                        Performance measurement
+                      </a>
+                    </li>
 
-                        <div class="md-footer-copyright__highlight">
-                            Copyright © University of Leeds
-                        </div>
+                    <li class="md-nav__item">
+                      <a href="#patch-wise-classification" class="md-nav__link">
+                        Patch-wise classification
+                      </a>
 
-                        Made with
-                        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+                      <nav
+                        class="md-nav"
+                        aria-label="Patch-wise classification"
+                      >
+                        <ul class="md-nav__list">
+                          <li class="md-nav__item">
+                            <a
+                              href="#mean-squared-error-mse-loss-function"
+                              class="md-nav__link"
+                            >
+                              Mean Squared Error (MSE) loss function
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a
+                        href="#encoder-decoder-and-u-net-architecture"
+                        class="md-nav__link"
+                      >
+                        Encoder-decoder and U-Net architecture
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="#bilinear-interpolation" class="md-nav__link">
+                        Bilinear interpolation
+                      </a>
+                    </li>
+
+                    <li class="md-nav__item">
+                      <a href="#references" class="md-nav__link">
+                        References
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              <h1 id="image-segmentation">Image segmentation</h1>
+              <p>
+                The <em>semantic segmentation</em> task is to label each and
+                every pixel in a given image with the object class to which it
+                belongs, including a catch-all class for the background. The
+                examples below are from the Pascal VOC 2011 dataset. On the left
+                are the original images and on the right are the ground-truth
+                segmentations, where each pixel is colour-coded with the object
+                class to which it belongs.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/segmentation.svg"
+                  alt="An image depicting a person on a motorbike, next to the semantic segmentic into three regions corresponding to the person, the motorbike and the background. Similarly, an image of a living room segmented into table, chair, sofa, background and a miscellaneous class coming from the legs of the sofa and specular reflection from a wall cabinet."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 1.</strong> Illustrating the semantic
+                    segmentation of two natural images.
+                  </p>
+                  <p>
+                    From
+                    <a href="http://host.robots.ox.ac.uk/pascal/VOC/index.html"
+                      >Pascal VOC dataset</a
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <h2 id="performance-measurement">Performance measurement</h2>
+              <p>
+                The performance of a method for semantic segmentation is
+                normally measured using the so-called <em>Jaccard index</em>,
+                which is a statistic for measuring the similarity between a pair
+                of sets, <span class="arithmatex">\(A\)</span> and
+                <span class="arithmatex">\(B\)</span>.
+              </p>
+              <p>
+                The Jaccard index is defined as the size of the intersection
+                over the size of the union of the two sets, expressed formally
+                as:
+              </p>
+              <div class="arithmatex">
+                \[ J(A,B) = \frac{|A\cap B|}{|A\cup B|} \]
+              </div>
+              <p>
+                The Jaccard Index is also referred to as
+                <em>Intersection over Union</em>.
+              </p>
+              <p>
+                Applied to semantic segmentation, we ignore the background class
+                (shown in black in the example above) and focus only on the
+                labels associated with the objects of interest. For each label,
+                we compute the Jaccard index of the set of pixels with that
+                label in the segmentation with the set of pixels with this label
+                in the ground-truth. The overall performance statistic is the
+                mean of these indices over all object classes.
+              </p>
+              <p>
+                Often the object pixels will be represented by rectangles or
+                arbitrary closed contours as shown below:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/jaccard.svg"
+                  alt="Two overlapping squares A and B, with the intersection shown. Two overlapping closed regions A and B with curved boundaries and with intersection shown."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 2.</strong> The Jaccard index is computed
+                    from a pair of sets. In this case the sets are represented
+                    by overlapping closed regions in 2D.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                In general however, the pixels from a class may form two or more
+                disjointed regions in the image and/or ground-truth.
+              </p>
+              <h2 id="patch-wise-classification">Patch-wise classification</h2>
+              <p>
+                One approach to semantic segmentation is to simply train a
+                classifier on small square patches surrounding each pixel,
+                together with the class label assigned to the pixel. This is the
+                approach adopted by <em>Ning et al.</em> [1].
+              </p>
+              <p>
+                The aim here was to segment microscope images of
+                <em>C. elegans</em> embryos. <em>C. elegans</em> is a tiny worm
+                that is barely visible to the human eye. The pixels of the
+                images are to be segmented with five class labels: nucleus,
+                nuclear membrane, cytoplasm, cell wall, and external medium. The
+                embryo images are grey-scale (i.e. one channel) and vary in
+                size, but are typically around
+                <span class="arithmatex">\(300 \times 300\)</span>.
+              </p>
+              <div class="admonition note">
+                <p class="admonition-title">Note</p>
+                <p>
+                  The 50 images are taken from five videos of varying sizes (10
+                  image frames per video). A size of
+                  <span class="arithmatex">\(300 \times 300\)</span> is assumed
+                  below for simplicity.
+                </p>
+              </div>
+              <p>
+                Examples of embyo images together with segmentations are shown
+                below. The second and third rows show the segmentation results
+                using different ground-truths for training.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/embryos.png"
+                  alt="Images of C. elegans embryos and segmentation results with colour-coded regions."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 3.</strong> Two segmentations of C. elegans
+                    embryo images into five classes: nucleus, nuclear membrane,
+                    cytoplasm, cell wall and external medium.
+                  </p>
+                  <p>From Ning et al. [1].</p>
+                </figcaption>
+              </figure>
+
+              <p>
+                In experiments, Ning et al. extract patches around each pixel of
+                size <span class="arithmatex">\(40 \times 40\)</span>. The
+                patches are classified using a CNN with three convolution layers
+                with no padding.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/embryocnn1.svg"
+                  alt="cnn for embryo classification patchwise."
+                  aria-describedby="fig-4-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 4.</strong> CNN for patchwise classification
+                    of pixels, giving a semantic segmentation.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-4-description">
+                      <p>
+                        CNN architecture taking in a 40x40 patch surrounding the
+                        pixel to be classified. The first stage is convolution
+                        with a 7x7 kernel into 6 feature maps. Second stage is
+                        2x2 mean-pooling with a stride of 2. Third stage is
+                        convolution with a 6x6 kernel into 16 feature maps. This
+                        is followed by 2x2 mean-pooling, then another
+                        convolution with 6x6 kernel into 40 feature maps. Final
+                        stage is a fully connected layer from 40 into the five
+                        class confidences for the target pixel. The tanh
+                        activation function is used throughout and the
+                        convolutions are all without padding, meaning that the
+                        output from the final convolution consists of 40 1x1
+                        feature maps.
+                      </p>
                     </div>
+                  </div>
+                </figcaption>
+              </figure>
 
+              <p>
+                The final convolutional layer outputs 40 feature maps each
+                containing a single value. From just 50 training images, 190,440
+                <span class="arithmatex">\(40 \times 40\)</span> patches are
+                obtained, each associated with the label assigned to a centre
+                pixel. Training uses the <em>mean squared error</em> loss
+                function (see below).
+              </p>
+              <p>
+                The output is a set of maps of class confidences, illustrated
+                below:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/classconfidences.svg"
+                  alt="Five images depicting the output confidences of the five classes. The corresponding structures are clearly visible in each confidence map."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 5.</strong> Illustrating the output
+                    confidence values for each of the five classes. Higher
+                    confidences are represented by lighter pixels.
+                  </p>
+                  <p>From Ning et al., 2005.</p>
+                </figcaption>
+              </figure>
+
+              <p>
+                The whole process can be made much more efficient by inputting a
+                whole embryo image into the network at once. This is at the
+                expense of a four-fold reduction in resolution of the final
+                segmentation map due to the two pooling steps. However, it
+                results in the same computation leading to each target pixel.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/embryocnn2.svg"
+                  alt="CNN for embryo classification."
+                  aria-describedby="fig-6-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 6.</strong> CNN for segmenting the whole
+                    image at once without breaking into patches.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-6-description">
+                      <p>
+                        The architecture of the network is the same as in Figure
+                        4 up until the fully connected layer. The difference is
+                        that the whole 300x300 image is passed into the network
+                        instead of a single patch. This means that the tensors
+                        at each stage are much larger. The fully-connected layer
+                        (fcl) is replaced by a 1x1 convolution, which
+                        effectively replicates the fcl at each location,
+                        computing an affine function of the values across the 40
+                        feature maps. The output is a 5x66x66 tensor providing
+                        class confidences over a 66x66 confidence map.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <h3 id="mean-squared-error-mse-loss-function">
+                Mean Squared Error (MSE) loss function
+              </h3>
+              <p>
+                Assume input <span class="arithmatex">\(\myvec{x}\)</span>,
+                network output
+                <span class="arithmatex">\(f(\myvec{x})\)</span> and training
+                data
+                <span class="arithmatex"
+                  >\(\{\myvec{x}^{(1)},\dots,\myvec{x}^{(m)}\}\)</span
+                >,
+                <span class="arithmatex"
+                  >\(\{\myvec{y}^{(1)},\dots, \myvec{y}^{(m)}\}\)</span
+                >
+                containing <span class="arithmatex">\(m\)</span> examples. The
+                <em>Mean Squared Error</em> loss is defined as:
+              </p>
+              <div class="arithmatex">
+                \[ \frac{1}{m}\sum_{i=1}^m ||\myvec{y}^{(i)} -
+                f(\myvec{x}^{(i)})||^2 \]
+              </div>
+              <p>
+                For example, if we want the output
+                <span class="arithmatex">\(\myvec{y} = f(\myvec{x})\)</span> to
+                be a probability distribution over class labels, we provide
+                one-hot vectors as the ground-truth. For example, the class
+                cytoplasm is represented by the ground-truth output vector
+                <span class="arithmatex">\((0,0,1,0,0)\)</span>. This is ideally
+                what we would like the network to output when cytoplasm is the
+                true class. This is an alternative to negative log likelihood
+                loss (cross-entropy loss).
+              </p>
+              <p>
+                The one-hot encoding for elements from an ordered set (e.g.
+                class labels) is defined in the section on Text classification.
+              </p>
+              <h2 id="encoder-decoder-and-u-net-architecture">
+                Encoder-decoder and U-Net architecture
+              </h2>
+              <p>
+                A second way to produce a semantic segmentation is using an
+                encoder-decoder architecture, which we depict as follows:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/encoderdecoder.svg"
+                  alt="The encoder-decoder architecture divides the network into two parts: an encoder that downsizes the image into a compact embedding layer followed by a decoder the expands from the embedding layer back to a semantic segmentation that has the same resolution as the input image."
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 7.</strong> Encoder-decoder architecture for
+                    semantic segmentation.
+                  </p>
+                  <p>
+                    The images are from the
+                    <a href="http://host.robots.ox.ac.uk/pascal/VOC/index.html">
+                      Pascal VOC dataset </a
+                    >.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <p>
+                The idea is that the encoder produces a compact encoding of the
+                input image within an <em>embedding</em> layer and the decoder
+                expands this encoding into a semantic segmentation. The encoder
+                and decoder will typically be multilayer CNNs. Conceptually, the
+                encoding is a compressed representation of the input that
+                succinctly captures patterns in the image structure from which
+                the decoder can construct the required semantic segmentation. By
+                forcing the information flow through the constriction, we
+                encourage the emergence of common patterns that encode the
+                image. This is the same intuition that underlies the semantic
+                embedding of the words in a piece of text that we will be
+                examining in the section on Text classification.
+              </p>
+              <p>
+                A powerful extension of this idea is the
+                <em>U-Net</em> architecture, which is essentially an
+                encoder-decoder network with shortcuts that link successive
+                layers of the encoder to the corresponding layers of the
+                decoder. This is naturally represented by depicting the network
+                as a 'U' shape - hence the name. The original idea for the U-Net
+                architecture for semantic segmentation is due to
+                <em>Ronnerberger et al.</em> [2].
+              </p>
+              <p>
+                We will look at a newer version used within a system for
+                diagnosis and referral in retinal disease due to
+                <em>Faux et al.</em> [3].
+              </p>
+              <p>
+                The images are obtained from a technique known as
+                <em>Optimal coherence tomography (OCT)</em> and are each 3D
+                scans of the tissue around the macular in the back of the eye.
+                Each image is of size
+                <span class="arithmatex">\(488 \times 512 \times 128\)</span>
+                slices. Given an OCT image, the aim of the system is to produce
+                one of four referal options: <strong>urgent</strong>,
+                <strong>semi-urgent</strong>, <strong>routine</strong> or
+                <strong>observation only</strong>; and 10 diagnostic options
+                (e.g. <strong>geographic atrophy</strong>,
+                <strong>normal</strong>). The system works in two stages. The
+                first stage produces a semantic segmentation of the 3D OCT
+                image. The second stage is a pair of classifiers generating
+                probability distributions for the referall options and for the
+                diagnostic options. The two stages are illustrated in the
+                following diagram:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/eyediseasenetwork.png"
+                  alt="Diagnosis of eye disease schematic."
+                  aria-describedby="fig-8-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 8.</strong> The classifier works in two
+                    stages. The first stage produces a tissue (semantic)
+                    segmentation map from the 3D OCT scan. This is trained using
+                    a corpus of manually segmented images and uses a U-net
+                    architecture. The second stage is a CNN-based classifier of
+                    the tissue maps into referral and diagnosis
+                    confidence/probability values. This stage is trained using
+                    tissue segmentations with confirmed diagnosis and referral
+                    decisions from patient records.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-8-description">
+                      <p>
+                        A 3D OCT scan is depicted on the left, mapping into a 3D
+                        tissue segmentation map in the middle, which maps into
+                        referrall and diagnosis values on the right. The
+                        training data is shown above the two mappings in each
+                        stage.
+                      </p>
+                    </div>
+                  </div>
+                  <p>From <em>Faux et al. </em> [3].</p>
+                </figcaption>
+              </figure>
+
+              <p>
+                The two parts of the system were trained separately. Training
+                the U-Net made use of 877 manually segmented training images,
+                and training the classifier made use of 14,884 semantic
+                segmentations (tissue maps) with the confirmed diagnosis and
+                referral labels (decisions).
+              </p>
+              <p>
+                The U-Net architecture used for semantic segmentation is shown
+                below:
+              </p>
+              <figure role="group">
+                <img
+                  src="images/eyediseaseunet.png"
+                  alt="U-Net architecture."
+                  aria-describedby="fig-9-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 9.</strong> The U-Net architecture used for
+                    producing tissue segmentation maps from OCT scans.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-9-description">
+                      <p>
+                        The architecture is similar to the original U-Net model.
+                        The input on the top-left consists of 9 consecutive
+                        slices from the OCT scan, each of size 448x512. This
+                        passes through three convolutions with 32 channels
+                        (feature maps). The progressive bilinear downsampling
+                        through 8 levels, ends with 1 slice of size 1x1 and 4092
+                        channels (bottom middle). This 4092 vector passes
+                        through 5 fully-connected layers before being
+                        progressively upsampled through 8 corresponding layers
+                        to produce a single output slice of the tissue
+                        segmentation map at the top-right. Cross-links feed the
+                        final feature maps at each level on the downside (left)
+                        across to be concatanated with the initial feature maps
+                        at each level of the upside (right).
+                      </p>
+                    </div>
+                  </div>
+                  <p>From <em>Faux et al.</em> [3].</p>
+                </figcaption>
+              </figure>
+
+              <p>
+                The U-Net is configured to produce 2D segmentations
+                corresponding to single 2D slices of the OCT scan. The input to
+                the U-Net is a set of nine slices, four either side of the
+                target slice. Thus, the U-Net runs multiple times to build up a
+                3D segmentation map, slice by slice, from a 3D OCT scan. In
+                detail, the input is a 3D tensor of size
+                <span class="arithmatex">\(448 \times 512 \times 9\)</span>. At
+                the first level, the input tensor goes into a sequence of three
+                convolutional layers, each performing 3D convolutions into 32
+                channels with
+                <span class="arithmatex">\(3 \times 3 \times 1\)</span> kernels.
+                Note that the first layer operates directly on the section of
+                the OCT scan. As usual, the second and third layers sum
+                convolutions over the 32 channels from the previous layer - this
+                can be thought of as performing a 4D convolution over all 32
+                channels.
+              </p>
+              <p>
+                The result from level one is a 4D <em>activation map</em> of
+                size
+                <span class="arithmatex"
+                  >\(448 \times 512 \times 9 \times 32\)</span
+                >. The spatial dimensions are now downsampled by a factor of two
+                using bilinear interpolation, giving an activation map of size
+                <span class="arithmatex"
+                  >\(224 \times 256 \times 9 \times 32\)</span
+                >. The three convolutional layers are repeated and the result is
+                again downsampled by a factor of two giving an activation map of
+                size
+                <span class="arithmatex"
+                  >\(112 \times 128 \times 9 \times 32\)</span
+                >. These are now downsampled again giving an activation map of
+                size size
+                <span class="arithmatex"
+                  >\(56 \times 64 \times 9 \times 32\)</span
+                >. Three more convolutions are performed, this time into 64
+                channels. This is followed by a convolutional layer with
+                <span class="arithmatex">\(1 \times 1 \times 3\)</span> kernel
+                size to combine data across the slice dimension, generating an
+                activation map of size
+                <span class="arithmatex"
+                  >\(56 \times 64 \times 7 \times 64\)</span
+                >. Notice the reduction in the size of the slice dimension due
+                to not using padding in this final convolutional layer. The same
+                process is repeated in the next three levels, ending up with an
+                activiation map of size
+                <span class="arithmatex"
+                  >\(7 \times 8 \times 1 \times 128\)</span
+                >. This is downsampled once more, flattened and passed through
+                five fully connected layers.
+              </p>
+              <p>
+                The result now travels back up through the levels, with bilinear
+                upsampling replacing downsampling and analogous convolutional
+                layers. The final output has the same spatial size as the input
+                image and depth equal to the number of classes. Taking the
+                maximum over the depth dimension gives the label at each spatial
+                location.
+              </p>
+              <p>
+                So far we have ignored the cross-links. These simply take the
+                final activation maps at each level on the encoder side and
+                concatenate with the input activation maps at the same level on
+                the decoder side. The idea is that detailed feature maps
+                obtained during encoding are available directly at the decoder
+                stage, where they are combined with contextual information that
+                passes from higher levels. Conceptually, you can think of the
+                class probabilities assigned to each pixel as being influenced
+                by a combination of information from different spatial scales,
+                ranging from the evidence in the immediate vicinity of the pixel
+                (from the cross-link) to global aspects of the image (from the
+                chain leading up from the embedding at the base of the 'U').
+              </p>
+              <p>
+                The classification stage is a CNN classifier applied directly to
+                a one-hot encoding of the segmentation map. The segmentation map
+                is subsampled from
+                <span class="arithmatex">\(448 \times 512 \times 128\)</span> to
+                <span class="arithmatex">\(300 \times 350 \times 43\)</span>.
+              </p>
+              <div class="admonition abstract">
+                <p class="admonition-title">Reading</p>
+                <p>
+                  You should read the Nature paper that describes this system
+                  (<em>Faux et al.</em> [3]). We will discuss the paper in the
+                  webinar next week. The main paper gives a lot of background
+                  and outlines the way in which the system works. The technical
+                  details are contained within a methods section at the end and
+                  there are many additional figures (including the U-Net
+                  architecture) and videos in the supplementary material.
+                </p>
+              </div>
+              <h2 id="bilinear-interpolation">Bilinear interpolation</h2>
+              <p>
+                An important part of the segmentation network is the
+                downsampling and upsampling using bilinear interpolation. The
+                definition of bilinear interpolation is as follows:
+              </p>
+              <p>
+                Given <span class="arithmatex">\(z_{ij}\in \mathbb{R}\)</span>,
+                defined over a 2D rectangular grid of points
+                <span class="arithmatex">\({(x_i ,y_j)}\)</span>, we seek to
+                derive a new grid of points at higher or lower resolution. For
+                some point <span class="arithmatex">\((x,y)\)</span> in the new
+                grid, the bilinear interpolated value
+                <span class="arithmatex">\(z\)</span> at this location is given
+                by linearly interpolating at the
+                <span class="arithmatex">\(x\)</span> intercept between the
+                values at the grid points above and below the new point, to give
+                <span class="arithmatex">\(z'\)</span> and
+                <span class="arithmatex">\(z''\)</span>, and then linearly
+                interpolating between <span class="arithmatex">\(z'\)</span> and
+                <span class="arithmatex">\(z''\)</span> at the
+                <span class="arithmatex">\(y\)</span> intercept to give
+                <span class="arithmatex">\(z\)</span>.
+              </p>
+              <figure role="group">
+                <img
+                  src="images/bilinear.svg"
+                  alt="Illustrating bilinear interpolation"
+                  aria-describedby="fig-9-description"
+                />
+                <figcaption>
+                  <p>
+                    <strong>Figure 10.</strong>Bilinear interpolation of the
+                    function at a given point works with a grid of values. First
+                    the function is approximated between adjacent horizontal
+                    grid points on the grid lines above and below the target
+                    point by linear interpolation, z' and z''. Then the function
+                    value z at the target point is approximated by linear
+                    interpolation between the values z' and z''.
+                  </p>
+                  <button class="accordion-button">
+                    View image description
+                  </button>
+                  <div class="accordion-panel">
+                    <div id="fig-10-description">
+                      <p>
+                        A 4x4 grid of known points is shown. A target point
+                        (x,y) within the inner grid square is labelled with the
+                        value z, which is to be found. The grid line at the
+                        bottom of the inner square shows the value z' obtained
+                        at horizontal coordinate position x and the grid line at
+                        the top of the inner square shows the value z'' also at
+                        x. A vertical dotted line through z', z, and z''
+                        represents the final linear interpolation that gives the
+                        required value of z.
+                      </p>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <p>
+                Note that the bilinear interpolation in the U-Net enters into
+                the gradient function since it changes the activation maps.
+              </p>
+              <p>
+                In downsampling of images, it may be necessary to smooth the
+                image first using Gaussian convolution to prevent aliasing
+                effects that arise from high spatial frequency content in the
+                image. It seems probable that this wasn't done here.
+              </p>
+              <h2 id="references">References</h2>
+              <p>
+                [1]
+                <a href="https://hal.archives-ouvertes.fr/hal-00114920/document"
+                  ><em
+                    >Ning, F., D. Delhomme, Y. Lecun, F. Piano, L. Bottou, and
+                    P.E. Barbano. 2005. Toward Automatic Phenotyping of
+                    Developing Embryos from Videos. IEEE Transactions on Image
+                    Processing 14 (9) (September): 1360–71.</em
+                  ></a
+                >
+              </p>
+              <p>
+                [2]
+                <a href="https://doi.org/10.1007/978-3-319-24574-4_28"
+                  ><em
+                    >Ronneberger, Olaf, Philipp Fischer, and Thomas Brox. U-Net:
+                    Convolutional Networks for Biomedical Image Segmentation. In
+                    Medical Image Computing and Computer-Assisted Intervention –
+                    MICCAI 2015, edited by Nassir Navab, Joachim Hornegger,
+                    William M. Wells, and Alejandro F. Frangi, 234–41. Lecture
+                    Notes in Computer Science. Cham: Springer International
+                    Publishing, 2015.</em
+                  ></a
+                >
+              </p>
+              <p>
+                [3]
+                <a href="https://www.nature.com/articles/s41591-018-0107-6"
+                  ><em
+                    >De Faux et al., Clinically applicable deep learning for
+                    diagnosis and referral in retinal disease, Nature Medicine,
+                    volume 24, 2018</em
+                  ></a
+                >
+              </p>
+            </article>
+          </div>
+        </div>
+      </main>
+
+      <footer class="md-footer">
+        <div class="md-footer-nav">
+          <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+            <a
+              href="CNN.html"
+              class="md-footer-nav__link md-footer-nav__link--prev"
+              rel="prev"
+            >
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"
+                  />
+                </svg>
+              </div>
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction"> Previous </span>
+                  Convolutional neural networks
                 </div>
-            </div>
-        </footer>
+              </div>
+            </a>
 
+            <a
+              href="../unit4/Introduction.html"
+              class="md-footer-nav__link md-footer-nav__link--next"
+              rel="next"
+            >
+              <div class="md-footer-nav__title">
+                <div class="md-ellipsis">
+                  <span class="md-footer-nav__direction"> Next </span>
+                  Sequential data
+                </div>
+              </div>
+              <div class="md-footer-nav__button md-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path
+                    d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"
+                  />
+                </svg>
+              </div>
+            </a>
+          </nav>
+        </div>
+
+        <div class="md-footer-meta md-typeset">
+          <div class="md-footer-meta__inner md-grid">
+            <div class="md-footer-copyright">
+              <div class="md-footer-copyright__highlight">
+                Copyright © University of Leeds
+              </div>
+
+              Made with
+              <a
+                href="https://squidfunk.github.io/mkdocs-material/"
+                target="_blank"
+                rel="noopener"
+              >
+                Material for MkDocs
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
     <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script>
     <script id="__lang" type="application/json">
-        {
-            "clipboard.copy": "Copy to clipboard",
-            "clipboard.copied": "Copied to clipboard",
-            "search.config.lang": "en",
-            "search.config.pipeline": "trimmer, stopWordFilter",
-            "search.config.separator": "[\\s\\-]+",
-            "search.placeholder": "Search",
-            "search.result.placeholder": "Type to start searching",
-            "search.result.none": "No matching documents",
-            "search.result.one": "1 matching document",
-            "search.result.other": "# matching documents",
-            "search.result.more.one": "1 more on this page",
-            "search.result.more.other": "# more on this page",
-            "search.result.term.missing": "Missing"
-        }
+      {
+        "clipboard.copy": "Copy to clipboard",
+        "clipboard.copied": "Copied to clipboard",
+        "search.config.lang": "en",
+        "search.config.pipeline": "trimmer, stopWordFilter",
+        "search.config.separator": "[\\s\\-]+",
+        "search.placeholder": "Search",
+        "search.result.placeholder": "Type to start searching",
+        "search.result.none": "No matching documents",
+        "search.result.one": "1 matching document",
+        "search.result.other": "# matching documents",
+        "search.result.more.one": "1 more on this page",
+        "search.result.more.other": "# more on this page",
+        "search.result.term.missing": "Missing"
+      }
     </script>
 
     <script>
-        app = initialize({
-            base: "../..",
-            features: ['navigation.sections'],
-            search: Object.assign({
-                worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
-            }, typeof search !== "undefined" && search)
-        })
+      app = initialize({
+        base: "../..",
+        features: ["navigation.sections"],
+        search: Object.assign(
+          {
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js",
+          },
+          typeof search !== "undefined" && search
+        ),
+      });
     </script>
 
     <script src="../../javascript/tablecontentsoverride.js"></script>
@@ -874,8 +1217,5 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-</body>
-
+  </body>
 </html>
