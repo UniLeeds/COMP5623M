@@ -15,11 +15,10 @@ name: Formate Code
 # Start the job on all push #
 #############################
 on:
-  push:
-    branches: [master]
-  pull_request:
-    branches-ignore: [master]
-    # Remove the line above to run when pull-requesting to master
+  repository_dispatch:
+  workflow_dispatch:
+  schedule:
+    - cron: "* */3 * * *"
 
 ###############
 # Set the Job #
