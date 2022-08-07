@@ -27,5 +27,5 @@ jobs:
           content-filepath: ./lychee/out.md
           labels: report, automated issue
       - name: asciidoctor-ghpages
-        uses: manoelcampos/asciidoctor-ghpages-action@v2.2.1
+        uses: manoelcampos/asciidoctor-ghpages-action@v2.2.4
 
